@@ -1,4 +1,4 @@
-ineer<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <title>Jennifer Si Li Home</title>
@@ -55,32 +55,31 @@ ineer<!DOCTYPE html>
       position: relative;
     }
     /* Skills section layout */
+    #skills {
+      max-width: 1050px;
+      margin: auto;
+    }
     
     .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem; /* smaller spacing like before */
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
       margin-top: 2rem;
     }
     
-    .skill-card {
-      background-color: #ffffff;
-      padding: 1.25rem 1.5rem; 
-    }
-    .skill-card h3 {
-      margin-top: 0;
+    .skill-category h3 {
+      font-size: 1.4rem;
       margin-bottom: 0.75rem;
-      font-size: 1.15rem;
     }
     
-    .skill-card ul {
-      margin: 0;
-      padding-left: 1.2rem;
+    .skill-category ul {
+      list-style-type: disc
+      margin: auto;
     }
     
-    .skill-card li {
-      margin-bottom: 0.4rem;
-      line-height: 1.45;
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
     }
 
   </style>
@@ -112,35 +111,39 @@ ineer<!DOCTYPE html>
     </div>
 
     <!-- Projects Dropdown -->
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-button">Projects ▾</button>
-      <div class="w3-dropdown-content w3-bar-block w3-border">
-    
-        <a href="projects/battery-fixtures.html" class="w3-bar-item w3-button">
-          Hollow Carbon Fiber Wheel
+<div class="w3-dropdown-hover w3-hide-small">
+  
+
+  <button class="w3-button">Projects ▾</button>
+
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+
+    <a href="projects/battery-fixtures.html" class="w3-bar-item w3-button">
+      Hollow Carbon Fiber Wheel
+    </a>
+
+    <!-- Nested Formula SAE dropdown -->
+    <div class="w3-dropdown-hover w3-bar-item w3-button fsae-parent">
+      Berkeley Formula Racing ▸
+
+      <div class="w3-dropdown-content w3-bar-block w3-border fsae-submenu">
+        <a href="projects/fsae-seat.html" class="w3-bar-item w3-button">
+          Carbon Fiber Seat
         </a>
-    
-        <!-- Nested Formula SAE dropdown -->
-        <div class="w3-dropdown-hover w3-bar-item w3-button fsae-parent">
-          Berkeley Formula Racing ▸
-    
-          <div class="w3-dropdown-content w3-bar-block w3-border fsae-submenu">
-            <a href="projects/fsae-seat.html" class="w3-bar-item w3-button">
-              Carbon Fiber Seat
-            </a>
-            <a href="projects/fsae-pedals.html" class="w3-bar-item w3-button">
-              Pedals / Pedal Tray
-            </a>
-            <a href="projects/fsae-brakes.html" class="w3-bar-item w3-button">
-              Brakes
-            </a>
-            <a href="projects/fsae-testing.html" class="w3-bar-item w3-button">
-              Testing & Validation
-            </a>
-          </div>
-        </div>
+        <a href="projects/fsae-pedals.html" class="w3-bar-item w3-button">
+          Pedals / Pedal Tray
+        </a>
+        <a href="projects/fsae-brakes.html" class="w3-bar-item w3-button">
+          Brakes
+        </a>
+        <a href="projects/fsae-testing.html" class="w3-bar-item w3-button">
+          Testing & Validation
+        </a>
       </div>
     </div>
+
+  </div>
+</div>
 
 
     <a href="courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
@@ -176,8 +179,9 @@ ineer<!DOCTYPE html>
   </div>
 </section>
 
-<section id="skills" class="w3-padding-64 w3-light-grey">
-  <h2>Skills</h2>
+<section id="skills" class="w3-container w3-padding-64">
+  
+  <h2 class="w3-xxxlarge">Skills</h2>
   <div class="skills-grid">
 
 
@@ -246,7 +250,7 @@ ineer<!DOCTYPE html>
 
 
 <!-- ================= WORK EXPERIENCE ================= -->
-<section id="experience" class="w3-container w3-padding-64">
+<section id="experience" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Work Experience</h2>
 
@@ -291,7 +295,7 @@ ineer<!DOCTYPE html>
 </section>
 
 <!-- ================= PROJECTS ================= -->
-<section id="projects" class="w3-padding-64 w3-light-grey">
+<section id="projects" class="w3-container w3-padding-64">
   <div class="max-width">
     <h2>Projects</h2>
 
