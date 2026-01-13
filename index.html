@@ -58,24 +58,38 @@ ineer<!DOCTYPE html>
     </div>
 
     <!-- Projects Dropdown -->
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-button">Projects ▾</button>
-      <div class="w3-dropdown-content w3-bar-block w3-border">
-        <a href="projects/battery-fixtures.html" class="w3-bar-item w3-button">
-          Hollow Carbon Fiber Wheel
+<div class="w3-dropdown-hover w3-hide-small">
+  <button class="w3-button">Projects ▾</button>
+
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+
+    <a href="projects/battery-fixtures.html" class="w3-bar-item w3-button">
+      Hollow Carbon Fiber Wheel
+    </a>
+
+    <!-- Nested Formula SAE dropdown -->
+    <div class="w3-dropdown-hover w3-bar-item w3-button fsae-parent">
+      Berkeley Formula Racing ▸
+
+      <div class="w3-dropdown-content w3-bar-block w3-border fsae-submenu">
+        <a href="projects/fsae-seat.html" class="w3-bar-item w3-button">
+          Carbon Fiber Seat
         </a>
-        <!-- Formula SAE parent -->
-        <li class="dropdown-sub">
-          <a href="#">Berkeley Formula Racing ▸</a>
-          <ul class="dropdown-menu-sub">
-            <li><a href="fsae-seat.html">Carbon Fiber Seat</a></li>
-            <li><a href="fsae-pedals.html">Pedals/Pedal Tray</a></li>
-            <li><a href="fsae-brakes.html">Brakes</a></li>
-            <li><a href="fsae-testing.html">Testing & Validation</a></li>
-          </ul>
-        </li>
+        <a href="projects/fsae-pedals.html" class="w3-bar-item w3-button">
+          Pedals / Pedal Tray
+        </a>
+        <a href="projects/fsae-brakes.html" class="w3-bar-item w3-button">
+          Brakes
+        </a>
+        <a href="projects/fsae-testing.html" class="w3-bar-item w3-button">
+          Testing & Validation
+        </a>
       </div>
     </div>
+
+  </div>
+</div>
+
 
     <a href="courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
     <a href="assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
