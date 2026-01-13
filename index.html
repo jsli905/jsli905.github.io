@@ -56,45 +56,38 @@ ineer<!DOCTYPE html>
     }
     /* Skills section layout */
 
-/* Skills section background */
-#skills {
-  background-color: #f2f2f2; /* light gray */
-  padding: 4rem 1rem;
-}
 
-/* Individual skill cards */
-.skill-card {
-  background: white;
-  padding: 1.75rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-/* Subtle hover effect */
-.skill-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
-}
-
-/* Headings inside cards */
-.skill-card h3 {
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
-
-/* Lists inside cards */
-.skill-card ul {
-  padding-left: 1.2rem;
-  margin: 0;
-}
-
-.skill-card li {
-  margin-bottom: 0.5rem;
-  line-height: 1.5;
-}
-
+    #skills {
+      background-color: #f2f2f2; /* light gray */
+      padding: 3rem 1rem;
+    }
+    
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; /* smaller spacing like before */
+      margin-top: 2rem;
+    }
+    
+    .skill-card {
+      background-color: #ffffff;
+      padding: 1.25rem 1.5rem; 
+    }
+    .skill-card h3 {
+      margin-top: 0;
+      margin-bottom: 0.75rem;
+      font-size: 1.15rem;
+    }
+    
+    .skill-card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+    
+    .skill-card li {
+      margin-bottom: 0.4rem;
+      line-height: 1.45;
+    }
 
   </style>
 
@@ -125,39 +118,35 @@ ineer<!DOCTYPE html>
     </div>
 
     <!-- Projects Dropdown -->
-<div class="w3-dropdown-hover w3-hide-small">
-  
-
-  <button class="w3-button">Projects ▾</button>
-
-  <div class="w3-dropdown-content w3-bar-block w3-border">
-
-    <a href="projects/battery-fixtures.html" class="w3-bar-item w3-button">
-      Hollow Carbon Fiber Wheel
-    </a>
-
-    <!-- Nested Formula SAE dropdown -->
-    <div class="w3-dropdown-hover w3-bar-item w3-button fsae-parent">
-      Berkeley Formula Racing ▸
-
-      <div class="w3-dropdown-content w3-bar-block w3-border fsae-submenu">
-        <a href="projects/fsae-seat.html" class="w3-bar-item w3-button">
-          Carbon Fiber Seat
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button">Projects ▾</button>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+    
+        <a href="projects/battery-fixtures.html" class="w3-bar-item w3-button">
+          Hollow Carbon Fiber Wheel
         </a>
-        <a href="projects/fsae-pedals.html" class="w3-bar-item w3-button">
-          Pedals / Pedal Tray
-        </a>
-        <a href="projects/fsae-brakes.html" class="w3-bar-item w3-button">
-          Brakes
-        </a>
-        <a href="projects/fsae-testing.html" class="w3-bar-item w3-button">
-          Testing & Validation
-        </a>
+    
+        <!-- Nested Formula SAE dropdown -->
+        <div class="w3-dropdown-hover w3-bar-item w3-button fsae-parent">
+          Berkeley Formula Racing ▸
+    
+          <div class="w3-dropdown-content w3-bar-block w3-border fsae-submenu">
+            <a href="projects/fsae-seat.html" class="w3-bar-item w3-button">
+              Carbon Fiber Seat
+            </a>
+            <a href="projects/fsae-pedals.html" class="w3-bar-item w3-button">
+              Pedals / Pedal Tray
+            </a>
+            <a href="projects/fsae-brakes.html" class="w3-bar-item w3-button">
+              Brakes
+            </a>
+            <a href="projects/fsae-testing.html" class="w3-bar-item w3-button">
+              Testing & Validation
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-
-  </div>
-</div>
 
 
     <a href="courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
