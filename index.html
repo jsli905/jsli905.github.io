@@ -8,58 +8,8 @@ ineer<!DOCTYPE html>
   <!-- W3.CSS -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-grey.css">
-  /* Skills section layout */
-  #skills {
-    max-width: 1100px;
-    margin: auto;
-  }
   
-  .skills-grid {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2.5rem;
-    margin-top: 2rem;
-  }
   
-  .skill-category h3 {
-    font-size: 1.4rem;
-    margin-bottom: 0.75rem;
-  }
-  
-  .skill-category ul {
-    list-style-type: disc;
-    padding-left: 1.25rem;
-    margin: 0;
-  }
-  
-  .skill-category li {
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-  }
-
-  /* Hide submenu by default */
-  .dropdown .submenu {
-    display: none;
-    position: absolute;
-    left: 100%;
-    top: 0;
-    background: white;
-    padding: 0.5rem 0;
-    min-width: 160px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    z-index: 1000;
-  }
-  
-  /* Show submenu ONLY on hover of parent */
-  .dropdown:hover .submenu {
-    display: block;
-  }
-  
-  /* Make parent positioning context */
-  .dropdown {
-    position: relative;
-  }
-
   <!-- Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
@@ -111,6 +61,29 @@ ineer<!DOCTYPE html>
 
     <!-- Projects Dropdown -->
 <div class="w3-dropdown-hover w3-hide-small">
+  /* Hide submenu by default */
+  .dropdown .submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background: white;
+    padding: 0.5rem 0;
+    min-width: 160px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    z-index: 1000;
+  }
+  
+  /* Show submenu ONLY on hover of parent */
+  .dropdown:hover .submenu {
+    display: block;
+  }
+  
+  /* Make parent positioning context */
+  .dropdown {
+    position: relative;
+  }
+
   <button class="w3-button">Projects ▾</button>
 
   <div class="w3-dropdown-content w3-bar-block w3-border">
@@ -179,6 +152,35 @@ ineer<!DOCTYPE html>
 </section>
 
 <section id="skills" class="w3-container w3-padding-64">
+  /* Skills section layout */
+  #skills {
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .skills-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+  }
+  
+  .skill-category h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .skill-category ul {
+    list-style-type: disc;
+    padding-left: 1.25rem;
+    margin: 0;
+  }
+  
+  .skill-category li {
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+  }
+
   <h2 class="w3-xxxlarge">Skills</h2>
   <div class="skills-grid">
 
