@@ -32,23 +32,22 @@
     a {
       text-decoration: none;
     }
-    /* Hide submenu by default */
-    .dropdown .submenu {
-      display: none;
-      position: absolute;
-      left: 100%;
-      top: 0;
-      background: white;
-      padding: 0.5rem 0;
-      min-width: 160px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      z-index: 1000;
-    }
     
-    /* Show submenu ONLY on hover of parent */
-    .dropdown:hover .submenu {
-      display: block;
-    }
+    /* Hide the nested submenu by default */
+.parent .submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background: white;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+/* Only show when hovering over Berkeley Formula Racing */
+.parent:hover .submenu {
+  display: block;
+}
     
     /* Make parent positioning context */
     .dropdown {
@@ -107,34 +106,21 @@
     </div>
 
     <!-- Projects Dropdown -->
-<div class="w3-dropdown-hover w3-hide-small">
-  
 
+<div class="w3-dropdown-hover">
   <button class="w3-button">Projects ▾</button>
 
   <div class="w3-dropdown-content w3-bar-block w3-border">
 
-    <a href="projects/battery-fixtures.html" class="w3-bar-item w3-button">
-      Hollow Carbon Fiber Wheel
-    </a>
+    <a href="#" class="w3-bar-item w3-button">Hollow Carbon Fiber Wheel</a>
 
-    <!-- Nested Formula SAE dropdown -->
-    <div class="w3-dropdown-hover w3-bar-item w3-button fsae-parent">
-      Berkeley Formula Racing ▸
+    <div class="w3-bar-item parent">
+      <button class="w3-button">Berkeley Formula Racing ▸</button>
 
-      <div class="w3-dropdown-content w3-bar-block w3-border fsae-submenu">
-        <a href="projects/fsae-seat.html" class="w3-bar-item w3-button">
-          Carbon Fiber Seat
-        </a>
-        <a href="projects/fsae-pedals.html" class="w3-bar-item w3-button">
-          Pedals / Pedal Tray
-        </a>
-        <a href="projects/fsae-brakes.html" class="w3-bar-item w3-button">
-          Brakes
-        </a>
-        <a href="projects/fsae-testing.html" class="w3-bar-item w3-button">
-          Testing & Validation
-        </a>
+      <div class="w3-bar-block w3-border submenu">
+        <a href="#" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
+        <a href="#" class="w3-bar-item w3-button">Pedals</a>
+        <a href="#" class="w3-bar-item w3-button">Brakes</a>
       </div>
     </div>
 
