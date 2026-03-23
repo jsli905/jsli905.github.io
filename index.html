@@ -34,21 +34,21 @@
     }
     
     /* Hide the nested submenu by default */
-.parent .submenu {
-  display: none;
-  position: absolute;
-  left: 100%;
-  top: 0;
-  background: white;
-  min-width: 180px;
-  z-index: 1000;
-}
-
-/* Only show when hovering over Berkeley Formula Racing */
-.parent:hover .submenu {
-  display: block;
-}
+    .parent .submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background: white;
+      min-width: 180px;
+      z-index: 1000;
+    }
     
+    /* Only show submenu when hovering*/
+    .parent:hover .submenu {
+      display: block;
+    }
+        
     /* Make parent positioning context */
     .dropdown {
       position: relative;
@@ -119,8 +119,11 @@
 
       <div class="w3-bar-block w3-border submenu">
         <a href="#" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
-        <a href="#" class="w3-bar-item w3-button">Pedals</a>
+        <a href="#" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
         <a href="#" class="w3-bar-item w3-button">Brakes</a>
+        <a href="#" class="w3-bar-item w3-button">Steering Wheel</a>
+        <a href="#" class="w3-bar-item w3-button">Diffuser</a>
+        <a href="#" class="w3-bar-item w3-button">Head Restraint</a>
       </div>
     </div>
 
@@ -146,7 +149,7 @@
     <div class="education-summary w3-large">
       <p><strong>M.S. Mechanical Engineering</strong> <span class="w3-text-grey">(UC Berkeley, Aug 2025 – May 2026)</span></p>
       <p><strong>B.S. Mechanical Engineering</strong> <span class="w3-text-grey">(UC Berkeley, Aug 2021 – May 2025)</span>
-      <span class="w3-text"><br>&emsp;Minor: Aerospace Engineering
+      <span class="w3-text"><br>&emsp;Minor: Aerospace Engineering Concentration: Electrical Engineering and Computer Science
       <br>&emsp;Certificates: Berkeley Certificate in Design Innovation; Berkeley Certificate in Entrepreneurship & Technology</span></p>
     </div>
 
