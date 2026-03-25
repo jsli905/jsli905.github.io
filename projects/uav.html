@@ -266,7 +266,7 @@
       while maintaining stable thrust.
     </p>
   
-    <img src="../images/mixer_diagram.jpg" alt="Quadcopter Motor Layout">
+    <img src="../images/mixer_diagram.jpg" alt="Quadcopter Motor Layout" style="width:50%; max-width:900px">
   
   
     <!-- ================= ESTIMATION ================= -->
@@ -278,7 +278,7 @@
       the accelerometer corrected long-term drift using a complementary filter.
     </p>
   
-    <img src="../images/attitude_estimator_plot.jpg" alt="Attitude Estimator Results">
+    <img src="../images/attitude_estimator_plot.jpg" alt="Attitude Estimator Results" style="width:50%; max-width:900px">
   
     <p>
       Experimental testing at ~35° tilt showed that pitch and roll converged
@@ -297,8 +297,33 @@
       affected oscillations and response time.
     </p>
   
-    <img src="../images/angle_response_plot.jpg" alt="Angle Response Plot">
-    <img src="../images/step_response_plot.jpg" alt="Step Response Plot">
+    <img src="../images/angle_response_plot.jpg" alt="Angle Response Plot"style="width:50%; max-width:900px">
+    <img src="../images/step_response_plot.jpg" alt="Step Response Plot"style="width:50%; max-width:900px">
+
+    <h3>6. Height Estimation</h3>
+
+    <p>
+    I also implemented and tested a height estimator using distance sensor
+    measurements combined with IMU data. The estimator was validated by
+    lifting the quadcopter to a known height (~0.5 m), holding it steady,
+    and returning it to the ground while recording the estimated height.
+    </p>
+    
+    <img src="../images/roll_pitch_estimator.jpg" alt="Roll Pitch Plot">
+    <img src="../images/vertical velocity.jpg" alt="Vertical Velocity Plot">
+    <img src="../images/height_estimator.jpg" alt="Height Estimator Plot">
+  </div>
+
+  <h3>7. Horizontal Estimation</h3>
+
+    <p>
+    I then verified the horizontal estimator's performance.
+    </p>
+    
+    <img src="../images/rate_gyro.jpg" alt="Roll Pitch Plot">
+    <img src="../images/flow_sensor.jpg" alt="Vertical Velocity Plot">
+    <img src="../images/height_estimator2.png" alt="Height Estimator Plot">
+    <img src="../images/horizontal_estimator.jpg" alt="Height Estimator Plot">
   </div>
 
 </section>
