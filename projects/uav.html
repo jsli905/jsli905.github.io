@@ -227,7 +227,7 @@
     <img src="../images/pwm_speed_plot.jpg" alt="PWM vs Speed Plot" style="width:80%; max-width:900px">
   
     <p>
-      I then derived the force produced by each motor using a one-axis test rig.
+      We then derived the force produced by each motor using a one-axis test rig.
       The angle of the rig was calculated from the accelerometer:
     </p>
   
@@ -239,7 +239,11 @@
 
     <img src="../images/thrust_rig_setup.jpg" alt="Thrust Calibration Setup" style="width:50%; max-width:900px">
     <img src="../images/thrust_calibration_plot.jpg" alt="Thrust Calibration Plot" style="width:50%; max-width:900px">
-  
+
+    <p>We derived the constant that related the per-motor measured force (in N) and the speed command (in rad=s).
+      We validated this after removing UAV from rig. We tested the constant at 95% of the drones weight, 
+      and it seemed as though the drone was very close to taking off, so the result seemed accurate.</p>
+    <img src="../images/prop_constant.jpg" alt="Prop Constant" style="width:50%; max-width:900px">
   
     <!-- ================= MIXER EQUATIONS ================= -->
     <h3>3. Mixer Equations</h3>
