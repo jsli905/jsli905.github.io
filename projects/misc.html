@@ -158,54 +158,33 @@
       <h3>
         Attitude estimation, control design, and autonomous quadcopter flight
       </h3>
+      <p>
+        Built a fully functioning quadcopter flight control system from the ground up from raw sensor data to stable autonomous flight. 
+        Developed software in C++ that allows the vehicle to estimate its orientation, control its attitude,
+        and complete a controlled flight task with minimal error. In the end, the quadcopter could take off autonomously, remain
+        stable in the air, cross an obstacle, and land upright as close as possible to a target location.
+      </p>
+
       <img src="../images/uav.jpg" alt="UAV" style="width:50%; max-width:900px">
 
       <h2>Overview</h2>
-      <p>
-        This project focused on building a fully functioning quadcopter flight control system
-        from the ground up. Rather than simply flying a drone, the goal was to develop the
-        software that allows the vehicle to estimate its orientation, control its attitude,
-        and complete a controlled flight task with minimal error.
-      </p>
-
-      <p>
-        The final demonstration required the quadcopter to take off autonomously, remain
-        stable in the air, cross an obstacle, and land upright as close as possible to a
-        target location.
-      </p>
-
-    <!-- What We Had To Do -->
-      <h2>What We Had To Do</h2>
-
+    
       <ul>
-        <li>Program and modify onboard flight software in C++</li>
+        
+        <li>Developed onboard flight software in C++ to control motors and read sensor data</li>
         <li>Identify the motor and propeller system (PWM → speed → thrust)</li>
         <li>Build an attitude estimator using gyroscope and accelerometer data</li>
-        <li>Design and tune closed-loop attitude controllers</li>
-        <li>Implement hover control using sensor feedback</li>
-        <li>Integrate all subsystems into a fully working UAV</li>
+        <li>Design and tune closed-loop attitude controllers and tested stability through flight experiments</li>
+        <li>Performed system identification experiments to relate motor input (PWM) to thrust and response</li>
+        <li>Tested and debugged unstable flight behavior through repeated flight experiments</li>
+        <li>Integrated estimation, control, and motor actuation into a fully working quadcopter</li>
       </ul>
 
-    <!-- My Work -->
-      <h2>My Work</h2>
-
-      <ul>
-        <li>Modified C++ firmware to control motors and read sensor data</li>
-        <li>Implemented an attitude estimator using IMU measurements</li>
-        <li>Tuned controller parameters and tested stability through flight experiments</li>
-        <li>Performed system identification experiments for motor thrust and response</li>
-        <li>Debugged unstable behavior and improved flight smoothness</li>
-        <li>Helped complete the final demonstration flight</li>
-      </ul>
-
-    <!-- Results -->
-      <h2>Results</h2>
 
       <p>
-        By the end of the project, the quadcopter was able to take off autonomously,
-        maintain stable flight using closed-loop control, cross an obstacle, and land
-        upright with minimal position error. Performance was evaluated based on both
-        landing accuracy and flight smoothness.
+        In the end, the quadcopter was able to take off autonomously,
+        maintain stable flight using closed-loop control, cross an obstacle without touching anything, and land
+        upright with minimal position error.
       </p>
 
     <!-- Skills -->
