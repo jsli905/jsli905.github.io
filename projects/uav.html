@@ -144,8 +144,7 @@
 <!-- Spacer for fixed navbar -->
 <div style="margin-top:64px"></div>
 
-        <!-- UAV-->
-<section id="UAV" class="w3-padding-64 w3-light-grey">
+<section id="overview" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
       <h2>UAV Flight Control</h2>
       <h3>
@@ -174,138 +173,141 @@
       </ul>
   </div>
 </section>
-    
-<section class="w3-white w3-padding-large w3-card w3-margin-top">
-  <h2>Technical Work</h2>
 
-  <p>
-    This project required building a full quadcopter flight system from the ground up.
-    Rather than simply flying the drone, the goal was to develop the estimation,
-    control, and motor models needed to achieve stable autonomous flight.
-  </p>
-
-  <!-- ================= SENSOR ANALYSIS ================= -->
-  <h3>1. Sensor Characterization</h3>
-
-  <p>
-    Before implementing control, I first analyzed the IMU sensors to understand noise,
-    bias, and drift. With the motors running, the standard deviation of the angular
-    velocity increased significantly due to vibration, which directly affected the
-    estimator performance.
-  </p>
-
-  <img src="../images/imu_noise_plot.jpg" alt="IMU Noise Analysis">
-
-  <p>
-    These experiments helped determine how long the estimator could run before drift
-    became too large and motivated the use of accelerometer feedback to correct
-    long-term orientation error.
-  </p>
-
-
-  <!-- ================= MOTOR IDENTIFICATION ================= -->
-  <h3>2. Motor System Identification</h3>
-
-  <p>
-    To control the quadcopter, I experimentally derived the relationship between
-    PWM command, motor speed, and thrust. Using a tachometer and multiple
-    command inputs, I obtained a linear relationship between PWM and motor speed:
-  </p>
-
-  <pre>
-PWM = a + b · ω
-a = -106
-b = 0.18
-  </pre>
-
-  <img src="../images/pwm_speed_plot.jpg" alt="PWM vs Speed Plot">
-
-  <p>
-    I then derived the force produced by each motor using a one-axis test rig.
-    The angle of the rig was calculated from the accelerometer:
-  </p>
-
-  <pre>
-θ = arcsin(a_z / g)
-
-F_motor = (9.81 m_R l_R + 9.81 m_B l) / (4 sin(θ) l)
-  </pre>
-
-  <img src="../images/thrust_calibration.jpg" alt="Thrust Calibration Setup">
-
-
-  <!-- ================= MIXER EQUATIONS ================= -->
-  <h3>3. Mixer Equations</h3>
-
-  <p>
-    After identifying the motor model, I implemented the mixer that converts
-    desired thrust and torques into individual motor commands. The mixer
-    matrix relates total thrust and roll/pitch/yaw torques to the four motors:
-  </p>
-
-  <pre>
-      [ T ]       [ 1   1   1   1 ] [ F1 ]
-      [ τx ]  =   [ 0   L   0  -L ] [ F2 ]
-      [ τy ]      [ -L  0   L   0 ] [ F3 ]
-      [ τz ]      [ k  -k   k  -k ] [ F4 ]
-  </pre>
-
-  <p>
-    This allowed the controller to command roll, pitch, and yaw independently
-    while maintaining stable thrust.
-  </p>
-
-  <img src="../images/mixer_diagram.jpg" alt="Quadcopter Motor Layout">
-
-
-  <!-- ================= ESTIMATION ================= -->
-  <h3>4. Attitude Estimation</h3>
-
-  <p>
-    I implemented an attitude estimator using gyroscope and accelerometer
-    measurements. The gyroscope provided accurate short-term motion, while
-    the accelerometer corrected long-term drift using a complementary filter.
-  </p>
-
-  <img src="../images/attitude_estimator_plot.jpg" alt="Attitude Estimator Results">
-
-  <p>
-    Experimental testing at ~35° tilt showed that pitch and roll converged
-    consistently across multiple trials, while yaw drifted over time due to
-    the lack of an absolute reference.
-  </p>
-
-
-  <!-- ================= CONTROL ================= -->
-  <h3>5. Controller Testing</h3>
-
-  <p>
-    After building the estimator, I tuned the closed-loop controller using
-    step-response testing and instability experiments. I tested both stable
-    and intentionally unstable controllers to understand how gain selection
-    affected oscillations and response time.
-  </p>
-
-  <img src="../images/step_response_plot.jpg" alt="Step Response Plot">
+<section id="technical" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Technical Work</h2>
+  
+    <p>
+      This project required building a full quadcopter flight system from the ground up.
+      Rather than simply flying the drone, the goal was to develop the estimation,
+      control, and motor models needed to achieve stable autonomous flight.
+    </p>
+  
+    <!-- ================= SENSOR ANALYSIS ================= -->
+    <h3>1. Sensor Characterization</h3>
+  
+    <p>
+      Before implementing control, I first analyzed the IMU sensors to understand noise,
+      bias, and drift. With the motors running, the standard deviation of the angular
+      velocity increased significantly due to vibration, which directly affected the
+      estimator performance.
+    </p>
+  
+    <img src="../images/imu_noise_plot.jpg" alt="IMU Noise Analysis">
+  
+    <p>
+      These experiments helped determine how long the estimator could run before drift
+      became too large and motivated the use of accelerometer feedback to correct
+      long-term orientation error.
+    </p>
+  
+  
+    <!-- ================= MOTOR IDENTIFICATION ================= -->
+    <h3>2. Motor System Identification</h3>
+  
+    <p>
+      To control the quadcopter, I experimentally derived the relationship between
+      PWM command, motor speed, and thrust. Using a tachometer and multiple
+      command inputs, I obtained a linear relationship between PWM and motor speed:
+    </p>
+  
+    <pre>
+  PWM = a + b · ω
+  a = -106
+  b = 0.18
+    </pre>
+  
+    <img src="../images/pwm_speed_plot.jpg" alt="PWM vs Speed Plot">
+  
+    <p>
+      I then derived the force produced by each motor using a one-axis test rig.
+      The angle of the rig was calculated from the accelerometer:
+    </p>
+  
+    <pre>
+  θ = arcsin(a_z / g)
+  
+  F_motor = (9.81 m_R l_R + 9.81 m_B l) / (4 sin(θ) l)
+    </pre>
+  
+    <img src="../images/thrust_calibration.jpg" alt="Thrust Calibration Setup">
+  
+  
+    <!-- ================= MIXER EQUATIONS ================= -->
+    <h3>3. Mixer Equations</h3>
+  
+    <p>
+      After identifying the motor model, I implemented the mixer that converts
+      desired thrust and torques into individual motor commands. The mixer
+      matrix relates total thrust and roll/pitch/yaw torques to the four motors:
+    </p>
+  
+    <pre>
+        [ T ]       [ 1   1   1   1 ] [ F1 ]
+        [ τx ]  =   [ 0   L   0  -L ] [ F2 ]
+        [ τy ]      [ -L  0   L   0 ] [ F3 ]
+        [ τz ]      [ k  -k   k  -k ] [ F4 ]
+    </pre>
+  
+    <p>
+      This allowed the controller to command roll, pitch, and yaw independently
+      while maintaining stable thrust.
+    </p>
+  
+    <img src="../images/mixer_diagram.jpg" alt="Quadcopter Motor Layout">
+  
+  
+    <!-- ================= ESTIMATION ================= -->
+    <h3>4. Attitude Estimation</h3>
+  
+    <p>
+      I implemented an attitude estimator using gyroscope and accelerometer
+      measurements. The gyroscope provided accurate short-term motion, while
+      the accelerometer corrected long-term drift using a complementary filter.
+    </p>
+  
+    <img src="../images/attitude_estimator_plot.jpg" alt="Attitude Estimator Results">
+  
+    <p>
+      Experimental testing at ~35° tilt showed that pitch and roll converged
+      consistently across multiple trials, while yaw drifted over time due to
+      the lack of an absolute reference.
+    </p>
+  
+  
+    <!-- ================= CONTROL ================= -->
+    <h3>5. Controller Testing</h3>
+  
+    <p>
+      After building the estimator, I tuned the closed-loop controller using
+      step-response testing and instability experiments. I tested both stable
+      and intentionally unstable controllers to understand how gain selection
+      affected oscillations and response time.
+    </p>
+  
+    <img src="../images/step_response_plot.jpg" alt="Step Response Plot">
+  </div>
 
 </section>
 <section id="results" class="w3-padding-64 w3-light-grey">
-      <p>
-        In the end, the quadcopter was able to take off autonomously, estimate its orientation, stabilize itself in flight using closed-loop control, 
-        cross an obstacle without touching anything, and land upright with minimal position error.
-        
-      </p>
+  <div class="max-width">
+    <h2>Summary</h2>
+    <p>
+      In the end, the quadcopter was able to take off autonomously, estimate its orientation, stabilize itself in flight using closed-loop control, 
+      cross an obstacle without touching anything, and land upright with minimal position error.
+      
+    </p>
 
-      <p>
-        The most important takeaway from this project was learning how theoretical
-        control systems behave in real hardware. Sensor noise, motor mismatch,
-        vibration, and estimator drift had a much larger impact than expected,
-        and most of the work involved debugging and improving robustness rather than simply writing code.
-      </p>
+    <p>
+      The most important takeaway from this project was learning how theoretical
+      control systems behave in real hardware. Sensor noise, motor mismatch,
+      vibration, and estimator drift had a much larger impact than expected,
+      and most of the work involved debugging and improving robustness rather than simply writing code.
+    </p>
 
     <!-- Skills -->
       <h2>Skills Demonstrated</h2>
-
       <p>
         Flight control • State estimation • Embedded C++ • Control systems •
         System identification • IMU sensor processing • Testing & debugging •
@@ -315,6 +317,7 @@ F_motor = (9.81 m_R l_R + 9.81 m_B l) / (4 sin(θ) l)
   </section>
 <section class="w3-white w3-padding-large w3-card w3-margin-top">
   <h2>Additional Plots & Media</h2>
+  <div class="max-width">
 
   <p>
     The images below show additional experiments, plots, and intermediate
@@ -322,56 +325,57 @@ F_motor = (9.81 m_R l_R + 9.81 m_B l) / (4 sin(θ) l)
     controller.
   </p>
 
-  <div class="w3-row-padding">
+    <div class="w3-row-padding">
+  
+      <!-- Image 1 -->
+      <div class="w3-col m6 w3-margin-bottom">
+        <img src="../images/uav_plot1.jpg" style="width:100%; border-radius:6px;">
+        <p class="w3-small w3-text-grey">
+          Figure 1: Gyroscope noise comparison with motors on vs. motors off.
+        </p>
+      </div>
+  
+      <!-- Image 2 -->
+      <div class="w3-col m6 w3-margin-bottom">
+        <img src="../images/uav_plot2.jpg" style="width:100%; border-radius:6px;">
+        <p class="w3-small w3-text-grey">
+          Figure 2: PWM command vs. measured motor speed used for system identification.
+        </p>
+      </div>
+  
+      <!-- Image 3 -->
+      <div class="w3-col m6 w3-margin-bottom">
+        <img src="../images/uav_plot3.jpg" style="width:100%; border-radius:6px;">
+        <p class="w3-small w3-text-grey">
+          Figure 3: Attitude estimator results during a 35° tilt experiment.
+        </p>
+      </div>
+  
+      <!-- Image 4 -->
+      <div class="w3-col m6 w3-margin-bottom">
+        <img src="../images/uav_plot4.jpg" style="width:100%; border-radius:6px;">
+        <p class="w3-small w3-text-grey">
+          Figure 4: Step response of the closed-loop attitude controller.
+        </p>
+      </div>
+  
+      <!-- Image 5 -->
+      <div class="w3-col m6 w3-margin-bottom">
+        <img src="../images/uav_plot5.jpg" style="width:100%; border-radius:6px;">
+        <p class="w3-small w3-text-grey">
+          Figure 5: Example log data showing roll, pitch, and yaw during flight.
+        </p>
+      </div>
+  
+      <!-- Image 6 -->
+      <div class="w3-col m6 w3-margin-bottom">
+        <img src="../images/uav_plot6.jpg" style="width:100%; border-radius:6px;">
+        <p class="w3-small w3-text-grey">
+          Figure 6: Motor thrust calibration experiment setup.
+        </p>
+      </div>
 
-    <!-- Image 1 -->
-    <div class="w3-col m6 w3-margin-bottom">
-      <img src="../images/uav_plot1.jpg" style="width:100%; border-radius:6px;">
-      <p class="w3-small w3-text-grey">
-        Figure 1: Gyroscope noise comparison with motors on vs. motors off.
-      </p>
     </div>
-
-    <!-- Image 2 -->
-    <div class="w3-col m6 w3-margin-bottom">
-      <img src="../images/uav_plot2.jpg" style="width:100%; border-radius:6px;">
-      <p class="w3-small w3-text-grey">
-        Figure 2: PWM command vs. measured motor speed used for system identification.
-      </p>
-    </div>
-
-    <!-- Image 3 -->
-    <div class="w3-col m6 w3-margin-bottom">
-      <img src="../images/uav_plot3.jpg" style="width:100%; border-radius:6px;">
-      <p class="w3-small w3-text-grey">
-        Figure 3: Attitude estimator results during a 35° tilt experiment.
-      </p>
-    </div>
-
-    <!-- Image 4 -->
-    <div class="w3-col m6 w3-margin-bottom">
-      <img src="../images/uav_plot4.jpg" style="width:100%; border-radius:6px;">
-      <p class="w3-small w3-text-grey">
-        Figure 4: Step response of the closed-loop attitude controller.
-      </p>
-    </div>
-
-    <!-- Image 5 -->
-    <div class="w3-col m6 w3-margin-bottom">
-      <img src="../images/uav_plot5.jpg" style="width:100%; border-radius:6px;">
-      <p class="w3-small w3-text-grey">
-        Figure 5: Example log data showing roll, pitch, and yaw during flight.
-      </p>
-    </div>
-
-    <!-- Image 6 -->
-    <div class="w3-col m6 w3-margin-bottom">
-      <img src="../images/uav_plot6.jpg" style="width:100%; border-radius:6px;">
-      <p class="w3-small w3-text-grey">
-        Figure 6: Motor thrust calibration experiment setup.
-      </p>
-    </div>
-
   </div>
 </section>
   
