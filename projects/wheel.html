@@ -1,173 +1,621 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hollow Carbon Fiber Wheel</title>
+  <title>Jennifer Si Li Home</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
-    color: #222;
-}
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-grey.css">
+  
+  
+  <!-- Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px 20px;
-}
+  <style>
+    body, h1, h2, h3, h4 {
+      font-family: "Roboto", sans-serif;
+    }
+    header h1 {
+    font-size: 6rem;  
+    margin-bottom: 0.25rem;
+    }
+    .max-width {
+      max-width: 1000px;
+      margin: auto;
+    }
+    img {
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Hide the nested submenu by default */
+    .parent .submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background: white;
+      min-width: 180px;
+      z-index: 1000;
+    }
+    
+    /* Only show submenu when hovering*/
+    .parent:hover .submenu {
+      display: block;
+    }
+        
+    /* Make parent positioning context */
+    .dropdown {
+      position: relative;
+    }
+    /* Skills section layout */
+    
+    .skills-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    /*.skill-card {
+      background-color: #ffffff;
+      padding: 1.25rem 1.5rem; /* tighter padding */
+      border-radius: 6px;
+    } */
+    .skill-category ul {
+      list-style-type: disc
+      margin: auto;
+    }
+    
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
 
-h1 {
-    text-align: center;
-    margin-bottom: 10px;
-}
 
-.subtitle {
-    text-align: center;
-    color: #666;
-    margin-bottom: 40px;
-}
+  </style>
 
-.section {
-    margin-bottom: 40px;
-}
-
-.section h2 {
-    border-bottom: 2px solid #ddd;
-    padding-bottom: 8px;
-    margin-bottom: 15px;
-}
-
-p {
-    line-height: 1.6;
-}
-
-.image {
-    text-align: center;
-    margin: 25px 0;
-}
-
-.image img {
-    width: 70%;
-    max-width: 700px;
-    border-radius: 6px;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.gallery-item {
-    flex: 1 1 300px;
-    text-align: center;
-}
-
-.gallery-item img {
-    width: 100%;
-    border-radius: 6px;
-}
-
-.gallery-item p {
-    font-size: 14px;
-    color: #555;
-    margin-top: 8px;
-}
-</style>
+  
 </head>
 
 <body>
 
-<div class="container">
+<!-- ================= NAVBAR ================= -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card">
 
-<h1>Hollow Carbon Fiber Wheel</h1>
-<p class="subtitle">Lightweight composite manufacturing project focused on strength, weight reduction, and manufacturability</p>
+    <a href="../index.html" class="w3-bar-item w3-button w3-large">
+      <b>Jennifer S. Li</b>
+    </a>
 
-<div class="section">
-<h2>Overview</h2>
-<p>
-This project focused on designing and manufacturing a hollow carbon fiber wheel with the goal of maximizing stiffness while minimizing weight. The project required developing a manufacturable layup strategy, designing reusable molds, and validating the structural performance of the finished component.
-</p>
+    <!-- Experience Dropdown -->
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button">Work Experience ▾</button>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+        <a href="../experience/astranis.html" class="w3-bar-item w3-button">
+          Astranis – Associate Technical Project Manager
+        </a>
+        <a href="../experience/spacex-hls.html" class="w3-bar-item w3-button">
+          SpaceX - Human Lander System (HLS) Mechanisms Intern
+        </a>
+        <a href="../experience/spacex-mechs.html" class="w3-bar-item w3-button">
+          SpaceX - Starship Mechanisms Intern
+        </a>
+        <a href="../experience/tesla.html" class="w3-bar-item w3-button">
+          Tesla - Stator Manufacturing Design Intern
+        </a>
+        <a href="../experience/chemix.html" class="w3-bar-item w3-button">
+          Chemix - Battery R&D Intern
+        </a>
+        <a href="../experiences/taflab.html" class="w3-bar-item w3-button">
+          TAFLab - Multihulled Unmanned Boat Undergrad Researcher
+        </a>
+        <a href="../experience/nist.html" class="w3-bar-item w3-button">
+          NIST - Additive Manufacturing Laser Powder Bed Fusion Intern
+        </a>
+        <a href="../experience/other.html" class="w3-bar-item w3-button">
+          Other (Misc)
+        </a>
+        
+      </div>
+    </div>
+
+    <!-- Projects Dropdown -->
+
+<div class="w3-dropdown-hover">
+  <button class="w3-button">Projects ▾</button>
+
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+
+    
+
+    <div class="parent">
+    <a href="../experience/fsae.html" class="w3-bar-item w3-button">
+      Berkeley Formula Racing ▸
+    </a>
+      <div class="w3-bar-block w3-border submenu">
+        <a href="bfr/seat.html" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
+        <a href="bfr/pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
+        <a href="bfr/brakes.html" class="w3-bar-item w3-button">Brakes</a>
+        <a href="bfr/steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
+        <a href="bfr/diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
+        <a href="bfr/headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
+      </div>
+
+      <a href="wheel.html" class="w3-bar-item w3-button">
+      Hollow Carbon Fiber Wheel
+      </a>
+       <a href="perry.html" class="w3-bar-item w3-button">
+        Perry the Quadruped Robot
+       </a>
+      <a href="passive-walker.html" class="w3-bar-item w3-button">
+        Passive Walking Robot
+       </a>
+      <a href="cupholder.html" class="w3-bar-item w3-button">
+        Gimballed Cup Holder
+       </a>
+      
+      <a href="uav.html" class="w3-bar-item w3-button">
+        UAV Flight Control
+       </a>
+      <a href="flower.html" class="w3-bar-item w3-button">
+        Morphing Flower Soft-Robot
+       </a>
+      <a href="turtle.html" class="w3-bar-item w3-button">
+        Amphibious Turtle Robot
+       </a>
+      <a href="star.html" class="w3-bar-item w3-button">
+        Stage Separation Mechanism
+       </a>
+      <a href="misc.html" class="w3-bar-item w3-button">
+        Other
+       </a>
+      
+    </div>
+    
+  </div>
 </div>
 
-<div class="section">
-<h2>Design Objectives</h2>
-<p>
-The main objective was to create a lightweight structural wheel using carbon fiber rather than traditional solid materials. The design needed to be strong enough to withstand loading while remaining hollow to reduce weight. This required careful consideration of laminate orientation, wall thickness, and mold design to ensure the part could be manufactured reliably.
-</p>
+
+    <a href="courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
+    <a href="assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+
+  </div>
 </div>
 
-<div class="section">
-<h2>My Contributions</h2>
-<ul>
-<li>Designed a hollow carbon fiber wheel structure focused on weight reduction and structural stiffness</li>
-<li>Developed a manufacturable layup strategy and laminate schedule</li>
-<li>Designed and built reusable molds for composite manufacturing</li>
-<li>Performed the full carbon fiber layup process including cutting, layering, and curing</li>
-<li>Refined the design based on manufacturability challenges during fabrication</li>
-<li>Produced a finished hollow composite wheel and evaluated its structural performance</li>
-</ul>
-</div>
+<!-- Spacer for fixed navbar -->
+<div style="margin-top:64px"></div>
 
-<div class="section">
-<h2>Manufacturing Process</h2>
-<p>
-The wheel was manufactured using layered carbon fiber sheets placed inside a custom mold. The design was intentionally hollow in order to reduce weight while still maintaining structural integrity. The manufacturing process required careful control of layer alignment, fiber orientation, and curing conditions to ensure a consistent and reliable result.
-</p>
+<!-- ================= ABOUT ================= -->
+<section id="about" class="w3-container w3-padding-64">
+  <div class="max-width">
+    <h1>Jennifer Si Li</h1>
+    <h2>Engineering Portfolio</h2>
+    <div class="education-summary w3-large">
+      <p><strong>M.S. Mechanical Engineering</strong> <span class="w3-text-grey">(UC Berkeley, Aug 2025 – May 2026)</span></p>
+      <p><strong>B.S. Mechanical Engineering</strong> <span class="w3-text-grey">(UC Berkeley, Aug 2021 – May 2025)</span>
+      <span class="w3-text"><br>&emsp;Minor: Aerospace Engineering 
+      <br>&emsp;Concentration: Electrical Engineering and Computer Science
+      <br>&emsp;Certificates: Berkeley Certificate in Design Innovation; Berkeley Certificate in Entrepreneurship & Technology</span></p>
+    </div>
 
-<div class="image">
-<img src="../images/cf_wheel_process.jpg" alt="Carbon Fiber Wheel Manufacturing Process">
-<p>Carbon fiber layup and manufacturing process</p>
-</div>
+    <p class="w3-large">
+      Hello! Thanks for visiting my portfolio. I’m a mechanical engineer with experience designing, building, and validating hardware across a range of systems, 
+      from mechanisms and structures to test equipment and production tooling, across multiple industry settings. 
+      My work spans early concept development to test and qualification to production, 
+      with a focus on translating requirements and constraints into robust, well-integrated products, as reflected in this portfolio. <br>
+    </p>
+  </div>
+</section>
 
-</div>
+<section id="skills" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+  <h2>Skills</h2>
+  <div class="skills-grid">
 
-<div class="section">
-<h2>Key Challenges</h2>
-<ul>
-<li>Designing a hollow structure that remained strong enough under load</li>
-<li>Ensuring the carbon fiber layers maintained proper alignment during layup</li>
-<li>Creating molds that could be reused while still producing a high-quality surface finish</li>
-<li>Balancing weight reduction with structural reliability</li>
-</ul>
-</div>
+    <div class="skill-card">
+      <h3>Mechanical & Product Design</h3>
+      <ul>
+        <li>Precision mechanisms, structural and thermal analysis, tolerance analysis</li>
+        <li>Design for manufacturing and assembly (DFM/DFA), GD&T</li>
+        <li>Human-centered design, basic electronics design</li>
+        <li>Concept development through production support</li>
+      </ul>
+    </div>
+    
+    <div class="skill-card">
+      <h3>CAD & Simulation</h3>
+      <ul>
+        <li><b>CAD: </b>Siemens NX, SolidWorks, Fusion 360, Inventor, Onshape</li>
+        <li><b>Analysis: </b>ANSYS (Mechanical, Fluent), Abaqus (Pre/Post: ANSA/META), Solidworks Simulation</li>
+      </ul>
+    </div>
 
-<div class="section">
-<h2>Results</h2>
-<p>
-The final result was a hollow carbon fiber wheel that demonstrated significant weight reduction while maintaining structural strength. The project provided hands-on experience with composite design, mold creation, and manufacturing techniques, as well as insight into how material selection and laminate design affect mechanical performance.
-</p>
-</div>
+    <div class="skill-card">
+      <h3>Prototyping & Manufacturing</h3>
+      <ul>
+        <li><b>Machining: </b>CNC milling & routing, manual machining (mills, lathes, shop machines + tools), laser cutting, waterjet</li>
+        <li><b>Joining: </b>Welding (TIG/MIG/HHLW/laser welding), brazing, soldering</li>
+        <li><b>Additive: </b> FDM, SLA, Polyjet, Metal AM</li>
+        <li><b>Composites and molding: </b>Composite layups, silicon & foam casting, plastic injection molding</li>
+        <li><b>Automation: </b>PLCs (Allen-Bradley, Siemens), robot automation (FANUC, ABB, KUKA)</li>
+      </ul>
+    </div>
 
-<div class="section">
-<h2>Media Gallery</h2>
-<div class="gallery">
+    <div class="skill-card">
+      <h3>Testing & Validation</h3>
+      <ul>
+        <li>Hardware validation, acceptance, qualification (thermal, vibration, static/functional, TVAC, integration) testing</li>
+        <li>Fixture, tooling, and test equipment design</li>
+        <li>Failure analysis and root-cause investigation</li>
+      </ul>
+    </div>
 
-<div class="gallery-item">
-<img src="../images/cf_wheel_1.jpg" alt="Carbon Fiber Wheel Layup">
-<p>Initial carbon fiber layup</p>
-</div>
 
-<div class="gallery-item">
-<img src="../images/cf_wheel_2.jpg" alt="Mold for Carbon Fiber Wheel">
-<p>Custom mold used to form the hollow wheel</p>
-</div>
+    <div class="skill-card">
+      <h3>Programming & Data</h3>
+      <ul>
+        <li><b>Primary: </b>Python, MATLAB</li>
+        <li><b>Systems & tooling: </b>LabVIEW, G-code, C/C++, Java</li>
+        <li><b>Web & Scripting: </b>HTML, JavaScript</li>
+        <li><b>Data & Statistics: </b>Minitab, R, Excel, SQL </li>
+        <li><b>Documentation: </b>LaTex, Microsoft Office</li>
+      </ul>
+    </div>
 
-<div class="gallery-item">
-<img src="../images/cf_wheel_3.jpg" alt="Finished Hollow Carbon Fiber Wheel">
-<p>Finished hollow carbon fiber wheel</p>
-</div>
+    <div class="skill-card">
+      <h3>Communication</h3>
+      <ul>
+        <li>Cross-functional collaboration across engineering teams, manufacturing, and management</li>
+        <li>Communication with vendors, customers</li>
+        <li>Technical reviews and documentation</li>
+        <li>Mandarin Chinese (conversational), Spanish (basic)</li>
+      </ul>
+    </div>
 
-</div>
-</div>
+  </div>
+</section>
 
-</div>
+
+<!-- ================= WORK EXPERIENCE ================= -->
+<section id="experience" class="w3-container w3-padding-64">
+  <div class="max-width">
+    <h2>Work Experience</h2>
+    <div class="skills-grid">
+
+      <!-- Experience Card -->
+      <a href="experience/astranis.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Astranis Space Technologies – Associate Technical Project Manager</h3>
+          <p>
+            Led cross-functional technical reviews and drove risk, schedule, and issue management processes to align engineering teams and customers.
+          </p>
+          <img src="images/chunghwa.jpg" alt="Astranis Chunghwa"
+               style="width:100%; max-width:900px">
+          </div>
+      <!-- Experience Card -->
+      <a href="experience/spacex-hls.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>SpaceX – Human Lander System (HLS) Mechanisms Intern</h3>
+          <p>
+            Designed, analyzed, built, and tested damping struts for Starship’s soft-capture docking mechanism, 
+            leading acceptance and qualification tests and informing redesign through structural, thermal, and vibration testing.
+          </p>
+          <img src="images/hls-prop-transfer.jpg" alt="HLS Propellant Transfer Concept"
+               style="width:100%; max-width:300px">
+          </div>
+      <!-- Experience Card -->
+      <a href="experience/spacex-mechs.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>SpaceX – Starship Mechanisms Intern</h3>
+          <p>
+            Designed, analyzed, built 0.5 MN-rated launch tower structures and plume measurement hardware, 
+            while designing tooling, running tests, programming robots, and driving root-cause analysis for Starship flaps, propellant systems, fueling interface
+          </p>
+          <img src="images/flap-reentry.jpg" alt="Starship Aft Flap Re-entry"
+               style="width:100%; max-width:300px">
+          </div>
+      <!-- Experience Card -->
+      <a href="experience/tesla.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Tesla - Stator Manufacturing Design Engineering Intern </h3>
+          <p>
+            Developed and automated a stator teardown line, and designed/improved automation systems that improved yield, availability, and safety.
+          </p>
+          <img src="/images/stator.jpg" alt="Tesla PM Stator" style="width:100%; max-width:300px">
+          </div>
+      <!-- Experience Card -->
+      <a href="experience/chemix.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Chemix Battery - Battery R&D Intern</h3>
+          <p>
+            Designed and built mechanical fixtures and thermal systems for battery
+            testing, supporting validation, performance characterization, and
+            safety-critical testing.
+          </p>
+          <img src="images/chemix.jpg" alt="Chemix batteries"
+               style="width:100%; max-width:300px">
+          </div>
+      <!-- Experience Card -->
+      <a href="experience/NIST.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>National Institute of Standards and Technologies - Engineering Lab Additive Manufacturing Intern</h3>
+          <p>
+            Developed data fusion and computer vision tools to analyze in-situ melt pool imagery 
+            for defect detection and process control in metal additive manufacturing.
+          </p>
+          <img src="images/lpbf2.jpg" alt="NIST Laser Powder Bed Fusion"
+               style="width:100%; max-width:300px">
+          </div>
+      <!-- Experience Card -->
+      <a href="https://jacobsinstitute.berkeley.edu/making-at-jacobs/">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Jacobs Metal Shop & Advanced Printing Specialist, Makerspace Supervisor</h3>
+          <p>
+            Execute part orders, manage makerspace and assist users on projects, and run workshops, demos, and trainings as a 
+            Metal Shop Specialist, Advanced Printing Lab Specialist, and Makerspace Supervisor at the UC Berkeley Jacobs Makerspace.
+          </p>
+          <img src="images/woodshop.jpg" alt="Jacobs Institute Woodshop"
+               style="width:100%; max-width:300px">
+          </div>
+        <!-- Experience Card -->
+        <a href="https://jluastro.atlassian.net/wiki/spaces/MULab/pages/2291269633/CuRIOS">
+          <div class="w3-card w3-white w3-padding w3-margin-top">
+            <h3>UC Berkeley Moving Universe Lab CubeSat Optical Payload Engineer </h3>
+            <p>
+              Designed camera–telescope system maintaining ±0.01 mm alignment through launch loads and thermal expansion; supported TVAC and vibration qual
+            </p>
+            <img src="images/mulab-tvac.jpg" alt="MULab TVAC Test"
+                 style="width:100%; max-width:300px">
+            </div>
+      </a>
+
+        <!-- Experience Card -->
+      <a href="https://jacobsinstitute.berkeley.edu/making-at-jacobs/">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Misc Work Experience</h3>
+          <p>
+            Teaching, mentoring, and technical experience across STEM education, web development internships, and others.
+          </p>
+          </div>
+      
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ================= CLUB EXPERIENCE ================= -->
+<section id="eng_club" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Club/Research Experience</h2>
+    <div class="skills-grid">
+
+      <!-- Experience Card -->
+      <a href="experience/fsae.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Berkeley Formula Racing </h3>
+          <p>
+            Led the Brakes and Driver Interface subsystem: designed, analyzed, validated, manufactured brake system and driver interfacing components
+            for a Formula SAE car. Designed and simulated aerodynamic components. Machined 300+ parts for the team.  
+          </p>
+          <img src="images/b23.jpg" alt="B23 FSAE comp"
+               style="width:100%; max-width:900px">
+        </div>
+      </a>
+      <!-- Experience Card -->
+      <a href="experience/TAFLab.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>UC Berkeley Theoretical and Applied Fluids Lab - Student Researcher</h3>
+          <p>
+            Designed & manufactured multi-hulled unmanned boats to locate and relay data among themselves
+          </p>
+          <img src="images/taf2.png" alt="TAFLab  Ship Prototype"
+               style="width:100%; max-width:900px">
+        </div>
+        
+
+       <!-- Project Card -->
+      <a href="experience/star.html">
+        <div class="w3-white w3-padding w3-margin-top">
+          <h3>Space Technologies and Rocketry - Structures Engineer</h3>
+          <p>
+            Designed spring-actuated pyro-bolt separation mechanism for two stage airframe separation
+          </p>
+          <img src="images/ssep.jpg" alt="Stage Separation Rocket"
+               style="width:100%; max-width:900px">
+        </div>
+      </a>
+         <!-- Project Card -->
+      <a>
+      <div class="w3-white w3-padding w3-margin-top">
+        <h3>Design Build Fly - Engineering Director</h3></h3>
+        <p>
+          Managed a new RC aircraft team, establishing engineering workflows and mentoring members in design, analysis, and manufacturing across aircraft subsystems.
+        </p>
+      </div>
+    </a>
+
+    <a>
+      <div class="w3-white w3-padding w3-margin-top">
+        <h3>CalSol (UC Berkeley Solar Vehicle Team) - Chassis Mentor</h3></h3>
+        <p>
+          Contributed to design of a new rollcage, ran FEA simulations on various chassis components, and taught members how to run Ansys simulations.
+        </p>
+      </div>
+    </a>
+
+    <!-- Project Card -->
+    <a>
+      <div class="w3-white w3-padding w3-margin-top">
+        <h3>Society of Women Engineers - DEI/Advocacy Director</h3>
+        <p>
+          Led initiatives to create a more inclusive culture and climate for underrepresented groups in Berkeley Engineering.
+        </p>
+      </div>
+    </a>
+
+     
+    </div>  
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="w3-container w3-padding-64">
+  <div class="max-width">
+    <h2>Misc. Projects</h2>
+    <div class="skills-grid">
+
+    
+      <!-- Project Card -->
+      <a href="projects/wheel.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Hollow Carbon Fiber Wheel</h3>
+          <p>
+            Manufactured a hollow carbon fiber wheel, exploring structural behavior, composite fabrication, and process optimization
+          </p>
+          <img src="images/cfwheel.jpg" alt="CF Wheel"
+               style="width:100%; max-width:900px">
+        </div>
+      </a>
+
+      <!-- Project Card -->
+      <a href="projects/perry.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Perry the Platypus</h3>
+          <p>
+            Single-motor-driven quadruped robot: synthesis and analysis of linkages using path mechanisms
+          </p>
+          <img src="images/perry.jpg" alt="Perry the Platypus"
+               style="width:100%; max-width:900px">
+        </div>
+      </a>
+
+      <!-- Project Card -->
+      <a href="projects/passive-walker.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Passive Walking Robot</h3>
+          <p>
+            Develop simulations and prototyped kneed walker with gravity controled locomotion.
+          </p>
+          <img src="images/walker.jpg" alt="Passive Walker"
+               style="width:100%; max-width:900px">
+        </div>
+      </a>
+
+      <a href="projects/flower.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Morphing Flower Light</h3>
+          <p>
+            Pneumatic soft-robotic flower alarm that uses vacuum-actuated petals and LEDs to provide visual wake-up cues
+          </p>
+          <img src="images/flower.png" alt="Morphing Flower"
+               style="width:100%; max-width:900px">
+        </div>
+      </a>
+
+      <a href="projects/turtle.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Turtlebot (Incomplete)</h3>
+          <p>
+            Turtle-inspired robot with servo-actuated flippers, rudder steering, and ballast control for locomotion and directional maneuvering on land and in water
+          </p>
+          <img src="images/turtlebot.jpg" alt="Turtlebot"
+               style="width:100%; max-width:900px">
+        </div>
+      </a>
+
+      <a href="projects/cupholder.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Gimballed Cup Holder</h3>
+          <p>
+            Self-leveling cup holder with a three-axis gimbal and bearing system to maintain drink orientation on a tilting scooter/bike.
+          </p>
+          <img src="images/cupholder2.png" alt="Gimballed Cup Holder"
+               style="width:100%; max-width:900px">
+        </div>
+      </a>
+
+      <a href="projects/uav.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>UAV Flight Control</h3>
+          <p>
+            Build a fully functioning quadcopter flight control system from the ground up, from raw sensor data to stable autonomous flight
+          </p>
+          <img src="images/uav.jpg" alt="Quadcopter"
+               style="width:100%; max-width:900px">
+        </div>
+      </a>
+
+      <a href="https://docs.google.com/document/d/1WN0lLn_GrvTcQG76eLhkB247Yabl4AAIgO3-p2DwnD8/edit?usp=sharing">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Testing effects of cure time on 3D printed resin properties</h3>
+          <p>
+            Study of cure-time effects on SLA resin mechanical properties through tensile testing and statistical analysis.
+          </p>
+          <img src="images/dogbones.jpg" alt="Tensile Testing"
+               style="width:100%; max-width:900px">
+        </div>
+      </a>
+
+      <a href="projects/misc.html">
+        <div class="w3-card w3-white w3-padding w3-margin-top">
+          <h3>Other Projects</h3>
+          <p>
+            Manufacturing projects, small projects, and older projects.
+          </p>
+          <img src="images/skateboard.png" alt="Skateboard"
+               style="width:100%; max-width:900px">
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+        
+<!-- ================= AWARDS ================= -->
+
+<section id="awards" class="w3-container w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Awards</h2>
+    <p><b>2021 Washington Academy of Sciences Student Research Project Convention</b><br>
+      First Place in Engineering<br>
+      <a href="https://docs.google.com/presentation/d/1TO9pozwB9zzLcT6su1ocrPDTdavTgmJT7q7RtPvUVxw/edit?usp=sharing">
+      &#x1F517; Undistorting and Analyzing Layerwise Images from Laser-Powder Bed Fusion Additive Manufacturing Tests</a>
+    </p>
+    <p><b>2021 Science Montgomery</b><br>
+      Judges' Choice Award in Optics and Photonics<br>
+      The Optical Society of America, National Capital Section; The IEEE/ Photonics Chapter<br>
+      <a href="https://docs.google.com/document/d/1SbP2KVFMO7x1bVQno0TCPOXc6Hzb1qxuAhsqPJLcocE/edit?usp=sharing">
+      &#x1F517; In-Process Data Fusion for Process Monitoring and Control of Metal Additive Manufacturing </a>
+    </p>
+    <p><b>2018 International High School Leadership Convention in Shanghai</b><br>
+      First Place in Engineering<br>
+      Automatic Curtain System
+    </p>
+  </div>
+</section>
+
+
+        
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="w3-container w3-padding-64">
+  <div class="max-width">
+    <h2>Contact</h2>
+    <p>Email: jennifersili@berkeley.edu</p>
+    <p>LinkedIn: linkedin.com/in/jennifersili</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="w3-container w3-center w3-padding-16 w3-light-grey">
+  <p>Jennifer Si Li | Engineering Portfolio</p>
+</footer>
 
 </body>
 </html>
-
