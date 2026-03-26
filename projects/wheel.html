@@ -318,137 +318,21 @@
     </p>
     <img src="/wheelimages/moldcad.jpg" alt="mold CAD" style="width:100%; max-width:900px">
   
-    <pre>
-  PWM = a + b · ω
-  a = -106
-  b = 0.18
-    </pre>
-  
-    <img src="../images/pwm_speed_plot.jpg" alt="PWM vs Speed Plot" style="width:60%; max-width:900px">
-  
-    <p>
-      We then derived the force produced by each motor using a one-axis test rig.
-      The angle of the rig was calculated from the accelerometer:
-    </p>
-  
-    <pre>
-  θ = arcsin(a_z / g)
-  
-  F_motor = (9.81 m_R l_R + 9.81 m_B l) / (4 sin(θ) l)
-    </pre>
-
-    <img src="../images/thrust_rig_setup.jpg" alt="Thrust Calibration Setup" style="width:50%; max-width:900px">
-    <img src="../images/thrust_calibration_plot.jpg" alt="Thrust Calibration Plot" style="width:50%; max-width:900px">
-
-    <p>We derived the constant that related the per-motor measured force (in N) and the speed command (in rad=s).
-      We validated this after removing UAV from rig. We tested the constant at 95% of the drones weight, 
-      and it seemed as though the drone was very close to taking off, so the result seemed accurate.</p>
-    <img src="../images/prop_constant.jpg" alt="Prop Constant" style="width:50%; max-width:900px">
-  
-    <!-- ================= MIXER EQUATIONS ================= -->
-    <h3>Mixer Equations</h3>
-  
-    <p>
-      After identifying the motor model, We implemented the mixer that converts
-      desired thrust and torques into individual motor commands. The mixer
-      matrix relates total thrust and roll/pitch/yaw torques to the four motors:
-    </p>
-  
-    <pre>
-        [ T ]       [ 1   1   1   1 ] [ F1 ]
-        [ τx ]  =   [ 0   L   0  -L ] [ F2 ]
-        [ τy ]      [ -L  0   L   0 ] [ F3 ]
-        [ τz ]      [ k  -k   k  -k ] [ F4 ]
-    </pre>
-  
-    <p>
-      This allowed the controller to command roll, pitch, and yaw independently
-      while maintaining stable thrust.
-    </p>
-  
-    <img src="../images/mixer_diagram.jpg" alt="Quadcopter Motor Layout" style="width:50%; max-width:900px">
-  
-  
-    <!-- ================= ESTIMATION ================= -->
-    <h3>Attitude Estimation</h3>
-  
-    <p>
-      We implemented an attitude estimator using gyroscope and accelerometer
-      measurements. The gyroscope provided accurate short-term motion, while
-      the accelerometer corrected long-term drift using a complementary filter.
-    </p>
-  
-    <img src="../images/attitude_estimator_plot.jpg" alt="Attitude Estimator Results" style="width:50%; max-width:900px">
-  
-    <p>
-      Experimental testing at ~35° tilt showed that pitch and roll converged
-      consistently across multiple trials, while yaw drifted over time due to
-      the lack of an absolute reference.
-    </p>
-  
-  
-    <!-- ================= CONTROL ================= -->
-    <h3>Controller Testing</h3>
-  
-    <p>
-      After building the estimator, We tuned the closed-loop controller using
-      step-response testing and instability experiments. We tested both stable
-      and intentionally unstable controllers to understand how gain selection
-      affected oscillations and response time.
-    </p>
-
-    <div style="display: flex; gap: 20px;">
-    <img src="../images/angle_response_plot.jpg" alt="Angle Response Plot"style="width:50%; max-width:900px">
-    <img src="../images/step_response_plot.jpg" alt="Step Response Plot"style="width:50%; max-width:900px">
-    </div>
-
-    <h3>Height Estimation</h3>
-
-    <p>
-    We also implemented and tested a height estimator using distance sensor
-    measurements combined with IMU data. The estimator was validated by
-    lifting the quadcopter to a known height (~0.5 m), holding it steady,
-    and returning it to the ground while recording the estimated height.
-    </p>
-    <div style="display: flex; gap: 20px;">
-
-      <img src="../images/roll_pitch_estimator.jpg" alt="Roll Pitch Plot" style="width:50%; max-width:900px">
-      <img src="../images/height_estimator.jpg" alt="Height Estimator Plot" style="width:50%; max-width:900px">
-  
-    </div>
-  
-
-  <h3>Horizontal Estimation</h3>
-
-    <p>
-    We then verified the horizontal estimator's performance.
-    </p>
-    <div style="display: flex; gap: 20px;">
-
-      <img src="../images/rate_gyro.jpg" alt="Rate Gyro Plot" style="width:50%; max-width:900px">
-      <img src="../images/flow_sensor.jpg" alt="Flow Sensor Plot" style="width:50%; max-width:900px">
-  
-    </div>
-    <div style="display: flex; gap: 20px;">
-
-      <img src="../images/height_estimator2.png" alt="Height Estimator Plot" style="width:50%; max-width:900px">
-      <img src="../images/horizontal_estimator.jpg" alt="Horizontal Estimator Plot" style="width:50%; max-width:900px">
-  
-    </div>
-    
-    
-  </div>
+</div>
 
 </section>
-<section id="results" class="w3-padding-64 w3-light-grey">
+<section id="manufacturing" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Summary</h2>
+    <h2>Manufacturing</h2>
+    <h3>Mold Manufacturing</h3>
+    <h4>Foam Tooling</h4>
     <p>
-      In the end, the quadcopter was able to take off autonomously, estimate its orientation, stabilize itself in flight using closed-loop control, 
-      cross an obstacle without touching anything, and land upright with minimal position error.
-      
+      The Foam tooling was made with the aforementioned PBLT-4 foam and the Shopbot CNC router in the Jacob’s Hall makerspace. 
+      Computer Aided Machining (CAM) to generate the G-Code required for machining was done through Autodesk Fusion 360, 
+      which allowed us to simulate different toolpaths and to implement strategies for reducing machining time. <br>
+      Below is a screenshot of the CAM Simulation that showcases minimal material removal to reduce machining time
     </p>
-
+    <img src="/wheelimages/wheelCAM.jpg" alt="Wheel Mold CAM" style="width:100%; max-width:900px">
     <p>
       The most important takeaway from this project was learning how theoretical
       control systems behave in real hardware. Sensor noise, motor mismatch,
