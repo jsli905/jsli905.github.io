@@ -13,6 +13,7 @@
   <!-- Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
+  
   <style>
     body, h1, h2, h3, h4 {
       font-family: "Roboto", sans-serif;
@@ -78,6 +79,8 @@
 
 
   </style>
+  
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   
 </head>
@@ -242,7 +245,7 @@
 
     <div style="display: flex; gap: 30px; align-items: center;">
 
-    <img src="../images/insert.jpg" 
+    <img src="wheelimages/insert.jpg" 
          alt="Aluminum wheel insert CAD"
          style="width: 45%; max-width: 400px; border-radius: 6px;">
 
@@ -262,11 +265,32 @@
     <img src="../images/epoxy_datasheet.jpg" alt="DP460NS Data Sheet Properties" style="width:100%; max-width:900px">
   
     <p>
-      These experiments helped determine how long the estimator could run before drift
-      became too large and motivated the use of accelerometer feedback to correct
-      long-term orientation error.
+      As shown, the aluminum in an etched condition fails at 4500 PSI whereas a FRP(Fiber Reinforced Polymer) 
+      with IPA-wipe surface preparation fails between 570 and 800 PSI. This indicates that the adhesive is most 
+      likely to fail adhesively to the Carbon Fiber. With a conservative diameter of 3.2 inches, a torque load-case 
+      of 1636.8 in-lbf, and a total glue-bond area of about 8.67 in^2, we can calculate the theoretical stress applied to the bond. 
     </p>
-  
+    $$
+    \begin{aligned}
+    F_{applied} &= \frac{Torque}{Reaction\ Arm\ Radius}
+    = \frac{1636.8\ in\!-\!lbf}{1.6\ in}
+    = 1023\ lbf  \\[10pt]
+    
+    \sigma_{glue\ bond\ area} &= \frac{F_{applied}}{Effective\ Area}
+    = \frac{1023\ lbf}{8.67\ in^2}
+    = 118\ psi \\[10pt]
+    \end{aligned}
+    
+    $$
+  <p>Utilizing the minimum FRP strength values, the factor of safety was calculated</p>
+    $$
+    begin{aligned}
+    FOS &= \frac{Material\ Strength}{Expected\ Stress}
+    = \frac{570\ psi}{118\ psi}
+    = 4.83
+    \end{aligned}
+    $$
+    <p>This is driven mostly by the large glue-bond area and reaction arm radius. </p>
   
     <!-- ================= MOTOR IDENTIFICATION ================= -->
     <h3>Motor System Identification</h3>
