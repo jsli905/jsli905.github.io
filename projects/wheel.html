@@ -291,15 +291,34 @@
     \end{aligned}
     $$
     <p>This is driven mostly by the large glue-bond area and reaction arm radius. </p>
+    <p>A similar calculation using the above equations was conducted for the lateral case of 325 lbf where a vehicle may be cornering. </p>
+    $$
+    \begin{aligned}
+    \sigma_{applied} &= \frac{325\ lbf}{8.67\ in^2} = 37.5\ psi \\[10pt]
+    
+    FOS &= \frac{570\ psi}{37.5\ psi} = 15.2
+    \end{aligned}
+    $$
   
-    <!-- ================= MOTOR IDENTIFICATION ================= -->
-    <h3>Motor System Identification</h3>
+    <h3>Mold Design </h3>
   
     <p>
-      To control the quadcopter, We experimentally derived the relationship between
-      PWM command, motor speed, and thrust. Using a tachometer and multiple
-      command inputs, We obtained a linear relationship between PWM and motor speed:
+      Hollow part molds must be carefully planned out to account for mold draft angle, mold rigidity, alignment, and other design for manufacturing properties. 
+      The SolidWorks draft analysis tool was set to 3° in order to determine the parting line and ensure the part will come out of the mold once cured. 
+      The wheel tapers in at the spokes, so the mold would part in the vertical direction as shown in Figure 5. <br>
+
+      In terms of material, our criteria required that it be reasonable to either additively or subtractively manufacture, be machined precisely, 
+      be rated for high temperature to prevent warping, and be sturdy such that the part cannot deform on its own while setting. We had Coastal 
+      Enterprises Low Temp Precision Board (PBLT-4) from a previous project that satisfied the criteria and was designed for tooling. 
+      These high density urethane boards came in a variety of densities and thicknesses, so we chose PBLT-4, which was 4 lbs/cubic foot and 
+      chose pieces that were 4” tall for ease of transport and that would fit under the shopbot tool head. This also meant that the mold files 
+      were sliced to 3-4” tall sections to accommodate the tool height limit. For realignment, dowel holes were made to hold the mold together 
+      during reassembly and the layup process. Mold design was iterated throughout the mold manufacturing process to accommodate Shopbot limitations. <br>
+        
+      Below is the mold CAD model consisting of the Inboard (green) and Outboard (yellow) mold plug
+
     </p>
+    <img src="/wheelimages/moldcad.jpg" alt="mold CAD" style="width:100%; max-width:900px">
   
     <pre>
   PWM = a + b · ω
