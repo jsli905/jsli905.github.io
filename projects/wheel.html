@@ -193,9 +193,13 @@
         Manufactured a hollow carbon fiber wheel, exploring structural behavior, composite fabrication, and process optimization
       </h3>
       <p>
-        This project focused on designing and manufacturing a hollow carbon fiber wheel with the goal of maximizing stiffness while minimizing weight. 
+         
+        We developed a method to manufacture hollow, structural carbon-fiber parts in order to eliminate the need for core materials. 
+        The mold can be reused to manufacture subsequent wheels or this methodology can be reconfigured to produce different parts such as an upright or steering wheel. 
         The project required designing a manufacturable hollow wheel, developing a layup strategy, designing and manufacturing molds for a hollow component, 
         and validating the structural integrity of the finished component.
+        Through experimentation with ply stackup sequences, mold manufacturing, and conducting a cure cycle with a new fabric, 
+        we enhanced our understanding of lightweight composite fabrication, reducing material waste while improving structural integrity. 
 
         <br>Project Partners: Jenson Ho, Jae Won Hwang
       </p>
@@ -204,43 +208,54 @@
   </div>
 </section>
 
-<section id="overview" class="w3-padding-64 w3-light-grey">
+<section id="background" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
       
 
-      <h2>Overview</h2>
-    
-      <ul>
-        
-        <li>Developed onboard flight software in C++ to control motors and read sensor data</li>
-        <li>Identify the motor and propeller system (PWM → speed → thrust)</li>
-        <li>Build an attitude estimator using gyroscope and accelerometer data</li>
-        <li>Design and tune closed-loop attitude controllers and tested stability through flight experiments</li>
-        <li>Performed system identification experiments to relate motor input (PWM) to thrust and response</li>
-        <li>Tested and debugged unstable flight behavior through repeated flight experiments</li>
-        <li>Integrated estimation, control, and motor actuation into a fully working quadcopter</li>
-      </ul>
+      <h2>Background</h2>
+    <p> For racing applications, such as Berkeley Formula Racing’s FSAE vehicle, reducing unsprung weight results in improved acceleration and braking performance. 
+      The wheel contributes a significant amount of mass that can be reduced by using composite materials instead. It is important to note that carbon fiber parts 
+      can include core material that is constrained by ply faces for structure, but hollow parts without core are more optimal for our application due to mass reduction 
+      and eliminating risk of core degradation. Hollow carbon fiber components are often difficult to manufacture while maintaining a uniform surface. 
+      Oftentimes, the part has discontinuous and potentially weak split mold seams, rough internal surfaces, or wrinkles, fiber distortions, or epoxy voids. </p>
+    <p>We considered a few other methods before the one described here: One approach involves laying spokes into a female mold with a lightweight foam core, which remains inside the final wheel. 
+      Another method uses a pressurized bladder, commonly made from bagging material, that is also left inside the spokes. 
+      Although these methods produce functional wheels, they have drawbacks—such as added weight and the inability to reuse molds, 
+      making production costly and time-intensive.</p>
+              
   </div>
 </section>
 
-<section id="technical" class="w3-padding-64 w3-white">
+<section id="design" class="w3-padding-64 w3-white">
   <div class="max-width">
-    <h2>Control System Development</h2>
+    <h2>Design</h2>
+    <h3>Wheel Redesign</h3>
   
     <p>
-      This project required building a full quadcopter flight system from the ground up.
-      Rather than simply flying the drone, the goal was to develop the estimation,
-      control, and motor models needed to achieve stable autonomous flight.
+      The previous wheel was a 3-piece Aluminum wheel held together with multiple fasteners, while this project attempts to create a hollowed out 
+      version of the wheel with only 2 pieces: an Aluminum insert and the hollow carbon fiber wheel. The new design incorporates 4 hollowed spokes, 
+      eliminating the aluminum wheel's crossing spokes, while maintaining an overall similar outer geometry to be compatible with existing components.
     </p>
+    <img src="wheelimages/ALvsCF.jpg" alt="Aluminum versus CF wheel design" style="width:100%; max-width:900px">
   
-    <!-- ================= SENSOR ANALYSIS ================= -->
-    <h3>Sensor Characterization</h3>
-  
+    <h3>Aluminum insert design</h3>
+
+    <div style="display: flex; gap: 30px; align-items: center;">
+
+    <img src="../images/insert.jpg" 
+         alt="Aluminum wheel insert CAD"
+         style="width: 45%; max-width: 400px; border-radius: 6px;">
+
     <p>
-      Before implementing control, Wefirst analyzed the IMU sensors to understand noise,
-      bias, and drift. With the motors running, the standard deviation of the angular
-      velocity increased significantly due to vibration, which directly affected the
-      estimator performance.
+      The wheels need to be fastened using standard lug-nuts, which exert a compressive force on the face of the insert.
+      The material choice was 6061 Aluminum as it’s a lightweight metal with isotropic properties and is better suited for handling compressive loads.
+      A more lightweight material could be used, but as its 2nd moment of area about the rotational axis is fairly small, reducing its weight is not as 
+      critical as the remainder of the wheel. We planned to bond this insert to the carbon fiber wheel with the structural epoxy DP460NS. 
+    </p>
+
+</div>
+    <p>
+      
     </p>
   
     <img src="../images/imu_noise_plot.jpg" alt="IMU Noise Analysis" style="width:100%; max-width:900px">
