@@ -196,7 +196,7 @@
     <h3>1. Sensor Characterization</h3>
   
     <p>
-      Before implementing control, I first analyzed the IMU sensors to understand noise,
+      Before implementing control, Wefirst analyzed the IMU sensors to understand noise,
       bias, and drift. With the motors running, the standard deviation of the angular
       velocity increased significantly due to vibration, which directly affected the
       estimator performance.
@@ -215,9 +215,9 @@
     <h3>2. Motor System Identification</h3>
   
     <p>
-      To control the quadcopter, I experimentally derived the relationship between
+      To control the quadcopter, We experimentally derived the relationship between
       PWM command, motor speed, and thrust. Using a tachometer and multiple
-      command inputs, I obtained a linear relationship between PWM and motor speed:
+      command inputs, We obtained a linear relationship between PWM and motor speed:
     </p>
   
     <pre>
@@ -251,7 +251,7 @@
     <h3>3. Mixer Equations</h3>
   
     <p>
-      After identifying the motor model, I implemented the mixer that converts
+      After identifying the motor model, We implemented the mixer that converts
       desired thrust and torques into individual motor commands. The mixer
       matrix relates total thrust and roll/pitch/yaw torques to the four motors:
     </p>
@@ -275,7 +275,7 @@
     <h3>4. Attitude Estimation</h3>
   
     <p>
-      I implemented an attitude estimator using gyroscope and accelerometer
+      We implemented an attitude estimator using gyroscope and accelerometer
       measurements. The gyroscope provided accurate short-term motion, while
       the accelerometer corrected long-term drift using a complementary filter.
     </p>
@@ -293,19 +293,21 @@
     <h3>5. Controller Testing</h3>
   
     <p>
-      After building the estimator, I tuned the closed-loop controller using
-      step-response testing and instability experiments. I tested both stable
+      After building the estimator, We tuned the closed-loop controller using
+      step-response testing and instability experiments. We tested both stable
       and intentionally unstable controllers to understand how gain selection
       affected oscillations and response time.
     </p>
-  
-    <img src="../images/angle_response_plot.jpg" alt="Angle Response Plot"style="width:50%; max-width:900px">
-    <img src="../images/step_response_plot.jpg" alt="Step Response Plot"style="width:50%; max-width:900px">
+
+    <div style="display: flex; gap: 20px; justify-content: center;">
+    <img src="../images/angle_response_plot.jpg" alt="Angle Response Plot"style="width:40%; max-width:900px">
+    <img src="../images/step_response_plot.jpg" alt="Step Response Plot"style="width:40%; max-width:900px">
+    </div>
 
     <h3>6. Height Estimation</h3>
 
     <p>
-    I also implemented and tested a height estimator using distance sensor
+    We also implemented and tested a height estimator using distance sensor
     measurements combined with IMU data. The estimator was validated by
     lifting the quadcopter to a known height (~0.5 m), holding it steady,
     and returning it to the ground while recording the estimated height.
@@ -321,7 +323,7 @@
   <h3>Horizontal Estimation</h3>
 
     <p>
-    I then verified the horizontal estimator's performance.
+    We then verified the horizontal estimator's performance.
     </p>
     <div style="display: flex; gap: 20px; justify-content: center;">
 
