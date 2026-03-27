@@ -317,7 +317,8 @@
       Below is the mold CAD model consisting of the Inboard (green) and Outboard (yellow) mold plug
 
     </p>
-    <img src="/wheelimages/moldcad.jpg" alt="mold CAD" style="width:100%; max-width:900px">
+    <img src="wheelimages/moldcad.jpg" alt="mold CAD" style="width:100%; max-width:900px">
+    
   
 </div>
 
@@ -333,7 +334,7 @@
       which allowed us to simulate different toolpaths and to implement strategies for reducing machining time. <br>
       Below is a screenshot of the CAM Simulation that showcases minimal material removal to reduce machining time
     </p>
-    <img src="/wheelimages/wheelCAM.jpg" alt="Wheel Mold CAM" style="width:100%; max-width:900px">
+    <img src="wheelimages/wheelCAM.jpg" alt="Wheel Mold CAM" style="width:100%; max-width:900px">
 
     <h4>3D Printing</h4>
     <div style="display: flex; gap: 30px; align-items: center;">
@@ -347,7 +348,56 @@
     <img src="wheelimages/plug.jpg" 
          alt="PC 3D inboard plug print"
          style="width: 25%; max-width: 400px; border-radius: 6px;">
+    </div>
+
+    <h4>Mold Preparation</h4>
+    <div style="display: flex; gap: 30px; align-items: center;">
+    <p>
+      To stack and glue the machined parts of the plug, wood glue was used and the part was aligned with 12” long bolts from home depot 
+      and weight added on top while setting. Although wood glue usually acts as a gap filler, there were still seam lines that would show through in the final part, so 3M Glazing Putty was used to fill any 
+      gaps or irregularities. The putty dried hard and was sanded to match the mold surface with 180, 220, then 360 grit sandpaper per the product specification.
+    </p>
+
+    <img src="wheelimages/moldgluing.jpg" 
+         alt="Plug mold gluing"
+         style="width: 25%; max-width: 400px; border-radius: 6px;">
+    </div>
+    <img src="wheelimages/seamfilling.jpg" alt="Gap filling seam line" style="width:100%; max-width:900px">
+
+    <p>The mold was sanded until there were no more tooling traces or irregularities and until the fitment of the plugs had a uniform seam with as 
+      little gap as possible, since this finished surface would be visible on the part. After cleaning off the remaining debris, the part was sprayed
+      with Duratec Polyester Surfacing Primer which is supposed to eliminate the porosity of the foam and is designed to stick to polyurethane foam.
+      Following the specification, the primer is sprayed with a pressure of 35-40 psi and allowed to tack before adding another layer. The primer was left 
+      to set for at least 8 hours before sanded from 220 grit to a surface finish. </p>
+    <p>
+      After two layers of surface primer and two rounds of sanding, the goal was to normalize the mold surface roughness until all porosity is visibly gone 
+      and even. For mold release, we wiped on 3 layers of Airtech Safelease 30, allowing for 30 minutes in between coats as per the datasheet. 
+      As an extra measure, RW4 Spray Wax Release Agent from Easy Composites was sprayed on as the last mold release application step. </p>
+
+    <h3>Material</h3>
+    <p>To capture the wheel’s intricate geometry, the wheel was produced with Axiom-5420-22CK, an epoxy prepreg. Based on the material specification, 
+      the matrix consists of toughened, high temperature, flame retardant epoxy and the fiber is a 3K Carbon/Kevlar hybrid on a 2x2 twill-weave 
+      that is high impact resistance and has a fabric weight of 190 gsm. Epoxy prepreg is more rigid during the pre-processing step due to the matrix 
+      being frozen into the fibers, so cutting out templates will make the layup process cleaner and reduce potential manufacturing error. 
+      With a flexible cure temperature given by the manufacturer’s spreadsheets, we utilized a cure-temp of 200F to reduce the required cure-time 
+      while still maintaining within the temperature range of our mold materials. However, there is no cure-time published by the manufacturer of the 
+      prepreg for a 200F cure-temp. Therefore, we utilized the logarithmic relationship between reaction-rate and temperature from the Arrhenius 
+      equation to generate a best-fit line and estimate our own cure-time for a 200F cure-temp as shown below </p>
+    <img src="wheelimages/cure_time_graph.jpg" alt="Correlating cure-time and cure-temperature" style="width:80%; max-width:900px">
+    <p>With a high R^2 score of 0.993, we can be confident in our line of best-fit. We utilize this equation of the best-fit line to calculate the cure-time. </p>
+    $$
+    \begin{aligned}
+    \ln(Cure\ Temp) &= -0.0569 \cdot \ln(Time) + 6.44 \\[12pt]
+    
+    \ln(Time) &= \frac{\ln(Cure\ Temp) - 6.44}{-0.0569}
+    \end{aligned}
+    $$
+    <img src="wheelimages/cure_time_calcs.jpg" alt="Cure Time Calculations" style="width:100%; max-width:900px">
   </section>
+
+  
+
+
 <section class="w3-white w3-padding-64">
    <div class="max-width">
     <!-- Skills -->
