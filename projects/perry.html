@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Perry</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-grey.css">
+  
+  
+  <!-- Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+  <style>
+    body, h1, h2, h3, h4 {
+      font-family: "Roboto", sans-serif;
+    }
+    header h1 {
+    font-size: 6rem;  
+    margin-bottom: 0.25rem;
+    }
+    .max-width {
+      max-width: 1000px;
+      margin: auto;
+    }
+    img {
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Hide the nested submenu by default */
+    .parent .submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background: white;
+      min-width: 180px;
+      z-index: 1000;
+    }
+    
+    /* Only show submenu when hovering*/
+    .parent:hover .submenu {
+      display: block;
+    }
+        
+    /* Make parent positioning context */
+    .dropdown {
+      position: relative;
+    }
+    /* Skills section layout */
+    
+    .skills-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    /*.skill-card {
+      background-color: #ffffff;
+      padding: 1.25rem 1.5rem; /* tighter padding */
+      border-radius: 6px;
+    } */
+    .skill-category ul {
+      list-style-type: disc
+      margin: auto;
+    }
+    
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+
+  </style>
+
+  
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card">
+
+    <a href="../index.html" class="w3-bar-item w3-button w3-large">
+      <b>Jennifer S. Li</b>
+    </a>
+
+    <!-- Experience Dropdown -->
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button">Work Experience ▾</button>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+        <a href="../experience/astranis.html" class="w3-bar-item w3-button">
+          Astranis – Associate Technical Project Manager
+        </a>
+        <a href="../experience/spacex-hls.html" class="w3-bar-item w3-button">
+          SpaceX - Human Lander System (HLS) Mechanisms Intern
+        </a>
+        <a href="../experience/spacex-mechs.html" class="w3-bar-item w3-button">
+          SpaceX - Starship Mechanisms Intern
+        </a>
+        <a href="../experience/tesla.html" class="w3-bar-item w3-button">
+          Tesla - Stator Manufacturing Design Intern
+        </a>
+        <a href="../experience/chemix.html" class="w3-bar-item w3-button">
+          Chemix - Battery R&D Intern
+        </a>
+        <a href="../experiences/taflab.html" class="w3-bar-item w3-button">
+          TAFLab - Multihulled Unmanned Boat Undergrad Researcher
+        </a>
+        <a href="../experience/nist.html" class="w3-bar-item w3-button">
+          NIST - Additive Manufacturing Laser Powder Bed Fusion Intern
+        </a>
+        <a href="../experience/other.html" class="w3-bar-item w3-button">
+          Other (Misc)
+        </a>
+        
+      </div>
+    </div>
+
+    <!-- Projects Dropdown -->
+
+<div class="w3-dropdown-hover">
+  <button class="w3-button">Projects ▾</button>
+
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+    <div class="parent">
+      <a href="../experience/fsae.html" class="w3-bar-item w3-button">
+        Berkeley Formula Racing ▸
+      </a>
+        <div class="w3-bar-block w3-border submenu">
+          <a href="bfr/seat.html" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
+          <a href="bfr/pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
+          <a href="bfr/brakes.html" class="w3-bar-item w3-button">Brakes</a>
+          <a href="bfr/steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
+          <a href="bfr/diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
+          <a href="bfr/headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
+        </div>
+  
+        <a href="wheel.html" class="w3-bar-item w3-button">
+        Hollow Carbon Fiber Wheel
+        </a>
+         <a href="perry.html" class="w3-bar-item w3-button">
+          Perry the Quadruped Robot
+         </a>
+        <a href="passive-walker.html" class="w3-bar-item w3-button">
+          Passive Walking Robot
+         </a>
+        <a href="cupholder.html" class="w3-bar-item w3-button">
+          Gimballed Cup Holder
+         </a>
+        
+        <a href="uav.html" class="w3-bar-item w3-button">
+          UAV Flight Control
+         </a>
+        <a href="flower.html" class="w3-bar-item w3-button">
+          Morphing Flower Soft-Robot
+         </a>
+        <a href="turtle.html" class="w3-bar-item w3-button">
+          Amphibious Turtle Robot
+         </a>
+        <a href="star.html" class="w3-bar-item w3-button">
+          Stage Separation Mechanism
+         </a>
+        <a href="misc.html" class="w3-bar-item w3-button">
+          Other
+        </a>
+    </div>
+  </div>
+</div>
+
+
+    <a href="../courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
+    <a href="../assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+
+  </div>
+</div>
+
+<!-- Spacer for fixed navbar -->
+<div style="margin-top:64px"></div>
+<!-- Header-->
+<section id="header" class="w3-container w3-padding-64">
+  <div class="max-width">
+    <h2>Single-Motor Quadruped Robot (“Perry the Platypus”)</h2>
+      <h3>
+        Designed a passively stable quadruped using a single actuator through linkage synthesis and gait optimization.
+      </h3>
+      <a href="https://docs.google.com/document/d/1yAwiRy8s41qFOhkNboLQTUxpEAD1BjNIKXl2qoMHh8M/edit?usp=sharing">Link to full technical report</a>
+      <img src="../images/perry.jpg" alt="perry the platypus" style="width:80%; max-width:900px">
+      
+  </div>
+</section>
+
+<section id="overview" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+      
+
+      <h2>Overview</h2>
+    
+      <ul>
+        
+        <li>Single-motor driven quadruped linkage synthesis and analysis</li>
+        <li>Mechanically synchronized gait (no electronics control)</li>
+        <li>4 legs, phase-offset via gearing (2:1 ratio, 180° offsets)</li>
+        <li>Fully custom linkage-based locomotion</li>=
+      </ul>
+  </div>
+</section>
+
+<section id="Constraints" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Design Goals</h2>
+  
+    <p>The leg mechanism was synthesized to achieve a passively stable gait using a single actuator. Stability was evaluated through position, velocity, and acceleration
+      of the foot through the gait cycle. Key constraints included:</p>
+    <ul>   
+      <li>Maintain duty factor ≥ 0.4 for stability</li>
+      <li>Achieve flat stance phase (<0.2 mm variation, >60 mm length)</li>
+      <li>Minimize impact at heel strike / toe-off</li>
+      <li>Reduce jerky motion (limit angular accel spikes)</li>
+      <li>Fit within 200 × 150 mm footprint</li>
+    </ul>
+    <p> All these factors were plotted in Python and optimized for. A prototype was made to verify these analyses.
+    </p>
+ 
+  </div>
+
+</section>
+<section id="Design" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Design</h2>
+
+    <h3>Initial Approach: Coupler Curve Synthesis</h3>
+    <p>First I created some linkages that would generate two out of phase paths, using coupler curves and cognates. 
+      I analyzed the paths generated by these linkages. My initial finalized linkage was a five bar created from two four bars that share a 
+      driver crank. This was made by optimizing coupler curve for a crank rocker found in the H.K. Atlas 
+      (page 127).</p>
+    <div style="display: flex; gap: 30px; align-items: center;">
+      <figure><img src="perryimages/backup.jpg" alt="initial iteration" style="width:50%; max-width:900px"> <figcaption>Intermediate Iteration</figcaption></figure>
+      <figure><img src="perryimages/initialcad.jpg" alt="intial finalized CAD" style="width:50%; max-width:900px"><figcaption>CAD of Initial Finalized Linkage</figcaption></figure>
+      <figure><img src="perryimages/initialcurve.png" alt="Initial Finalized Coupler Curve" style="width:50%; max-width:900px"><figcaption>Initial Finalized Coupler Curve</figcaption></figure> 
+    </div>
+    <p> While most optimized out of the linkages I designed, it was still unideal, especially when it came to smooth landing and take off. The foot slides or 
+      digs into the ground rather than moving cleanly forward. The foot also spends less time on the ground than in the air. Thus, I read literature on leg locomotion and found the Jansen linkage.</p>
+    
+    <h3>Final Approach: Jansen Linkage</h3>
+    <p>After I switched to biologically inspired Jansen linkage, I optimized geometry via Python kinematic analysis. I tuned link lengths to increase 
+      duty factor, flatten stance phase, and reduce acceleration spikes</p>
+     <img src="perryimages/cad.jpg" alt="Final CAD" style="width:100%; max-width:900px">
+    <p>I solved multi-loop linkage kinematics using the vector loop method to compute foot position, angular velocity, and angular acceleration, which was then
+      used to simulate gait timing, stability, smoothness. I differentiated loop equations to obtain full dynamic profiles of all links. Through my test iterations in Python, 
+      I found that the length of link d and the crank a had the most significant impact on foot trajectory.</p>
+    <img src="perryimages/optimization.jpg" alt="Link Length Optimization" style="width:100%; max-width:900px">
+    <p>From this, I determined the final lengths of each link.</p>
+    <img src="perryimages/coupler_curve.jpg" alt="Lengths and Final Coupler Curve" style="width:100%; max-width:900px">
+    <video width="100%" controls>
+      <source src="perryimages/JansenLinkage.mp4" type="video/mp4">
+      Jansen Linkage Motion Simulation
+    </video>
+    <p>A SolidWorks motion simulation confirmed correct four-leg coordination.</p>
+    <video width="100%" controls>
+      <source src="perryimages/sim.mp4" type="video/mp4">
+      Full Robot Motion Simulation
+    </video>
+
+  </div>
+
+</section>
+<section id="results" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Prototype and Results</h2>
+    <video width="70%" controls>
+        <source src="perryimages/perry.mp4" type="video/mp4">
+        Perry Prototype
+    </video>
+    <p>
+      The final physical prototype was able to walk but was not stable. This was largely due to structural flexibility in the thin linkages and 
+      how thin the entire quadrupedal structure was. While forward–backward center of mass motion was addressed in the synthesis, no constraints 
+      were imposed for side-to-side stability, causing the robot to tip unless the feet were carefully aligned. 
+      It demonstrated that linkage-level optimization alone is insufficient without full-body dynamics. 
+      Future work could model the full-body with gravitational forces and mass distribution to minimize vertical loading and center of mass movement.
+    </p>
+    <p>
+      The most important takeaways were that mechanical design can encode control behavior passively, that foot trajectory design is critical for stability,
+      there is a tradeoff between kinematic performance and dynamic smoothness, and that real-world systems require structural + dynamic + kinematic integration
+    </p>
+  </section>
+<section class="w3-white w3-padding-64">
+   <div class="max-width">
+    <!-- Skills -->
+      <h2>Skills Demonstrated</h2>
+      <p>
+        Mechanism design • Linkage synthesis • Kinematic analysis • Vector loop modeling • MATLAB/Python simulation • Design optimization • CAD and Motion Simulation (SolidWorks) • 
+        Dynamic analysis • Rapid prototyping • Mechanical system integration
+      </p>
+    </div>
+  </section>
+  
+
+<section id="contact" class="w3-light-grey w3-padding-64">
+  <div class="max-width">
+    <h2>Contact</h2>
+    <p>Email: jennifersili@berkeley.edu</p>
+    <p>LinkedIn: linkedin.com/in/jennifersili</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="w3-container w3-center w3-padding-16 w3-white">
+  <p>Jennifer Si Li | Engineering Portfolio</p>
+</footer>
+
+</body>
+</html>
+        
