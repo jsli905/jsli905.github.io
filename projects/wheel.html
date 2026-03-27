@@ -385,27 +385,98 @@
       equation to generate a best-fit line and estimate our own cure-time for a 200F cure-temp as shown below </p>
     <img src="wheelimages/cure_time_graph.jpg" alt="Correlating cure-time and cure-temperature" style="width:80%; max-width:900px">
     <p>With a high R^2 score of 0.993, we can be confident in our line of best-fit. We utilize this equation of the best-fit line to calculate the cure-time. </p>
-    $$
-    \begin{aligned}
-    \ln(Cure\ Temp) &= -0.0569 \cdot \ln(Time) + 6.44 \\[12pt]
+    <div style="display: flex; gap: 30px; align-items: center;">
+      $$
+      \begin{aligned}
+      \ln(Cure\ Temp) &= -0.0569 \cdot \ln(Time) + 6.44 \\[12pt]
+      
+      \ln(Time) &= \frac{\ln(Cure\ Temp) - 6.44}{-0.0569}
+      \end{aligned}
+      $$
+      <img src="wheelimages/cure_time_calcs.jpg" alt="Cure Time Calculations" style="width:100%; max-width:900px">
+    </div>
     
-    \ln(Time) &= \frac{\ln(Cure\ Temp) - 6.44}{-0.0569}
-    \end{aligned}
-    $$
-    <img src="wheelimages/cure_time_calcs.jpg" alt="Cure Time Calculations" style="width:100%; max-width:900px">
+    <h3>Ply Stackup and Orientation</h3>
+    <div style="display: flex; gap: 30px; align-items: center;">
+      <p>The stackup was sequenced to account for the wheel’s variable thickness while also using a symmetrical and balanced layup, as it allows for
+        more predictable stress distribution and stiffness properties. This allows us to utilize Quasi-Isotropic Balanced and Symmetric (QIBS) 
+        assumptions for calculating part-strength if materials testing of sample coupons were to be conducted in the future. Since one of the 
+        main goals was to preserve longitudinal stiffness, 0° plies are the innermost and outermost layers for axial stiffness, intended to handle 
+        forces along the direction of rotation and keep the wheel rigid under compression and tension. The 45° plies resist shear forces during 
+        acceleration, braking, cornering, and provide torsional stiffness.The 90° plies improve resistance against impacts, distributing radial 
+        loads evenly across the structure. Despite the wheel being variable thickness, maintaining symmetrical plies will reduce warping and bending. 
+        The photo on the right shows a 3D printed plug filling the insert slot, after deciding that it would be more advantageous to have a surface rather 
+        than a through hole for the insert.</p>
+      <img src="wheelimages/wheel_parts_diagram.png" alt="Wheel parts diagram" style="width:50%; max-width:900px">
+    </div>
+    <p>We had a cured 2 ply sample of the Axiom-5420 and it measured to 1 mm. We used this to determine the plies needed. To make sure each component has 
+      the required plies, we needed a strategy to cover the entire wheel at once, essentially one pass through that covers all the surfaces. 
+      The maximum of these full wheel sweepthroughs is 7 since we are limited by the thickness of the spokes. However, a repeating layup with the same seam 
+      lines would be extremely failure prone since all the discontinuities would be concentrated in one area.<br> 
+      Thus, we devised a layup sequence with 2 full wheel operations 
+      that cover the wheel from bead to bead. Operation 1 covers the wheel circumferentially while Operation 2 covers the wheel axially. This creates a 
+      cross ply structure which is stronger and each operation will cover the previous seamlines. Each operation was broken up into specific templates 
+      that could be followed. The contrasting operations are sketched out below</p>
+    <img src="wheelimages/layup_ops.jpg" alt="Layup operations and corresponding components" style="width:100%; max-width:900px">
+    <p>Operation 1 has three components:
+      <br>Box: The hollowed recesses of the spokes, includes outboard bead material.
+      <br>Rectangular patch: The outer walls of the spokes, includes outboard bead material.
+      <br>Barrel: The strip that wraps around the wheel, includes inboard bead material.</p>
+      
+    <p>Operation 2 has two components:
+      <br>Vertical box: The hollowed recesses of the spokes extended to include outboard & inboard bead material.
+      <br>Vertical rectangle: The outer walls of the spokes extended to include outboard & inboard bead material.
+      </p>
+
+      <p>Since there would be many relief cuts and seam lines during the process, making templates were essential 
+        to streamline material preparation and make sure all the areas were covered as planned. We explored the SolidWorks flattening feature, 
+        however, the template was ultimately laid on top of the mold and fitted by hand. During this process, 
+        extra material was also added for overlap. </p>
+      <h3>Layup and Cure</h3>
+      <div style="display: flex; gap: 30px; align-items: center;">
+        <img src="wheelimages/prepreg_prep.png" alt="Prepreg cutting" style="width:50%; max-width:900px">
+        <p>As per the datasheet, the prepreg was taken out 4-6 hours before cutting to stabilize to room temperature. Using the templates, all the pieces were cut out and 
+          labeled while the mold was being prepped. <br><br>
+          To formulate the most optimal manufacturing sequence, we split the layup procedure into two phases according to our mold design. 
+          The first phase involves wrapping strips of the fabric concentrically to fill the insert ring space on the inboard plug before then
+          stacking the outboard plug to constrain the ring. We alternated strips of 0, 45, and 90 degrees as the ring was being formed. This ensures the seam 
+          line is continuous all the way around as the radius grows once more material is added. 
+        </p>
+      </div>
+      <div style="display: flex; gap: 30px; align-items: center;">
+        <img src="wheelimages/layup.jpg" alt="Prepreg cutting" style="width:50%; max-width:900px">
+        <p>We fit the aluminum insert into the mold cavity when joining the mold plugs together. After that, rods and weight were placed on top of the 
+          joined mold to keep the part compressed and aligned. We followed the sequence and began laying the first layers, attempting to match the fibers 
+          at the seam line. As a note, there is a little excess fabric on the top edge of the barrel piece intended to fold over onto the hollow spoke area. </p>
+      </div>
+    <p>Once all the plies have been applied and sufficiently flattened, perforated release film is added in a similar manner, attempting to conform to the 
+      mold geometry. The perforation is to allow epoxy to seep into the breather, overwise the part would be oversaturated and brittle. The part was wrapped 
+      in breather material, which acts as a buffer medium for the vacuum to pull through even when there is vacuum compression. The part was vacuum bagged
+      with lots of excess bag to account for the hollow cavities. The final vacuumed part then went into the hot box and vacuum was pulled. Full vacuum was defined at 29.92 inHg.
+    </p>
+    <img src="wheelimages/vacuum.jpg" alt="vacuumed part and vacuum reading" style="width:100%; max-width:900px">
   </section>
-
-  
-
+<section id="design" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Results</h2>
+    <p>The CFRP Wheel weighed 575 grams and the aluminum insert weighed 126 grams, resulting in a combined weight of 701 grams.
+      This was a 3.5X mass reduction from the 2483 gram weight of the original aluminum wheel assembly</p>
+    <p> The process taught us the challenges of maintaining surface uniformity and ensuring durability without a core material. While this wheel is not yet at the standard 
+      for performance testing, the process provided valuable insights into composite fabrication and structural design. 
+      The bead requires further development to improve durability and performance in order to be pressure bearing, and the insert needs a redesign to 
+      ensure better integration and load distribution. Before performance testing, we can utilize Instron testing equipment to check tensile and 
+      compression properties, conduct deformation experiments, and cut the wheel to inspect the part more closely and verify part thickness. 
+      However, the ply stackup sequence and mold manufacturing steps were useful learning experiences, offering a deeper understanding of material behavior, 
+      structural optimization, and process refinement.</p>
+  </div>
+</section>
 
 <section class="w3-white w3-padding-64">
    <div class="max-width">
     <!-- Skills -->
       <h2>Skills Demonstrated</h2>
       <p>
-        Flight control • State estimation • Embedded C++ • Control systems •
-        System identification • IMU sensor processing • Testing & debugging •
-        Experimental validation
+        
       </p>
     </div>
   </section>
