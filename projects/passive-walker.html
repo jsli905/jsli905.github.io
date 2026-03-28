@@ -225,6 +225,19 @@
       to a three-link system with knees. The goal was to achieve a stable walking cycle by tuning physical parameters 
       and validating performance through both simulation and prototyping.
     </p>
+    
+    <p>Our ultimate aim is to enable stable, controlled downhill walking at steeper inclines, which has been proven challenging 
+      for conventional passive bipeds. At higher inclinations, existing passive walkers often struggle to maintain an upright posture. 
+      To address this, we adjusted the mass distribution to position the center of mass near the central axle and introduced supplemental masses
+      throughout the leg assembly to enhance dynamic stability.  </p>
+    <p>Our efforts focused on refining design parameters through simulation-based analysis, guiding us with an understanding 
+      of integrating the desired hardware development for our product. A first generation prototype was designed and manufactured 
+      for testing, forming the foundation for ongoing improvements and modifications in simulation-based testing. We applied observations in the simulation in the real life prototype, which were also
+      designed to test and validate our simulations. Our simulation progress allowed us to find out the reasons for our errors and achievements between our prototype iterations. 
+      Through validation in our simulation and real world tests, we were able to confidently make our prototype, based on our fundamental equations and simulation results.
+    </p>
+    
+    
   </div>
 </section>
 
@@ -234,102 +247,286 @@
     <h2>Modeling</h2>
     <h3>System Model</h3>
 
+    <p>The simplest theoretical model of a passive walker device is that of the rimless wheel</p>
+    <img src="walkerimages/compass.jpg" alt="Rimless Wheel" style="width:40%; max-width:900px">
     <p>
       The walker is modeled as a three-link system (a stance leg, a swing leg, and a torso) using generalized 
-      coordinates defined by joint angles. The dynamics are derived using Lagrangian mechanics.
+      coordinates defined by joint angles. This model consists of a single point mass at the hip and straight legs 
+      radiating out of essentially a rimless wheel, and has a given analytical solution for its step-to-step behavior. By just having two of 
+      the legs and placing a pin between them, the legs may move relative to each other and the compass gait can be created, as seen below.
+    </p>
+    <img src="walkerimages/compass_gait.jpg" alt="Compass Gait" style="width:40%; max-width:900px">
+
+    <h4>Lagrangian Equation</h4>
+    <p>The dynamics are derived using Lagrangian mechanics.</p>
+    
+      $$ H(q)\ddot{q} + B(q,\dot{q})\dot{q} + G(q) = 0 $$
+    
+    <p>
+    Inertia matrix, velocity-dependent (Coriolis/centrifugal), and gravitational terms for the three-link pendulum.
     </p>
 
-    <p><strong>Generalized coordinates:</strong> θ = [θ₁, θ₂, θ₃]</p>
+    <h4>Unlocked Knees</h4>
+    <img src="walkerimages/kneedmodel.jpg" alt="Passive Dynamic Walking with Knees Point Foot Model" style="width:50%; max-width:900px">
+    <p>Upon kneestrike, the knee will remain locked. The matrices below describe the system when the knee joint is 
+      free (unlocked), allowing three independent degrees of freedom:</p>
 
     <p>
-      The equations of motion take the standard manipulator form:
+    Inertia matrix:
     </p>
+   
+    $$
+    H =
+    \begin{bmatrix}
+    H_{11} & H_{12} & H_{13} \\
+    H_{12} & H_{22} & H_{23} \\
+    H_{13} & H_{23} & H_{33}
+    \end{bmatrix}
+    $$
+    <p>
+    Coriolis and Centrifugal forces with varying joint velocities:
+    </p>
+    $$
+    B =
+    \begin{bmatrix}
+    0 & h_{122}\dot{q}_2 & h_{133}\dot{q}_3 \\
+    h_{211}\dot{q}_1 & 0 & h_{233}\dot{q}_3 \\
+    h_{311}\dot{q}_1 & h_{322}\dot{q}_2 & 0
+    \end{bmatrix}
+    $$
+    <p>Gravity Matrix</p>
+    $$
+    G =
+    \begin{bmatrix}
+    -(m_s a_1 + m_t(l_s + a_2) + (m_h + m_s + m_t)L)g\sin(q_1) \\
+    (m_t b_2 + m_s l_t)g\sin(q_2) \\
+    m_s b_1 g \sin(q_3)
+    \end{bmatrix}
+    $$
 
-    :contentReference[oaicite:0]{index=0}
+    
+    <p>Unlocked knee conditions:</p>
+    
+    <div class="equation">
+    $$
+    H_{11} = m_s a_1^2 + m_t(l_s + a_2)^2 + (m_h + m_s + m_t)L^2
+    $$
+    
+    $$
+    H_{12} = -(m_t b_2 + m_s l_t)L \cos(q_2 - q_1)
+    $$
+    
+    $$
+    H_{13} = -m_s b_1 L \cos(q_3 - q_1)
+    $$
+    
+    $$
+    H_{22} = m_t b_2^2 + m_s l_t^2
+    $$
+    
+    $$
+    H_{23} = m_s l_t b_1 \cos(q_3 - q_2)
+    $$
+    
+    $$
+    H_{33} = m_s b_1^2
+    $$
+    </div>
+    
+    <div class="equation">
+    $$
+    h_{122} = -(m_t b_2 + m_s l_t)L \sin(q_1 - q_2)
+    $$
+    
+    $$
+    h_{133} = -m_s b_1 L \sin(q_1 - q_3)
+    $$
+    
+    $$
+    h_{211} = -h_{122}, \quad h_{311} = -h_{133}
+    $$
+    
+    $$
+    h_{233} = m_s l_t b_1 \sin(q_3 - q_2), \quad h_{322} = -h_{233}
+    $$
+    </div>
 
-    <ul>
-      <li><strong>M(θ):</strong> configuration-dependent inertia matrix</li>
-      <li><strong>C(θ, θ̇):</strong> Coriolis and centrifugal effects</li>
-      <li><strong>G(θ):</strong> gravitational forces driving motion</li>
-    </ul>
+
+    <h4>Locked Knees</h4>
 
     <p>
-      These nonlinear coupled differential equations govern the continuous motion of the walker during the swing phase.
+    The system is re-derived for locked knees using a reduced Lagrangian formulation:
     </p>
+    
+    <div class="equation">
+    $$
+    H =
+    \begin{bmatrix}
+    H_{11} & H_{12} \\
+    H_{12} & H_{22}
+    \end{bmatrix}
+    $$
+    
+    $$
+    B =
+    \begin{bmatrix}
+    0 & h\dot{q}_2 \\
+    -h\dot{q}_1 & 0
+    \end{bmatrix}
+    $$
+    
+    $$
+    G =
+    \begin{bmatrix}
+    -(m_s a_1 + m_t(l_s + a_2) + (m_h + m_t + m_s)L)g\sin(q_1) \\
+    (m_t b_2 + m_s(l_t + b_1))g\sin(q_2)
+    \end{bmatrix}
+    $$
+    </div>
+    
+    <p>
+    These equations govern swing foot impact, heel strike collision, and switching between stance and swing legs:
+    </p>
+    <div class="equation">
+    $$
+    H_{11} = m_s a_1^2 + m_t(l_s + a_2)^2 + (m_h + m_s + m_t)L^2
+    $$
+    
+    $$
+    H_{12} = -(m_t b_2 + m_s(l_t + b_1))L\cos(q_2 - q_1)
+    $$
+    
+    $$
+    H_{22} = m_t b_2^2 + m_s(l_t + b_1)^2
+    $$
+    
+    $$
+    h = -(m_t b_2 + m_s(l_t + b_1))L\sin(q_1 - q_2)
+    $$
+    </div>
+
+    <section>
+
+  <h3> Simulations</h3> 
   
-    <h3>Hybrid Gait Dynamics</h3>
+  <h4>Slope Angle Optimization</h4>
+  <p>
+    Using MATLAB and Simulink simulations, the optimal slope angle for the passive walking robot was determined to be 3°. 
+    This result was obtained by sweeping slope angles from 0° to 5° and evaluating gait performance using conditional logic.
+  </p>
 
-    <p>
-      The walking cycle is modeled as a hybrid dynamical system consisting of continuous dynamics and discrete transitions.
-    </p>
-
-    <h4>Continuous Phase (Swing)</h4>
-
-    :contentReference[oaicite:1]{index=1}
-
-    <p>
-      During the swing phase, the system evolves according to the nonlinear equations of motion derived from the Lagrangian.
-    </p>
-
-    <h4>Discrete Phase (Heel Strike Impact)</h4>
-
-    :contentReference[oaicite:2]{index=2}
-
-    <p>
-      At heel strike, an instantaneous, inelastic collision occurs. The system undergoes a discrete state transition 
-      where velocities change abruptly due to impact constraints.
-    </p>
-
+  <div class="equation">
+    <p><strong>Evaluation Method:</strong></p>
     <ul>
-      <li>Angular velocities are reset via conservation of angular momentum</li>
-      <li>Energy is dissipated at each step</li>
-      <li>Leg roles are swapped (stance ↔ swing)</li>
+      <li>Parameter sweep: θ ∈ [0°, 5°]</li>
+      <li>Simulation-based validation</li>
+      <li>Stability determined via <code>if-else</code> logic conditions</li>
     </ul>
+  </div>
 
+  <p>
+    A <strong>stable gait</strong> was defined as a periodic walking cycle without excessive or insufficient swing motion.
+  </p>
+
+  <h3>Stability Criteria</h3>
+  <ul>
+    <li><strong>Periodic Gait Cycle:</strong> Joint states return to initial conditions after each step.</li>
+    <li><strong>Kneestrike Dynamics:</strong> Swing leg fully extends and locks during impact.</li>
+    <li><strong>Heelstrike Dynamics:</strong> Proper ground contact angle and momentum transfer.</li>
+    <li><strong>Swing Leg Motion:</strong> Sufficient forward motion without instability or stalling.</li>
+  </ul>
+
+  <p>Results</p>
+  <ul>
+    <li><strong>θ &lt; 3°:</strong> Insufficient swing due to low gravitational potential energy.</li>
+    <li><strong>θ &gt; 5°:</strong> Excessive swing → instability, loss of balance, high-speed gait.</li>
+    <li><strong>θ = 3°:</strong> Optimal — stable, repeatable periodic gait satisfying all conditions.</li>
+  </ul>
+
+  <p>
+    The governing equations were derived from the Lagrangian formulation, assuming uniform mass distribution along each leg segment.
+  </p>
+
+  <hr>
+
+  <h3>3D Simulink / Simscape Model</h3>
+
+  <p>
+    A 3D dynamic model was developed using Simscape to represent a biped robot with a knee joint.
+  </p>
+
+  <img src="walkerimages/simulink.jpg" alt="Simulink Block Model" style="width:50%; max-width:900px">
+  <h3>Model Design</h3>
+  <ul>
+    <li>Initial condition: robot collapses due to flexed knee configuration</li>
+    <li>Spring added between femur and tibia to restore extension</li>
+    <li>Prismatic rod mechanism used to simulate <strong>knee locking at heel strike</strong></li>
+  </ul>
+
+  <h3>Key Challenges</h3>
+  <ul>
+    <li>Spring stiffness too high → prevented proper kneestrike</li>
+    <li>Contact dynamics introduced <strong>friction and bouncing</strong></li>
+    <li>High sensitivity due to 3D complexity (many degrees of freedom)</li>
+  </ul>
+
+  <p>
+    While a partial gait cycle (single swing/stance phase) was achieved, instability from contact dynamics limited full-cycle performance.
+  </p>
+
+  <p>
+    Due to these challenges, the analysis transitioned to a 2D dynamic model for better control and interpretability.
+  </p>
+
+  <hr>
+
+  <h3>2D Simulink Dynamics Simulation</h3>
+
+  <p>
+    A 2D simulation framework was developed in Simulink to analyze system dynamics and validate the derived equations.
+  </p>
+
+  <h3>Model Setup</h3>
+  <ul>
+    <li>Two dynamic phases: <strong>Stance</strong> and <strong>Swing</strong></li>
+    <li>State vector: <strong>q = (q₁, q₂, q₃)</strong></li>
+  </ul>
+
+  <div class="equation">
+    <p><strong>Initial Conditions:</strong></p>
     <p>
-      This hybrid structure makes the system highly sensitive to parameters and initial conditions.
+      q₁ = 15°, q₂ = 25°, q₃ = 0° <br>
+      q̇₁ = 0°/s, q̇₂ = 0°/s, q̇₃ = 0°/s
     </p>
+  </div>
 
-    <h3>Gait Stability & Limit Cycles</h3>
+  <h3>Model Parameters</h3>
+  <ul>
+    <li>Tibia length and mass = <strong>1/5 of femur</strong></li>
+    <li>Hip, knee, and foot trajectories computed via transformation matrices</li>
+  </ul>
+  <img src="walkerimages/simulink_results.png" alt="Simulink results" style="width:100%; max-width:900px">
 
+  <h3>Results & Observations</h3>
+  <ul>
+    <li><strong>Stance phase (q₁):</strong> Physically reasonable behavior</li>
+    <li><strong>Swing phase issue:</strong> q₂ increased positively instead of decreasing</li>
+    <li>This caused instability in q₃ and overall system divergence</li>
+  </ul>
+
+  <div class="equation">
+    <p><strong>Critical Issue:</strong></p>
     <p>
-      Stable walking corresponds to a periodic solution (limit cycle) of the hybrid system, where the state 
-      repeats after each step.
+      Expected: q₂ → negative during swing <br>
+      Observed: q₂ → increasing positive values
     </p>
+  </div>
 
-    :contentReference[oaicite:3]{index=3}
+  <p>
+    Despite testing multiple initial conditions, no configuration produced the expected negative evolution of q₂.
+    Resolving this behavior was identified as the primary requirement for achieving a stable simulated gait.
+  </p>
 
-    <p>
-      A Poincaré map is used to analyze step-to-step behavior. A stable gait satisfies:
-    </p>
-
-    <ul>
-      <li>Existence of a fixed point: x* = P(x*)</li>
-      <li>Eigenvalues of the linearized map lie within the unit circle</li>
-    </ul>
-
-    <p>
-      Stability depends strongly on system parameters such as slope angle, mass distribution, and leg geometry.
-    </p>
-
-    <h3>Simulation & Numerical Methods</h3>
-
-    <p>
-      The system was simulated in MATLAB/Simulink using numerical ODE solvers with event detection to capture 
-      heel strike conditions.
-    </p>
-
-    <ul>
-      <li>ODE integration for continuous dynamics</li>
-      <li>Event detection for ground contact</li>
-      <li>State reset using impact map</li>
-      <li>Parameter sweeps for stability analysis</li>
-    </ul>
-
-    <p>
-      Simulations identified a narrow range of parameters that produced stable walking behavior, particularly 
-      near a ramp angle of ~3°.
-    </p>
   </div>
 </section>
 
@@ -339,37 +536,45 @@
     <h2>Prototyping</h2>
 
     <p>
-      We validated simulation results and iterated on our simulation and evaluate real-world performance through various test prototypes.
+      We validated simulation results and iterated on our simulation by evaluating real-world performance through various test prototypes.
       These designs included adjustable mass distribution to tune the center of mass and improve stability.
       We then used the final simulation results as a jumping off point for our final physical prototype.        
     </p>
-    <p>
-      While simulations predicted stable limit cycle behavior, the physical prototype exhibited rapid energy loss 
-      and instability.
-    </p>
-   
-
     <ul>
       <li>Leg length: 6.06 in</li>
       <li>Center of mass: 3 in from hip</li>
       <li>Stride length: 1.25 in</li>
       <li>Ramp angle: 3°</li>
     </ul>
-    <h3>Key Sources of Discrepancy</h3>
+    <div style="display: flex; gap: 30px; align-items: center;">
+    <img src="walkerimages/straight_legged.jpg" alt="Straight Legged Prototype" style="width:30%; max-width:900px">
+    <video width="70%" controls="">
+        <source src="walkerimages/walker.mp4" type="video/mp4">
+        Straight Legged Prototype
+    </video>
+    </div>
+    
+    <p>
+      While simulations predicted stable limit cycle behavior, the physical prototype exhibited rapid energy loss. The prototype achieved a maximum of three steps before failure, highlighting the sensitivity of passive 
+      dynamic systems to real-world imperfections.
+    </p>
+
+    <p>Using what we learned, we updated our simulation and designed a kneed prototype.</p>
+   
+
+    <div style="display: flex; gap: 30px; align-items: center;">
+    <img src="walkerimages/kneed1.jpg" alt="Initial Kneed Prototype" style="width:30%; max-width:900px">
+    <p>Key Sources of Discrepancy
     <ul>
       <li>Joint friction and bearing losses</li>
       <li>Non-ideal (inelastic) impacts</li>
       <li>Structural compliance</li>
       <li>Knee buckling under load</li>
     </ul>
-
-        <p>
-      The prototype achieved a maximum of three steps before failure, highlighting the sensitivity of passive 
-      dynamic systems to real-world imperfections.
     </p>
 
-        <p>
-      To address instability and knee buckling, a redesigned mechanism was developed with knee joints controlled by a pulley and cam system. This
+    <p>
+      To address instability and knee buckling in this prototype, a redesigned mechanism was developed with knee joints controlled by a pulley and cam system. This
       incorporated minimal actuation while preserving passive dynamics.
     </p>
 
@@ -379,6 +584,7 @@
       <li>Pulley system for force transmission</li>
       <li>“Flopper” mechanism for passive leg return</li>
     </ul>
+    <img src="walkerimages/final_walker.jpg" alt="Final Walker CAD" style="width:30%; max-width:900px">
 
     <p>
       This approach introduces controlled assistance to improve robustness while maintaining the efficiency benefits 
@@ -386,7 +592,13 @@
     </p>
     
 
-    <img src="../images/prototype.jpg" alt="Walker prototype" style="width:50%; max-width:900px">
+    <div style="display: flex; gap: 30px; align-items: center;">
+    <img src="../images/passive walker.jpg" alt="Passive Walker Final Prototype" style="width:30%; max-width:900px">
+    <video width="70%" controls="">
+        <source src="walkerimages/flopper.mp4" type="video/mp4">
+        Flopper System
+    </video>
+    </div>
   </div>
 </section>
 
@@ -394,19 +606,6 @@
 <section id="results" class="w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Results & Failure Analysis</h2>
-
-    <p>
-      The prototype successfully demonstrated passive walking behavior, but was only able to sustain motion 
-      for approximately three steps before failing.
-    </p>
-
-    <h3>Observed Issues</h3>
-    <ul>
-      <li>Rapid energy loss due to friction and impact</li>
-      <li>High sensitivity to initial conditions</li>
-      <li>Knee buckling during stance phase</li>
-      <li>Insufficient stability to maintain continuous gait</li>
-    </ul>
 
     <p>
       While the simulation predicted stable motion, real-world effects such as joint compliance, imperfect impacts, 
