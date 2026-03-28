@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Cupholder</title>
+  <title>CF Wheel</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,6 +13,7 @@
   <!-- Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
+  
   <style>
     body, h1, h2, h3, h4 {
       font-family: "Roboto", sans-serif;
@@ -76,12 +77,10 @@
       line-height: 1.5;
     }
 
-    </style>
-    
-    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-
+  </style>
   
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
   
 </head>
@@ -189,188 +188,186 @@
 
 <!-- Spacer for fixed navbar -->
 <div style="margin-top:64px"></div>
-
-<!-- Header -->
+<!-- Header-->
 <section id="header" class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Gimballed Cupholder</h2>
+    <h2>Morphing Matter Structure</h2>
+
     <h3>
-      Created a gimballed cupholder for scooters/bikes on UC Berkeley's bumpy and hilly roads. 
+      Designed, analyzed, and experimentally tested a deformable structure using mechanics of materials and structural testing
     </h3>
 
     <p>
-      This project involved the design and manufacturing of a functional cupholder system.
+      This project focused on designing a structure that could deform in a controlled way while still maintaining structural integrity.
+      The goal was to apply mechanics of materials concepts to a real physical system and validate the design through calculations
+      and experimental testing.
+
+      Rather than being purely theoretical, the project required building a physical prototype, estimating stresses and deformation,
+      calculating safety factors, and comparing experimental behavior to theoretical predictions. The project emphasized the full
+      engineering workflow: design → build → test → analyze.
+
+      <br>Course: Design of Morphing Materials and Mechanisms
+      <br>Project Partners: Tyler Ho, Yuka Iwashita, Ryan Lee
     </p>
 
-    <img src="../images/cupholder2.png" alt="cupholder" style="width:50%; max-width:900px">
+
+    <h2>Full Technical Report</h2>
+
+    <p>
+      The full report includes detailed calculations, derivations, and experimental analysis.
+    </p>
+
+    <a href="../assets/Morphing Matter Final Project Report.pdf"
+       class="w3-button w3-black">
+       View Full Paper
+    </a>
+
+
+    <img src="../images/morphing_structure_main.jpg"
+         alt="Morphing matter structure"
+         style="width:50%; max-width:900px">
   </div>
 </section>
-<section id="design" class="w3-padding-64 w3-light-grey">
+
+
+<!-- Background -->
+<section id="background" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
-  <h2>Design Considerations</h2>
-    <img src="cupholderimages/cupholder_cad.png" alt="Cupholder CAD Model" style="width:50%; max-width:900px">
-      <p>
-        The design prioritized adjustability, usability, and robustness.
-      </p>
 
-      <h3>Adjustability</h3>
-      <ul>
-        <li>Designed to accommodate a range of cup diameters and geometries</li>
-        <li>Incorporated compliant or adjustable features to handle size variation</li>
-        <li>Avoided over-constraining the cup to prevent binding or instability</li>
-      </ul>
+    <h2>Background</h2>
 
-      <h3>Ease of Use</h3>
-      <ul>
-        <li>Single-handed operation for insertion and removal</li>
-        <li>Minimal force required for adjustment</li>
-        <li>Clear and intuitive interaction (no precise alignment required)</li>
-      </ul>
+    <p>
+      Many mechanical systems require structures that are both flexible and strong. Designing a structure that can deform
+      predictably without failing requires an understanding of stress, strain, and load paths. The goal of this project was to
+      design a structure that could undergo controlled deformation while maintaining structural integrity under load.
+    </p>
 
-      <h3>Stability & Retention</h3>
-      <ul>
-        <li>Geometry designed to prevent tipping during motion</li>
-        <li>Maintains secure contact without excessive clamping force</li>
-        <li>Accounts for dynamic loads (e.g., vehicle motion)</li>
-      </ul>
+    <p>
+      Instead of relying only on theory, the structure had to be physically built and tested. This required estimating the loads
+      applied to the structure, calculating expected deformation, and determining whether the structure would fail or remain
+      within a safe operating range.
+    </p>
+
   </div>
-</div>
 </section>
 
-<section id="design" class="w3-padding-64">
+
+<!-- Design -->
+<section id="design" class="w3-padding-64 w3-white">
   <div class="max-width">
-  <h2>Material Selection</h2>
 
-  <p>
-    Material selection was driven by a balance between performance, manufacturability, and cost:
-  </p>
+    <h2>Design</h2>
 
-    <ul>
-      <li>Sufficient stiffness to maintain shape under load</li>
-      <li>Durability under repeated use and cyclic loading</li>
-      <li>Resistance to environmental conditions (temperature, moisture)</li>
-      <li>Compatibility with selected manufacturing process</li>
-    </ul>
+    <p>
+      The structure was designed using mechanics of materials concepts such as bending stress, normal stress, and deformation.
+      The goal was to create a structure that would visibly deform under load but not fail. This required balancing stiffness and
+      flexibility while also ensuring that stress levels remained below material limits.
+    </p>
 
-  <p>Materials Used</p>
-    <ul>
-      <li>Clamp: PLA</li>
-      <li>Outer Ring: 1/2” Aluminum, 1/8” Ball Bearings (quantity: 2)</li>
-      <li>Middle Ring: 1/2” Aluminum, 1/8” Ball Bearings (quantity: 4)</li>
-      <li>Cup Holder: Markforge X7 Nylon, 1/2” long 1/4”-20 bolts (quantity: 3), 1/4”-20 nuts (quantity: 3), washers (quantity: 3)</li>
-    </ul>
-  <p>Manufacturing Methods</p>
-    <ul>
-      <li>Clamp: 3D printed using a Bambu Lab P1S FDM 3D printer</li>
-      <li>Outer Ring: Outer ring and T key feature were water jetted as separate parts. The bearing holes were milled.</li>
-      <li>Middle Ring: Main shape was water jetted. The bearing holes were milled.</li>
-      <li>Cup Holder: 3D printed using the Markforged X7 Carbon Fiber FDM 3D printer</li>
-    </ul>
+    <p>
+      Load cases were estimated based on how the structure would be tested, and stress calculations were performed to determine
+      whether the design would remain within a safe range. Safety factors were calculated to ensure the structure could be tested
+      without risk of catastrophic failure.
+    </p>
 
-  <img src="cupholderimages/material_selection.jpg" alt="material selection" style="width:60%; max-width:900px">
-    
-</div>
+    <img src="../images/morphing_design.jpg"
+         alt="Design of morphing structure"
+         style="width:100%; max-width:900px">
+
+  </div>
 </section>
-<section id="design" class="w3-padding-64 w3-light-grey">
+
+
+<!-- Analysis -->
+<section id="analysis" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
-  <h2>Design for Manufacturing (DFM)</h2>
 
+    <h2>Analysis and Calculations</h2>
 
-      <p>
-        The design was developed to ensure compatibility with common manufacturing processes 
-        while minimizing cost and complexity.
-      </p>
+    <p>
+      Analytical calculations were performed to estimate stress and deformation under load. These calculations included estimating
+      bending stress, normal stress, and expected deflection. Safety factors were then calculated to verify that the structure could
+      safely undergo deformation without permanent damage.
+    </p>
 
-      <ul>
-        <li>Simplified geometry to reduce machining operations</li>
-        <li>Minimized tight tolerances where not functionally required</li>
-        <li>Avoided unnecessary undercuts and complex features</li>
-        <li>Designed for ease of assembly and repeatability</li>
-      </ul>
+    <p>
+      The analytical results were later compared to experimental results in order to validate the design and determine whether the
+      theoretical assumptions were accurate.
+    </p>
 
+    <img src="../images/morphing_calculations.jpg"
+         alt="Stress and deformation calculations"
+         style="width:100%; max-width:900px">
 
-
-
-  <h2>Tolerancing Strategy</h2>
-
-  <p>
-    A critical aspect of the design was defining tolerances that balance functionality, manufacturability, and cost:
-  </p>
-
-    <ul>
-      <li>Loose tolerances applied to non-critical features</li>
-      <li>Tight tolerances reserved for mating and alignment surfaces</li>
-      <li>Stack-up analysis performed to ensure proper fit</li>
-      <li>Consideration of manufacturing variability</li>
-    </ul>
-
-  <img src="cupholderimages/tolerances.jpg" alt="Fits and Tolerances" style="width:60%; max-width:900px">
-
-  <p>
-    This approach reduced manufacturing difficulty while ensuring reliable assembly and performance.
-  </p>
-
-
-
-  <h2>Engineering Drawings</h2>
-
-  <p>
-    GD&amp;T was used to clearly communicate design intent and ensure consistent part quality. Examples:
-  </p>
-  <img src="cupholderimages/clamp.jpg" alt="inner clamp drawing" style="width:70%; max-width:900px">
-  <img src="cupholderimages/clamp2.jpg" alt="outer clamp drawing" style="width:70%; max-width:900px">
-  <img src="cupholderimages/slider1.jpg" alt="female slider drawing" style="width:70%; max-width:900px">
-  <img src="cupholderimages/slider2.jpg" alt="male slider drawing" style="width:70%; max-width:900px">
-</div>
+  </div>
 </section>
 
+
+<!-- Manufacturing and Testing -->
+<section id="manufacturing" class="w3-padding-64 w3-white">
+  <div class="max-width">
+
+    <h2>Manufacturing and Testing</h2>
+
+    <p>
+      After the design was finalized, a physical prototype was built and tested. A testing setup was created to apply loads and
+      measure deformation. The goal was to determine whether the real structure behaved the same way as the analytical predictions.
+    </p>
+
+    <p>
+      Experimental results were compared to theoretical calculations in order to evaluate the accuracy of the model and identify
+      potential sources of error such as material assumptions, boundary conditions, and manufacturing tolerances.
+    </p>
+
+    <img src="../images/morphing_testing.jpg"
+         alt="Testing setup"
+         style="width:100%; max-width:900px">
+
+  </div>
+</section>
 
 
 <!-- Results -->
-<section id="results" class="w3-padding-64 w3-white">
+<section id="results" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
+
     <h2>Results</h2>
 
-    <div style="display: flex; gap: 30px; align-items: center;">
-      
-      <img src="cupholderimages/cupholder.jpg" alt="cupholder" style="width:20%; max-width:900px">
-      <div>
-      <p>
-        The final design successfully met key functional and manufacturing objectives, including secure cup retention, 
-        adaptability to varying cup sizes, and compatibility with standard manufacturing processes. The implementation 
-        of GD&amp;T improved dimensional clarity and ensured consistent assembly performance.
-      </p>
-      
-  
-      <p>
-      The current gimbal cup holder uses three concentric rings connected via ball bearings to maintain orientation despite scooter tilts. 
-      It also has an adjustable mount system that allows for various drink sizes to be secured.</p>
-      <p>What works well: Rotation system allows bearings to be level, clamp holds position well during use, and cup holder accommodates different sized cups. The horizontal and sliding
-      features of the size adjustment work well and the interface between the clamp and the outer ring works mostly as intended.</p>
-      <p>What doesn’t: the vertical slider on the inner ring runs into the middle ring at around a 30° rotation in either direction. </p>
-      <p>Limitations: Material deformation in the 3D printed clamp under load can reduce holding strength over time and precision milling 
-        bearing holes was essential as  tolerances were small</p>
-      
+    <p>
+      The structure successfully demonstrated controlled deformation while maintaining structural integrity. Experimental results
+      were consistent with analytical predictions, confirming that the design approach was valid. The project demonstrated how
+      theoretical mechanics concepts can be applied to a real physical system and validated through testing.
+    </p>
 
-      </div>
-    </div>
+    <p>
+      The project also highlighted the importance of assumptions in engineering calculations and how experimental testing can be
+      used to verify theoretical models.
+    </p>
+
   </div>
 </section>
+
+
+
 
 
 <!-- Skills -->
 <section class="w3-light-grey w3-padding-64">
   <div class="max-width">
+
     <h2>Skills Demonstrated</h2>
+
     <p>
-      Design for Manufacturing (DFM) • Geometric Dimensioning &amp; Tolerancing (GD&amp;T) • Tolerance stack-up analysis • 
-      Product Design • CAD (OnShape) • Machining (manual mill, waterjet) • User-centered design 
+      Structural analysis • Mechanics of materials • Stress and deformation calculations • Safety factor analysis •
+      Experimental design • Mechanical testing • Engineering calculations • Prototype design • Data analysis •
+      Applying theory to real physical systems • Engineering decision making • Technical documentation
     </p>
+
   </div>
 </section>
+  
 
-
-<section id="contact" class="w3-padding-64">
+<section id="contact" class="w3-white w3-padding-64">
   <div class="max-width">
     <h2>Contact</h2>
     <p>Email: jennifersili@berkeley.edu</p>
