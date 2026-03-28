@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cupholder</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-grey.css">
+  
+  
+  <!-- Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+  <style>
+    body, h1, h2, h3, h4 {
+      font-family: "Roboto", sans-serif;
+    }
+    header h1 {
+    font-size: 6rem;  
+    margin-bottom: 0.25rem;
+    }
+    .max-width {
+      max-width: 1000px;
+      margin: auto;
+    }
+    img {
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Hide the nested submenu by default */
+    .parent .submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background: white;
+      min-width: 180px;
+      z-index: 1000;
+    }
+    
+    /* Only show submenu when hovering*/
+    .parent:hover .submenu {
+      display: block;
+    }
+        
+    /* Make parent positioning context */
+    .dropdown {
+      position: relative;
+    }
+    /* Skills section layout */
+    
+    .skills-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    /*.skill-card {
+      background-color: #ffffff;
+      padding: 1.25rem 1.5rem; /* tighter padding */
+      border-radius: 6px;
+    } */
+    .skill-category ul {
+      list-style-type: disc
+      margin: auto;
+    }
+    
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    </style>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  
+
+  
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card">
+
+    <a href="../index.html" class="w3-bar-item w3-button w3-large">
+      <b>Jennifer S. Li</b>
+    </a>
+
+    <!-- Experience Dropdown -->
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button">Work Experience ▾</button>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+        <a href="../experience/astranis.html" class="w3-bar-item w3-button">
+          Astranis – Associate Technical Project Manager
+        </a>
+        <a href="../experience/spacex-hls.html" class="w3-bar-item w3-button">
+          SpaceX - Human Lander System (HLS) Mechanisms Intern
+        </a>
+        <a href="../experience/spacex-mechs.html" class="w3-bar-item w3-button">
+          SpaceX - Starship Mechanisms Intern
+        </a>
+        <a href="../experience/tesla.html" class="w3-bar-item w3-button">
+          Tesla - Stator Manufacturing Design Intern
+        </a>
+        <a href="../experience/chemix.html" class="w3-bar-item w3-button">
+          Chemix - Battery R&D Intern
+        </a>
+        <a href="../experiences/taflab.html" class="w3-bar-item w3-button">
+          TAFLab - Multihulled Unmanned Boat Undergrad Researcher
+        </a>
+        <a href="../experience/nist.html" class="w3-bar-item w3-button">
+          NIST - Additive Manufacturing Laser Powder Bed Fusion Intern
+        </a>
+        <a href="../experience/other.html" class="w3-bar-item w3-button">
+          Other (Misc)
+        </a>
+        
+      </div>
+    </div>
+
+    <!-- Projects Dropdown -->
+
+<div class="w3-dropdown-hover">
+  <button class="w3-button">Projects ▾</button>
+
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+    <div class="parent">
+      <a href="../experience/fsae.html" class="w3-bar-item w3-button">
+        Berkeley Formula Racing ▸
+      </a>
+        <div class="w3-bar-block w3-border submenu">
+          <a href="bfr/seat.html" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
+          <a href="bfr/brakes.html" class="w3-bar-item w3-button">Brakes</a>
+          <a href="bfr/steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
+          <a href="bfr/diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
+          <a href="bfr/pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
+          <a href="bfr/headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
+        </div>
+  
+        <a href="wheel.html" class="w3-bar-item w3-button">
+        Hollow Carbon Fiber Wheel
+        </a>
+         <a href="perry.html" class="w3-bar-item w3-button">
+          Perry the Quadruped Robot
+         </a>
+        <a href="passive-walker.html" class="w3-bar-item w3-button">
+          Passive Walking Robot
+         </a>
+        <a href="cupholder.html" class="w3-bar-item w3-button">
+          Gimballed Cup Holder
+         </a>
+        
+        <a href="uav.html" class="w3-bar-item w3-button">
+          UAV Flight Control
+         </a>
+        <a href="flower.html" class="w3-bar-item w3-button">
+          Morphing Flower Soft-Robot
+         </a>
+        <a href="turtle.html" class="w3-bar-item w3-button">
+          Amphibious Turtle Robot
+         </a>
+        <a href="star.html" class="w3-bar-item w3-button">
+          Stage Separation Mechanism
+         </a>
+        <a href="misc.html" class="w3-bar-item w3-button">
+          Other
+        </a>
+    </div>
+  </div>
+</div>
+
+
+    <a href="../courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
+    <a href="../assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+
+  </div>
+</div>
+
+<!-- Spacer for fixed navbar -->
+<div style="margin-top:64px"></div>
+
+<!-- Header -->
+<section id="header" class="w3-container w3-padding-64">
+  <div class="max-width">
+    <h2>Gimballed Cupholder</h2>
+    <h3>
+      Created a gimballed cupholder for scooters/bikes on UC Berkeley's bumpy and hilly roads. 
+    </h3>
+
+    <p>
+      This project involved the design and manufacturing of a functional cupholder system.
+    </p>
+
+    <img src="../images/cupholder2.png" alt="cupholder" style="width:50%; max-width:900px">
+  </div>
+</section>
+<section id="design" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+  <h2>Design Considerations</h2>
+    <img src="cupholderimages/cupholder_cad.png" alt="Cupholder CAD Model" style="width:50%; max-width:900px">
+      <p>
+        The design prioritized adjustability, usability, and robustness.
+      </p>
+
+      <h3>Adjustability</h3>
+      <ul>
+        <li>Designed to accommodate a range of cup diameters and geometries</li>
+        <li>Incorporated compliant or adjustable features to handle size variation</li>
+        <li>Avoided over-constraining the cup to prevent binding or instability</li>
+      </ul>
+
+      <h3>Ease of Use</h3>
+      <ul>
+        <li>Single-handed operation for insertion and removal</li>
+        <li>Minimal force required for adjustment</li>
+        <li>Clear and intuitive interaction (no precise alignment required)</li>
+      </ul>
+
+      <h3>Stability & Retention</h3>
+      <ul>
+        <li>Geometry designed to prevent tipping during motion</li>
+        <li>Maintains secure contact without excessive clamping force</li>
+        <li>Accounts for dynamic loads (e.g., vehicle motion)</li>
+      </ul>
+  </div>
+</div>
+</section>
+
+<section id="design" class="w3-padding-64">
+  <div class="max-width">
+  <h2>Material Selection</h2>
+
+  <p>
+    Material selection was driven by a balance between performance, manufacturability, and cost:
+  </p>
+
+    <ul>
+      <li>Sufficient stiffness to maintain shape under load</li>
+      <li>Durability under repeated use and cyclic loading</li>
+      <li>Resistance to environmental conditions (temperature, moisture)</li>
+      <li>Compatibility with selected manufacturing process</li>
+    </ul>
+
+  <p>Materials Used</p>
+    <ul>
+      <li>Clamp: PLA</li>
+      <li>Outer Ring: 1/2” Aluminum, 1/8” Ball Bearings (quantity: 2)</li>
+      <li>Middle Ring: 1/2” Aluminum, 1/8” Ball Bearings (quantity: 4)</li>
+      <li>Cup Holder: Markforge X7 Nylon, 1/2” long 1/4”-20 bolts (quantity: 3), 1/4”-20 nuts (quantity: 3), washers (quantity: 3)</li>
+    </ul>
+  <p>Manufacturing Methods</p>
+    <ul>
+      <li>Clamp: 3D printed using a Bambu Lab P1S FDM 3D printer</li>
+      <li>Outer Ring: Outer ring and T key feature were water jetted as separate parts. The bearing holes were milled.</li>
+      <li>Middle Ring: Main shape was water jetted. The bearing holes were milled.</li>
+      <li>Cup Holder: 3D printed using the Markforged X7 Carbon Fiber FDM 3D printer</li>
+    </ul>
+
+  <img src="cupholderimages/material_selection.jpg" alt="material selection" style="width:60%; max-width:900px">
+    
+</div>
+</section>
+<section id="design" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+  <h2>Design for Manufacturing (DFM)</h2>
+
+
+      <p>
+        The design was developed to ensure compatibility with common manufacturing processes 
+        while minimizing cost and complexity.
+      </p>
+
+      <ul>
+        <li>Simplified geometry to reduce machining operations</li>
+        <li>Minimized tight tolerances where not functionally required</li>
+        <li>Avoided unnecessary undercuts and complex features</li>
+        <li>Designed for ease of assembly and repeatability</li>
+      </ul>
+
+
+
+
+  <h2>Tolerancing Strategy</h2>
+
+  <p>
+    A critical aspect of the design was defining tolerances that balance functionality, manufacturability, and cost:
+  </p>
+
+    <ul>
+      <li>Loose tolerances applied to non-critical features</li>
+      <li>Tight tolerances reserved for mating and alignment surfaces</li>
+      <li>Stack-up analysis performed to ensure proper fit</li>
+      <li>Consideration of manufacturing variability</li>
+    </ul>
+
+  <img src="cupholderimages/tolerances.jpg" alt="Fits and Tolerances" style="width:60%; max-width:900px">
+
+  <p>
+    This approach reduced manufacturing difficulty while ensuring reliable assembly and performance.
+  </p>
+
+
+
+  <h2>Engineering Drawings</h2>
+
+  <p>
+    GD&amp;T was used to clearly communicate design intent and ensure consistent part quality. Examples:
+  </p>
+  <img src="cupholderimages/clamp.jpg" alt="inner clamp drawing" style="width:70%; max-width:900px">
+  <img src="cupholderimages/clamp2.jpg" alt="outer clamp drawing" style="width:70%; max-width:900px">
+  <img src="cupholderimages/slider1.jpg" alt="female slider drawing" style="width:70%; max-width:900px">
+  <img src="cupholderimages/slider2.jpg" alt="male slider drawing" style="width:70%; max-width:900px">
+</div>
+</section>
+
+
+
+<!-- Results -->
+<section id="results" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Results</h2>
+
+    <div style="display: flex; gap: 30px; align-items: center;">
+      
+      <img src="cupholderimages/cupholder.jpg" alt="cupholder" style="width:20%; max-width:900px">
+      <div>
+      <p>
+        The final design successfully met key functional and manufacturing objectives, including secure cup retention, 
+        adaptability to varying cup sizes, and compatibility with standard manufacturing processes. The implementation 
+        of GD&amp;T improved dimensional clarity and ensured consistent assembly performance.
+      </p>
+      
+  
+      <p>
+      The current gimbal cup holder uses three concentric rings connected via ball bearings to maintain orientation despite scooter tilts. 
+      It also has an adjustable mount system that allows for various drink sizes to be secured.</p>
+      <p>What works well: Rotation system allows bearings to be level, clamp holds position well during use, and cup holder accommodates different sized cups. The horizontal and sliding
+      features of the size adjustment work well and the interface between the clamp and the outer ring works mostly as intended.</p>
+      <p>What doesn’t: the vertical slider on the inner ring runs into the middle ring at around a 30° rotation in either direction. </p>
+      <p>Limitations: Material deformation in the 3D printed clamp under load can reduce holding strength over time and precision milling 
+        bearing holes was essential as  tolerances were small</p>
+      
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Skills -->
+<section class="w3-light-grey w3-padding-64">
+  <div class="max-width">
+    <h2>Skills Demonstrated</h2>
+    <p>
+      Design for Manufacturing (DFM) • Geometric Dimensioning &amp; Tolerancing (GD&amp;T) • Tolerance stack-up analysis • 
+      Product Design • CAD (OnShape) • Machining (manual mill, waterjet) • User-centered design 
+    </p>
+  </div>
+</section>
+
+
+<section id="contact" class="w3-padding-64">
+  <div class="max-width">
+    <h2>Contact</h2>
+    <p>Email: jennifersili@berkeley.edu</p>
+    <p>LinkedIn: linkedin.com/in/jennifersili</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="w3-container w3-center w3-padding-16 w3-light-grey">
+  <p>Jennifer Si Li | Engineering Portfolio</p>
+</footer>
+
+</body>
+</html>
+        
