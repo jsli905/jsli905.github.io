@@ -217,102 +217,170 @@
 </section>
 
 
-<!-- Background -->
-<section id="background" class="w3-padding-64 w3-light-grey">
-  <div class="max-width">
-
-    <h2>Background</h2>
-
-    <p>
-      The goal of this project was to design a structure that could undergo controlled deformation while maintaining the geometric integrity of real flower petals opening and closing. 
-      Experimental research into achieving organic, fluid blooming motion to the development of thin-formed vacuum-powered artificial muscles.
-    </p>
-
-    <img src="flowerimages/vacuum_muscles.jpg"
-         alt="Vacuum Powered Artificial Muscles"
-         style="width:100%; max-width:900px">
-    <p>
-      This was then implemented into a physical product as a visual alarm, to be used by those who require more than auditory stimulation to wake up. The alarm provides a strobe light stimulus to the user 
-      by opening and closing its petals to mechanically dim and expose LED lights when it recognizes an auditory alarm. 
-    </p>
-    
-  </div>
-</section>
-
-
 <!-- Design -->
-<section id="design" class="w3-padding-64 w3-white">
+<section id="design" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
 
-    <h2>Initial Designs and Testing</h2>
+    <h2>Design</h2>
+    <h3>Flipper Path</h3>
 
-    <div style="display: flex; gap: 30px; align-items: center;">
-      <div>
-      <p>
-        The initial idea for the morphing actuation used two flexible silicone sheets glued together to create a sealed space for air along the blue tape. The silicone was attached to 
-        3D printed petal pieces held together with a compliant backing so that the air would inflate the space between the petal pieces and make the petal bloom.  
-        However, when the silicone was inflated with air, it was too thin to push open the petal (inscreasing pressure meant bursting the silicone). 
-      </p>
-  
-      <p>
-        We made thicker silicone sheets for the next iteration to create a tube for air and had a balloon attached to the petal pieces and the tube. 
-        Upon inflation, the balloon should have expanded and induced rotation between the petal halves, functioning as a soft hinge. The air was able to 
-        flow through the tube to the balloon without expanding the tube, but the balloon inflated in all directions and was not strong enough to push the petal piece. 
-      </p>
+    <h4>Front Flippers</h4>
+    <p>
+      Sea turtles move their front flippers in a three dimensional figure 8 pattern to produce thrust. To maximize efficiency, we mimicked the sea turtle flipper path found in this 
+      <a href="https://www.nature.com/articles/s41598-023-37904-5/figures/1"> paper</a>. </p>
+      <img src="turtleimages/flipperpath.jpg" alt="flipper path" style="width:100%; max-width:900px">
+      <p>We began with several options for achieving the 3D flipper path, mostly combinations of 
+      various planar mechanisms to achieve the 3D path. We prototyped two options. The first option has a single motor drive both front flippers using a complex linkage mechanism with a 4 bar linkage, and two ball joints:</p>
+     <video width="80%" controls=""><source src="turtleimages/FlipperAssem.mp4" type="video/mp4">3D path with single motor actuation</video>
+      
+     <p>The other main option was one that uses three motors and four crank rockers on linear rails to drive both front flippers, which was more robust than the first option.</p> 
+      <div style="display: flex; gap: 30px; align-items: center;">  
+        <img src="turtleimages/turtlesystem2.jpg" alt="option 2"
+               style="width:75%; max-width:900px">
+        <img src="turtleimages/flipper_actuation.jpg" alt="option 2"
+               style="width:25%; max-width:900px">
       </div>
-  
-      <img src="flowerimages/prototype0.jpg" alt="Prototype 1" style="width:20%; max-width:900px">
-    </div>
     
-    <p>As a result, subsequent prototypes focused on understanding how hinge geometry and balloon configuration influence petal motion. 
-      Several variants were constructed to test different hinge angles and balloon attachment strategies. Further prototypes integrated fabric layers to
-      better constrain balloon expansion and shape the resulting motion</p>
-    <img src="flowerimages/prototype1.jpg" alt="Hinge and fabric tests" style="width:80%; max-width:900px">
-    <p>Our final configurations enabled large actuation, but the balloon expanded rapidly and uncontrollably, transitioning quickly from a minimally actuated state 
-      to a fully inflated state. This resulted in a bloated appearance that deviated from the desired petal-like curvature. </p>
-    <img src="flowerimages/prototype1_petals.jpg" alt="Overinflated petals" style="width:80%; max-width:900px">
-    <div style="display: flex; gap: 30px; align-items: center;">
-    <p>Through additional testing, we improved control over balloon expansion, but the inflated petal still exhibited a rounded, bloated appearance rather 
-      than the slender, tapered curvature characteristic of natural petals. The volume of the balloon required to achieve sufficient bending resulted in 
-      outward bulging, producing limited visual differentiation between intermediate and fully actuated states.
-      <br>Due to this mismatch between actuation behavior and the desired aesthetic outcome, we ultimately pivoted away from this design direction. 
+      <p>We learned through these prototypes that we wanted a way to more easily iterate our flipper path, and thus pivoted to a purely motor controlled flipper actuation design, 
+        using servo motors as a serial manipulator. The reduced mechanical components with this option also reduce the room for potential error. In initial iterations of 
+        this design, we used three servo motors for each front flipper for a total of six motors.</p>
+      <p>With this assembly of servos, we were able to deconstruct the 3D points and servo angles of the paper used in their robotic turtle and apply it to our system.
+        We then tried to follow a similar process by inputting the 3D path into Solidworks and mapping our flipper and servo assembly to determine the angles needed to 
+        match the exact path, however we found this to be challenging. We tried finding a mathematical fit for the 3D path using inverse kinematics to determine the joint 
+        angles for each servo for the flipper end tip to match the curve, but in the end, we applied a simple elliptical flipper path. This was done by oscillating 
+        the servos defined with sine and cosine waves, then scaling the waves to achieve our desired major and minor axes of the ellipse.
     </p>
-    <img src="flowerimages/prototype0_final.jpg" alt="inflated petal" style="width:20%; max-width:900px">
-    </div>
-    <p>A second alternative method explored was adding a diamond shape to the center of a sealed bladder to produce L-shaped bending. This technique was also
-      not used because of implementation complications and a bloated, undesirable appearance.</p>
-    <img src="flowerimages/diamond.jpg" alt="diamond" style="width:80%; max-width:900px">
+    <h4>Rear Flippers</h4>
+    <p>While sea turtles use lift-like mechanics in their front flippers, acting like wings while their hind flippers were meant to act like rudders. As this will allow for 
+      a simplified design, steering, and ground movement stability, the robot also used its hind flippers as rudders. In initial iterations of the design, the back flippers 
+      were also controlled with three servo motors each, for a total of six motors.</p>
+    <p>To reduce down our motors, we simplified the front flipper actuation to a two motor serial manipulator and only used a single motor for the rear flipper. This decreased 
+      our servo motor count from 24 motors to 6 motors, reducing weight and load on the grounded motor, increasing efficiency, and reducing electrical losses.
+    </p>
+    <h3>Flipper Geometry</h3>
+
+    <p>
+      We performed calculations to determine the generated thrust from the paper’s flipper path given our rough flipper dimensions. 
+      Our flipper lengths are designed to be anatomically close to real sea turtle proportions given the body needed to house our internal 
+      components while maintaining positive buoyancy. For the thrust calculations, we assume a rectangular flipper with a width of 
+      7.62 cm and a length of 30 cm. The roll, pitch, and yaw coordinates were taken from Geest et al. 2022 [1]. 
+      The pitch, yaw, and roll angles are plotted below.
+    </p>
+
+    <img src="images/flipper_angles.png"
+         alt="Roll, pitch, and yaw angles from Geest et al. 2022"
+         style="width:100%; max-width:900px">
+
+    <p>
+      Calculations of the flippers followed the method described in the paper linked above. The equation below was used to calculate 
+      the total thrust generated by the flipper. The thrust calculation code models the thrust generated by a flipper by first 
+      calculating its trajectory in three-dimensional space, then deriving velocity and acceleration from that path.
+    </p>
+
+    $$
+    \begin{aligned}
+    F_T = m a + \frac{\rho (SA) c_d v^2}{2}
+    \end{aligned}
+    $$
+
+    <p>
+      Here, \( c_d \) is taken as a function of twist angle (pitch), \( \rho \) is the fluid density, \( A \) is the surface area, 
+      and \( v \) is the velocity magnitude. The Euler angles were used to transform a coordinate 
+      \( (0, 0, P) \), representing the tip of a flipper with our flipper length. Numerical derivatives of the transformed coordinates 
+      were then taken to determine the velocity and acceleration of the flipper tip. These values were used together with the 
+      pitch-dependent drag coefficient to calculate the total thrust force.
+    </p>
+
+    <p>
+      The thrust calculation code interpolates the roll, pitch, and yaw angles from the paper onto a common time base. The position 
+      \( (X(t), Y(t), Z(t)) \) is then calculated based on the flipper length and the Euler transformations of the local coordinates 
+      through the roll, pitch, and yaw angles using rotation matrices. The thrust is computed using Newton’s second law together with 
+      the drag force, and the torque generated by this thrust is calculated by multiplying the force by the lever arm length 
+      (half of the rod’s length). This provides insight into the mechanical efficiency and power of the flipper stroke.
+    </p>
+
+    <p>
+      Images of the velocity and acceleration are shown below, followed by the thrust calculated for this flipper path.
+    </p>
+
+    <img src="images/flipper_velocity.png"
+         alt="Velocity of flipper tip"
+         style="width:100%; max-width:900px">
+
+    <img src="images/flipper_thrust.png"
+         alt="Calculated thrust from flipper motion"
+         style="width:100%; max-width:900px">
+
+    <p>
+      The integrated thrust from the above plot is <b>3.05 N</b>. The load on the shaft was determined by multiplying the thrust 
+      force with the center of mass point. It was also observed that the drag force does not significantly affect the load to first order.
+    </p>
+    <p>
+      The top-down profile of both the front flippers was designed to mimic that of sea turtles, while the rear flippers were designed 
+      to behave more like boat rudders. The side profiles were formed from NACA airfoils: NACA 4412 for the front flippers and 
+      NACA 0012 for the rear flippers [3]. The flippers were modeled in SolidWorks and 3D printed from ABS using a Fortus 380MC.
+    </p>
+     <figure>
+      <img src="turtleimages/frontflipper.jpg" alt="Front Flipper CAD" style="width:50%; max-width:900px"
+        <figcaption>Front Flipper CAD</figcaption>
+      <img src="turtleimages/rearflipper.jpg" alt="Rear Flipper CAD" style="width:50%; max-width:900px"
+      <figcaption>Rear Flipper CAD</figcaption>
+     </figure>
+
+
+    <h3>Ballast</h3>
+    <p>The turtle's ability to move up and down in the water was inspired by submarine systems. Foam floats were attached to the turtle to increase the baseline uoyancy.
+      Ballast tanks then act as the primary, controllable weight mechanism to change buoyancy. 
+      The low infill 3d print shell creates natural limber holes. As water enters the bottom of the turtle via limber holes, it pushes air out of the top vents. 
+      This increases the weight of the submarine (negative buoyancy), causing it to sink. The limber holes ensure that air is not trapped under the deck or within 
+      the outer structure, which could cause unwanted positive buoyancy. </p>    
+    <p>For the ballast system, we chose to use the 12V DC geared motor because the force needed to drive the syringes requires a lot of torque. Tolerances and fits were especially important
+      and carefully selected for the ballast system.</p>
+    <div style="display: flex; gap: 30px; align-items: center;">  
+        <img src="turtleimages/ballast.jpg" alt="Ballast"
+               style="width:30%; max-width:900px">
+        <img src="turtleimages/ballastcad.jpg" alt="Ballast CAD"
+               style="width:30%; max-width:900px">
+        <img src="turtleimages/ballastend.jpg" alt="Ballast End CAD"
+               style="width:30%; max-width:900px">
+      </div>
     
-    <h3>Vacuum Designs</h3>
-    <h4>Petal Actuation</h4>
-    <p>We decided that in order to avoid a bloated appearance, we could morph the petal by pulling a vacuum instead of pumping air. When air is removed from a bladder, 
-      the ridge points are vacuumed closer while the spines maintain length but change curvature to curl the flower petal in a blooming motion.
-      Initially, it was assumed that any curved shape could be formed from a flat net if the air was removed from the gaps, as seen below:</p>
-     <img src="flowerimages/net.jpg" alt="net" style="width:40%; max-width:900px">
-    <p> 
-    However, through experimentation, we realized that the nearly parallel surface area was what encouraged actuation by vacuum, 
-      not the small gaps seen in early iterations. Through many iterations of spines and tests of their bending capabilities with a vacuum, 
-      the angular tooth structure was refined into angled ridges spaced out on a thin, bendable strip. 
+
+    <h3>Housing Design</h3>
+    <p>The housing was designed to be rectangular, which would facilitate the mounting of motors and electronics to it. Since we were using PLA as our material for the housing, we chose ¼” thick walls that were 
+      sufficiently durable and prevented water from leaking through the pores of the material. The overall size of the housing matched the printing size of our 3D printer - roughly 10”x10”
+      - to contain the ballast system and all of the wiring.  A 3D printed turtle shell with round surfaces would 
+      surround the housing to improve aerodynamics and assist with buoyancy. In hindsight, the housing could have been made smaller if we had shortened the wires 
+      and placed the breadboards above the ballast. The top of the housing was designed to have a groove for the gasket and bolt holes evenly spaced for even application of pressure.</p>
+    <div style="display: flex; gap: 30px; align-items: center;">  
+        <img src="turtleimages/housing.jpg" alt="Internal Housing"
+               style="width:50%; max-width:900px">
+        <img src="turtleimages/shell.jpg" alt="Shell"
+               style="width:50%; max-width:900px">
+      </div>
+    
+
+    <h3>Waterproofing</h3>
+    <p>All of the wires, breadboards, and microcontrollers were placed within our 3D printed housing. To allow for easy access to the electronics within the housing, 
+      we designed a custom neoprene gasket that was cut on a laser cutter. The gasket would be compressed by a lid via nuts and bolts. The syringes for the ballast 
+      system were mounted through holes on the housing side. We sealed the gap between the syringes and holes with epoxy.</p>
+    <p>The flipper motors are attached to the housing, and would be covered with rubber boots. The servo motors would have also been covered in grease or silicone
+      oil to further protect the components from water, as it is a moving component that can not sit entirely within our housing. </p>
+    <p>>All other components do not need to be waterproofed. Because of this, our outer shell can be printed with a low infill density. 
+      The gaps in the outer shell would act as limber holes to provide water to the ballast system, helping control the turtle buoyancy.
     </p>
-    <img src="flowerimages/spines.jpg" alt="spines" style="width:90%; max-width:900px">
-    <p>In order to get the desired flower-like appearance, the structure was made as thin as possible while still being actuatable. 
-      Without multimodal actuation, the spine needed to spring naturally back into position to be able to open with the vacuum on and close when off.
-      The length also needed to fit within the standard-sized balloons without too much tension when inserted, i.e., without stretching the balloon. 
-      The thickness of the base strip and the height, angle, and spacing of the ridges were varied to program the bending behavior of the structure. 
-      Increasing the height, spacing, and angle relative to the base strip would consistently increase the amount of bending possible with the same amount 
-      of vacuum pressure. Increasing the thickness decreased the amount of bending by vacuum actuation, but the increased stiffness allowed the spine to 
-      return to its original shape more easily. The experimental results were sufficient to conclude that the parallel surface area was the most prominent 
-      factor in determining the amount of bending by vacuum actuation. Thus, by changing the surface areas the vacuum acted on in each segment, the bending 
-      behavior could be easily programmed. </p>
-    <p>Below are the spine iterations and resulting bending with a vacuum pressure of 5 Pa. eight is the length from the base strip to the ridge tips. The vertex angle 
-      is the angle of the ridges from the tip. The thickness is the thickness of the base strip.</p>
-    <div style="display: flex; gap: 30px; align-items: center;">
-      <img src="flowerimages/spinetable1.jpg" alt="table pt 1" style="width:40%; max-width:900px">
-      <img src="flowerimages/spinetable2.jpg" alt="table pt 2" style="width:40%; max-width:900px">
-    </div>
-    <p>In the end, the final assembly used the two petal designs: half of the petals with a height of 0.5 cm would bloom minimally, and the other half with a 
-      height of 1 cm would bloom greatly to better serve the tabletop demonstration aspect of the project.</p>
-    <img src="flowerimages/finalspines.jpg" alt="Final Spines" style="width:100%; max-width:900px">
+    <p>
+    The shells and bodies of sea turtles are streamlined to reduce drag in the water. Given more time, we would have iterated the shell design to optimize aerodynamics to further maximize robot efficiency.
+    </p>
+
+    <h3>Electronics and Software</h3>
+    <p>To control the TurtleBot, we correlated the front and back flipper movements to a joystick. The front flippers move forward in a predetermined path regardless of the direction. 
+      When the joystick is in a forward position, the back flippers lay flat in a neutral angle. When the joystick is pointed right, the right back flipper tilts backward, and when the 
+      joystick is pointed left, the left back flipper tilts backward. The LEDs serve as a visual cue of this behavior: both lights turn on when moving forward, otherwise the red or 
+      yellow LED, located on the left or right side of the joystick respectively, will light up when turning in that direction. 
+
+The ballast DC motor required 12V while the flipper servo motors required 5V. We planned to use our 12V, 10A power supply with a buck converter stepped down to 5V to power our entire robot, however this could not provide enough current, so in the end we added a separate 5V, 4A power supply.
+</p>
       
   </div>
 </section>
@@ -346,6 +414,13 @@
     <p>The software is implemented as a finite-state machine. Two primary states are implemented: a listening state where the microcontroller continuously samples the analog microphone input 
       and a triggered state where the vacuum is activated, the LEDs are turned on, and the microcontroller suspends further audio analysis. 
       The system transitions back to the listening state when a pushbutton is pressed.</p>
+    <div style="display: flex; gap: 30px; align-items: center;">  
+        <img src="turtleimages/circuit1.png" alt="Flipper circuit diagram	"
+               style="width:50%; max-width:900px">
+        <img src="turtleimages/circuit2.png" alt="Ballast circuit diagram"
+               style="width:50%; max-width:900px">
+      </div>
+    
     <p>The system uses a dual-voltage power architecture to safely support both logic-level electronics and higher-power loads. The Arduino and signal-processing components 
       operate at low voltage (5 V), while the pneumatic vacuum and LED system operate from a 12V supply. A common ground is shared between the logic and power domains to ensure 
       proper signal referencing, particularly for MOSFET gate control.</p>
