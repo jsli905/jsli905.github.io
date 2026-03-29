@@ -377,63 +377,26 @@
     <p>To control the TurtleBot, we correlated the front and back flipper movements to a joystick. The front flippers move forward in a predetermined path regardless of the direction. 
       When the joystick is in a forward position, the back flippers lay flat in a neutral angle. When the joystick is pointed right, the right back flipper tilts backward, and when the 
       joystick is pointed left, the left back flipper tilts backward. The LEDs serve as a visual cue of this behavior: both lights turn on when moving forward, otherwise the red or 
-      yellow LED, located on the left or right side of the joystick respectively, will light up when turning in that direction. 
-
-The ballast DC motor required 12V while the flipper servo motors required 5V. We planned to use our 12V, 10A power supply with a buck converter stepped down to 5V to power our entire robot, however this could not provide enough current, so in the end we added a separate 5V, 4A power supply.
-</p>
-      
-  </div>
-</section>
-
-
-<!-- design -->
-<section id="design" class="w3-padding-64 w3-light-grey">
-  <div class="max-width">
-
-    <h2>Final Design and Prototype</h2>
-    <div style="display: flex; gap: 30px; align-items: center;">
-    <video width="20%" controls=""><source src="flowerimages/flower2.mp4" type="video/mp4">Flower</video>
-      <p>
-        The morphing behavior is enabled by pneumatic robotic actuation, where the alarm sound wirelessly triggers the blooming of the flower.
-        The semi-rigid interior petal structures have ridges to create voids and rigid surfaces for vacuum forces to act on when covered by airtight bladders. 
-        The interior petal structure was 3D printed from PLA to be inserted into latex balloon bladders. The stiffness of the PLA allowed the petal spines to 
-        spring back into a closed position when released from the vacuum.
-      </p>
-    </div>
-    <h2>Airflow</h2>
-    <p>Since the spine needed to be printed flat on the print bed, a separate piece larger than the balloon opening was designed to press fit 
-      onto the bottom of the spine to seal the balloon, leaving only a single opening. Heat shrink tubing inserted into the petal openings was used 
-      as small airtight channels connecting to a maniforld that connects to the main vacuum intake tube. The PLA press fits were not airtight, 
-      so a latex sealant was used to fill in gaps to ensure the vacuum was providing adequate actuation forces in the petals. </p>
-     <img src="flowerimages/flower_stem.jpg" alt="Flower Stem Airways" style="width:80%; max-width:900px">
-
-    <p> Holes were also added running through the ridges of the spines to allow for easier air evacuation as the balloons close around the spines.</p>
-    <img src="flowerimages/spine_airholes.jpg" alt="Final Spines with Airholes" style="width:80%; max-width:900px">
-
-   <h2>Electronics and Software</h2>
-    <p>The software is implemented as a finite-state machine. Two primary states are implemented: a listening state where the microcontroller continuously samples the analog microphone input 
-      and a triggered state where the vacuum is activated, the LEDs are turned on, and the microcontroller suspends further audio analysis. 
-      The system transitions back to the listening state when a pushbutton is pressed.</p>
+      yellow LED, located on the left or right side of the joystick respectively, will light up when turning in that direction. </p>
     <div style="display: flex; gap: 30px; align-items: center;">  
         <img src="turtleimages/circuit1.png" alt="Flipper circuit diagram	"
                style="width:50%; max-width:900px">
         <img src="turtleimages/circuit2.png" alt="Ballast circuit diagram"
                style="width:50%; max-width:900px">
       </div>
-    
-    <p>The system uses a dual-voltage power architecture to safely support both logic-level electronics and higher-power loads. The Arduino and signal-processing components 
-      operate at low voltage (5 V), while the pneumatic vacuum and LED system operate from a 12V supply. A common ground is shared between the logic and power domains to ensure 
-      proper signal referencing, particularly for MOSFET gate control.</p>
-    <p>An analog microphone module is connected to the Arduino’s analog input and continuously samples ambient sound. The microphone signal is digitized and processed using a 
-      Fast Fourier Transform (FFT) in real time. This software-based frequency detection provides noise immunity compared to simple amplitude thresholding.
-      Upon detection of an alarm, the array of yellow LED lights (two parallel branches of 3 LEDs in series with a current limiting resistor)
-      and a 12V pneumatic vacuum pump are turned on. The pump and LEDS are switched using a logic-level N-channel MOSFET in a low-side configuration. 
-      A gate resistor limits transient currents, a pull-down resistor ensures the pump 
-      remains off during reset, and a Schottky 1N5822 acts as a flyback diode across the pump to protect the circuit from inductive voltage spikes.
-      Finally, a push button input is connected to allow the user to manually reset the system, returning it to the listening state. 
+    <p>The ballast DC motor required 12V while the flipper servo motors required 5V. We planned to use our 12V, 10A power supply with a buck converter stepped down to 5V to power our entire robot, however this could not provide enough current, so in the end we added a separate 5V, 4A power supply.
     </p>
+    <div style="display: flex; gap: 30px; align-items: center;">  
+        <img src="turtleimages/circuit1.png" alt="Flipper circuit diagram	"
+               style="width:50%; max-width:900px">
+        <img src="turtleimages/circuit2.png" alt="Ballast circuit diagram"
+               style="width:50%; max-width:900px">
+      </div>
+      
   </div>
 </section>
+
+
 
 
 <!-- Results -->
