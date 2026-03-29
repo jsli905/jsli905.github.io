@@ -322,7 +322,8 @@
     </p>
      <figure>
       <img src="turtleimages/frontflipper.jpg" alt="Front Flipper CAD" style="width:50%; max-width:900px"
-        <figcaption>Front Flipper CAD</figcaption>
+        <figcaption>Front Flipper CAD</figcaption></figure>
+    <figure>
       <img src="turtleimages/rearflipper.jpg" alt="Rear Flipper CAD" style="width:50%; max-width:900px"
       <figcaption>Rear Flipper CAD</figcaption>
      </figure>
@@ -378,20 +379,25 @@
       When the joystick is in a forward position, the back flippers lay flat in a neutral angle. When the joystick is pointed right, the right back flipper tilts backward, and when the 
       joystick is pointed left, the left back flipper tilts backward. The LEDs serve as a visual cue of this behavior: both lights turn on when moving forward, otherwise the red or 
       yellow LED, located on the left or right side of the joystick respectively, will light up when turning in that direction. </p>
-    <div style="display: flex; gap: 30px; align-items: center;">  
-        <img src="turtleimages/circuit1.png" alt="Flipper circuit diagram	"
-               style="width:50%; max-width:900px">
-        <img src="turtleimages/circuit2.png" alt="Ballast circuit diagram"
-               style="width:50%; max-width:900px">
+    <div style="display: flex; gap: 0px; align-items: center;">  
+      <figure>
+        <img src="turtleimages/circuit1.png" alt="Flipper circuit diagram	" style="width:50%; max-width:900px">
+      <figcaption>Flipper circuit diagram</figcaption>
+      </figure>
+      <figure>
+        <img src="turtleimages/circuit2.png" alt="Ballast circuit diagram" style="width:50%; max-width:900px"><figcaption>Ballast circuit diagram</figcaption> 
+      </figure>
       </div>
-    <p>The ballast DC motor required 12V while the flipper servo motors required 5V. We planned to use our 12V, 10A power supply with a buck converter stepped down to 5V to power our entire robot, however this could not provide enough current, so in the end we added a separate 5V, 4A power supply.
+    <p>The ballast DC motor required 12V while the flipper servo motors required 5V. We used a 12V, 10A power supply with a buck converter stepped down to 5V to power our entire robot.
     </p>
-    <div style="display: flex; gap: 30px; align-items: center;">  
-        <img src="turtleimages/circuit1.png" alt="Flipper circuit diagram	"
-               style="width:50%; max-width:900px">
-        <img src="turtleimages/circuit2.png" alt="Ballast circuit diagram"
-               style="width:50%; max-width:900px">
-      </div>
+    <div style="display: flex; gap: 0px; align-items: center;">  
+       <figure>
+        <img src="turtleimages/flippercontrol.jpg" alt="flipper control " style="width:50%; max-width:900px"> <figcaption>State transition diagrams of flipper control </figcaption>
+      </figure>
+      <figure>
+        <img src="turtleimages/ballastcontrol.jpg" alt="ballast control " style="width:50%; max-width:900px"> <figcaption>State transition diagrams of the ballast control </figcaption>
+      </figure>
+    </div>
       
   </div>
 </section>
@@ -404,31 +410,10 @@
   <div class="max-width">
 
     <h2>Results</h2>
+        <p>We unfortunately did not have time to print out a turtle shell and did not attach rubber boots to the clippers for waterproofing. Although we did run individual flipper and ballast tests, 
+          tests in the water, we did not test the integrated turtle in water. We also did not have time to integrate the camera fixture for a real time video feed.
+          However, the turtle was tested on land and achieved forward motion with just front flipper movements, and could achieve proper ballast and proper flipper control when suspended in the air.
 
-    <div style="display: flex; gap: 30px; align-items: center;">
-      <video width="20%" controls="">
-        <source src="flowerimages/flower_demo.mp4" type="video/mp4">
-        Alarm Demo
-      </video>
-      <div>
-        <p>The morphing flower alarm is a realization of how pneumatic, vacuum-actuated mechanisms can be visually integrated with bio-inspired elements, 
-          programmable light fixtures, and be full of accessibility potential. The created product can morph in response to an auditory alarm, 
-          combining wireless communication with vacuum actuation for a practical use. With additional time, 
-          the spine’s resting shape could be more inward-curved and have realistic flower-like motions.
-          The current mechanism design could also be easily adjusted to allow for variable bending amounts along the length and in multiple directions to achieve more real or interesting curvatures.
-          Multimodal actuation could be implemented with the current design by mirroring the spine structure and separating the bladders, controlling the vacuuming to bend in either direction.
-          </p>
-        <p> 
-          Advanced multimodal actuation could be achieved by connecting more bladders with structures to bend in at least three independent directions. In this implementation, the air pressure 
-          would act as the connecting string, similar to a cable-driven tentacle. 
-          </p>
-        <p> 
-          Overall, the alarm establishes a foundation for further breakthroughs in multimodal, visual display systems. The vacuum actuation allows more mechanical programmability 
-          in bending behavior, as the surface area in each segment determines its relative curvature based on the vacuum pressure. Likewise, each segment could be designed to bend 
-          to specific degrees, a higher level of control that is more complex to achieve with simple cable-pulling.
-        </p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -442,7 +427,9 @@
 
     <h2>Skills Demonstrated</h2>
 
-    <p>Experimental design • Product Design • Mechanical testing • C Programming • Electronic Circuit Design and Assembly • Design Iterations • Pnuematics
+    <p>
+    Bio-inspired robotics • CAD (SolidWorks) • Multi-DOF mechanism design • Servo motor control • 
+    Structural and thrust analysis • Electronics integration •  Waterproof enclosure design • System-level engineering
     </p>
 
   </div>
