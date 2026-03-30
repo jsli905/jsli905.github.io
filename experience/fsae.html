@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +9,19 @@
   <!-- W3.CSS -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-grey.css">
-
+  
+  
   <!-- Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
+  
   <style>
     body, h1, h2, h3, h4 {
       font-family: "Roboto", sans-serif;
+    }
+    header h1 {
+    font-size: 6rem;  
+    margin-bottom: 0.25rem;
     }
     .max-width {
       max-width: 1000px;
@@ -23,9 +30,60 @@
     img {
       border-radius: 6px;
       margin-top: 12px;
-      margin-bottom: 12px;
     }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Hide the nested submenu by default */
+    .parent .submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background: white;
+      min-width: 180px;
+      z-index: 1000;
+    }
+    
+    /* Only show submenu when hovering*/
+    .parent:hover .submenu {
+      display: block;
+    }
+        
+    /* Make parent positioning context */
+    .dropdown {
+      position: relative;
+    }
+    /* Skills section layout */
+    
+    .skills-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    /*.skill-card {
+      background-color: #ffffff;
+      padding: 1.25rem 1.5rem; /* tighter padding */
+      border-radius: 6px;
+    } */
+    .skill-category ul {
+      list-style-type: disc
+      margin: auto;
+    }
+    
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+
   </style>
+  
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  
 </head>
 
 <body>
@@ -42,26 +100,88 @@
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-button">Work Experience ▾</button>
       <div class="w3-dropdown-content w3-bar-block w3-border">
-        <a href="experience/astranis.html" class="w3-bar-item w3-button">
+        <a href="astranis.html" class="w3-bar-item w3-button">
           Astranis – Associate Technical Project Manager
         </a>
-        <a href="experience/company-a.html" class="w3-bar-item w3-button">
+        <a href="spacex-hls.html" class="w3-bar-item w3-button">
           SpaceX - Human Lander System (HLS) Mechanisms Intern
         </a>
+        <a href="spacex-mechs.html" class="w3-bar-item w3-button">
+          SpaceX - Starship Mechanisms Intern
+        </a>
+        <a href="tesla.html" class="w3-bar-item w3-button">
+          Tesla - Stator Manufacturing Design Intern
+        </a>
+        <a href="chemix.html" class="w3-bar-item w3-button">
+          Chemix - Battery R&D Intern
+        </a>
+        <a href="taflab.html" class="w3-bar-item w3-button">
+          TAFLab - Multihulled Unmanned Boat Undergrad Researcher
+        </a>
+        <a href="nist.html" class="w3-bar-item w3-button">
+          NIST - Additive Manufacturing Laser Powder Bed Fusion Intern
+        </a>
+        <a href="other.html" class="w3-bar-item w3-button">
+          Other (Misc)
+        </a>
+        
       </div>
     </div>
 
     <!-- Projects Dropdown -->
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-button">Projects ▾</button>
-      <div class="w3-dropdown-content w3-bar-block w3-border">
-        <a href="projects/battery-fixtures.html" class="w3-bar-item w3-button">
-          Hollow Carbon Fiber Wheel
-        </a>
-      </div>
-    </div>
 
-    <a href="assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
+<div class="w3-dropdown-hover">
+  <button class="w3-button">Projects ▾</button>
+
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+    <div class="parent">
+      <a href="../experience/fsae.html" class="w3-bar-item w3-button">
+        Berkeley Formula Racing ▸
+      </a>
+        <div class="w3-bar-block w3-border submenu">
+          <a href="../projects/bfr/seat.html" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
+          <a href="../projects/bfr/brakes.html" class="w3-bar-item w3-button">Brakes</a>
+          <a href="../projects/bfr/steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
+          <a href="../projects/bfr/diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
+          <a href="../projects/bfr/pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
+          <a href="../projects/bfr/headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
+        </div>
+  
+        <a href="../projects/wheel.html" class="w3-bar-item w3-button">
+        Hollow Carbon Fiber Wheel
+        </a>
+         <a href="../projects/perry.html" class="w3-bar-item w3-button">
+          Perry the Quadruped Robot
+         </a>
+        <a href="../projects/passive-walker.html" class="w3-bar-item w3-button">
+          Passive Walking Robot
+         </a>
+        <a href="../projects/cupholder.html" class="w3-bar-item w3-button">
+          Gimballed Cup Holder
+         </a>
+        
+        <a href="../projects/uav.html" class="w3-bar-item w3-button">
+          UAV Flight Control
+         </a>
+        <a href="../projects/flower.html" class="w3-bar-item w3-button">
+          Morphing Flower Soft-Robot
+         </a>
+        <a href="../projects/turtle.html" class="w3-bar-item w3-button">
+          Amphibious Turtle Robot
+         </a>
+        <a href="../projects/star.html" class="w3-bar-item w3-button">
+          Stage Separation Mechanism
+         </a>
+        <a href="../projects/misc.html" class="w3-bar-item w3-button">
+          Other
+        </a>
+    </div>
+  </div>
+</div>
+
+
+    <a href="../courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
+    <a href="../assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
 
   </div>
@@ -69,179 +189,311 @@
 
 <!-- Spacer for fixed navbar -->
 <div style="margin-top:64px"></div>
-
-
-<!-- ================= PAGE HEADER ================= -->
-<section class="w3-container w3-padding-64">
+<!-- Header-->
+<section id="header" class="w3-container w3-padding-64">
   <div class="max-width">
-    <h1>Associate Technical Project Manager – Astranis</h1>
-    <p class="w3-large">
-      <b>Dates:</b> Month Year – Month Year<br>
-      <b>Team:</b> Battery Systems / Product Engineering / R&D<br>
-      <b>Focus:</b> Mechanical design, fixtures, thermal systems, validation
-    </p>
+    <h2>Berkeley Formula Racing</h2>
+      <h3>
+        Manufactured a hollow carbon fiber wheel, exploring structural behavior, composite fabrication, and process optimization
+      </h3>
+      <p>
+         
+        We developed a method to manufacture hollow, structural carbon-fiber parts in order to eliminate the need for core materials. 
+        The mold can be reused to manufacture subsequent wheels or this methodology can be reconfigured to produce different parts such as an upright or steering wheel. 
+        The project required designing a manufacturable hollow wheel, developing a layup strategy, designing and manufacturing molds for a hollow component, 
+        and validating the structural integrity of the finished component.
+        Through experimentation with ply stackup sequences, mold manufacturing, and conducting a cure cycle with a new fabric, 
+        we enhanced our understanding of lightweight composite fabrication, reducing material waste while improving structural integrity. 
+
+        <br>Project Partners: Jenson Ho, Jae Won Hwang
+      </p>
+
+      <img src="../images/cf wheel.png" alt="UAV" style="width:50%; max-width:900px">
   </div>
 </section>
 
-<!-- ================= ROLE SUMMARY ================= -->
-<section class="w3-container w3-padding-32 w3-light-grey">
+<section id="Projects" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Role Summary</h2>
+    <h2>Projects</h2>
+    <p> For racing applications, such as Berkeley Formula Racing’s FSAE vehicle, reducing unsprung weight results in improved acceleration and braking performance. 
+      The wheel contributes a significant amount of mass that can be reduced by using composite materials instead. It is important to note that carbon fiber parts 
+      can include core material that is constrained by ply faces for structure, but hollow parts without core are more optimal for our application due to mass reduction 
+      and eliminating risk of core degradation. Hollow carbon fiber components are often difficult to manufacture while maintaining a uniform surface. 
+      Oftentimes, the part has discontinuous and potentially weak split mold seams, rough internal surfaces, or wrinkles, fiber distortions, or epoxy voids. </p>
+    <p>We considered a few other methods before the one described here: One approach involves laying spokes into a female mold with a lightweight foam core, which remains inside the final wheel. 
+      Another method uses a pressurized bladder, commonly made from bagging material, that is also left inside the spokes. 
+      Although these methods produce functional wheels, they have drawbacks—such as added weight and the inability to reuse molds, 
+      making production costly and time-intensive.</p>
+              
+  </div>
+</section>
+
+<section id="design" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Design</h2>
+    <h3>Wheel Redesign</h3>
+  
     <p>
-      High-level description of your role. What were you hired to do?
-      What problems did your team own? What scale were you working at?
+      The previous wheel was a 3-piece Aluminum wheel held together with multiple fasteners, while this project attempts to create a hollowed out 
+      version of the wheel with only 2 pieces: an Aluminum insert and the hollow carbon fiber wheel. The new design incorporates 4 hollowed spokes, 
+      eliminating the aluminum wheel's crossing spokes, while maintaining an overall similar outer geometry to be compatible with existing components.
     </p>
-    <ul>
-      <li>What you owned end-to-end</li>
-      <li>Key interfaces (EE, firmware, manufacturing, test)</li>
-      <li>Decision-making authority</li>
-    </ul>
-  </div>
-</section>
+    <img src="wheelimages/ALvsCF.jpg" alt="Aluminum versus CF wheel design" style="width:100%; max-width:900px">
+  
+    <h3>Aluminum insert design</h3>
 
-<!-- ================= PROBLEM SPACE ================= -->
-<section class="w3-container w3-padding-64">
-  <div class="max-width">
-    <h2>Problem Space</h2>
-    <p>
-      What was broken, missing, or limiting the organization?
-      Why did this problem matter (cost, safety, schedule, scale)?
-    </p>
-    <ul>
-      <li>Existing system limitations</li>
-      <li>Throughput / reliability / safety issues</li>
-      <li>Constraints from facilities or standards</li>
-    </ul>
+    <div style="display: flex; gap: 30px; align-items: center;">
 
-    <!-- Example Image -->
-    <img src="../images/company-a_problem.jpg"
-         alt="Problem context image"
-         style="width:100%; max-width:900px">
-  </div>
-</section>
-
-<!-- ================= REQUIREMENTS & CONSTRAINTS ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
-  <div class="max-width">
-    <h2>Requirements & Constraints</h2>
-    <ul>
-      <li>Performance requirements (loads, temps, tolerances)</li>
-      <li>Safety & compliance (UL, CE, internal standards)</li>
-      <li>Manufacturing constraints</li>
-      <li>Schedule / budget constraints</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= CONCEPT DEVELOPMENT ================= -->
-<section class="w3-container w3-padding-64">
-  <div class="max-width">
-    <h2>Concept Development</h2>
-    <p>
-      Describe how you explored solutions. Include trade studies,
-      early prototypes, or architecture decisions.
-    </p>
-
-    <img src="../images/company-a_concept.jpg"
-         alt="Concept sketches or CAD"
-         style="width:100%; max-width:900px">
-
-    <ul>
-      <li>Alternatives considered</li>
-      <li>Why the final concept was chosen</li>
-      <li>Key risks identified early</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= DETAILED DESIGN ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
-  <div class="max-width">
-    <h2>Detailed Design</h2>
-    <p>
-      Mechanical details you personally designed.
-      Call out materials, tolerances, mechanisms, and interfaces.
-    </p>
-
-    <ul>
-      <li>CAD tools used</li>
-      <li>Material selection rationale</li>
-      <li>Thermal / structural considerations</li>
-    </ul>
-
-    <img src="../images/company-a_cad.jpg"
-         alt="Detailed CAD"
-         style="width:100%; max-width:900px">
-  </div>
-</section>
-
-<!-- ================= ANALYSIS & VALIDATION ================= -->
-<section class="w3-container w3-padding-64">
-  <div class="max-width">
-    <h2>Analysis & Validation</h2>
-    <ul>
-      <li>FEA / hand calcs</li>
-      <li>Thermal modeling</li>
-      <li>Design margin verification</li>
-      <li>Test plans</li>
-    </ul>
-
-    <img src="../images/company-a_testing.jpg"
-         alt="Testing setup"
-         style="width:100%; max-width:900px">
-  </div>
-</section>
-
-<!-- ================= MANUFACTURING & ASSEMBLY ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
-  <div class="max-width">
-    <h2>Manufacturing & Assembly</h2>
-    <p>
-      How was this built? Who built it? What changed between prototype
-      and final versions?
-    </p>
-
-    <ul>
-      <li>Vendors / processes</li>
-      <li>Assembly sequence considerations</li>
-      <li>DFM / DFA changes</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= RESULTS & IMPACT ================= -->
-<section class="w3-container w3-padding-64">
-  <div class="max-width">
-    <h2>Results & Impact</h2>
-    <ul>
-      <li>Quantified improvements (%, $, throughput)</li>
-      <li>Safety improvements</li>
-      <li>Business or engineering outcomes</li>
-    </ul>
+    <img src="wheelimages/insert.jpg" 
+         alt="Aluminum wheel insert CAD"
+         style="width: 25%; max-width: 400px; border-radius: 6px;">
 
     <p>
-      Example: Increased test throughput by <b>3.5×</b> while reducing
-      operator setup time by <b>40%</b>.
+      The wheels need to be fastened using standard lug-nuts, which exert a compressive force on the face of the insert.
+      The material choice was 6061 Aluminum as it’s a lightweight metal with isotropic properties and is better suited for handling compressive loads.
+      A more lightweight material could be used, but as its 2nd moment of area about the rotational axis is fairly small, reducing its weight is not as 
+      critical as the remainder of the wheel. <br>
+      We planned to bond this insert to the carbon fiber wheel with the structural epoxy DP460NS. <br><br>
+      Shown below is the overlap shear test results from the manufacturer’s datasheet using ASTM D 1002-72 Standard
     </p>
+
+</div>
+  
+    <img src="wheelimages/epoxy_datasheet.jpg" alt="DP460NS Data Sheet Properties" style="width:100%; max-width:900px">
+  
+    <p>
+      As shown, the aluminum in an etched condition fails at 4500 PSI whereas a FRP(Fiber Reinforced Polymer) 
+      with IPA-wipe surface preparation fails between 570 and 800 PSI. This indicates that the adhesive is most 
+      likely to fail adhesively to the Carbon Fiber. With a conservative diameter of 3.2 inches, a torque load-case 
+      of 1636.8 in-lbf, and a total glue-bond area of about 8.67 in^2, we can calculate the theoretical stress applied to the bond. 
+    </p>
+    $$
+    \begin{aligned}
+    F_{applied} &= \frac{Torque}{Reaction\ Arm\ Radius}
+    = \frac{1636.8\ in\!-\!lbf}{1.6\ in}
+    = 1023\ lbf  \\[10pt]
+    \end{aligned}
+    \begin{aligned}
+    \sigma_{glue\ bond\ area} &= \frac{F_{applied}}{Effective\ Area}
+    = \frac{1023\ lbf}{8.67\ in^2}
+    = 118\ psi \\[10pt]
+    \end{aligned}
+    
+    $$
+  <p>Utilizing the minimum FRP strength values, the factor of safety was calculated</p>
+    $$
+    \begin{aligned}
+    FOS &= \frac{Material\ Strength}{Expected\ Stress}
+    = \frac{570\ psi}{118\ psi}
+    = 4.83
+    \end{aligned}
+    $$
+    <p>This is driven mostly by the large glue-bond area and reaction arm radius. </p>
+    <p>A similar calculation using the above equations was conducted for the lateral case of 325 lbf where a vehicle may be cornering. </p>
+    $$
+    \begin{aligned}
+    \sigma_{applied} &= \frac{325\ lbf}{8.67\ in^2} = 37.5\ psi \\[10pt]
+    
+    FOS &= \frac{570\ psi}{37.5\ psi} = 15.2
+    \end{aligned}
+    $$
+  
+    <h3>Mold Design </h3>
+  
+    <p>
+      Hollow part molds must be carefully planned out to account for mold draft angle, mold rigidity, alignment, and other design for manufacturing properties. 
+      The SolidWorks draft analysis tool was set to 3° in order to determine the parting line and ensure the part will come out of the mold once cured. 
+      The wheel tapers in at the spokes, so the mold would part in the vertical direction. <br>
+
+      In terms of material, our criteria required that it be reasonable to either additively or subtractively manufacture, be machined precisely, 
+      be rated for high temperature to prevent warping, and be sturdy such that the part cannot deform on its own while setting. We had Coastal 
+      Enterprises Low Temp Precision Board (PBLT-4) from a previous project that satisfied the criteria and was designed for tooling. 
+      These high density urethane boards came in a variety of densities and thicknesses, so we chose PBLT-4, which was 4 lbs/cubic foot and 
+      chose pieces that were 4” tall for ease of transport and that would fit under the shopbot tool head. This also meant that the mold files 
+      were sliced to 3-4” tall sections to accommodate the tool height limit. For realignment, dowel holes were made to hold the mold together 
+      during reassembly and the layup process. Mold design was iterated throughout the mold manufacturing process to accommodate Shopbot limitations. <br>
+        
+      Below is the mold CAD model consisting of the Inboard (green) and Outboard (yellow) mold plug
+
+    </p>
+    <img src="wheelimages/moldcad.jpg" alt="mold CAD" style="width:100%; max-width:900px">
+    
+  
+</div>
+
+</section>
+<section id="manufacturing" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Manufacturing</h2>
+    <h3>Mold Manufacturing</h3>
+    <h4>Foam Tooling</h4>
+    <p>
+      The Foam tooling was made with the aforementioned PBLT-4 foam and the Shopbot CNC router in the Jacob’s Hall makerspace. 
+      Computer Aided Machining (CAM) to generate the G-Code required for machining was done through Autodesk Fusion 360, 
+      which allowed us to simulate different toolpaths and to implement strategies for reducing machining time. <br>
+      Below is a screenshot of the CAM Simulation that showcases minimal material removal to reduce machining time
+    </p>
+    <img src="wheelimages/wheelCAM.jpg" alt="Wheel Mold CAM" style="width:100%; max-width:900px">
+
+    <h4>3D Printing</h4>
+    <div style="display: flex; gap: 30px; align-items: center;">
+    <p>
+      To verify that the foam mold matched the original CAD file, a FDM 3D printed model of the outboard plug 
+      was printed out of polycarbonate filament, in the off chance that we would need to use the print as the mold instead.
+      To test the warpage and whether the print would behave irregularly under the heat, we left the print in the oven for 
+      3 hours at 200°F, which would be roughly the temperature conditions of the bake. 
+    </p>
+
+    <img src="wheelimages/plug.jpg" 
+         alt="PC 3D inboard plug print"
+         style="width: 25%; max-width: 400px; border-radius: 6px;">
+    </div>
+
+    <h4>Mold Preparation</h4>
+    <div style="display: flex; gap: 30px; align-items: center;">
+    <p>
+      To stack and glue the machined parts of the plug, wood glue was used and the part was aligned with 12” long bolts from home depot 
+      and weight added on top while setting. Although wood glue usually acts as a gap filler, there were still seam lines that would show through in the final part, so 3M Glazing Putty was used to fill any 
+      gaps or irregularities. The putty dried hard and was sanded to match the mold surface with 180, 220, then 360 grit sandpaper per the product specification.
+    </p>
+
+    <img src="wheelimages/moldgluing.jpg" 
+         alt="Plug mold gluing"
+         style="width: 25%; max-width: 400px; border-radius: 6px;">
+    </div>
+    <img src="wheelimages/seamfilling.jpg" alt="Gap filling seam line" class="center-image" style="width:100%; max-width:900px">
+
+    <p>The mold was sanded until there were no more tooling traces or irregularities and until the fitment of the plugs had a uniform seam with as 
+      little gap as possible, since this finished surface would be visible on the part. After cleaning off the remaining debris, the part was sprayed
+      with Duratec Polyester Surfacing Primer which is supposed to eliminate the porosity of the foam and is designed to stick to polyurethane foam.
+      Following the specification, the primer is sprayed with a pressure of 35-40 psi and allowed to tack before adding another layer. The primer was left 
+      to set for at least 8 hours before sanded from 220 grit to a surface finish. </p>
+    <p>
+      After two layers of surface primer and two rounds of sanding, the goal was to normalize the mold surface roughness until all porosity is visibly gone 
+      and even. For mold release, we wiped on 3 layers of Airtech Safelease 30, allowing for 30 minutes in between coats as per the datasheet. 
+      As an extra measure, RW4 Spray Wax Release Agent from Easy Composites was sprayed on as the last mold release application step. </p>
+
+    <h3>Material</h3>
+    <p>To capture the wheel’s intricate geometry, the wheel was produced with Axiom-5420-22CK, an epoxy prepreg. Based on the material specification, 
+      the matrix consists of toughened, high temperature, flame retardant epoxy and the fiber is a 3K Carbon/Kevlar hybrid on a 2x2 twill-weave 
+      that is high impact resistance and has a fabric weight of 190 gsm. Epoxy prepreg is more rigid during the pre-processing step due to the matrix 
+      being frozen into the fibers, so cutting out templates will make the layup process cleaner and reduce potential manufacturing error. 
+      With a flexible cure temperature given by the manufacturer’s spreadsheets, we utilized a cure-temp of 200F to reduce the required cure-time 
+      while still maintaining within the temperature range of our mold materials. However, there is no cure-time published by the manufacturer of the 
+      prepreg for a 200F cure-temp. Therefore, we utilized the logarithmic relationship between reaction-rate and temperature from the Arrhenius 
+      equation to generate a best-fit line and estimate our own cure-time for a 200F cure-temp as shown below </p>
+    <img src="wheelimages/cure_time_graph.jpg" alt="Correlating cure-time and cure-temperature" style="width:80%; max-width:900px">
+    <p>With a high R^2 score of 0.993, we can be confident in our line of best-fit. We utilize this equation of the best-fit line to calculate the cure-time. </p>
+    <div style="display: flex; gap: 30px; align-items: center;">
+      $$
+      \begin{aligned}
+      \ln(Cure\ Temp) &= -0.0569 \cdot \ln(Time) + 6.44 \\[12pt]
+      
+      \ln(Time) &= \frac{\ln(Cure\ Temp) - 6.44}{-0.0569}
+      \end{aligned}
+      $$
+      <img src="wheelimages/cure_time_calcs.jpg" alt="Cure Time Calculations" style="width:40%; max-width:900px">
+    </div>
+    
+    <h3>Ply Stackup and Orientation</h3>
+    <div style="display: flex; gap: 30px; align-items: center;">
+      <p>The stackup was sequenced to account for the wheel’s variable thickness while also using a symmetrical and balanced layup, as it allows for
+        more predictable stress distribution and stiffness properties. This allows us to utilize Quasi-Isotropic Balanced and Symmetric (QIBS) 
+        assumptions for calculating part-strength if materials testing of sample coupons were to be conducted in the future. Since one of the 
+        main goals was to preserve longitudinal stiffness, 0° plies are the innermost and outermost layers for axial stiffness, intended to handle 
+        forces along the direction of rotation and keep the wheel rigid under compression and tension. The 45° plies resist shear forces during 
+        acceleration, braking, cornering, and provide torsional stiffness.The 90° plies improve resistance against impacts, distributing radial 
+        loads evenly across the structure. Despite the wheel being variable thickness, maintaining symmetrical plies will reduce warping and bending. 
+        The photo on the right shows a 3D printed plug filling the insert slot, after deciding that it would be more advantageous to have a surface rather 
+        than a through hole for the insert.</p>
+      <img src="wheelimages/wheel_parts_diagram.png" alt="Wheel parts diagram" style="width:50%; max-width:900px">
+    </div>
+    <p>We had a cured 2 ply sample of the Axiom-5420 and it measured to 1 mm. We used this to determine the plies needed. To make sure each component has 
+      the required plies, we needed a strategy to cover the entire wheel at once, essentially one pass through that covers all the surfaces. 
+      The maximum of these full wheel sweepthroughs is 7 since we are limited by the thickness of the spokes. However, a repeating layup with the same seam 
+      lines would be extremely failure prone since all the discontinuities would be concentrated in one area.<br> 
+      Thus, we devised a layup sequence with 2 full wheel operations 
+      that cover the wheel from bead to bead. Operation 1 covers the wheel circumferentially while Operation 2 covers the wheel axially. This creates a 
+      cross ply structure which is stronger and each operation will cover the previous seamlines. Each operation was broken up into specific templates 
+      that could be followed. The contrasting operations are sketched out below</p>
+    <img src="wheelimages/layup_ops.jpg" alt="Layup operations and corresponding components" style="width:100%; max-width:900px">
+    <p>Operation 1 has three components:
+      <br>Box: The hollowed recesses of the spokes, includes outboard bead material.
+      <br>Rectangular patch: The outer walls of the spokes, includes outboard bead material.
+      <br>Barrel: The strip that wraps around the wheel, includes inboard bead material.</p>
+      
+    <p>Operation 2 has two components:
+      <br>Vertical box: The hollowed recesses of the spokes extended to include outboard & inboard bead material.
+      <br>Vertical rectangle: The outer walls of the spokes extended to include outboard & inboard bead material.
+      </p>
+
+      <p>Since there would be many relief cuts and seam lines during the process, making templates were essential 
+        to streamline material preparation and make sure all the areas were covered as planned. We explored the SolidWorks flattening feature, 
+        however, the template was ultimately laid on top of the mold and fitted by hand. During this process, 
+        extra material was also added for overlap. </p>
+      <h3>Layup and Cure</h3>
+      <div style="display: flex; gap: 30px; align-items: center;">
+        <img src="wheelimages/prepreg_prep.jpg" alt="Prepreg cutting" style="width:25%; max-width:900px">
+        <p>As per the datasheet, the prepreg was taken out 4-6 hours before cutting to stabilize to room temperature. Using the templates, all the pieces were cut out and 
+          labeled while the mold was being prepped. <br><br>
+          To formulate the most optimal manufacturing sequence, we split the layup procedure into two phases according to our mold design. 
+          The first phase involves wrapping strips of the fabric concentrically to fill the insert ring space on the inboard plug before then
+          stacking the outboard plug to constrain the ring. We alternated strips of 0, 45, and 90 degrees as the ring was being formed. This ensures the seam 
+          line is continuous all the way around as the radius grows once more material is added. 
+        </p>
+      </div>
+      <div style="display: flex; gap: 30px; align-items: center;">
+        <img src="wheelimages/layup.jpg" alt="Layup Process" style="width:25%; max-width:900px">
+        <p>We fit the aluminum insert into the mold cavity when joining the mold plugs together. After that, rods and weight were placed on top of the 
+          joined mold to keep the part compressed and aligned. We followed the sequence and began laying the first layers, attempting to match the fibers 
+          at the seam line. As a note, there is a little excess fabric on the top edge of the barrel piece intended to fold over onto the hollow spoke area. </p>
+      </div>
+    <p>Once all the plies have been applied and sufficiently flattened, perforated release film is added in a similar manner, attempting to conform to the 
+      mold geometry. The perforation is to allow epoxy to seep into the breather, overwise the part would be oversaturated and brittle. The part was wrapped 
+      in breather material, which acts as a buffer medium for the vacuum to pull through even when there is vacuum compression. The part was vacuum bagged
+      with lots of excess bag to account for the hollow cavities. The final vacuumed part then went into the hot box and vacuum was pulled. Full vacuum was defined at 29.92 inHg.
+    </p>
+    <img src="wheelimages/vacuum.jpg" alt="vacuumed part and vacuum reading" style="width:100%; max-width:900px">
+  </section>
+<section id="design" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Results</h2>
+    <p>The CFRP Wheel weighed 575 grams and the aluminum insert weighed 126 grams, resulting in a combined weight of 701 grams.
+      This was a 3.5X mass reduction from the 2483 gram weight of the original aluminum wheel assembly</p>
+    <p> The process taught us the challenges of maintaining surface uniformity and ensuring durability without a core material. While this wheel is not yet at the standard 
+      for performance testing, the process provided valuable insights into composite fabrication and structural design. 
+      The bead requires further development to improve durability and performance in order to be pressure bearing, and the insert needs a redesign to 
+      ensure better integration and load distribution. Before performance testing, we can utilize Instron testing equipment to check tensile and 
+      compression properties, conduct deformation experiments, and cut the wheel to inspect the part more closely and verify part thickness. 
+      However, the ply stackup sequence and mold manufacturing steps were useful learning experiences, offering a deeper understanding of material behavior, 
+      structural optimization, and process refinement.</p>
   </div>
 </section>
 
-<!-- ================= LESSONS LEARNED ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
+<section class="w3-light-grey w3-padding-64">
+   <div class="max-width">
+    <!-- Skills -->
+      <h2>Skills Demonstrated</h2>
+      <p>Composite structures • Laminate design and planning • Reusable mold design • CNC Router • CAM • Analysis (Stress and factor-of-safety calcs, Load path analysis, DFM, Strength vs. weight optimization) • 
+        Failure modes (delamination, fiber fracture) •  Design optimization • CAD (SolidWorks) • Experimental validation • Engineering tradeoff analysis
+      </p>
+    </div>
+  </section>
+  
+
+<section id="contact" class="w3-white w3-padding-64">
   <div class="max-width">
-    <h2>Lessons Learned</h2>
-    <ul>
-      <li>What you would do differently</li>
-      <li>What surprised you</li>
-      <li>Skills or judgment you developed</li>
-    </ul>
+    <h2>Contact</h2>
+    <p>Email: jennifersili@berkeley.edu</p>
+    <p>LinkedIn: linkedin.com/in/jennifersili</p>
   </div>
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer class="w3-container w3-center w3-padding-16">
-  <p>© Your Name | Mechanical & Product Design Engineer</p>
+<footer class="w3-container w3-center w3-padding-16 w3-light-grey">
+  <p>Jennifer Si Li | Engineering Portfolio</p>
 </footer>
 
 </body>
 </html>
+        
