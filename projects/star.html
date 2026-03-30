@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Stage Separation</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-grey.css">
+  
+  
+  <!-- Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+  <style>
+    body, h1, h2, h3, h4 {
+      font-family: "Roboto", sans-serif;
+    }
+    header h1 {
+    font-size: 6rem;  
+    margin-bottom: 0.25rem;
+    }
+    .max-width {
+      max-width: 1000px;
+      margin: auto;
+    }
+    img {
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Hide the nested submenu by default */
+    .parent .submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background: white;
+      min-width: 180px;
+      z-index: 1000;
+    }
+    
+    /* Only show submenu when hovering*/
+    .parent:hover .submenu {
+      display: block;
+    }
+        
+    /* Make parent positioning context */
+    .dropdown {
+      position: relative;
+    }
+    /* Skills section layout */
+    
+    .skills-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    /*.skill-card {
+      background-color: #ffffff;
+      padding: 1.25rem 1.5rem; /* tighter padding */
+      border-radius: 6px;
+    } */
+    .skill-category ul {
+      list-style-type: disc
+      margin: auto;
+    }
+    
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+
+  </style>
+
+  
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card">
+
+    <a href="../index.html" class="w3-bar-item w3-button w3-large">
+      <b>Jennifer S. Li</b>
+    </a>
+
+    <!-- Experience Dropdown -->
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button">Work Experience ▾</button>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+        <a href="../experience/astranis.html" class="w3-bar-item w3-button">
+          Astranis – Associate Technical Project Manager
+        </a>
+        <a href="../experience/spacex-hls.html" class="w3-bar-item w3-button">
+          SpaceX - Human Lander System (HLS) Mechanisms Intern
+        </a>
+        <a href="../experience/spacex-mechs.html" class="w3-bar-item w3-button">
+          SpaceX - Starship Mechanisms Intern
+        </a>
+        <a href="../experience/tesla.html" class="w3-bar-item w3-button">
+          Tesla - Stator Manufacturing Design Intern
+        </a>
+        <a href="../experience/chemix.html" class="w3-bar-item w3-button">
+          Chemix - Battery R&D Intern
+        </a>
+        <a href="../experiences/taflab.html" class="w3-bar-item w3-button">
+          TAFLab - Multihulled Unmanned Boat Undergrad Researcher
+        </a>
+        <a href="../experience/nist.html" class="w3-bar-item w3-button">
+          NIST - Additive Manufacturing Laser Powder Bed Fusion Intern
+        </a>
+        <a href="../experience/other.html" class="w3-bar-item w3-button">
+          Other (Misc)
+        </a>
+        
+      </div>
+    </div>
+
+    <!-- Projects Dropdown -->
+
+<div class="w3-dropdown-hover">
+  <button class="w3-button">Projects ▾</button>
+
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+    <div class="parent">
+      <a href="../experience/fsae.html" class="w3-bar-item w3-button">
+        Berkeley Formula Racing ▸
+      </a>
+        <div class="w3-bar-block w3-border submenu">
+          <a href="bfr/seat.html" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
+          <a href="bfr/brakes.html" class="w3-bar-item w3-button">Brakes</a>
+          <a href="bfr/steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
+          <a href="bfr/diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
+          <a href="bfr/pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
+          <a href="bfr/headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
+        </div>
+  
+        <a href="wheel.html" class="w3-bar-item w3-button">
+        Hollow Carbon Fiber Wheel
+        </a>
+         <a href="perry.html" class="w3-bar-item w3-button">
+          Perry the Quadruped Robot
+         </a>
+        <a href="passive-walker.html" class="w3-bar-item w3-button">
+          Passive Walking Robot
+         </a>
+        <a href="cupholder.html" class="w3-bar-item w3-button">
+          Gimballed Cup Holder
+         </a>
+        
+        <a href="uav.html" class="w3-bar-item w3-button">
+          UAV Flight Control
+         </a>
+        <a href="flower.html" class="w3-bar-item w3-button">
+          Morphing Flower Soft-Robot
+         </a>
+        <a href="turtle.html" class="w3-bar-item w3-button">
+          Amphibious Turtle Robot
+         </a>
+        <a href="star.html" class="w3-bar-item w3-button">
+          Stage Separation Mechanism
+         </a>
+        <a href="misc.html" class="w3-bar-item w3-button">
+          Other
+        </a>
+    </div>
+  </div>
+</div>
+
+
+    <a href="../courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
+    <a href="../assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+
+  </div>
+</div>
+
+<!-- Spacer for fixed navbar -->
+<div style="margin-top:64px"></div>
+<!-- Header-->
+<section id="header" class="w3-container w3-padding-64">
+  <div class="max-width">
+    <h2>Stage Separation Mechanism</h2>
+      <h3>
+        Worked on design for a stage separation mechanism in a test rocket.
+      </h3>
+    <p>STAR’s Stage Separation rocket (SSEP) is a proof of concept project testing a two stage airframe design and a spring-actuated separation mechanism that is released upon the 
+      detonation of explosive bolts (pyro bolts). Stage separation technology makes rockets more efficient by ejecting dead weight.
+</p>
+      <img src="../images/ssep_rocket.jpg" alt="ssep test rocket" style="width:100%; max-width:900px">
+      
+  </div>
+</section>
+
+<section id="mechanism" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Separation Mechanism</h2>
+  
+    <p>The mechanism holding the two stages together consist of two aluminum rings, each of which are epoxied into their respective stages. 
+      "Pyro bolts" and two igniters slot through the lower stage ring and screw into threads in the upper ring. 
+      Pyro bolts were ⅜” nylon bolts with a hole lathed through their center axis that is filled with black powder and a pyrotechnic e-match, and then sealed with JB-Weld’s 15-minute Plastic Bonding epoxy.
+      These bolts hold the rings and thus hold the stages together while compressing three springs to exactly 0.5 inches, mediated by 0.5 inch standoffs. 
+      Upon a signal from Altus Metrum Easymega altimeters, the bolts detonate, allowing the springs to separate the stages.
+</p>
+    <img src="../images/ssep.jpg" alt="ssep CAD" style="width:100%; max-width:900px">
+  </div>
+
+</section>
+<section id="calcs" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Testing and Calculations</h2>
+    <p>Prior to any testing of the pyro bolts, calculations were done to determine the amount of black powder required to break the bolts.  
+      These used the tensile strength and the shear strength of the lathed bolts to determine that 0.33g of black powder was necessary to break each bolt:
+    </p>
+    <img src="../images/ssep_calcs.jpg" alt="ssep calculation" style="width:100%; max-width:900px">
+    <p>Our testing began as single bolt tests to determine and validate the type of epoxy, diameter size, and amount of black powder used. We eneded up selecting a bolt 
+      design with a 3/16’’ diameter hole 1.25 inches deep, which allowed us to put our igniters side by side in the bottom of the 
+      bolt. Though we initially found scoring, which reduces the tensile strength of the bolt, to be unnecessary, we still scored the outside of the bolts at their center 
+      point to weaken the structure, encouraging a failure in the more desirable location. We then tested the 3 bolts together in a prototype mechanism, with one empty tube 
+      containing the upper ring and another containing the lower ring. There were no documented failures across several full separation tests.</p>
+  </div>
+  </section>
+  
+<section class="w3-white w3-padding-64">
+   <div class="max-width">
+    <!-- Skills -->
+      <h2>Skills Demonstrated</h2>
+      <p>
+        Mechanism design • CAD (Solidworks) • Structural and failure analysis • Experimental testing </p>
+    </div>
+  </section>
+  
+
+<section id="contact" class="w3-light-grey w3-padding-64">
+  <div class="max-width">
+    <h2>Contact</h2>
+    <p>Email: jennifersili@berkeley.edu</p>
+    <p>LinkedIn: linkedin.com/in/jennifersili</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="w3-container w3-center w3-padding-16 w3-white">
+  <p>Jennifer Si Li | Engineering Portfolio</p>
+</footer>
+
+</body>
+</html>
+        
