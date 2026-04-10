@@ -232,28 +232,33 @@
 <section id="design" class="w3-padding-64 w3-white">
     <div class="max-width">
 
-    <h2>Design and Ergonomics</h2>
+    <h2>Seat Design</h2>
 
     <h3>Driver Positioning and Ergonomics</h3>
 
     <p>
-      The seat geometry was derived from driver body measurements and validated using a custom-built ergonomics jig. 
-      I developed an adjustable three-panel jig that allowed rapid iteration of seat geometry by varying back angle, 
-      leg support, and hip positioning within the constraints of the cockpit.
+       
+      The seat geometry was derived from taking driver body measurements and using a custom-built ergonomics jig to determine prefered seat angles of the drivers. 
+      I also received direct driver feedback from the previous B19 seat design to guide the design. 
+      I also read literature on seat ergonomics and lumbar support, but driver preferences to priority over literature. I developed an adjustable three-panel jig that allowed rapid iteration of seat geometry by varying back angle, 
+      leg support, and hip positioning within the constraints of the cockpit to determine preferred body angle placements for the drivers. Driver positioning was optimized based on cockpit constraints such as firewall angle and available space, which limited 
+      how reclined the seat could be.
+      The seat was designed to be optimized for the comfort of the B22's main drivers, but also be compatible for drivers at least within the 5th percentile female to
+      95th percentile male range (our seat was camptible for drivers beyong the higher end due to one of our drivers being especially tall).
+      
     </p>
 
     <p>
-      Driver positioning was optimized based on cockpit constraints such as firewall angle and available space, which limited 
-      how reclined the seat could be. Multiple drivers were evaluated to ensure compatibility across different body types.
+       A plywood prototype was also made to receive additional feedback from drivers.
     </p>
 
     <p>
-      Iterations were guided by direct driver feedback from previous seat designs. Key improvements included:
+      The final design included changed such as:
       <br>• Increased upper body side support for lateral stability
       <br>• Improved leg support for comfort under braking
       <br>• Reduced shoulder constraints that interfered with steering input
       <br>• Adjusted lumbar support for a more natural driving posture
-      <br>• Improved integration with mounting hardware
+
     </p>
 
     <img src="../images/ergo_jig.jpg" alt="Ergonomics jig" style="width:100%; max-width:900px">
@@ -285,11 +290,19 @@
       male mold for ease of manufacturing and removal, exposed side of seat is the prettier side, and to save on mold material. Designed for easy mold removal with reusable molds:
       Pry bar holes Decided on xyz
       jsalkfds
+      Initially designed the mold to be made from foam. Decided to 3D print mold because the foam we have on hand isn’t a common material in industry for machine shops and will wreck machines that aren’t set up for this foam. Filament is also
+      a lot cheaper than foam material, and we had a 3D printing sponsor. However, due to issues we had with the 3d printed mold, we switched to using foam molds the year after.
 
     </p>
       <p>Mold CAD partner: Michelle Chow</p>
     <img src="wheelimages/moldcad.jpg" alt="mold CAD" style="width:100%; max-width:900px">
-    
+
+      <h3>Seat Mounts</h3>
+
+      <p>
+      Tab design. Seat tab jigging. T-hat design.
+
+      </p>
 
   </div>
 </section>
@@ -305,12 +318,7 @@
     <h4>3D Printing</h4>
     <div style="display: flex; gap: 30px; align-items: center;">
     <p>
-      To verify that the foam mold matched the original CAD file, a FDM 3D printed model of the outboard plug 
-      was printed out of polycarbonate filament, in the off chance that we would need to use the print as the mold instead.
-      To test the warpage and whether the print would behave irregularly under the heat, we left the print in the oven for 
-      3 hours at 200°F, which would be roughly the temperature conditions of the bake. 
-    </p>
-
+      
     <img src="wheelimages/plug.jpg" 
          alt="PC 3D inboard plug print"
          style="width: 25%; max-width: 400px; border-radius: 6px;">
@@ -340,28 +348,6 @@
       and even. For mold release, we wiped on 3 layers of Airtech Safelease 30, allowing for 30 minutes in between coats as per the datasheet. 
       As an extra measure, RW4 Spray Wax Release Agent from Easy Composites was sprayed on as the last mold release application step. </p>
 
-    <h3>Material</h3>
-    <p>To capture the wheel’s intricate geometry, the wheel was produced with Axiom-5420-22CK, an epoxy prepreg. Based on the material specification, 
-      the matrix consists of toughened, high temperature, flame retardant epoxy and the fiber is a 3K Carbon/Kevlar hybrid on a 2x2 twill-weave 
-      that is high impact resistance and has a fabric weight of 190 gsm. Epoxy prepreg is more rigid during the pre-processing step due to the matrix 
-      being frozen into the fibers, so cutting out templates will make the layup process cleaner and reduce potential manufacturing error. 
-      With a flexible cure temperature given by the manufacturer’s spreadsheets, we utilized a cure-temp of 200F to reduce the required cure-time 
-      while still maintaining within the temperature range of our mold materials. However, there is no cure-time published by the manufacturer of the 
-      prepreg for a 200F cure-temp. Therefore, we utilized the logarithmic relationship between reaction-rate and temperature from the Arrhenius 
-      equation to generate a best-fit line and estimate our own cure-time for a 200F cure-temp as shown below </p>
-    <img src="wheelimages/cure_time_graph.jpg" alt="Correlating cure-time and cure-temperature" style="width:80%; max-width:900px">
-    <p>With a high R^2 score of 0.993, we can be confident in our line of best-fit. We utilize this equation of the best-fit line to calculate the cure-time. </p>
-    <div style="display: flex; gap: 30px; align-items: center;">
-      $$
-      \begin{aligned}
-      \ln(Cure\ Temp) &= -0.0569 \cdot \ln(Time) + 6.44 \\[12pt]
-      
-      \ln(Time) &= \frac{\ln(Cure\ Temp) - 6.44}{-0.0569}
-      \end{aligned}
-      $$
-      <img src="wheelimages/cure_time_calcs.jpg" alt="Cure Time Calculations" style="width:40%; max-width:900px">
-    </div>
-    
     <h3>Ply Stackup and Orientation</h3>
     <div style="display: flex; gap: 30px; align-items: center;">
       <p>The stackup was sequenced to account for the wheel’s variable thickness while also using a symmetrical and balanced layup, as it allows for
