@@ -134,7 +134,7 @@
 
   <div class="w3-dropdown-content w3-bar-block w3-border">
     <div class="parent">
-      <a href="../experience/fsae.html" class="w3-bar-item w3-button">
+      <a href="../../experience/fsae.html" class="w3-bar-item w3-button">
         Berkeley Formula Racing ▸
       </a>
         <div class="w3-bar-block w3-border submenu">
@@ -193,21 +193,19 @@
   <div class="max-width">
     <h2>Ergonomic Carbon Fiber Seat</h2>
       <h3>
-        Designed and manufactured a carbon fiber seat
-      </h3>
-      <p>
-         
-        We developed a method to manufacture hollow, structural carbon-fiber parts in order to eliminate the need for core materials. 
-        The mold can be reused to manufacture subsequent wheels or this methodology can be reconfigured to produce different parts such as an upright or steering wheel. 
-        The project required designing a manufacturable hollow wheel, developing a layup strategy, designing and manufacturing molds for a hollow component, 
-        and validating the structural integrity of the finished component.
-        Through experimentation with ply stackup sequences, mold manufacturing, and conducting a cure cycle with a new fabric, 
-        we enhanced our understanding of lightweight composite fabrication, reducing material waste while improving structural integrity. 
+       Designed and manufactured a safe, ergonomic, and easily manufacturable carbon fiber seat for a Formula SAE racecar
+    </h3>
 
-        
+    <p>
+      I led the design and development of a carbon fiber driver seat to improve driver comfort, safety, and integration with the chassis for B22 and onwards. 
+      
+      This project involved the full development cycle: defining driver ergonomics, designing a manufacturable composite seat, 
+      developing reusable mold tooling, and executing the layup and curing process. The focus was on developing a structurally sound, 
+      lightweight seat that meets safety requirements while ensuring driver comfort for long driving sessions. Another focus was ensuring the seat could be 
+      reliably manufactured repeatedly throughout the years with a reusable mold.
       </p>
 
-      <img src="../images/cf wheel.png" alt="UAV" style="width:50%; max-width:900px">
+      <img src="images/cf wheel.png" alt="UAV" style="width:50%; max-width:900px">
   </div>
 </section>
 
@@ -216,90 +214,81 @@
       
 
       <h2>Background</h2>
-    <p> For racing applications, such as Berkeley Formula Racing’s FSAE vehicle, reducing unsprung weight results in improved acceleration and braking performance. 
-      The wheel contributes a significant amount of mass that can be reduced by using composite materials instead. It is important to note that carbon fiber parts 
-      can include core material that is constrained by ply faces for structure, but hollow parts without core are more optimal for our application due to mass reduction 
-      and eliminating risk of core degradation. Hollow carbon fiber components are often difficult to manufacture while maintaining a uniform surface. 
-      Oftentimes, the part has discontinuous and potentially weak split mold seams, rough internal surfaces, or wrinkles, fiber distortions, or epoxy voids. </p>
-    <p>We considered a few other methods before the one described here: One approach involves laying spokes into a female mold with a lightweight foam core, which remains inside the final wheel. 
-      Another method uses a pressurized bladder, commonly made from bagging material, that is also left inside the spokes. 
-      Although these methods produce functional wheels, they have drawbacks—such as added weight and the inability to reuse molds, 
-      making production costly and time-intensive.</p>
-              
+
+      <p>
+        In Formula SAE, the driver seat plays a critical role in both safety and performance. The seat must securely support the drivers under 
+        dynamic loads such as braking, cornering, and acceleration, while maintaining comfort and minimizing fatigue over extended driving sessions. 
+        Seat positioning affects the driver’s center of gravity, which affects vehicle handling, load transfer, and stability.
+        Additionally, the seat must integrate precisely with the vehicle’s chassis geometry and mounting points, while complying with competition 
+        safety regulations. 
+      </p>
+  
+      <p>
+        The team had designed and prototyped a carbon fiber seat for B19, but the prototype receieved negative feedback due to poor 
+        ergonomics and lack of stiffness. The prototype also improperly fit within the B22 cockpit. Due to lack of knowledge transfer 
+        over COVID-19, prior design rationale, research, and documentation was unavailable, requiring the project to be redeveloped from ground up.
+      </p>
+               
   </div>
 </section>
 
 <section id="design" class="w3-padding-64 w3-white">
-  <div class="max-width">
-    <h2>Design</h2>
-    <h3>Wheel Redesign</h3>
-  
-    <p>
-      The previous wheel was a 3-piece Aluminum wheel held together with multiple fasteners, while this project attempts to create a hollowed out 
-      version of the wheel with only 2 pieces: an Aluminum insert and the hollow carbon fiber wheel. The new design incorporates 4 hollowed spokes, 
-      eliminating the aluminum wheel's crossing spokes, while maintaining an overall similar outer geometry to be compatible with existing components.
-    </p>
-    <img src="wheelimages/ALvsCF.jpg" alt="Aluminum versus CF wheel design" style="width:100%; max-width:900px">
-  
-    <h3>Aluminum insert design</h3>
+    <div class="max-width">
 
-    <div style="display: flex; gap: 30px; align-items: center;">
+    <h2>Design and Ergonomics</h2>
 
-    <img src="wheelimages/insert.jpg" 
-         alt="Aluminum wheel insert CAD"
-         style="width: 25%; max-width: 400px; border-radius: 6px;">
+    <h3>Driver Positioning and Ergonomics</h3>
 
     <p>
-      The wheels need to be fastened using standard lug-nuts, which exert a compressive force on the face of the insert.
-      The material choice was 6061 Aluminum as it’s a lightweight metal with isotropic properties and is better suited for handling compressive loads.
-      A more lightweight material could be used, but as its 2nd moment of area about the rotational axis is fairly small, reducing its weight is not as 
-      critical as the remainder of the wheel. <br>
-      We planned to bond this insert to the carbon fiber wheel with the structural epoxy DP460NS. <br><br>
-      Shown below is the overlap shear test results from the manufacturer’s datasheet using ASTM D 1002-72 Standard
+      The seat geometry was derived from driver body measurements and validated using a custom-built ergonomics jig. 
+      I developed an adjustable three-panel jig that allowed rapid iteration of seat geometry by varying back angle, 
+      leg support, and hip positioning within the constraints of the cockpit.
     </p>
 
-</div>
-  
-    <img src="wheelimages/epoxy_datasheet.jpg" alt="DP460NS Data Sheet Properties" style="width:100%; max-width:900px">
-  
     <p>
-      As shown, the aluminum in an etched condition fails at 4500 PSI whereas a FRP(Fiber Reinforced Polymer) 
-      with IPA-wipe surface preparation fails between 570 and 800 PSI. This indicates that the adhesive is most 
-      likely to fail adhesively to the Carbon Fiber. With a conservative diameter of 3.2 inches, a torque load-case 
-      of 1636.8 in-lbf, and a total glue-bond area of about 8.67 in^2, we can calculate the theoretical stress applied to the bond. 
+      Driver positioning was optimized based on cockpit constraints such as firewall angle and available space, which limited 
+      how reclined the seat could be. Multiple drivers were evaluated to ensure compatibility across different body types.
     </p>
-    $$
-    \begin{aligned}
-    F_{applied} &= \frac{Torque}{Reaction\ Arm\ Radius}
-    = \frac{1636.8\ in\!-\!lbf}{1.6\ in}
-    = 1023\ lbf  \\[10pt]
-    \end{aligned}
-    \begin{aligned}
-    \sigma_{glue\ bond\ area} &= \frac{F_{applied}}{Effective\ Area}
-    = \frac{1023\ lbf}{8.67\ in^2}
-    = 118\ psi \\[10pt]
-    \end{aligned}
-    
-    $$
-  <p>Utilizing the minimum FRP strength values, the factor of safety was calculated</p>
-    $$
-    \begin{aligned}
-    FOS &= \frac{Material\ Strength}{Expected\ Stress}
-    = \frac{570\ psi}{118\ psi}
-    = 4.83
-    \end{aligned}
-    $$
-    <p>This is driven mostly by the large glue-bond area and reaction arm radius. </p>
-    <p>A similar calculation using the above equations was conducted for the lateral case of 325 lbf where a vehicle may be cornering. </p>
-    $$
-    \begin{aligned}
-    \sigma_{applied} &= \frac{325\ lbf}{8.67\ in^2} = 37.5\ psi \\[10pt]
-    
-    FOS &= \frac{570\ psi}{37.5\ psi} = 15.2
-    \end{aligned}
-    $$
-  
-    <h3>Mold Design </h3>
+
+    <p>
+      Iterations were guided by direct driver feedback from previous seat designs. Key improvements included:
+      <br>• Increased upper body side support for lateral stability
+      <br>• Improved leg support for comfort under braking
+      <br>• Reduced shoulder constraints that interfered with steering input
+      <br>• Adjusted lumbar support for a more natural driving posture
+      <br>• Improved integration with mounting hardware
+    </p>
+
+    <img src="../images/ergo_jig.jpg" alt="Ergonomics jig" style="width:100%; max-width:900px">
+
+
+    <h3>Structural Design and Layup</h3>
+
+    <p>
+      The seat was designed as a composite sandwich structure to balance stiffness, strength, and weight. 
+      A 6-ply carbon fiber laminate was selected with a Rohacell foam core to increase bending stiffness without significantly increasing mass.
+    </p>
+
+    <p>
+      Preliminary structural validation was performed using SolidWorks FEA. A conservative carbon fiber modulus was used due to the absence 
+      of manufacturer data, while Rohacell core properties were taken from datasheets. Under a 2G cornering load with a 170 lb driver, 
+      the design achieved a factor of safety of approximately 20 against yield.
+    </p>
+
+    <p>
+      The analysis highlighted the importance of material characterization, and future work would include coupon testing or more advanced 
+      composite simulation tools such as ANSYS Composite PrepPost to refine material properties and improve prediction accuracy.
+    </p>
+
+    <img src="../images/seat_fea.jpg" alt="Seat FEA results" style="width:100%; max-width:900px">
+
+  </div>
+</section>
+
+<section id="design" class="w3-padding-64 w3-white">
+    <div class="max-width">
+
+    <h2>Mold Design</h2>
     <p>Project Partner: Michelle Chow</p>
     <p>
       Hollow part molds must be carefully planned out to account for mold draft angle, mold rigidity, alignment, and other design for manufacturing properties. 
