@@ -237,31 +237,44 @@
     <h3>Driver Positioning and Ergonomics</h3>
 
     <p>
-       
-      The seat geometry was derived from taking driver body measurements and using a custom-built ergonomics jig to determine prefered seat angles of the drivers. 
-      I also received direct driver feedback from the previous B19 seat design to guide the design. 
-      I also read literature on seat ergonomics and lumbar support, but driver preferences to priority over literature. I developed an adjustable three-panel jig that allowed rapid iteration of seat geometry by varying back angle, 
-      leg support, and hip positioning within the constraints of the cockpit to determine preferred body angle placements for the drivers. Driver positioning was optimized based on cockpit constraints such as firewall angle and available space, which limited 
-      how reclined the seat could be.
-      The seat was designed to be optimized for the comfort of the B22's main drivers, but also be compatible for drivers at least within the 5th percentile female to
-      95th percentile male range (our seat was camptible for drivers beyong the higher end due to one of our drivers being especially tall).
-      
+      The seat geometry was developed using driver body measurements and a custom-built ergonomics jig to determine the drivers' preferred seat positions. 
+      I incorporated direct feedback from the previous B19 seat design and reviewed literature on seat ergonomics and lumbar support, 
+      though driver preference and feedback was prioritized over literature in designs.
+    
+      I designed an adjustable three-panel ergonomics jig that allowed us to change the angles of the back, leg support, and hip positioning within cockpit constraints.
+      These included the firewall position/angle and available cockpit space, which limited how reclined the seat could be. The jig with the selected angles was modeled in CAD.
+    </p>
+      <img src="../images/ergo_jig.jpg" alt="Ergonomics jig" style="width:100%; max-width:900px">
+    
+    <p>
+      The final seating position was optimized for the primary B22 drivers while maintaining compatibility across the 5th percentile female to 95th percentile male range 
+      (and accommodating for our tallest driver who was beyond the 95% percentile).
+      Using the driver body measurements results, I created articulated CAD models of driver torsos + hip/upper leg segments, as well as a model of the 5th percentile female 
+      and 95th percentile male. Each model consisted of segmented torso and hip sections with coincident centers, allowing them to be positioned 
+      and bent like a human.
+    
+      I then bent and placed these models into the ergo jig CAD. These models were then placed into the chassis CAD model for proper positioning.
+      I designed the seat by following the resulting body contours and taking into account suggestions from drivers and literature. The final design included a flange around the seat, harness pass-throughs, and mounting “t-hat” holes for proper chassis integration.
+      During the design process, FSAE rules were taken into account, notably:
+      Clear Path: Harness straps must be free to move and cannot rub on seat openings or structural members (this included researching and purchasing a rules compliant harness).
+      No Interference: Seat design must not interfere with the harness routing to ensure the Frontal Head Restraint (FHR/HANS) operates correctly.  
     </p>
 
     <p>
-       A plywood prototype was also made to receive additional feedback from drivers.
+       A plywood prototype was made to receive additional feedback from drivers.
     </p>
 
+      <img src="../images/seat prototype.jpg" alt="Seat Prototype" style="width:100%; max-width:900px">
     <p>
       The final design included changes such as:
-      <br>• Increased upper body side support for lateral stability
+      <br>• Increased upper body side support underneath arms for lateral stability
       <br>• Improved leg support for comfort under braking
       <br>• Reduced shoulder constraints that interfered with steering input
       <br>• Adjusted lumbar support for a more natural driving posture
 
     </p>
 
-    <img src="../images/ergo_jig.jpg" alt="Ergonomics jig" style="width:100%; max-width:900px">
+    <img src="../images/seat_cad.jpg" alt="Seat CAD" style="width:100%; max-width:900px">
 
 
     <h3>Structural Design and Layup</h3>
@@ -284,7 +297,7 @@
 
     <img src="../images/seat_fea.jpg" alt="Seat FEA results" style="width:100%; max-width:900px">
 
-      <h3>Mold Design</h3>
+     <h3>Mold Design</h3>
     
     <p>
       male mold for ease of manufacturing and removal, exposed side of seat has the nicer finish, and to save on mold material.
@@ -309,6 +322,13 @@
 
       <p>
       Tab design. Seat tab jigging. T-hat design.
+
+        rules:
+              Spacers and Tabs: If a harness tab design causes rubbing or mismatch, a small spacer should be used to provide sufficient axial clearance.
+        Mounting Hardware: The hardware used to attach the harness to the chassis must not make contact with the driver.
+Bolted connections in the Primary Structure must use a removable bolt and nut Bonded fasteners and blind nuts and bolts do not meet this requirement 
+Threaded fasteners used in Primary Structure are Critical Fasteners
+Bolted connections in the Primary Structure using tabs or brackets must have an edge distance ratio “e/D” of 1.5 or higher 
 
       </p>
 
