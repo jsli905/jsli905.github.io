@@ -303,27 +303,24 @@
     <h3>Structural Design and Layup</h3>
 
     <p>
-      The seat was designed as a composite sandwich structure to balance stiffness, strength, and weight. 
-      A 6-ply carbon fiber laminate was selected with a Rohacell foam core to increase bending stiffness without significantly increasing mass.
+      The seat was designed as 6-ply carbon fiber laminate with a Rohacell foam core (to increase bending stiffness without significantly increasing mass).
     </p>
 
     <p>
-      Preliminary structural validation was performed using SolidWorks FEA on the B19 seat design. This was due to needing to 
-      determine seat thickness before finalizing the new seat design and due to the more simplified model.
-      Under a 2G cornering load with a 170 lb driver, the design achieved a FOS of approximately 20 against yield with 6-ply carbon fiber with Rohacell RIMA 051 core.
+      Preliminary structural validation was performed using SolidWorks FEA on the B19 seat design. The choice to run simulations on the B19 seat was because I was still 
+      finalizing the new seat design and the B19 seat allowed for a more simplified simulation.
+      Under a 2G cornering load with a 170 lb driver, the design achieved a FOS of approximately 20 against yield with 6-ply carbon fiber with Rohacell RIMA 051 core. Rohacell was chosen 
+      over Nomex aramid honeycomb and no core at all as it due to the complex curvature of the seat and potential for bending.
       A conservative carbon fiber modulus was used due to the absence of manufacturer data, while Rohacell core properties were taken from datasheets. 
-      6-ply carbon fiber was chosen despite the extremeley high FOS as drivers expressed concern about the stiffness of the 4-ply B19 seat, saying that it felt "flimsy."
+      6-ply carbon fiber was chosen despite the extremely high FOS as drivers expressed concern about the stiffness of the 4-ply B19 seat, saying that it felt "flimsy."
     </p>
+    <img src="../images/seat_fea.jpg" alt="Seat FEA results" style="width:100%; max-width:900px">
 
     <p>
-      Looking back, we should have done coupon testing to determine the carbon fiber young’s modulus  OR 
-Use ANSYS for sandwich calc:
-Import material properties from ANSYS Composite Preppost
-or more advanced 
-      composite simulation tools such as ANSYS Composite PrepPost to refine material properties and improve prediction accuracy.
+      Looking back, we should have done coupon testing to determine the carbon fiber young’s modulus and used ANSYS Composite Preppost for sandwich calc to refine material properties and improve prediction accuracy.
     </p>
 
-    <img src="../images/seat_fea.jpg" alt="Seat FEA results" style="width:100%; max-width:900px">
+    
 
      <h3>Mold Design</h3>
     
