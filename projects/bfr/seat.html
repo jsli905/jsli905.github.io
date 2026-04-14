@@ -319,8 +319,39 @@
     <p>
       Looking back, we should have done coupon testing to determine the carbon fiber young’s modulus and used ANSYS Composite Preppost for sandwich calc to refine material properties and improve prediction accuracy.
     </p>
+      <h3>Mounting Design</h3>
 
-    
+        <p>
+          The seat mounting system was designed to securely attach the composite seat to the chassis while maintaining driver comfort, 
+          structural integrity, and compliance with FSAE safety regulations. The seat interfaces with welded tabs on the chassis, requiring 
+          careful coordination between composite design, hardware integration, and chassis geometry.
+        </p>
+        
+        <p>
+          Aluminum “T-hat” inserts were bonded directly to the carbon fiber seat to provide a better load path between the composite structure 
+          and the mounting hardware. These inserts were designed to distribute loads effectively while minimizing local stress concentrations 
+          in the laminate. To improve driver comfort and packaging, the mounting hardware was designed to sit as flush as possible with the seat surface. 
+          This was achieved using counterbored features and button head screws.
+        </p>
+        
+        <p>
+          The button head fasteners interface with floating anchor nuts located on the back side of the chassis seat tabs, allowing for 
+          easier assembly and accommodating minor misalignment during installation. New seat tabs were designed and welded onto the chassis 
+          to match the updated seat geometry, with key constraints driven by FSAE safety rules such as edge distance-to-diameter (e/D) requirements.
+        </p>
+        
+        <p>
+          The upper seat tabs were additionally designed to constrain both the seat and the heat shield, integrating multiple subsystems 
+          into a single mounting solution. Hand calculations were performed to validate the structural integrity of the mounting interfaces 
+          under expected loading conditions.
+        </p>
+        
+        <p>
+          To ensure accurate placement of the mounting tabs, dedicated welding jigs were designed using 80/20 extrusion and precision angle blocks. 
+          These jigs constrained the tab locations during welding, achieving tolerances of approximately ±0.003 inches and ensuring proper alignment 
+          between the seat and chassis.
+        </p>
+  
 
     <h3>Mold Design</h3>
       <p> Mold CAD partner: Michelle Chow </p>
@@ -415,113 +446,25 @@ However, due to issues we had with the 3d printed mold that will be described in
   <div class="max-width">
     <h2>Manufacturing</h2>
     <p>Manufacturing Partner: Michelle Chow</p>
-    <h3>Mold Manufacturing</h3>
-
-    <h4>3D Printing</h4>
-    <div style="display: flex; gap: 30px; align-items: center;">
-    <p>
-      
-    <img src="wheelimages/plug.jpg" 
-         alt="PC 3D inboard plug print"
-         style="width: 25%; max-width: 400px; border-radius: 6px;">
-    </div>
-
-    <h4>Mold Preparation</h4>
-    <div style="display: flex; gap: 30px; align-items: center;">
-    <p>
-      To stack and glue the machined parts of the plug, wood glue was used and the part was aligned with 12” long bolts from home depot 
-      and weight added on top while setting. Although wood glue usually acts as a gap filler, there were still seam lines that would show through in the final part, so 3M Glazing Putty was used to fill any 
-      gaps or irregularities. The putty dried hard and was sanded to match the mold surface with 180, 220, then 360 grit sandpaper per the product specification.
-    </p>
-
-    <img src="wheelimages/moldgluing.jpg" 
-         alt="Plug mold gluing"
-         style="width: 25%; max-width: 400px; border-radius: 6px;">
-    </div>
-    <img src="wheelimages/seamfilling.jpg" alt="Gap filling seam line" class="center-image" style="width:100%; max-width:900px">
-
-    <p>The mold was sanded until there were no more tooling traces or irregularities and until the fitment of the plugs had a uniform seam with as 
-      little gap as possible, since this finished surface would be visible on the part. After cleaning off the remaining debris, the part was sprayed
-      with Duratec Polyester Surfacing Primer which is supposed to eliminate the porosity of the foam and is designed to stick to polyurethane foam.
-      Following the specification, the primer is sprayed with a pressure of 35-40 psi and allowed to tack before adding another layer. The primer was left 
-      to set for at least 8 hours before sanded from 220 grit to a surface finish. </p>
-    <p>
-      After two layers of surface primer and two rounds of sanding, the goal was to normalize the mold surface roughness until all porosity is visibly gone 
-      and even. For mold release, we wiped on 3 layers of Airtech Safelease 30, allowing for 30 minutes in between coats as per the datasheet. 
-      As an extra measure, RW4 Spray Wax Release Agent from Easy Composites was sprayed on as the last mold release application step. </p>
-
-    <h3>Ply Stackup and Orientation</h3>
-    <div style="display: flex; gap: 30px; align-items: center;">
-      <p>The stackup was sequenced to account for the wheel’s variable thickness while also using a symmetrical and balanced layup, as it allows for
-        more predictable stress distribution and stiffness properties. This allows us to utilize Quasi-Isotropic Balanced and Symmetric (QIBS) 
-        assumptions for calculating part-strength if materials testing of sample coupons were to be conducted in the future. Since one of the 
-        main goals was to preserve longitudinal stiffness, 0° plies are the innermost and outermost layers for axial stiffness, intended to handle 
-        forces along the direction of rotation and keep the wheel rigid under compression and tension. The 45° plies resist shear forces during 
-        acceleration, braking, cornering, and provide torsional stiffness.The 90° plies improve resistance against impacts, distributing radial 
-        loads evenly across the structure. Despite the wheel being variable thickness, maintaining symmetrical plies will reduce warping and bending. 
-        The photo on the right shows a 3D printed plug filling the insert slot, after deciding that it would be more advantageous to have a surface rather 
-        than a through hole for the insert.</p>
-      <img src="wheelimages/wheel_parts_diagram.png" alt="Wheel parts diagram" style="width:50%; max-width:900px">
-    </div>
-    <p>We had a cured 2 ply sample of the Axiom-5420 and it measured to 1 mm. We used this to determine the plies needed. To make sure each component has 
-      the required plies, we needed a strategy to cover the entire wheel at once, essentially one pass through that covers all the surfaces. 
-      The maximum of these full wheel sweepthroughs is 7 since we are limited by the thickness of the spokes. However, a repeating layup with the same seam 
-      lines would be extremely failure prone since all the discontinuities would be concentrated in one area.<br> 
-      Thus, we devised a layup sequence with 2 full wheel operations 
-      that cover the wheel from bead to bead. Operation 1 covers the wheel circumferentially while Operation 2 covers the wheel axially. This creates a 
-      cross ply structure which is stronger and each operation will cover the previous seamlines. Each operation was broken up into specific templates 
-      that could be followed. The contrasting operations are sketched out below</p>
-    <img src="wheelimages/layup_ops.jpg" alt="Layup operations and corresponding components" style="width:100%; max-width:900px">
-    <p>Operation 1 has three components:
-      <br>Box: The hollowed recesses of the spokes, includes outboard bead material.
-      <br>Rectangular patch: The outer walls of the spokes, includes outboard bead material.
-      <br>Barrel: The strip that wraps around the wheel, includes inboard bead material.</p>
-      
-    <p>Operation 2 has two components:
-      <br>Vertical box: The hollowed recesses of the spokes extended to include outboard & inboard bead material.
-      <br>Vertical rectangle: The outer walls of the spokes extended to include outboard & inboard bead material.
-      </p>
-
-      <p>Since there would be many relief cuts and seam lines during the process, making templates were essential 
-        to streamline material preparation and make sure all the areas were covered as planned. We explored the SolidWorks flattening feature, 
-        however, the template was ultimately laid on top of the mold and fitted by hand. During this process, 
-        extra material was also added for overlap. </p>
-      <h3>Layup and Cure</h3>
-      <div style="display: flex; gap: 30px; align-items: center;">
-        <img src="wheelimages/prepreg_prep.jpg" alt="Prepreg cutting" style="width:25%; max-width:900px">
-        <p>As per the datasheet, the prepreg was taken out 4-6 hours before cutting to stabilize to room temperature. Using the templates, all the pieces were cut out and 
-          labeled while the mold was being prepped. <br><br>
-          To formulate the most optimal manufacturing sequence, we split the layup procedure into two phases according to our mold design. 
-          The first phase involves wrapping strips of the fabric concentrically to fill the insert ring space on the inboard plug before then
-          stacking the outboard plug to constrain the ring. We alternated strips of 0, 45, and 90 degrees as the ring was being formed. This ensures the seam 
-          line is continuous all the way around as the radius grows once more material is added. 
-        </p>
-      </div>
-      <div style="display: flex; gap: 30px; align-items: center;">
-        <img src="wheelimages/layup.jpg" alt="Layup Process" style="width:25%; max-width:900px">
-        <p>We fit the aluminum insert into the mold cavity when joining the mold plugs together. After that, rods and weight were placed on top of the 
-          joined mold to keep the part compressed and aligned. We followed the sequence and began laying the first layers, attempting to match the fibers 
-          at the seam line. As a note, there is a little excess fabric on the top edge of the barrel piece intended to fold over onto the hollow spoke area. </p>
-      </div>
-    <p>Once all the plies have been applied and sufficiently flattened, perforated release film is added in a similar manner, attempting to conform to the 
-      mold geometry. The perforation is to allow epoxy to seep into the breather, overwise the part would be oversaturated and brittle. The part was wrapped 
-      in breather material, which acts as a buffer medium for the vacuum to pull through even when there is vacuum compression. The part was vacuum bagged
-      with lots of excess bag to account for the hollow cavities. The final vacuumed part then went into the hot box and vacuum was pulled. Full vacuum was defined at 29.92 inHg.
-    </p>
-    <img src="wheelimages/vacuum.jpg" alt="vacuumed part and vacuum reading" style="width:100%; max-width:900px">
-  </section>
-<section id="design" class="w3-padding-64 w3-white">
-  <div class="max-width">
-    <h2>Results</h2>
-    <p>The CFRP Wheel weighed 575 grams and the aluminum insert weighed 126 grams, resulting in a combined weight of 701 grams.
-      This was a 3.5X mass reduction from the 2483 gram weight of the original aluminum wheel assembly</p>
-    <p> The process taught us the challenges of maintaining surface uniformity and ensuring durability without a core material. While this wheel is not yet at the standard 
-      for performance testing, the process provided valuable insights into composite fabrication and structural design. 
-      The bead requires further development to improve durability and performance in order to be pressure bearing, and the insert needs a redesign to 
-      ensure better integration and load distribution. Before performance testing, we can utilize Instron testing equipment to check tensile and 
-      compression properties, conduct deformation experiments, and cut the wheel to inspect the part more closely and verify part thickness. 
-      However, the ply stackup sequence and mold manufacturing steps were useful learning experiences, offering a deeper understanding of material behavior, 
-      structural optimization, and process refinement.</p>
+    <ol>
+      <li>Assemble 3 part mold</li>
+      <li>Used Bondo to fix machining errors and smooth out mold seams</li>
+      <li>Used masking tape and paper to mark cutouts on the rohacell</li>
+      <li>Cut carbon fiber with 3–4 inches of excess material around all edges to ensure full coverage 
+      and allow for trimming after cure.</li>
+      <li>Impregnate carbon and stored in a freezer to control curing and maintain workability 
+      during the layup process</li>
+      <li>Gel coat and sand mold to improve surface finish and reduce porosity for proper sealing. Gel coating was required to create a non-porous surface for proper vacuum bag sealing (otherwise vacuum tape would not adhere properly and leaks would occur during curing).
+      <li>Lay on impregnated carbon fiber layers and rohacell (90/45/90/R/90/45/90)</li>
+      <li>Apply release film, peel ply, and the breather</li>
+      <li>Make big vacuum bag that goes around the whole mold. Place vacuum bag over the mold and then double side tape it to the mold</li>
+      <li>Place in oven to cure (unfortunately do not remember cure temperature or time)</li>
+      <li>Remove seat from mold</li>
+      <li>Scrub off mold release, epoxy fill any gaps, sand, and insert aluminum mount interfaces (“t-hats”)</li>
+      <li>Trim seat with dremel and clear coat.</li>
+    </ol>
+    <img src="../images/seatInChassis.jpg" alt="Final seat fitted in chassis" style="width:100%; max-width:900px">
+    <p>Final seat fitted in chassis with seat tabs welded on. </p>
   </div>
 </section>
 
