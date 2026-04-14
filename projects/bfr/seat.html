@@ -202,7 +202,7 @@
       reliably manufactured repeatedly throughout the years with a reusable mold.
       </p>
 
-      <img src="images/cf wheel.png" alt="UAV" style="width:50%; max-width:900px">
+      <img src="images/seat_in_car.jpg" alt="Seat in Car" style="width:50%; max-width:900px">
   </div>
 </section>
 
@@ -244,7 +244,7 @@
       I designed an adjustable three-panel ergonomics jig that allowed us to change the angles of the back, leg support, and hip positioning within cockpit constraints.
       These included the firewall position/angle and available cockpit space, which limited how reclined the seat could be. The jig with the selected angles was modeled in CAD.
     </p>
-      <img src="../images/ergo_jig.jpg" alt="Ergonomics jig" style="width:100%; max-width:900px">
+      <img src="images/ergo_jig.jpg" alt="Ergonomics jig" style="width:100%; max-width:900px">
     
     <p>
       The final seating position was optimized for the primary B22 drivers while maintaining compatibility across the 5th percentile female to 95th percentile male range 
@@ -274,19 +274,21 @@
         <li>Lowest possible mounting for a low vehicle C.G.</li>
       </ul>
       
-      The final design included a flange around the seat, harness pass-throughs, and mounting “t-hat” holes for proper chassis integration.
+      The design included a flange around the seat, harness pass-throughs, and mounting “t-hat” holes for proper chassis integration.
       During the design process, FSAE rules were taken into account, notably:      
     </p>
       <ul>       
-        <li>Clear Path: Harness straps must be free to move and cannot rub on seat openings or structural members (included researching and purchasing a rules compliant harness).</li>
-        <li>No Interference: Seat design must not interfere with the harness routing to ensure the Frontal Head Restraint (FHR/HANS) operates correctly.  </li>
+        <li>Harness straps must be free to move and cannot rub on seat openings or structural members (included researching and purchasing a rules compliant harness).</li>
+        <li>Seat design must not interfere with the harness routing to ensure the Frontal Head Restraint (FHR/HANS) operates correctly.  </li>
+        <li>Seat positioning constraints:</li>
       </ul>
+      <img src="images/seat_rules.jpg" alt="seat rules" style="width:100%; max-width:900px">
 
     <p>
        A plywood prototype was made to receive additional feedback from drivers.
     </p>
 
-      <img src="../images/seat prototype.jpg" alt="Seat Prototype" style="width:100%; max-width:900px">
+      <img src="images/seat_prototype.jpg" alt="Seat Prototype" style="width:100%; max-width:900px">
     <p>
       The final design included changes such as:
       <ul>       
@@ -297,7 +299,7 @@
       </ul>
     </p>
 
-    <img src="../images/seat_cad.jpg" alt="Seat CAD" style="width:100%; max-width:900px">
+    <img src="images/seat_cad.jpg" alt="Seat CAD" style="width:100%; max-width:900px">
 
 
     <h3>Structural Design and Layup</h3>
@@ -314,7 +316,7 @@
       A conservative carbon fiber modulus was used due to the absence of manufacturer data, while Rohacell core properties were taken from datasheets. 
       6-ply carbon fiber was chosen despite the extremely high FOS as drivers expressed concern about the stiffness of the 4-ply B19 seat, saying that it felt "flimsy."
     </p>
-    <img src="../images/seat_fea.jpg" alt="Seat FEA results" style="width:100%; max-width:900px">
+    <img src="images/seat_fea.jpg" alt="Seat FEA results" style="width:100%; max-width:900px">
 
     <p>
       Looking back, we should have done coupon testing to determine the carbon fiber young’s modulus and used ANSYS Composite Preppost for sandwich calc to refine material properties and improve prediction accuracy.
@@ -335,23 +337,28 @@
         </p>
         
         <p>
-          The button head fasteners interface with floating anchor nuts located on the back side of the chassis seat tabs, allowing for 
+          The button head fasteners interface with two lug floating anchor nuts located on the back side of the seat tabs, allowing for 
           easier assembly and accommodating minor misalignment during installation. New seat tabs were designed and welded onto the chassis 
           to match the updated seat geometry, with key constraints driven by FSAE safety rules such as edge distance-to-diameter (e/D) requirements.
+          The upper seat tabs were additionally designed to constrain both the seat and the heat shield, integrating multiple subsystems 
+          into a single mounting solution. 
         </p>
+
+      <img src="images/seat_mounts.jpg" alt="Seat FEA results" style="width:100%; max-width:900px">
         
         <p>
-          The upper seat tabs were additionally designed to constrain both the seat and the heat shield, integrating multiple subsystems 
-          into a single mounting solution. Hand calculations were performed to validate the structural integrity of the mounting interfaces 
+          Hand calculations were performed to validate the structural integrity of the mounting interfaces 
           under expected loading conditions.
         </p>
-        
+
+      <img src="images/seat_handcalcs.jpg" alt="Seat FEA results" style="width:100%; max-width:900px">
         <p>
           To ensure accurate placement of the mounting tabs, dedicated welding jigs were designed using 80/20 extrusion and precision angle blocks. 
           These jigs constrained the tab locations during welding, achieving tolerances of approximately ±0.003 inches and ensuring proper alignment 
           between the seat and chassis.
         </p>
-  
+
+      <img src="images/seat_jig.jpg" alt="Upper seat tab jigging" style="width:100%; max-width:900px">
 
     <h3>Mold Design</h3>
       <p> Mold CAD partner: Michelle Chow </p>
@@ -422,6 +429,7 @@
       Additional considerations included ensuring that Rohacell core inserts could be easily integrated during layup. Core material was 
       excluded from edge flange regions to maintain flexibility and simplify fabrication.
     </p>
+      
 
 
 <h4>Additional Design Features</h4>
@@ -433,6 +441,8 @@
     <p>
       All edges were filleted or chamfered to improve manufacturability, reduce stress concentrations, and facilitate layup.
     </p>
+      <img src="images/mold_cad.jpg" alt="Mold CAD" style="width:100%; max-width:900px">
+      <img src="images/seat_mold.jpg" alt="seat mold" style="width:100%; max-width:900px">
 
   </div>
 </section>
@@ -447,26 +457,32 @@
     <ol>
       <li>Assemble 3 part mold</li>
       <li>Used Bondo to fix machining errors and smooth out mold seams</li>
+      <img src="images/seat_mold2.jpg" alt="Seat mold assembly" style="width:100%; max-width:900px">
+
       <li>Used masking tape and paper to mark cutouts on the rohacell</li>
       <li>Cut carbon fiber with 3–4 inches of excess material around all edges to ensure full coverage 
       and allow for trimming after cure.</li>
       <li>Impregnate carbon and stored in a freezer to control curing and maintain workability 
       during the layup process</li>
-      <li>Gel coat and sand mold to improve surface finish and reduce porosity for proper sealing. Gel coating was required to create a non-porous surface for proper vacuum bag sealing (otherwise vacuum tape would not adhere properly and leaks would occur during curing).
+      <li>Gel coat and sand mold to improve surface finish and reduce porosity for proper sealing. Gel coating was required to create a non-porous surface for proper vacuum bag sealing (otherwise vacuum tape would not adhere properly and leaks would occur during curing). 
       <li>Lay on impregnated carbon fiber layers and rohacell (90/45/90/R/90/45/90)</li>
+      <img src="images/seat_layup.jpg" alt="Seat Layup" style="width:100%; max-width:900px">
+        
       <li>Apply release film, peel ply, and the breather</li>
-      <li>Make big vacuum bag that goes around the whole mold. Place vacuum bag over the mold and then double side tape it to the mold</li>
+      <li>Make big vacuum bag that goes around the whole mold. Place vacuum bag over the mold and then double side tape it to the mold. Pull vacuum.</li>
+      <img src="images/seat_vacuum.jpg" alt="Seat Vacuum Bagging" style="width:100%; max-width:900px">
       <li>Place in oven to cure (unfortunately do not remember cure temperature or time)</li>
       <li>Remove seat from mold</li>
       <li>Scrub off mold release, epoxy fill any gaps, sand, and insert aluminum mount interfaces (“t-hats”)</li>
+      <img src="images/seat_post_process.jpg" alt="Seat Post Processing" style="width:100%; max-width:900px">
       <li>Trim seat with dremel and clear coat.</li>
     </ol>
-    <img src="../images/seatInChassis.jpg" alt="Final seat fitted in chassis" style="width:100%; max-width:900px">
+    <img src="../images/seat_fitted.jpg" alt="Final seat fitted in chassis" style="width:100%; max-width:900px">
     <p>Final seat fitted in chassis with seat tabs welded on. </p>
   </div>
 </section>
 </section>
-<section id="manufacturing" class="w3-padding-64 w3-white">
+<section id="results" class="w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Results</h2>
     <p>The final seat recieved very positive feedback and was used for cars B22-B24 (subsequently retired from cosmetic damage and mounting updates). </p>
