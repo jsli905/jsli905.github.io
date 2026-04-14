@@ -322,43 +322,92 @@
 
     
 
-     <h3>Mold Design</h3>
-    
-    <p>
-      male mold for ease of manufacturing and removal, exposed side of seat has the nicer finish, and to save on mold material.
-      jsalkfds
-      
-      Initially designed the mold to be made from foam. I had chosen the PBLT foam by looking at the maximum threshold curing temp for our wet layup process with
-      a 30-75pcf density (depending on whether we would need to machine in house at Jacobs or if we could use a professional machine from a sponsor) by looking at spindle horsepower
-      and regidity. The mold pieces would be glued with PB Bond 240.
-      
-      However, I later pivoted to 3D printing the mold because foam suitable for composite layups weren’t a common material for machine shops and it was difficult to find
-      machines that were set up for this foam. PET-G filament and printing is also a lot cheaper than foam material, and we had a 3D printing sponsor.
-      Due to issues we had with the 3d printed mold that will be described in the next section, we switched to using foam molds the year after.
+    <h3>Mold Design</h3>
+      <p> Mold CAD partner: Michelle Chow </p>
 
-      Designed for easy mold removal with reusable molds:
-      Pry bar holes Decided on xyz
+    <p>
+      The seat was manufactured using a male mold to simplify layup and demolding, while ensuring a high-quality finish on the exposed surface. The male mold also reduced overall mold material usage. The mold was designed to be reusable, rigid under vacuum loading, and easily disassembled to allow removal of the cured part.
+    </p>
+
+    <h3>Material Selection and Manufacturing Strategy</h3>
+
+    <p>
+      Initially I intended the mold to be made PBLT foam, which was selected by compatibility with the maximum threshold curing temp for our wet layup process. The foam was to have a 30-75pcf density (depending on whether we would machine in-house at Jacobs or on a professional machine by a sponsor) by considering spindle horsepower and rigidity. The in-house CNC router had limited rigidity and Z-height capacity, which constrained toolpaths and required careful planning of mold segmentation. The mold pieces would then be glued with PB Bond 240.
 
     </p>
-      <p>Mold CAD partner: Michelle Chow</p>
-    <img src="wheelimages/moldcad.jpg" alt="mold CAD" style="width:100%; max-width:900px">
 
-      <h3>Seat Mounts</h3>
+    <p>
+     However, I later pivoted to FDM 3D printing the mold using PET-G. This was because foam suitable for composite layups weren’t a common material for industry to machine, and it was difficult to find machines that were set up for this foam. Additionally, machining accurate locating features in foam on the in-house router was challenging due to tool offsets and seat depths.  This 3D printed approach also reduced cost and leveraged available sponsorship resources.
+However, due to issues we had with the 3d printed mold that will be described in the manufacturing section, we switched to using foam for later molds.
+    </p>
 
-      <p>
-      Tab design. Seat tab jigging. T-hat design.
 
-        rules:
-              Spacers and Tabs: If a harness tab design causes rubbing or mismatch, a small spacer should be used to provide sufficient axial clearance.
-        Mounting Hardware: The hardware used to attach the harness to the chassis must not make contact with the driver.
-Bolted connections in the Primary Structure must use a removable bolt and nut Bonded fasteners and blind nuts and bolts do not meet this requirement 
-Threaded fasteners used in Primary Structure are Critical Fasteners
-Bolted connections in the Primary Structure using tabs or brackets must have an edge distance ratio “e/D” of 1.5 or higher 
 
-      </p>
+    <h3>Mold Segmentation, Locating, and Assembly</h3>
+
+    <p>
+      A primary design challenge was ensuring accurate locating and joining the mold. The mold was split into three parallel sections  to accommodate manufacturing constraints and enable demolding of the convex geometry. These sections were aligned using through-hole 
+      features and threaded rods spanning the width of the mold.
+    </p>
+
+
+
+    <p>
+      Designing locating features for a convex mold presented challenges, as features on side faces would require machining from multiple orientations. The three-piece parallel segmentation avoided this complexity while still maintaining alignment accuracy and  structural rigidity.
+    </p>
+    <p>
+      Locating strategy focused on fully constraining all degrees of freedom between mold sections. Flat mating faces were used in combination with alignment features (threaded rods and geometry constraining X and Y). The threaded rods also provided compression and constraint in the remaining directions. This approach ensured repeatable, accurate alignment and also served as a clamping mechanism during adhesive bonding and layup.
+    </p>
+
+    <h3>Design for assembly, disassembly, demolding</h3>
+
+    <p>
+      The mold was designed for easy disassembly and removal and reusability. The three part segmentation was driven by printer bed size to minimize part count for easier assembly and disassembly. Threaded rods could be removed to release the center section first,  creating clearance for the side sections to be removed. Through-holes (approximately 1 inch diameter) were incorporated to allow tubes 
+      to be inserted and used as a lever to push out the center section.
+    </p>
+
+    <p>
+      Vertical cutouts were added along the mold perimeter to allow insertion of pry bars beneath the cured  composite. These cutouts were chamfered outward to improve access while minimizing large vacuum cavities.
+    </p>
+
+    <h3>Design for Layup and Manufacturing</h3>
+
+    <p>
+      The mold included approximately 2 inches of perimeter material around the seat geometry. This served multiple purposes: 
+<ul>
+<li>
+      it allows us to trim the seat into its final shape instead of need to lay up plies precisely at edges</li>
+<li>  provided surface for adhesion between the composite and mold
+<ul> 
+<li> carbon fiber laminates have finite stiffness and adhesive strength, sufficient contact area was required to prevent the laminate from lifting during vacuum application
+</li>
+</li>
+<li> created space for vacuum bagging tape and sealing </li>
+</ul>
+    </p>
+
+    <p>
+      Sharp transitions ("moats") were incorporated into the mold geometry to act as visual trim guides, allowing for consistent and accurate post-processing. All corners were kept above 60° to prevent bridging during layup and to avoid large void volumes that would  weaken vacuum pressure. Having a convex mold with the seat’s edge flange radii made this quite difficult, since we needed to make it easy to lay up with the flange.
+    </p>
+    <p>
+      Additional considerations included ensuring that Rohacell core inserts could be easily integrated during layup. Core material was 
+      excluded from edge flange regions to maintain flexibility and simplify fabrication.
+    </p>
+
+
+    <h3>Additional Design Features</h3>
+
+    <p>
+      The mold included shallow, tapered cavities to indicate mounting hole and harness locations, allowing accurate post-processing without constraining  final placement. Sectioning planes were incorporated at the  highest points of the seat to guide mold splitting and improve manufacturability.
+    </p>
+
+    <p>
+      All edges were filleted or chamfered to improve manufacturability, reduce stress concentrations, and facilitate layup.
+    </p>
 
   </div>
 </section>
+
 
 
 </section>
