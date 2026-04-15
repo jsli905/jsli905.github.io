@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Steering Wheel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-grey.css">
+  
+  
+  <!-- Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+  
+  <style>
+    body, h1, h2, h3, h4 {
+      font-family: "Roboto", sans-serif;
+    }
+    header h1 {
+    font-size: 6rem;  
+    margin-bottom: 0.25rem;
+    }
+    .max-width {
+      max-width: 1000px;
+      margin: auto;
+    }
+    img {
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Hide the nested submenu by default */
+    .parent .submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background: white;
+      min-width: 180px;
+      z-index: 1000;
+    }
+    
+    /* Only show submenu when hovering*/
+    .parent:hover .submenu {
+      display: block;
+    }
+        
+    /* Make parent positioning context */
+    .dropdown {
+      position: relative;
+    }
+    /* Skills section layout */
+    
+    .skills-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    /*.skill-card {
+      background-color: #ffffff;
+      padding: 1.25rem 1.5rem; /* tighter padding */
+      border-radius: 6px;
+    } */
+    .skill-category ul {
+      list-style-type: disc
+      margin: auto;
+    }
+    
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+
+  </style>
+  
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card">
+
+    <a href="../../index.html" class="w3-bar-item w3-button w3-large">
+      <b>Jennifer S. Li</b>
+    </a>
+
+    <!-- Experience Dropdown -->
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button">Work Experience ▾</button>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+        <a href="../../experience/astranis.html" class="w3-bar-item w3-button">
+          Astranis – Associate Technical Project Manager
+        </a>
+        <a href="../../experience/spacex-hls.html" class="w3-bar-item w3-button">
+          SpaceX - Human Lander System (HLS) Mechanisms Intern
+        </a>
+        <a href="../../experience/spacex-mechs.html" class="w3-bar-item w3-button">
+          SpaceX - Starship Mechanisms Intern
+        </a>
+        <a href="../../experience/tesla.html" class="w3-bar-item w3-button">
+          Tesla - Stator Manufacturing Design Intern
+        </a>
+        <a href="../../experience/chemix.html" class="w3-bar-item w3-button">
+          Chemix - Battery R&D Intern
+        </a>
+        <a href="../../experiences/taflab.html" class="w3-bar-item w3-button">
+          TAFLab - Multihulled Unmanned Boat Undergrad Researcher
+        </a>
+        <a href="../../experience/nist.html" class="w3-bar-item w3-button">
+          NIST - Additive Manufacturing Laser Powder Bed Fusion Intern
+        </a>
+        <a href="../../experience/other.html" class="w3-bar-item w3-button">
+          Other (Misc)
+        </a>
+        
+      </div>
+    </div>
+
+    <!-- Projects Dropdown -->
+
+<div class="w3-dropdown-hover">
+  <button class="w3-button">Projects ▾</button>
+
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+    <div class="parent">
+      <a href="../../experience/fsae.html" class="w3-bar-item w3-button">
+        Berkeley Formula Racing ▸
+      </a>
+        <div class="w3-bar-block w3-border submenu">
+          <a href="seat.html" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
+          <a href="brakes.html" class="w3-bar-item w3-button">Brakes</a>
+          <a href="steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
+          <a href="diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
+          <a href="pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
+          <a href="headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
+        </div>
+  
+        <a href="../wheel.html" class="w3-bar-item w3-button">
+        Hollow Carbon Fiber Wheel
+        </a>
+         <a href="../perry.html" class="w3-bar-item w3-button">
+          Perry the Quadruped Robot
+         </a>
+        <a href="../passive-walker.html" class="w3-bar-item w3-button">
+          Passive Walking Robot
+         </a>
+        <a href="../cupholder.html" class="w3-bar-item w3-button">
+          Gimballed Cup Holder
+         </a>
+        
+        <a href="../uav.html" class="w3-bar-item w3-button">
+          UAV Flight Control
+         </a>
+        <a href="../flower.html" class="w3-bar-item w3-button">
+          Morphing Flower Soft-Robot
+         </a>
+        <a href="../turtle.html" class="w3-bar-item w3-button">
+          Amphibious Turtle Robot
+         </a>
+        <a href="../star.html" class="w3-bar-item w3-button">
+          Stage Separation Mechanism
+         </a>
+        <a href="../misc.html" class="w3-bar-item w3-button">
+          Other
+        </a>
+    </div>
+  </div>
+</div>
+
+
+    <a href="../../courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
+    <a href="../../assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+
+  </div>
+</div>
+
+<!-- Spacer for fixed navbar -->
+<div style="margin-top:64px"></div>
+<!-- Header-->
+<section id="header" class="w3-container w3-padding-64">
+  <div class="max-width">
+    <h2>Ergonomic Steering Wheel with Integrated Screen</h2>
+      <h3>
+       designed and manufactured steering wheel xyz
+    </h3>
+
+    <p>asjdgkjflkafalhjf
+      </p>
+
+      <img src="images/brake_sys.jpg" alt="Brake System" style="width:50%; max-width:900px">
+  </div>
+</section>
+
+<section id="overview" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+      
+
+      <h2>Overview</h2>
+
+      <p>
+       first steering wheel with integrated screen. Worked on ergonomics and worked with electrical team on integrating a screen. 
+      </p>
+               
+  </div>
+</section>
+<section id="handle" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Handle ergo</h2>
+    <p>credit noah for preliminary design iterations</p>
+  </div>
+</section>
+  
+<section id="shifting" class="w3-padding-64 w3-light-grey">
+    <div class="max-width">
+
+    <h2>Paddle Shifters</h2>
+      <p>credit noah for shifter preliminary design iterations</p>
+      <p>ergo design iterations, mounting, clicking feedback testing and design</p>
+    
+
+  </div>
+</section>
+
+
+
+</section>
+<section id="electronics" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Screen Integration</h2>
+    <p>credit brandon for taking over and finalizing</p>
+    <h3>pcb</h3>
+    <h3>screen</h3>
+    <h3>wires</h3>
+  
+    
+  </div>
+</section>
+
+
+<section id="misc" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Misc</h2>
+    <p>diffuser, quick disconnect</p>
+  </div>
+</section>
+<section id="results" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Results</h2>
+    <p>easier to look at road and adl, so not doing the screen anymore, but it turned out very well and was used in B23 and for B24 testing before retiring. Lots
+    carried over in furutre years.</p>
+
+    
+  </div>
+</section>
+  
+<section class="w3-light-grey w3-padding-64">
+   <div class="max-width">
+    <!-- Skills -->
+    <h2>Skills Demonstrated</h2>
+
+    <p>
+     
+      </p>
+    </div>
+  </section>
+  
+
+<section id="contact" class="w3-white w3-padding-64">
+  <div class="max-width">
+    <h2>Contact</h2>
+    <p>Email: jennifersili@berkeley.edu</p>
+    <p>LinkedIn: linkedin.com/in/jennifersili</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="w3-container w3-center w3-padding-16 w3-light-grey">
+  <p>Jennifer Si Li | Engineering Portfolio</p>
+</footer>
+
+</body>
+</html>
+        
