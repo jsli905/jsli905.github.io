@@ -279,10 +279,98 @@
 <section id="brake script" class="w3-padding-64 w3-light-grey">
     <div class="max-width">
 
+<section id="brake script" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+
     <h2>Brake Script</h2>
-      <h3>pedal ratio script</h3>
-      <h3>Brake script</h3>
-      <p>changes in brake script here. credit ezra.</p>
+
+    <h3>Pedal Ratio Script</h3>
+    <p>
+      Using the updated brake pedal geometry (<a href="pedals.html">see pedal design</a>), I calculated the pedal ratio, 
+      which serves as a key input to the brake script model. The pedal ratio directly relates driver input force to master cylinder force, 
+      making it critical for accurately predicting system pressures and required driver effort:
+      <img src="images/pedal_script.png" alt="Pedla Ratio Script" style="width:100%; max-width:900px">
+    </p>
+
+    <h3>Brake System Modeling</h3>
+    <p>
+      The team uses a MATLAB-based brake script to simulate braking performance and guide component selection, including master cylinders, 
+      calipers, and rotor geometry. The script models vehicle deceleration, hydraulic pressures, and front/rear brake force distribution 
+      as a function of pedal input.
+    </p>
+
+    <p>
+      This tool was initially developed by Ezra Apple, who established the baseline model and incorporated preliminary aerodynamic center 
+      of pressure (CoP) assumptions. I contributed to debugging and validating the script early on, and later took ownership of refining 
+      and expanding the model.
+    </p>
+
+    <h3>Incorporating Variable Aerodynamic CoP</h3>
+    <p>
+      A key improvement was introducing a variable aerodynamic center of pressure based on vehicle deceleration. Previously, the model 
+      assumed a fixed CoP, which did not align with observed vehicle behavior — specifically, the car exhibited slight oversteer under 
+      braking despite predictions suggesting a balanced system.
+    </p>
+
+    <p>
+      To improve accuracy, I implemented a model where aerodynamic load transfer varies as a function of deceleration (in Gs), using 
+      linear interpolation between minimum and maximum CoP values:
+    </p>
+
+    <!-- Insert graph here -->
+    <img src="images/cop_interpolation.png" alt="CoP interpolation vs deceleration" style="width:100%; max-width:900px">
+
+    <p>
+      This allowed the model to more accurately capture how aerodynamic forces shift during braking events, improving correlation between 
+      simulation and real-world driver feedback.
+    </p>
+
+    <h3>Model Refinements</h3>
+    <p>
+      In addition to the CoP update, I refined several key parameters in the model, including:
+    </p>
+    <ul>
+      <li>Updated aerodynamic downforce model for the B23 aero package</li>
+      <li>Revised CoP bounds based on aero data</li>
+      <li>Vehicle parameters such as mass, driver weight, and geometry</li>
+      <li>Separate friction coefficients for front and rear rotors</li>
+    </ul>
+
+    <p>
+      After incorporating these updates, the model predicted slight oversteer under braking, which aligned with observed behavior from B22:
+    </p>
+
+    <!-- Insert comparison plot -->
+    <img src="images/b22_cop_comparison.png" alt="Brake balance with and without variable CoP" style="width:100%; max-width:900px">
+
+    <h3>Design Application</h3>
+    <p>
+      The brake script was used to guide key design decisions, including rotor sizing, component selection, and brake bias optimization. 
+      The goal was to minimize required pedal effort while achieving balanced braking performance.
+    </p>
+
+    <p>
+      Optimal brake bias was determined by aligning front and rear brake force curves such that they intersect near the average vehicle 
+      velocity. This ensures that both axles approach lockup simultaneously, with a slight front bias to promote understeer and maintain 
+      vehicle stability under braking.
+    </p>
+
+    <p>
+      Target pedal force ranges were determined experimentally by measuring driver input during aggressive braking events. These values 
+      were used to ensure the system remained within comfortable and controllable limits for the driver.
+    </p>
+
+    <p>
+      While the script was effective for system-level design, rotor geometry required additional thermal analysis to evaluate temperature 
+      limits and brake pad performance. This is discussed further in the rotor design section.
+    </p>
+
+    <p>
+      The final brake script output, shown below, reflects the selected components and validated system performance:
+    </p>
+
+    <!-- Final output plot -->
+    <img src="images/final_brake_script.png" alt="Final brake script output" style="width:100%; max-width:900px">
 
   </div>
 </section>
