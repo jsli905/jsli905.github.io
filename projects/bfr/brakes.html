@@ -197,7 +197,8 @@
     </h3>
 
     <p>
-      Include rotors, calipers+brake pads, brake bias adjustment, hydraulic system (brake lines, master cylinders, fluid resevoirs, pressure transducers, etc). 
+      As Brakes and Driver Interface (BDI) Lead, I led the design, analysis, and manufacturing of the full brake system for Berkeley Formula Racing’s B23 car. 
+      This included rotors, calipers+brake pads, brake bias adjustment, hydraulic system (brake lines, master cylinders, fluid resevoirs, pressure transducers, etc). 
       The system required balancing performance, reliability, manufacturability, and strict FSAE safety constraints. Work included design and modeling, 
       FEA and structural analysis, thermal simulations, physical testing, and manufacturing. Some of the projects listed below were owned/worked on by other BDI members (ownership and my contributions will be noted in these cases).
     </p>
@@ -222,13 +223,58 @@
         adding driver brake bias control for the first time, developing rotor simulation processes, creating a more accurate prake performance matlab script for component selection,
         and better packaging within the rest of the car (chasssis and wheel shells). 
       </p>
-               
+
+    
   </div>
 </section>
 <section id="results" class="w3-padding-64 w3-white">
   <div class="max-width">
     <h2>B22 brake failure analysis</h2>
-    <p></p>
+    <p>
+      During Endurance at competition, the B22 vehicle was unable to finish due to sudden loss of brake pressure. The failure occurred after the vehicle received a black flag, resulting
+      in the driver applying a high braking load while entering the pits.
+    </p>
+
+    <h3>Observed Behavior</h3>
+    <p>
+      Brake pressure data collected during endurance showed a clear drop in front brake pressure immediately after the black flag event, 
+      corresponding to when engine RPM dropped to zero. This indicated a loss of pressure in the front braking circuit rather than a gradual degradation 
+      due to thermal effects or pad wear.
+    </p>
+
+    <p>
+      Part inspection revealed that the bleeder screw on the front-right caliper had was mising. The component was not recovered, 
+      but inspection of the caliper showed that the threads remained intact and the caliper functioned normally after installing a replacement screw.
+    </p>
+
+    <h3>Root Cause Analysis</h3>
+    <p>
+      Hydraulic pressure data was critical in distinguishing between leakage and performance degradation. It was also noted that failure was localized 
+      to a single mechanical component rather than a system-wide issue.
+      The most likely failure mode was mechanical wear of the bleeder screw due to repeated tightening and loosening during brake bleeding procedures 
+      throughout testing. Over time, this likely reduced the effective thread engagement or compromised the structural integrity of the screw.
+    </p>
+
+    <p>
+      Under normal operation, the component remained secure; however, the high transient load introduced when the driver aggressively applied the brakes 
+      during the black flag event likely exceeded the remaining strength of the worn component, causing it to fly off the caliper and resulted in 
+      an immediate loss of hydraulic pressure in the front circuit.
+    </p>
+
+    <h3>Preventative Measures</h3>
+    <ul>
+      <li>Replace aging calipers and hardware (the B22 components had been in use since 2018)</li>
+      <li>Implement routine inspection logs to track condition of fittings, threads, and fasteners</li>
+      <li>Establish pre-run validation procedures, including checking all fittings and applying high-load brake tests (“donkey kick”) before runs</li>
+      <li>Standardize replacement intervals for critical wear components such as bleeder screws</li>
+    </ul>
+
+    <p>
+      This failure highlighted the importance of not only designing robust systems, but also implementing structured maintenance, inspection, 
+      and validation procedures to ensure reliability under competition conditions.
+    </p>
+    <p>Comp Front Brake Pressure Data: </p>
+    <img src="images/brake_failure.jpg" alt="Brake failure pressure data" style="width:50%; max-width:900px">
   </div>
 </section>
   
