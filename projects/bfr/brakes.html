@@ -473,35 +473,95 @@
     <p> Project Owner: Brandon Chin. Brandon led most of the thermal simulation efforts while I reviewed and assisted with simulation set up and methodology. </p>
 
     <p>
-      Rotor thermal simulations were developed and validated using temperature data collected during SoCal Shootout testing. Brake heat flow and forced 
-      convection cooling were calculated from measured rotor temperature data and applied within ANSYS thermal simulations. Heat flow values were derived 
-      from braking energy dissipation over time and repeated over multiple simulated laps to estimate steady-state rotor temperatures.
+      Rotor thermal simulations were developed to optimize rotor geometry and determine the largest possible inner diameter 
+      while maintaining brake temperatures within the ideal operating range of the brake pads. Since rotor temperature data 
+      from competition was unavailable, temperature measurements collected during SoCal Shootout testing were used to develop 
+      and validate the simulation model.
     </p>
-
+    
     <p>
-      Thermal analysis was used primarily to optimize rotor inner diameter and determine operating temperatures for different material options. Rotor 
-      designs were evaluated based on maintaining brake pad temperatures within their ideal operating ranges while minimizing weight. Simulations 
-      predicted peak rotor temperatures near 300°C, which closely matched measured IR sensor data from testing and helped validate the simulation approach. 
-      
+      A representative “one lap” segment of the SoCal Shootout temperature data was isolated by clipping the data from the 
+      beginning of a cooling section (vehicle acceleration) to the end of a major braking event corresponding to a rotor 
+      temperature peak. Using the measured rotor temperature change, the braking heat input into the rotors was calculated 
+      from:
     </p>
-
+    
+    $$
+    Q = mc\Delta T
+    $$
+    
     <p>
-      Final rotor dimensions were selected based on achieving acceptable operating temperatures, minimizing weight, maintaining full brake pad contact, 
-      and passing structural and fatigue analysis requirements.
+      where \(m\) is the rotor mass, \(c\) is the specific heat capacity of the rotor material, and \(\Delta T\) is the measured 
+      temperature change over each time interval. Heat flow into the front and rear rotors was then calculated over time and 
+      applied as a transient thermal load within ANSYS.
     </p>
-
-    <h3>Shear and Fatigue Analysis</h3>
-
+    
     <p>
-      Fatigue analysis was performed using worst-case braking torque conditions corresponding to wheel lockup at the vehicle's most common operating 
-      velocity. S-N curve data for gray cast iron was used to evaluate rotor life under repeated braking cycles.
+      The original temperature data was sampled at approximately 0.02 second intervals, which resulted in thousands of simulation 
+      time steps and excessive computational cost. To improve processing time, the heat flow data was averaged over one-second 
+      intervals before being applied to the simulation. The calculated heat flow initially contained both positive and negative 
+      values corresponding to rotor heating and cooling. Since convective cooling was modeled separately within the simulation, 
+      negative heat flow values were removed so that only braking energy input was applied directly to the rotor.
+    </p>
+    
+    <h4>Forced Convection Cooling</h4>
+    
+    <p>
+      In addition to brake heating, the simulations accounted for forced convection cooling caused by airflow over the rotating 
+      rotors throughout a lap. A convection coefficient \(h\) was required to model heat transfer between the rotor surface and air:
+    </p>
+    
+    $$
+    Q = hA\Delta T
+    $$
+    
+    <p>
+      However, because the braking heat input varied throughout the lap and complete vehicle speed data was unavailable, the 
+      convection coefficient could not be directly solved from the measured data over time. Instead, \(h\) was estimated using 
+      forced convection correlations for flow over a cylinder, where the convection coefficient depends on both air properties 
+      and vehicle velocity.
+    </p>
+    
+    <p>
+      Since wheel speed data was unavailable from competition testing, the convection coefficient was calculated using the most 
+      common vehicle velocity previously determined from vehicle data analysis, approximately 42 mph. This provided a reasonable 
+      approximation of average cooling behavior throughout the lap.
+    </p>
+    
+    <h4>Simulation Validation</h4>
+    
+    <p>
+      The transient heat flow and convection boundary conditions were first applied to the previous generation B20 rotors in 
+      ANSYS to validate the simulation methodology against measured SoCal Shootout temperature data. Heat flow multipliers were 
+      iteratively adjusted until the simulated rotor temperatures closely matched the experimentally measured IR sensor data.
+    </p>
+    
+    <p>
+      The validated simulation setup was then applied to candidate rotor geometries with varying inner diameters. To estimate 
+      steady-state operating temperatures during endurance conditions, the one-lap heat flow profile was repeated over ten 
+      simulated laps. Rotor temperatures were evaluated at the brake pad contact region, where thermal performance most directly 
+      affects braking behavior and pad friction characteristics.
+    </p>
+    
+    <p>
+      Thermal analysis results were used alongside structural and fatigue simulations to select the final rotor geometry. Rotor 
+      designs were evaluated based on maintaining brake pad operating temperatures within the desired range while minimizing 
+      rotor mass and maintaining full brake pad contact. Final simulations predicted peak rotor temperatures near 300°C, which 
+      closely matched measured SoCal Shootout data and helped validate the overall thermal modeling approach.
     </p>
 
-    <p>
-      The final rotor geometry remained below the fatigue stress limits for the target life cycle requirements, indicating that the rotors would survive 
-      endurance loading conditions without fatigue failure. Additional shear and stress analysis was also conducted at the tongue interfaces to verify 
-      the integrity of the floating rotor mounting geometry under braking loads.
-    </p>
+  <h3>Shear and Fatigue Analysis</h3>
+
+  <p>
+    Fatigue analysis was performed using worst-case braking torque conditions corresponding to wheel lockup at the vehicle's most common operating 
+    velocity. S-N curve data for gray cast iron was used to evaluate rotor life under repeated braking cycles.
+  </p>
+
+  <p>
+    The final rotor geometry remained below the fatigue stress limits for the target life cycle requirements, indicating that the rotors would survive 
+    endurance loading conditions without fatigue failure. Additional shear and stress analysis was also conducted at the tongue interfaces to verify 
+    the integrity of the floating rotor mounting geometry under braking loads.
+  </p>
 
   </div>
 </section>
