@@ -414,17 +414,92 @@
         This design  improved manufacturability and serviceability compared to more constrained retention methods.
       </p>
         
-    <img src="images/bananaclip.png" 
-       alt="Banana mounting clips" 
-       style="width:50%; max-width:900px">
-    <h3>geometry and fea</h3>
-    <p>credit liam</p>
-    <h3>material and fea</h3>
-    <h3>packagin</h3>
-    <h3>thermal analysis and testing</h3>
-    <p>credit brandon</p>
-    <h3>Shear and Fatigue analysis</h3>
-    
+    <img src="images/bananaclip.png" alt="Banana mounting clips" style="width:50%; max-width:900px">
+
+    <h3>Geometry and Structural Analysis</h3>
+
+    <p>
+      Rotor outer diameter was maximized within wheel shell and caliper packaging constraints in order to maximize brake torque and braking performance. 
+      Rotor sizing was constrained by the wheel shell dimensions and the Wilwood GP320 front and GP200 rear calipers. The final rotor diameters also 
+      ensured full brake pad contact across the rotor surface.
+    </p>
+    <p>
+      The rotor inner diameter was selected through thermal analysis and testing to determine the rotor width that would maintain the brake pads within 
+      their optimal operating temperature range while minimizing unnecessary mass. Multiple inner diameters were tested and compared based on predicted 
+      steady-state temperatures, weight reduction, and fatigue performance.
+    </p>
+    <p>
+      The rotor tongues were redesigned using continuous tensile-triangle style profiles instead of the previous rounded spline-like geometry 
+      to reduce stress concentrations and improve load transfer through the tongues. 
+    </p>
+
+    <p>
+      Structural FEA was performed on both 4130 steel and gray cast iron rotor designs under braking loads. Simulations showed acceptable factors of 
+      safety for both materials under worst-case braking conditions. Most of the structural FEA analyses were run by Liam Brownlie, while I worked closely with him to review simulation methodology, 
+      evaluate design tradeoffs, and iterate rotor geometry throughout development.
+    </p>
+
+    <p>
+      Solid rotors were selected over slotted or drilled rotors because drilled and slotted geometries can introduce stress risers that increase the 
+      likelihood of cracking during repeated thermal cycles. Since Formula SAE endurance events involve repeated aggressive braking, durability and crack 
+      resistance were prioritized over the minor benefits of drilled or slotted rotor designs.
+    </p>
+
+    <h3>Material Selection</h3>
+
+    <p>
+      Rotor material trade studies focused primarily on gray cast iron and 4130 steel. Both materials were analyzed and tested to help guide future 
+      design decisions. Cast iron was ultimately selected because it had been successfully used by the team for many years, possessed a high melting 
+      temperature, and was available through sponsorship.
+    </p>
+
+    <p>
+      While 4130 steel offered higher mechanical strength and potentially improved durability, concerns remained regarding long-term wear characteristics 
+      and a lower coefficient of friction compared to cast iron. Thermal and structural simulations showed similar stress performance between the two 
+      materials, so the team prioritized the proven reliability and known braking characteristics of cast iron.
+    </p>
+
+    <h3>Packaging</h3>
+
+    <p>
+      Rotor geometry was tightly constrained by the wheel shell and brake caliper packaging envelope. Rotor diameters were increased as much as possible 
+      while maintaining sufficient caliper clearance inside the wheel assembly. This packaging work ensured full brake pad engagement while avoiding the 
+      clearance issues experienced on previous vehicles, where caliper edges required manual grinding for wheel fitment.
+    </p>
+
+    <h3>Thermal Analysis and Testing</h3>
+
+    <p>
+      Rotor thermal simulations were developed and validated using temperature data collected during SoCal Shootout testing. Brake heat flow and forced 
+      convection cooling were calculated from measured rotor temperature data and applied within ANSYS thermal simulations. Heat flow values were derived 
+      from braking energy dissipation over time and repeated over multiple simulated laps to estimate steady-state rotor temperatures.
+    </p>
+
+    <p>
+      Thermal analysis was used primarily to optimize rotor inner diameter and determine operating temperatures for different material options. Rotor 
+      designs were evaluated based on maintaining brake pad temperatures within their ideal operating ranges while minimizing weight. Simulations 
+      predicted peak rotor temperatures near 300°C, which closely matched measured IR sensor data from testing and helped validate the simulation approach. 
+      Brandon Chin led most of the thermal simulation efforts while I reviewed and assisted with simulation set up and methodology.
+    </p>
+
+    <p>
+      Final rotor dimensions were selected based on achieving acceptable operating temperatures, minimizing weight, maintaining full brake pad contact, 
+      and passing structural and fatigue analysis requirements.
+    </p>
+
+    <h3>Shear and Fatigue Analysis</h3>
+
+    <p>
+      Fatigue analysis was performed using worst-case braking torque conditions corresponding to wheel lockup at the vehicle's most common operating 
+      velocity. S-N curve data for gray cast iron was used to evaluate rotor life under repeated braking cycles.
+    </p>
+
+    <p>
+      The final rotor geometry remained below the fatigue stress limits for the target life cycle requirements, indicating that the rotors would survive 
+      endurance loading conditions without fatigue failure. Additional shear and stress analysis was also conducted at the tongue interfaces to verify 
+      the integrity of the floating rotor mounting geometry under braking loads.
+    </p>
+
   </div>
 </section>
 
