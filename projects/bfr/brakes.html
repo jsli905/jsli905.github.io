@@ -380,7 +380,42 @@
 <section id="rotors" class="w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Rotors</h2>
-    <h3>mounting strat</h3>
+    <p>
+  The rotor system was redesigned to improve braking consistency, thermal performance, manufacturability, and reliability while packaging within wheel and upright constraints.
+  We iterated rotor dimensions, geometries, and materials to balance pedal effort, brake bias, thermal capacity, and unsprung mass while ensuring compatibility with the calipers, wheel packaging, and suspension geometry. 
+  Additional analysis focused on shear loading, fatigue life, and thermal behavior under endurance conditions to improve durability and reduce the likelihood of brake-related failures during competition.
+</p>
+    <p>Objectives: low weight, rotor width optimized to have an operating temperature that supports peak brake pad performance, tongue strength FOS>2</p>
+    
+    <h3>Mounting Strategy</h3>
+
+      <p>
+        I evaluated both fixed and floating rotor mounting strategies before selecting a floating rotor design. 
+        Fixed rotors are simpler and less expensive, but constraining the rotor directly with bolts can lead to uneven thermal expansion, 
+        increasing the likelihood of rotor warping under repeated braking events.
+      </p>
+      
+      <p>
+        Floating rotors allow the brake disc to expand more freely under thermal loading while maintaining more consistent contact with the brake pads. 
+        This improves braking consistency, reduces the likelihood of thermal distortion, and maximizes rotor-to-pad contact during operation. 
+        Floating rotors also reduced overall rotor mass, helping decrease unsprung weight.
+      </p>
+      <img src="images/rotor_mounting_strategy.png" 
+       alt="Comparison of fixed and floating rotor mounting strategies" 
+       style="width:100%; max-width:900px">
+      <p>
+        Although floating rotors introduce additional complexity and potential failure points through the mounting hardware, 
+        the improved thermal behavior and braking consistency made them the preferred choice for the vehicle.
+      </p>
+      <p>
+        We also explored different floating rotor retention methods and selected banana-shaped tongue mounts over snap ring or bobbin retention. 
+        The curved tongue geometry simplified rotor assembly and disassembly while reducing stress concentrations at the mounting interfaces. 
+        This design  improved manufacturability and serviceability compared to more constrained retention methods.
+      </p>
+        
+    <img src="images/bananaclip.png" 
+       alt="Banana mounting clips" 
+       style="width:100%; max-width:900px">
     <h3>geometry and fea</h3>
     <p>credit liam</p>
     <h3>material and fea</h3>
