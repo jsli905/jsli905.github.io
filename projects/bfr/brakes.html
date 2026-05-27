@@ -294,16 +294,17 @@
 
     <h3>Brake System Modeling</h3>
     <p>
+      Project Partner: Ezra Apple. This tool was initially improved upon by Ezra, who incorporated preliminary aerodynamic center 
+      of pressure (CoP) assumptions. I contributed to debugging and validating the script early on, and later took ownership of refining 
+      and expanding the model.
+    </p>
+    <p>
       The team uses a MATLAB-based brake script to simulate braking performance and guide component selection, including master cylinders, 
       calipers, and rotor geometry. The script models vehicle deceleration, hydraulic pressures, and front/rear brake force distribution 
       as a function of pedal input.
     </p>
 
-    <p>
-      This tool was initially improved upon by Ezra Apple, who incorporated preliminary aerodynamic center 
-      of pressure (CoP) assumptions. I contributed to debugging and validating the script early on, and later took ownership of refining 
-      and expanding the model.
-    </p>
+    
 
     <h3>Incorporating Variable Aerodynamic CoP</h3>
     <p>
@@ -417,6 +418,8 @@
     <img src="images/bananaclip.png" alt="Banana mounting clips" style="width:50%; max-width:900px">
 
     <h3>Geometry and Structural Analysis</h3>
+    <p> Project Owner: Liam Brownlie.  Most of the structural FEA analyses were run by Liam, while I worked closely with him to review simulation methodology, 
+      evaluate design tradeoffs, and iterate rotor geometry throughout development. </p>
 
     <p>
       Rotor outer diameter was maximized within wheel shell and caliper packaging constraints in order to maximize brake torque and braking performance. 
@@ -435,8 +438,7 @@
 
     <p>
       Structural FEA was performed on both 4130 steel and gray cast iron rotor designs under braking loads. Simulations showed acceptable factors of 
-      safety for both materials under worst-case braking conditions. Most of the structural FEA analyses were run by Liam Brownlie, while I worked closely with him to review simulation methodology, 
-      evaluate design tradeoffs, and iterate rotor geometry throughout development.
+      safety for both materials under worst-case braking conditions.
     </p>
 
     <p>
@@ -468,6 +470,7 @@
     </p>
 
     <h3>Thermal Analysis and Testing</h3>
+    <p> Project Owner: Brandon Chin. Brandon led most of the thermal simulation efforts while I reviewed and assisted with simulation set up and methodology. </p>
 
     <p>
       Rotor thermal simulations were developed and validated using temperature data collected during SoCal Shootout testing. Brake heat flow and forced 
@@ -479,7 +482,7 @@
       Thermal analysis was used primarily to optimize rotor inner diameter and determine operating temperatures for different material options. Rotor 
       designs were evaluated based on maintaining brake pad temperatures within their ideal operating ranges while minimizing weight. Simulations 
       predicted peak rotor temperatures near 300°C, which closely matched measured IR sensor data from testing and helped validate the simulation approach. 
-      Brandon Chin led most of the thermal simulation efforts while I reviewed and assisted with simulation set up and methodology.
+      
     </p>
 
     <p>
