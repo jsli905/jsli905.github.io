@@ -518,7 +518,17 @@
     <p>
       However, because the braking heat input varied throughout the lap and complete vehicle speed data was unavailable, the 
       convection coefficient could not be directly solved from the measured data over time. Instead, \(h\) was estimated using 
-      forced convection correlations for flow over a cylinder, where the convection coefficient depends on both air properties 
+      the following:
+    </p>
+    <div class="equation">
+    \[
+      h = \frac{0.037k}{l} \text{Re}^{0.8} \text{Pr}^{0.33}
+        = \frac{0.037k}{l}
+          \left(\frac{\rho\, l\, v}{\mu}\right)^{0.8}
+          \left(\frac{C_p\, \mu}{k}\right)^{0.33}
+    \]
+  </div>
+    <p></p>where the convection coefficient depends on both air properties 
       and vehicle velocity.
     </p>
     
