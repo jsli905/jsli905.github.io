@@ -631,24 +631,42 @@
     <img src="images/thermal_dimensioning.png" alt="Rotor Iterations Thermally Optimized" style="width:70%; max-width:900px">
 
     <p>The criteria for the selected rotor geometries were:
-      <ul> Fronts highest temperature within 750-1000 °F </ul>
-      <ul> Rears highest temperature within 350-550 °F </ul>
-      <ul> Lowest weight </ul>
-      <ul> Passes fatigue analysis </ul>
+      <ul> 
+        <li>Fronts highest temperature within 750-1000 °F </li>
+        <li> Rears highest temperature within 350-550 °F </li>
+        <li> Lowest weight </li>
+        <li> Passes fatigue analysis </li>
+      </ul>
 </p>
 
   <h3>Shear and Fatigue Analysis</h3>
-
-  <p>
-    Fatigue analysis was performed using worst-case braking torque conditions corresponding to wheel lockup at the vehicle's most common operating 
-    velocity. S-N curve data for gray cast iron was used to evaluate rotor life under repeated braking cycles.
-  </p>
-
-  <p>
-    The final rotor geometry remained below the fatigue stress limits for the target life cycle requirements, indicating that the rotors would survive 
+    <h4>Rotor Shear Stress Analysis</h4> 
+    <p> Shear stress within the rotor tongue geometry was approximated using the applied braking torque and the effective cross-sectional area resisting the load. </p> 
+    $$ \tau = \frac{F}{A} = \frac{T}{rA} $$ 
+    <p> Using a braking torque of 4200 lb-in: </p> 
+    $$ \tau = \frac{4200 \text{ lb-in}} {3.3 \text{ in} \cdot (0.1772 \text{ in} \times 0.6 \text{ in}) / 4} \approx 2.18 \text{ ksi} $$ 
+    <p> The calculated shear stress was significantly lower than the approximate 60 ksi maximum shear strength of gray cast iron, indicating that 
+      the tongue geometry could safely withstand the applied braking loads. </p>
+  <h4>Fatigue Analysis</h4> 
+    <div style="display: flex; gap: 30px; align-items: center;">
+    <div>
+    <p> Fatigue analysis was conducted to estimate rotor life under repeated braking cycles. A design life of approximately \(10^5\) cycles 
+      was selected based on the estimated number of braking events experienced during vehicle operation. </p> 
+    <p> S-N curve data for gray cast iron was used to determine material fatigue limits. The corresponding fatigue stress limit at \(10^5\) cycles was approximately 31.9 ksi. </p> 
+    </div>
+    <img src="images/gci_sn.png" alt="Gray Cast Iron SN curve" style="width:30%; max-width:900px">
+    </div>
+    
+    <p> FEA was run using worst-case braking torque conditions corresponding to wheel lockup at the vehicle's most common operating 
+    velocity: </p> 
+    <ul> <li>Front braking torque: 3993 in-lbs</li> 
+      <li>Rear braking torque: 1103 in-lbs</li> </ul> 
+    <img src="images/fea_fatigue.png" alt="FEA" style="width:30%; max-width:900px">
+    <p> Simulation results predicted a maximum principal stress of 27.98 ksi, which remained below the 31.9 ksi fatigue limit, indicating that the rotors are good for 1e5 cycles.
+ </p> 
+    <p> These results indicated that the final rotor design remained below the fatigue stress limits for the target life cycle requirements, indicating that the rotors would survive 
     endurance loading conditions without fatigue failure. Additional shear and stress analysis was also conducted at the tongue interfaces to verify 
-    the integrity of the floating rotor mounting geometry under braking loads.
-  </p>
+    the integrity of the floating rotor mounting geometry under braking loads.</p>
 
   </div>
 </section>
