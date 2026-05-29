@@ -77,6 +77,86 @@
       line-height: 1.5;
     }
 
+    /* ── Table of Contents Sidebar ── */
+    .page-layout {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    #toc-sidebar {
+      position: sticky;
+      top: 80px;
+      width: 210px;
+      min-width: 210px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      padding: 1rem 0.75rem;
+      background: #f9f9f9;
+      border-right: 2px solid #e0e0e0;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      z-index: 100;
+    }
+
+    #toc-sidebar h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin: 0 0 0.6rem 0;
+    }
+
+    #toc-sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #toc-sidebar li {
+      margin-bottom: 2px;
+    }
+
+    #toc-sidebar a {
+      display: block;
+      padding: 3px 6px;
+      color: #444;
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+    }
+
+    #toc-sidebar a:hover {
+      background: #e8e8e8;
+      color: #000;
+    }
+
+    #toc-sidebar a.toc-active {
+      background: #dde8f5;
+      color: #1a5fa8;
+      font-weight: 600;
+    }
+
+    /* sub-items (h3) */
+    #toc-sidebar .toc-sub {
+      padding-left: 14px;
+      color: #666;
+      font-size: 0.78rem;
+    }
+
+    #toc-sidebar .toc-sub.toc-active {
+      background: #dde8f5;
+      color: #1a5fa8;
+      font-weight: 600;
+    }
+
+    .main-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    /* Hide sidebar on small screens */
+    @media (max-width: 860px) {
+      #toc-sidebar { display: none; }
+    }
 
   </style>
   
@@ -188,7 +268,51 @@
 
 <!-- Spacer for fixed navbar -->
 <div style="margin-top:64px"></div>
-<!-- Header-->
+
+<div class="page-layout">
+
+<!-- ================= TOC SIDEBAR ================= -->
+<nav id="toc-sidebar">
+  <h4>Contents</h4>
+  <ul>
+    <li><a href="#header">Overview</a></li>
+    <li><a href="#overview">Background</a></li>
+
+    <li><a href="#failure-analysis">Brake Failure Analysis</a></li>
+    <li><a href="#rca" class="toc-sub">Root Cause Analysis</a></li>
+    <li><a href="#preventative" class="toc-sub">Preventative Measures</a></li>
+
+    <li><a href="#brake-script">Brake Script</a></li>
+    <li><a href="#pedal-ratio" class="toc-sub">Pedal Ratio Script</a></li>
+    <li><a href="#brake-modeling" class="toc-sub">System Modeling</a></li>
+    <li><a href="#aero-cop" class="toc-sub">Variable Aero CoP</a></li>
+    <li><a href="#model-refinements" class="toc-sub">Model Refinements</a></li>
+    <li><a href="#design-application" class="toc-sub">Design Application</a></li>
+
+    <li><a href="#calipers">Calipers</a></li>
+
+    <li><a href="#pads">Brake Pads</a></li>
+
+    <li><a href="#rotors">Rotors</a></li>
+    <li><a href="#mounting-strategy" class="toc-sub">Mounting Strategy</a></li>
+    <li><a href="#geometry-structural" class="toc-sub">Geometry &amp; Structural</a></li>
+    <li><a href="#rotor-packaging" class="toc-sub">Packaging</a></li>
+    <li><a href="#material-selection" class="toc-sub">Material Selection</a></li>
+    <li><a href="#thermal-analysis" class="toc-sub">Thermal Analysis</a></li>
+    <li><a href="#forced-convection" class="toc-sub">↳ Forced Convection</a></li>
+    <li><a href="#sim-validation" class="toc-sub">↳ Sim Validation</a></li>
+    <li><a href="#shear-fatigue" class="toc-sub">Shear &amp; Fatigue</a></li>
+    <li><a href="#rotor-shear" class="toc-sub">↳ Shear Stress</a></li>
+    <li><a href="#fatigue-analysis" class="toc-sub">↳ Fatigue Analysis</a></li>
+
+    <li><a href="#brake bias">Brake Bias</a></li>
+    <li><a href="#hydraulics">Hydraulic System</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="main-content">
 <section id="header" class="w3-container w3-padding-64">
   <div class="max-width">
     <h2>Brake System</h2>
@@ -230,13 +354,13 @@
 </section>
 <section id="results" class="w3-padding-64 w3-white">
   <div class="max-width">
-    <h2>B22 brake failure analysis</h2>
+    <h2 id="failure-analysis">B22 Brake Failure Analysis</h2>
     <p>
       During Endurance at competition, the B22 (aka "B20", used interchangeably) vehicle was unable to finish due to sudden loss of brake pressure. The failure occurred after the vehicle received a black flag, resulting
       in the driver applying a high braking load while entering the pits.
     </p>
 
-    <h3>Root Cause Analysis</h3>
+    <h3 id="rca">Root Cause Analysis</h3>
     <p>
       Hydraulic pressure data collected during the endurance run was critical in distinguishing between leakage and performance degradation. 
       The brake pressure data showed a clear drop in front brake pressure immediately after the black flag event, 
@@ -261,7 +385,7 @@
     <p>Comp Front Brake Pressure Data: </p>
     <img src="images/brake_failure.jpg" alt="Brake failure pressure data" style="width:100%; max-width:900px">
     
-    <h3>Preventative Measures</h3>
+    <h3 id="preventative">Preventative Measures</h3>
     <ul>
       <li>Replace aging calipers and hardware (the B22 components had been in use since 2018)</li>
       <li>Implement routine inspection logs to track condition of fittings, threads, and fasteners</li>
@@ -283,7 +407,7 @@
 
     <h2>Brake Script</h2>
 
-    <h3>Pedal Ratio Script</h3>
+    <h3 id="pedal-ratio">Pedal Ratio Script</h3>
     <p>
       Using the updated brake pedal geometry (<a href="pedals.html">see pedal design</a>), I calculated the pedal ratio, 
       which serves as a key input to the brake script model. The pedal ratio directly relates driver input force to master cylinder force, 
@@ -291,7 +415,7 @@
       <img src="images/pedal_script.jpg" alt="Pedla Ratio Script" style="width:60%; max-width:900px">
    
 
-    <h3>Brake System Modeling</h3>
+    <h3 id="brake-modeling">Brake System Modeling</h3>
     <p>
       Project Partner: Ezra Apple. This tool was initially improved upon by Ezra, who incorporated preliminary aerodynamic center 
       of pressure (CoP) assumptions. I contributed to debugging and validating the script early on, and later took ownership of refining 
@@ -305,7 +429,7 @@
 
     
 
-    <h3>Incorporating Variable Aerodynamic CoP</h3>
+    <h3 id="aero-cop">Incorporating Variable Aerodynamic CoP</h3>
     <div style="display: flex; gap: 30px; align-items: center;">
     <div>
     <p>
@@ -330,7 +454,7 @@
       <img src="images/cop_interpolation.png" alt="CoP interpolation vs deceleration" style="width:50%; max-width:900px">
     </div>
 
-    <h3>Model Refinements</h3>
+    <h3 id="model-refinements">Model Refinements</h3>
     <p>
       In addition to the CoP update, I refined several key parameters in the model, including:
     </p>
@@ -348,7 +472,7 @@
     <!-- Insert comparison plot -->
     <img src="images/cop_comparison.png" alt="Brake balance with and without variable CoP" style="width:100%; max-width:900px">
 
-    <h3>Design Application</h3>
+    <h3 id="design-application">Design Application</h3>
     <p>
       The brake script was used to guide key design decisions, including rotor sizing, component selection, and brake bias optimization. 
       The goal was to minimize required pedal effort while achieving balanced braking performance.
@@ -441,7 +565,7 @@
 </p>
     <p>Objectives: low weight, rotor width optimized to have an operating temperature that supports peak brake pad performance, tongue strength FOS>2</p>
     
-    <h3>Mounting Strategy</h3>
+    <h3 id="mounting-strategy">Mounting Strategy</h3>
 
       <p>
         I evaluated both fixed and floating rotor mounting strategies before selecting a floating rotor design. 
@@ -470,7 +594,7 @@
         
     <img src="images/bananaclip.png" alt="Banana mounting clips" style="width:50%; max-width:900px">
 
-    <h3>Geometry and Structural Analysis</h3>
+    <h3 id="geometry-structural">Geometry and Structural Analysis</h3>
     <p> Project Owner: Liam Brownlie.  Most of the structural FEA analyses were run by Liam, while I worked closely with him to review simulation methodology, 
       evaluate design tradeoffs, and iterate rotor geometry throughout development. </p>
 
@@ -502,10 +626,7 @@
       resistance were prioritized over the minor benefits of drilled or slotted rotor designs.
     </p>
 
-    <h3>Packaging</h3>
-
-    <p>
-      Rotor geometry was tightly constrained by the wheel shell and brake caliper packaging envelope. Rotor diameters were increased as much as possible 
+    <h3 id="rotor-packaging">Packaging</h3> by the wheel shell and brake caliper packaging envelope. Rotor diameters were increased as much as possible 
       while maintaining sufficient caliper clearance inside the wheel assembly. This packaging work ensured full brake pad engagement while avoiding the 
       clearance issues experienced on previous vehicles, where caliper edges required manual grinding for wheel fitment.
     </p>
@@ -514,7 +635,7 @@
     <img src="images/tolerance_stackup.png" alt="Tolerance Stackup" style="width:70%; max-width:900px">
 
 
-    <h3>Material Selection</h3>
+    <h3 id="material-selection">Material Selection</h3>
 
     <p>
       Rotor material trade studies focused primarily on gray cast iron and 4130 steel. Both materials were analyzed to help guide future 
@@ -533,7 +654,7 @@
        the team prioritized the proven reliability and known braking characteristics of cast iron.
     </p>
 
-    <h3>Thermal Analysis and Testing</h3>
+    <h3 id="thermal-analysis">Thermal Analysis and Testing</h3>
     <p> Project Owner: Brandon Chin. Brandon led most of the thermal simulation efforts while I assisted with and reviewed simulation set up and methodology. </p>
 
     <p>
@@ -571,7 +692,7 @@
     </p>
     <img src="images/heat_flow_adjusted.png" alt="One Lap with heat flow adjusted" style="width:70%; max-width:900px">
     
-    <h4>Forced Convection Cooling</h4>
+    <h4 id="forced-convection">Forced Convection Cooling</h4>
     
     <p>
       In addition to brake heating, the simulations accounted for forced convection cooling caused by airflow over the rotating 
@@ -605,7 +726,7 @@
       approximation of average cooling behavior throughout the lap.
     </p>
     
-    <h4>Simulation Validation</h4>
+    <h4 id="sim-validation">Simulation Validation</h4>
     
     <p>
       The transient heat flow and convection boundary conditions were first applied to the previous generation B20 rotors in 
@@ -640,15 +761,15 @@
       </ul>
 </p>
 
-  <h3>Shear and Fatigue Analysis</h3>
-    <h4>Rotor Shear Stress Analysis</h4> 
+  <h3 id="shear-fatigue">Shear and Fatigue Analysis</h3>
+    <h4 id="rotor-shear">Rotor Shear Stress Analysis</h4> 
     <p> Shear stress within the rotor tongue geometry was approximated using the applied braking torque and the effective cross-sectional area resisting the load. </p> 
     $$ \tau = \frac{F}{A} = \frac{T}{rA} $$ 
     <p> Using a braking torque of 4200 lb-in: </p> 
     $$ \tau = \frac{4200 \text{ lb-in}} {3.3 \text{ in} \cdot (0.1772 \text{ in} \times 0.6 \text{ in}) / 4} \approx 2.18 \text{ ksi} $$ 
     <p> The calculated shear stress was significantly lower than the approximate 60 ksi maximum shear strength of gray cast iron, indicating that 
       the tongue geometry could safely withstand the applied braking loads. </p>
-  <h4>Fatigue Analysis</h4> 
+  <h4 id="fatigue-analysis">Fatigue Analysis</h4> 
     <div style="display: flex; gap: 30px; align-items: center;">
     <div>
     <p> Fatigue analysis was conducted to estimate rotor life under repeated braking cycles. A design life of approximately \(10^5\) cycles 
@@ -723,11 +844,35 @@
   </div>
 </section>
 
+</div><!-- /.main-content -->
+</div><!-- /.page-layout -->
+
 <!-- ================= FOOTER ================= -->
 <footer class="w3-container w3-center w3-padding-16 w3-light-grey">
   <p>Jennifer Si Li | Engineering Portfolio</p>
 </footer>
 
+<script>
+  // Scroll-spy: highlight the active TOC link as user scrolls
+  const tocLinks = document.querySelectorAll('#toc-sidebar a');
+  const headings = Array.from(tocLinks)
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+
+  function onScroll() {
+    let current = headings[0];
+    for (const el of headings) {
+      if (el.getBoundingClientRect().top <= 120) current = el;
+    }
+    tocLinks.forEach(a => {
+      a.classList.toggle('toc-active',
+        a.getAttribute('href') === '#' + current.id);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
 </body>
 </html>
         
