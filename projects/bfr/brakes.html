@@ -805,9 +805,62 @@
   <div class="max-width">
     <h2>Brake Bias</h2>
     <p></p>
-    <h3>bias bar</h3>
-    <h3>bias adjuster</h3>
-    <h3>bias line routing</h3>
+    <h3>Brake Bias System</h3>
+
+<p>
+  I used the brake script to determine optimal front-to-rear hydraulic pressure 
+  distribution under expected braking conditions (brake bias), which was what the default brake bias was set to using the Tilton 77/78 Series Bias Bar.
+  This balance bar provides 9% of pressure bias adjustability, 
+  allowing brake balance to be tuned during testing to account for tire grip, driver preference, and dynamic vehicle behavior.
+  For the first time, we also implemented an adjustable brake bias system so that the drivers could tune the brake dias whilst driving and provided significantly greater flexibility for tuning braking performance.
+</p>
+
+<p>
+  Proportioning valves were initially investigated as an alternative method for brake bias adjustment. However, the concept was 
+  ultimately abandoned due to increased system complexity and several functional drawbacks compared to a balance bar system.
+</p>
+
+<p>
+  Unlike a balance bar, which mechanically redistributes braking capability between the front and rear circuits, a proportioning 
+  valve reduces hydraulic pressure to one circuit after reaching a predefined “bite point.” This decreases the total available 
+  braking capability of the system rather than redistributing it. In contrast, the balance bar preserves total braking force 
+  while shifting brake bias directly between the front and rear brakes.
+</p>
+
+<p>
+  The balance bar approach also provided more direct and predictable adjustment behavior since the knob mechanically changes the 
+  balance bar position rather than relying on pressure-threshold-based proportioning behavior.
+</p>
+
+<h3>Bias Adjuster Mechanism</h3>
+
+<p>
+  We initially tried implementing a Tilton brake bias adjuster. However, the bias knob's small plastic-ball ratcheting mechanism proved unreliable and difficult 
+  to adjust consistently during operation. To improve robustness and tactile feedback, I switched to a Wilwood brake bias adjuster, which had a sturdier ratcheting mechanism. 
+  To integrate the two systems, a custom stainless steel thread adapter was designed and machined to connect 
+  the Wilwood adjuster to the Tilton balance bar assembly.
+</p>
+
+<img src="images/brake_adjuster_adapter.png" alt="brake bias adjuster adapter" style="width:50%; max-width:900px">
+
+<h3>Bias Line Routing and Packaging</h3>
+
+<p>
+  Routing the brake bias cable required careful consideration due to the stiffness of the cable housing and the mechanical 
+  nature of the balance bar adjustment system. Since the cable directly rotates the balance bar, excessive bends or twisting 
+  in the cable routing and extra length increased friction and reduced adjustment smoothness. The line was cut to length and brazed to interface with the balance bar.
+</p>
+
+<p>
+  The routing path was therefore designed to minimize sharp turns while maintaining compatibility with the vehicle chassis and 
+  driver packaging constraints. Mounting tabs and zip-tie retention points were desdigned and added throughout the cockpit to secure the 
+  cable and prevent unwanted movement during operation.
+</p>
+<img src="images/bias_line_routing.png" alt="brake bias line routing" style="width:50%; max-width:900px">
+<p>
+  Additional consideration was required for adjuster mounting location due to the importance of accessibility, rigidity, and 
+  driver ergonomics during on-track adjustment.
+</p>
   </div>
 </section>
 <section id="hydraulics" class="w3-padding-64 w3-white">
