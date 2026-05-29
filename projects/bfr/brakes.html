@@ -868,15 +868,134 @@
 </p>
   </div>
 </section>
-<section id="hydraulics" class="w3-padding-64 w3-white">
+
+  <section id="hydraulics" class="w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Hydraulic System</h2>
-    <h3>master cylinders</h3>
-    <h3>fluid resevoirs</h3>
-    <h3>brake lines and circuits</h3>
-    <p>pressure transducer mounts</p>
+    <p>
+      The hydraulic system was redesigned to address the reliability and packaging issues observed
+      on B22, where unorganized brake line routing created interference risks and made maintenance
+      difficult. The goals for B23 were to provide consistent brake pressure, minimize overall line
+      length, ensure lines were well-constrained within the chassis, and prevent interference with
+      the wiring harness and other internal components.
+    </p>
 
-    
+    <h3>Circuit Architecture</h3>
+    <p>
+      The system uses two fully independent hydraulic circuits — one for the front brakes and one
+      for the rear. Each fed by a dedicated master cylinder. Separating the circuits provides a
+      safety redundancy: a failure in one circuit does not result in total brake loss. The front
+      circuit uses a smaller diameter master cylinder while the rear uses a larger diameter master
+      cylinder. Since the front brakes provide the majority of total braking force, they operate
+      at higher hydraulic pressures, requiring a smaller bore to generate the necessary pressure
+      from driver pedal input.
+    </p>
+
+    <h3>Master Cylinders</h3>
+    <p>
+      Four master cylinder options were evaluated across cost, weight, size, and compatibility
+      with the Tilton bias bar:
+    </p>
+
+    <table class="w3-table w3-bordered w3-striped" style="margin-top: 0.5rem; margin-bottom: 1rem;">
+      <thead class="w3-light-grey">
+        <tr>
+          <th>Master Cylinder</th>
+          <th>Cost</th>
+          <th>Weight</th>
+          <th>Size (in)</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+
+    <p>
+      The <strong>Tilton 78 Series</strong> was selected. It was the least expensive option, had
+      been used successfully by the team in previous years, and was directly compatible with the
+      Tilton bias bar. The primary drawback was its length, which required careful packaging
+      within the pedal tray area. Despite this, its proven reliability and cost advantage made it
+      the clear choice.
+    </p>
+
+    <h3>Fluid Reservoirs</h3>
+    <p>
+      The brake fluid reservoirs were replaced with AUTOVIC Transparent Motorcycle Rear Brake
+      Masters (9 mm max diameter outlet), paired with Pegasus Racing Remote Brake Fluid Reservoir
+      Hose (5/16 inch ID). The transparent reservoir bodies allow fluid level to be checked
+      visually without disassembly. Custom mounting tabs were fabricated from sheet metal and bent
+      into shape to mount the reservoirs to the chassis. M6 × 1 screws (20 mm long) with M6 × 1
+      mm 8 mm high locknuts were used to secure all hardware and prevent loosening under
+      vibration.
+    </p>
+    <img src="images/reservoir.png" alt="Brake fluid reservoir and mounting" style="width:60%; max-width:900px">
+
+    <h3>Pressure Transducer Mounts</h3>
+    <p>
+      The pressure transducers were relocated to be mounted in front of the pedal tray, moving
+      them to the right side of the chassis alongside the rear hardline run. This consolidated
+      the hydraulic connections in one area, reduced line complexity, and minimized potential
+      collision with wiring harnesses. Custom mounts were designed and modeled in CAD to secure
+      the transducers to the chassis tubing.
+    </p>
+    <img src="images/transducer_mount.png" alt="Pressure transducer mount CAD" style="width:60%; max-width:900px">
+
+    <h3>Brake Lines and Circuits</h3>
+      <div style="display: flex; gap: 30px; align-items: center;">
+      <div>
+    <p>
+      The brake line system was redesigned from scratch to address the ad hoc routing issues
+      on B22, where unplanned line runs resulted in unnecessary length, pinch point risks, and
+      interference with the wiring harness. For B23, all hard lines were modeled in CAD before
+      fabrication to define exact routing paths, bend locations, and lengths.
+    </p>
+
+    <h4>Hard Line vs. Soft Line Strategy</h4>
+    <p>
+      A key early decision was determining where to use hard lines versus soft lines. Both were
+      procured and tested with driver feedback before committing to a final configuration.
+    </p>
+
+    <table class="w3-table w3-bordered w3-striped" style="max-width:600px; margin-top: 0.5rem; margin-bottom: 1rem;">
+      <thead class="w3-light-grey">
+        <tr><th></th><th>Pros</th><th>Cons</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Braided Soft Lines</strong></td>
+          <td>Flexible; easy to route around components</td>
+          <td>Fixed lengths; must be ordered to exact size</td>
+        </tr>
+        <tr>
+          <td><strong>Hard Lines</strong></td>
+          <td>Custom length; cheaper than soft lines</td>
+          <td>Less flexible; harder to route cleanly</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      The final configuration uses hard lines on all segments that do not move, and soft lines
+      only at the four corners (where suspension components move during travel) and at the front
+      of the car where the pedal tray adjusts fore-aft. Soft lines at these locations were custom
+      made to the correct length to eliminate excess slack while accommodating full range of motion.
+      The main rear hardline runs along the right side of the chassis, fully isolated from the
+      wiring harness.
+    </p>
+    <p>
+      The brake bias soft line routing was carefully planned to prevent kinking under bias
+      adjustment, avoid contact with the throttle pedal, and maintain consistent pedal feel
+      through the full range of bias bar motion.
+    </p>
+      </div>
+      <figure>
+  <img src="brake_lines_old" alt="Old Brake Lines" style="width:20%">
+  <figcaption>B22 Brake Lines</figcaption>
+</figure>
+</div>
+
+
+
+
+
   </div>
 </section>
   
