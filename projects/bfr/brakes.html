@@ -231,7 +231,7 @@
   <div class="max-width">
     <h2>B22 brake failure analysis</h2>
     <p>
-      During Endurance at competition, the B22 vehicle was unable to finish due to sudden loss of brake pressure. The failure occurred after the vehicle received a black flag, resulting
+      During Endurance at competition, the B22 (aka "B20", used interchangeably) vehicle was unable to finish due to sudden loss of brake pressure. The failure occurred after the vehicle received a black flag, resulting
       in the driver applying a high braking load while entering the pits.
     </p>
 
@@ -470,7 +470,7 @@
     <img src="images/bananaclip.png" alt="Banana mounting clips" style="width:50%; max-width:900px">
 
     <h3>Geometry and Structural Analysis</h3>
-    <p> Dimensioning Owner: Liam Brownlie.  Most of the structural FEA analyses were run by Liam, while I worked closely with him to review simulation methodology, 
+    <p> Project Owner: Liam Brownlie.  Most of the structural FEA analyses were run by Liam, while I worked closely with him to review simulation methodology, 
       evaluate design tradeoffs, and iterate rotor geometry throughout development. </p>
 
     <p>
@@ -546,7 +546,7 @@
       A representative “one lap” segment of the SoCal Shootout temperature data was isolated by clipping the data from the 
       beginning of a cooling section (vehicle acceleration) to the end of a major braking event corresponding to a rotor 
       temperature peak.</p>
-    <img src="images/one_lap.png" alt="Tolerance Stackup" style="width:70%; max-width:900px">
+    <img src="images/one_lap.png" alt="Clipped One Lap" style="width:70%; max-width:900px">
     <p>Using the measured rotor temperature change, the braking heat input into the rotors was calculated 
       from:
     </p>
@@ -568,6 +568,7 @@
       values corresponding to rotor heating and cooling. Since convective cooling was modeled separately within the simulation, 
       negative heat flow values were removed so that only braking energy input was applied directly to the rotor.
     </p>
+    <img src="images/heat_flow_adjusted.png" alt="One Lap with heat flow adjusted" style="width:70%; max-width:900px">
     
     <h4>Forced Convection Cooling</h4>
     
@@ -611,6 +612,8 @@
       iteratively adjusted until the simulated rotor temperatures closely matched the experimentally measured IR sensor data.
     </p>
     
+    <img src="images/comparison.png" alt="Comparison between real temperatures and simulation" style="width:70%; max-width:900px">
+    
     <p>
       The validated simulation setup was then applied to candidate rotor geometries with varying inner diameters. To estimate 
       steady-state operating temperatures during endurance conditions, the one-lap heat flow profile was repeated over ten 
@@ -621,9 +624,18 @@
     <p>
       Thermal analysis results were used alongside structural and fatigue simulations to select the final rotor geometry. Rotor 
       designs were evaluated based on maintaining brake pad operating temperatures within the desired range while minimizing 
-      rotor mass and maintaining full brake pad contact. Final simulations predicted peak rotor temperatures near 300°C, which 
+      rotor mass and maintaining full brake pad contact. Final simulations predicted peak rotor temperatures that 
       closely matched measured SoCal Shootout data and helped validate the overall thermal modeling approach.
     </p>
+
+    <img src="images/thermal_dimensioning.png" alt="Rotor Iterations Thermally Optimized" style="width:70%; max-width:900px">
+
+    <p>The criteria for the selected rotor geometries were:
+      <ul> Fronts highest temperature within 750-1000 °F </ul>
+      <ul> Rears highest temperature within 350-550 °F </ul>
+      <ul> Lowest weight </ul>
+      <ul> Passes fatigue analysis </ul>
+</p>
 
   <h3>Shear and Fatigue Analysis</h3>
 
