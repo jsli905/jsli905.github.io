@@ -4,7 +4,7 @@
   <title>Brakes</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+ 
   <!-- W3.CSS -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-grey.css">
@@ -12,7 +12,7 @@
   
   <!-- Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
+ 
   
   <style>
     body, h1, h2, h3, h4 {
@@ -76,13 +76,18 @@
       margin-bottom: 0.5rem;
       line-height: 1.5;
     }
-
+ 
+    /* Ensure navbar always sits above sidebar and dropdowns */
+    .w3-top {
+      z-index: 9999 !important;
+    }
+ 
     /* ── Table of Contents Sidebar ── */
     .page-layout {
       display: flex;
       align-items: flex-start;
     }
-
+ 
     #toc-sidebar {
       position: sticky;
       top: 80px;
@@ -95,9 +100,9 @@
       border-right: 2px solid #e0e0e0;
       font-size: 0.82rem;
       line-height: 1.5;
-      z-index: 100;
+      z-index: 1;
     }
-
+ 
     #toc-sidebar h4 {
       font-size: 0.75rem;
       text-transform: uppercase;
@@ -105,17 +110,17 @@
       color: #888;
       margin: 0 0 0.6rem 0;
     }
-
+ 
     #toc-sidebar ul {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-
+ 
     #toc-sidebar li {
       margin-bottom: 2px;
     }
-
+ 
     #toc-sidebar a {
       display: block;
       padding: 3px 6px;
@@ -123,58 +128,58 @@
       border-radius: 4px;
       transition: background 0.15s, color 0.15s;
     }
-
+ 
     #toc-sidebar a:hover {
       background: #e8e8e8;
       color: #000;
     }
-
+ 
     #toc-sidebar a.toc-active {
       background: #dde8f5;
       color: #1a5fa8;
       font-weight: 600;
     }
-
+ 
     /* sub-items (h3) */
     #toc-sidebar .toc-sub {
       padding-left: 14px;
       color: #666;
       font-size: 0.78rem;
     }
-
+ 
     #toc-sidebar .toc-sub.toc-active {
       background: #dde8f5;
       color: #1a5fa8;
       font-weight: 600;
     }
-
+ 
     .main-content {
       flex: 1;
       min-width: 0;
     }
-
+ 
     /* Hide sidebar on small screens */
     @media (max-width: 860px) {
       #toc-sidebar { display: none; }
     }
-
+ 
   </style>
   
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+ 
   
 </head>
-
+ 
 <body>
-
+ 
 <!-- ================= NAVBAR ================= -->
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card">
-
+ 
     <a href="../../index.html" class="w3-bar-item w3-button w3-large">
       <b>Jennifer S. Li</b>
     </a>
-
+ 
     <!-- Experience Dropdown -->
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-button">Work Experience ▾</button>
@@ -206,12 +211,12 @@
         
       </div>
     </div>
-
+ 
     <!-- Projects Dropdown -->
-
+ 
 <div class="w3-dropdown-hover">
   <button class="w3-button">Projects ▾</button>
-
+ 
   <div class="w3-dropdown-content w3-bar-block w3-border">
     <div class="parent">
       <a href="../../experience/fsae.html" class="w3-bar-item w3-button">
@@ -257,41 +262,42 @@
     </div>
   </div>
 </div>
-
-
+ 
+ 
     <a href="../../courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
     <a href="../../assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
-
+ 
   </div>
 </div>
-
+ 
 <!-- Spacer for fixed navbar -->
 <div style="margin-top:64px"></div>
-
+ 
 <div class="page-layout">
-
+ 
 <!-- ================= TOC SIDEBAR ================= -->
 <nav id="toc-sidebar">
+  <h4>Contents</h4>
   <ul>
     <li><a href="#header">Overview</a></li>
     <li><a href="#overview">Background</a></li>
-
+ 
     <li><a href="#failure-analysis">Brake Failure Analysis</a></li>
     <li><a href="#rca" class="toc-sub">Root Cause Analysis</a></li>
     <li><a href="#preventative" class="toc-sub">Preventative Measures</a></li>
-
+ 
     <li><a href="#brake-script">Brake Script</a></li>
     <li><a href="#pedal-ratio" class="toc-sub">Pedal Ratio Script</a></li>
     <li><a href="#brake-modeling" class="toc-sub">System Modeling</a></li>
     <li><a href="#aero-cop" class="toc-sub">Variable Aero CoP</a></li>
     <li><a href="#model-refinements" class="toc-sub">Model Refinements</a></li>
     <li><a href="#design-application" class="toc-sub">Design Application</a></li>
-
+ 
     <li><a href="#calipers">Calipers</a></li>
-
+ 
     <li><a href="#pads">Brake Pads</a></li>
-
+ 
     <li><a href="#rotors">Rotors</a></li>
     <li><a href="#mounting-strategy" class="toc-sub">Mounting Strategy</a></li>
     <li><a href="#geometry-structural" class="toc-sub">Geometry &amp; Structural</a></li>
@@ -303,13 +309,13 @@
     <li><a href="#shear-fatigue" class="toc-sub">Shear &amp; Fatigue</a></li>
     <li><a href="#rotor-shear" class="toc-sub">↳ Shear Stress</a></li>
     <li><a href="#fatigue-analysis" class="toc-sub">↳ Fatigue Analysis</a></li>
-
+ 
     <li><a href="#brake bias">Brake Bias</a></li>
     <li><a href="#hydraulics">Hydraulic System</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
+ 
 <!-- ================= MAIN CONTENT ================= -->
 <div class="main-content">
 <section id="header" class="w3-container w3-padding-64">
