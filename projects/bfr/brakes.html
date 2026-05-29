@@ -305,6 +305,8 @@
     
 
     <h3>Incorporating Variable Aerodynamic CoP</h3>
+    <div style="display: flex; gap: 30px; align-items: center;">
+    <div>
     <p>
       A key improvement was introducing a variable aerodynamic center of pressure based on vehicle deceleration. Previously, the model 
       assumed a fixed CoP, which did not align with observed vehicle behavior — specifically, the car exhibited slight oversteer under 
@@ -316,12 +318,15 @@
       linear interpolation between minimum and maximum CoP values:
     </p>
 
-    <img src="images/cop_interpolation.png" alt="CoP interpolation vs deceleration" style="width:50%; max-width:900px">
+    
 
     <p>
       This allowed the model to more accurately capture how aerodynamic forces shift during braking events, improving correlation between 
       simulation and real-world driver feedback.
     </p>
+    </div>
+
+      <img src="images/cop_interpolation.png" alt="CoP interpolation vs deceleration" style="width:50%; max-width:900px">
 
     <h3>Model Refinements</h3>
     <p>
