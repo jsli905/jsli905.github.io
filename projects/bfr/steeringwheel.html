@@ -192,91 +192,166 @@
 <section id="header" class="w3-container w3-padding-64">
   <div class="max-width">
     <h2>Ergonomic Steering Wheel with Integrated Screen</h2>
-      <h3>
-       designed and manufactured steering wheel xyz
+    <h3>
+      Designed and manufactured a custom steering wheel featuring an integrated display,
+      redesigned paddle shifters, and iteratively validated ergonomics for the B23 Formula SAE vehicle.
     </h3>
-
-    <p>asjdgkjflkafalhjf
-      </p>
-
-      <img src="images/brake_sys.jpg" alt="Brake System" style="width:50%; max-width:900px">
+    <p>
+      This was a collaborative project spanning mechanical and electrical subteams. My contributions
+      covered the initial ergonomic design, handle geometry iterations, paddle shifter sensitivity
+      tuning, and final electrical adjustments. Intermediary ergonomic work and electronics
+      integration were carried out by teammates Noah Shermis and Brandon Chin respectively.
+    </p>
+    <img src="images/sw_final.jpg" alt="B23 Steering Wheel" style="width:50%; max-width:900px">
   </div>
 </section>
 
 <section id="overview" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
-      
-
-      <h2>Overview</h2>
-
-      <p>
-       first steering wheel with integrated screen. Worked on ergonomics and worked with electrical team on integrating a screen. 
-      </p>
-               
+    <h2>Overview</h2>
+    <p>
+      The B23 steering wheel was the team's first with a fully integrated display, replacing the
+      external MoTeC ADL unit to reduce weight and surface driver data directly on the wheel.
+      The redesign addressed ergonomic shortcomings from the previous year, growing the wheel
+      diameter from 235 mm to 267 mm, redesigning the handle geometry and paddle shape, and
+      packaging a screen, PCB, function buttons, and all wiring cleanly within a single 3D
+      printed carbon-fiber-reinforced nylon body.
+    </p>
   </div>
 </section>
+
 <section id="handle" class="w3-padding-64 w3-white">
   <div class="max-width">
-    <h2>Handle ergo</h2>
-    <p>credit noah for preliminary design iterations</p>
+    <h2>Handle Ergonomics</h2>
+    <p>
+      Initial handle geometry was designed by Noah Shermis. I took over for the final ergonomic
+      refinement phase, iterating on grip shape, handle angle, and overall wheel diameter based
+      on driver feedback from rough 3D prints produced starting September 14. The initial design
+      was completed September 3, with the finalized ergonomic design locked October 15.
+    </p>
+    <p>
+      The wheel diameter was increased from 235 mm to 267 mm to improve comfort and create more
+      space for the integrated screen. Handle geometry was iteratively adjusted in CAD and
+      re-printed until all drivers confirmed a comfortable, secure grip. Tennis grip tape was
+      applied to the final handles for additional tactile comfort during racing.
+    </p>
+    <!-- <img src="images/sw_ergo_iterations.png" alt="Handle ergonomic iterations" style="width:70%; max-width:800px"> -->
   </div>
 </section>
-  
+
 <section id="shifting" class="w3-padding-64 w3-light-grey">
-    <div class="max-width">
-
+  <div class="max-width">
     <h2>Paddle Shifters</h2>
-      <p>credit noah for shifter preliminary design iterations</p>
-      <p>ergo design iterations, mounting, clicking feedback testing and design</p>
-    
-
+    <p>
+      The paddle shifting mechanism carried over the same core architecture from the previous
+      year, with preliminary design iterations contributed by Noah Shermis. I redesigned the
+      paddle geometry for improved ergonomics, tuned actuation feel, and validated shift feedback
+      with drivers.
+    </p>
+    <p>
+      The paddles were resized and reshaped to better guide fingers into position and reduce
+      accidental actuation. Paddle travel was reduced both before and after limit switch actuation
+      to tighten shift feel. Magnets provide the return force after each shift, and the magnet
+      arrangement was iterated on alongside paddle geometry to achieve a crisp, consistent click
+      that matched driver preference. Significant time was spent tuning sensitivity — adjusting
+      actuation force and travel distance — until each driver's feedback was satisfied.
+    </p>
+    <!-- <img src="images/sw_paddles.png" alt="Paddle shifter CAD and magnet return mechanism" style="width:70%; max-width:800px"> -->
   </div>
 </section>
 
-
-
-</section>
 <section id="electronics" class="w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Screen Integration</h2>
-    <p>credit brandon for taking over and finalizing</p>
-    <h3>pcb</h3>
-    <h3>screen</h3>
-    <h3>wires</h3>
-  
-    
+    <p>
+      Electronics integration was led by Brandon Chin, who finalized the electrical architecture
+      and wiring. My role covered the mechanical packaging of all electrical components within
+      the wheel body, and final electrical adjustments during assembly and testing.
+    </p>
+
+    <h3>PCB</h3>
+    <p>
+      The PCB is mounted to the removable carbon fiber backing plate, keeping it accessible for
+      maintenance without disassembling the wheel body. Wiring runs from the display and buttons
+      to the PCB, and from the PCB out to the main connector. All components were waterproofed
+      using custom rubber gaskets.
+    </p>
+    <!-- <img src="images/sw_pcb.png" alt="PCB mounted to backplate" style="width:50%; max-width:700px"> -->
+
+    <h3>Screen</h3>
+    <p>
+      The screen is bolted into the front face of the wheel and vibrationally isolated by rubber
+      feet to protect it from chassis vibration during racing. Incorporating the screen directly
+      into the wheel eliminated the need for the external MoTeC ADL, reducing weight and keeping
+      driver-useful data within the natural sightline.
+    </p>
+    <!-- <img src="images/sw_screen.png" alt="Integrated screen" style="width:50%; max-width:700px"> -->
+
+    <h3>Wiring</h3>
+    <p>
+      Dedicated wiring channels are routed into the back face of the wheel body, guiding all
+      wires cleanly from the screen and buttons to the connector. Wiring is potted with resin
+      to secure it in place and prevent chafing under vibration. The carbon fiber backing plate
+      covers the wiring for a clean finish and keeps everything contained within the wheel.
+    </p>
+    <!-- <img src="images/sw_wiring.png" alt="Wiring channels and resin potting" style="width:50%; max-width:700px"> -->
   </div>
 </section>
-
 
 <section id="misc" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Misc</h2>
-    <p>diffuser, quick disconnect</p>
+    <h2>Additional Details</h2>
+
+    <h3>Shifting Light Diffuser</h3>
+    <p>
+      A shifting light diffuser sits above the screen to display gear shift indicators. The
+      diffuser spreads the LED light evenly across the indicator strip, keeping shift cues
+      visible in bright outdoor conditions without glare.
+    </p>
+
+    <h3>Quick Disconnect</h3>
+    <p>
+      The wheel interfaces with the steering column via a quick-disconnect hub, allowing the
+      wheel to be removed rapidly for driver ingress and egress — a requirement under FSAE rules.
+      Initial 3D prints confirmed a good fit with the quick-release interface early in the
+      design process.
+    </p>
   </div>
 </section>
+
 <section id="results" class="w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Results</h2>
-    <p>easier to look at road and adl, so not doing the screen anymore, but it turned out very well and was used in B23 and for B24 testing before retiring. Lots
-    carried over in furutre years.</p>
+    <p>
+      The B23 steering wheel was successfully manufactured and raced, with the integrated screen
+      functioning as designed. Driver feedback after the season noted that glancing at the wheel
+      for data during racing was harder than anticipated compared to a dashboard-mounted display,
+      as it required taking eyes off the road. As a result, the team opted not to continue the
+      integrated screen approach on B24.
+    </p>
+    <p>
+      Despite this, the wheel was well-received overall and remained in use through B23's full
+      race season and into B24 testing before being retired. The ergonomic improvements, handle
+      geometry, and paddle shifter design were carried forward and informed future steering wheel
+      iterations.
+    </p>
+  </div>
+</section>
 
-    
+<section class="w3-light-grey w3-padding-64">
+  <div class="max-width">
+    <h2>Skills Demonstrated</h2>
+    <p>
+      Iterative ergonomic design and driver-centered validation through physical prototyping;
+      3D printing with MarkForged carbon-fiber-reinforced nylon; mechanical packaging of
+      electronics within a constrained structural envelope; paddle shifter mechanism design
+      and sensitivity tuning; cross-functional collaboration with electrical subteam on wiring
+      integration and waterproofing; CAD modeling across multiple design review cycles (CDR,
+      DDR, FDR).
+    </p>
   </div>
 </section>
   
-<section class="w3-light-grey w3-padding-64">
-   <div class="max-width">
-    <!-- Skills -->
-    <h2>Skills Demonstrated</h2>
-
-    <p>
-     
-      </p>
-    </div>
-  </section>
-  
-
 <section id="contact" class="w3-white w3-padding-64">
   <div class="max-width">
     <h2>Contact</h2>
