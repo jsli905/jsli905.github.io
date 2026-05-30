@@ -355,6 +355,8 @@
 <section id="pedal-tray" class="w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Pedal Tray</h2>
+    <p> Project Owner: Donald Le. <br>
+      Contributions: Contributed extensively on design and engineering trade studies + simulation setup and validation. Manufactured and machinined pedal tray. </p>
     <p>
       The pedal tray is the structural backbone of the assembly, mounting the brake pedal,
       master cylinders, throttle pedal, and all associated hardware to the chassis floor.
@@ -389,8 +391,12 @@
 <section id="brake-pedal" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Brake Pedal</h2>
-
-    <h3 id="brake-design">Design Changes (B22 → B23)</h3>
+    <p>
+      Project Owner: Donald Le.<br>
+      Contributions: Collaborated extensively on pedal design and iteration, assisted with simulation setup and validation, 
+      conducted testing and analysis of the previous B22 pedal design to inform improvements, and contributed to manufacturing and machining of the final assembly.
+    </p>
+    <h3 id="brake-design">Design</h3>
     <p>
       The overall geometry of the brake pedal was retained from B22, but several targeted
       changes were made to improve structural performance, reduce weight, and improve
@@ -435,7 +441,7 @@
   <div class="max-width">
     <h2>Throttle Pedal</h2>
 
-    <h3 id="throttle-design">Design Changes (B22 → B23)</h3>
+    <h3 id="throttle-design">Design</h3>
     <p>
       The throttle pedal retained its two-waterjet-piece parallel plate construction from B22,
       using two 0.16-inch 6061-T6 aluminum plates with aluminum spacers. Smaller bronze bushings
@@ -499,29 +505,22 @@
   <div class="max-width">
     <h2>Pedal Cups and Heel Rest</h2>
     <p>
-      The B23 pedal tray introduced driver ergonomic contact surfaces for the first time:
-      carbon-fiber-reinforced 3D printed pedal cups and a heel rest. Both were printed on a
+      The B23 pedal tray introduced driver ergonomic contact surfaces for the first time: carbon-fiber-reinforced 3D printed pedal cups and a heel rest. Both were printed on a
       MarkForged printer using Onyx (carbon-fiber-filled nylon) with continuous carbon fiber
-      reinforcement for stiffness. Geometry and dimensions were based directly on driver
-      feedback gathered during testing.
+      reinforcement for stiffness. Geometry and dimensions were based directly on driver feedback gathered during testing.
     </p>
 
     <h3>Pedal Cups</h3>
     <p>
-      The pedal cups mount to the sides of the brake pedal face rather than the face itself,
-      an improvement over the B22 mounting approach that reduced stress concentrations on the
-      pedal. This side-mounting strategy also made the cups easier to install and remove
-      independently of the pedal.
+      The pedal cups mount to the sides of the brake pedal face rather than the face itself, an improvement over the B22 mounting approach that reduced stress concentrations on the
+      pedal. This side-mounting strategy also made the cups easier to install and remove independently of the pedal.
     </p>
 
     <h3>Heel Rest</h3>
     <p>
-      The heel rest mounts to tabs on the tray floor using female threaded round standoffs
-      (McMaster 91125A341) and stainless steel flat head screws (McMaster 91500A352), with
-      standoff height used to adjust the heel rest distance from the tray. The part uses
-      reinforcing flanges on the back face to increase the moment area and overall stiffness,
-      an open shell in the center to reduce weight, and side walls to restrict lateral driver
-      foot movement. An inverted T-shaped cutout at the base allows the part to slide over
+      The heel rest mounts to tabs on the tray floor using female threaded round standoffs and stainless steel flat head screws, with
+      standoff height used to adjust the heel rest distance from the tray. The part uses reinforcing flanges on the back face to increase the moment area and overall stiffness,
+      an open shell in the center to reduce weight, and side walls to restrict lateral driver foot movement. An inverted T-shaped cutout at the base allows the part to slide over
       the mounting tabs for installation.
     </p>
     <!-- <img src="images/pedal_cups_heel_rest.png" alt="Pedal cups and heel rest CAD" style="width:70%; max-width:800px"> -->
@@ -533,25 +532,19 @@
   <div class="max-width">
     <h2>Post-FDR Issues and Iterations</h2>
     <p>
-      The pedal tray went through several significant redesign cycles after FDR as issues were
-      discovered during assembly and on-car testing. These are documented here both for
-      completeness and because they represent the bulk of the real engineering problem-solving
-      work on this subsystem.
+      The pedal tray went through several significant redesign cycles after FDR as issues were discovered during assembly and on-car testing. These are documented here both for
+      completeness and because they represent the bulk of the real engineering problem-solving work on this subsystem.
     </p>
 
     <h3 id="linpot-range">Sensor Dynamic Range Issues</h3>
     <p>
-      After switching to larger linear potentiometers, the throttle pedal travel was
-      insufficient to reach the required dynamic range of the sensors needed for accurate
-      throttle position readings. The sensors were physically too long for the available
-      pedal stroke, meaning the output voltage swing across the full pedal travel was too
+      After switching to larger linear potentiometers, the throttle pedal travel was insufficient to reach the required dynamic range of the sensors needed for accurate
+      throttle position readings. The sensors were physically too long for the available pedal stroke, meaning the output voltage swing across the full pedal travel was too
       small to be reliably interpreted by the DAQ system.
     </p>
     <p>
-      Shorter linear potentiometers were sourced to match the available pedal stroke, but
-      this required a full redesign of the potentiometer mounting on the pedal tray to
-      accommodate the new sensor geometry. The tray mounting features were reprinted and
-      the sensor mounting brackets were updated accordingly.
+      Shorter linear potentiometers were sourced to match the available pedal stroke, but this required a full redesign of the potentiometer mounting on the pedal tray to
+      accommodate the new sensor geometry. The tray mounting features were reprinted and the sensor mounting brackets were updated accordingly.
     </p>
 
     <h3 id="torsional">Torsional Stiffness and Tracking Faults</h3>
@@ -583,7 +576,7 @@
     </p>
     <p>
       The linear potentiometer length constraint ultimately points to a need to redesign
-      the pedals themselves — not just the tray mounting — to accommodate shorter sensors
+      the pedals themselves, not just the tray mounting, to accommodate shorter sensors
       with the correct stroke geometry from the start. The current approach of adapting
       the mounting around available sensors creates packaging compromises that cascade into
       structural and accuracy issues.
