@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pedals</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-grey.css">
+  
+  
+  <!-- Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+  
+  <style>
+    body, h1, h2, h3, h4 {
+      font-family: "Roboto", sans-serif;
+    }
+    header h1 {
+    font-size: 6rem;  
+    margin-bottom: 0.25rem;
+    }
+    .max-width {
+      max-width: 1000px;
+      margin: auto;
+    }
+    img {
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Hide the nested submenu by default */
+    .parent .submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background: white;
+      min-width: 180px;
+      z-index: 1000;
+    }
+    
+    /* Only show submenu when hovering*/
+    .parent:hover .submenu {
+      display: block;
+    }
+        
+    /* Make parent positioning context */
+    .dropdown {
+      position: relative;
+    }
+    /* Skills section layout */
+    
+    .skills-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    /*.skill-card {
+      background-color: #ffffff;
+      padding: 1.25rem 1.5rem; /* tighter padding */
+      border-radius: 6px;
+    } */
+    .skill-category ul {
+      list-style-type: disc
+      margin: auto;
+    }
+    
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+
+  </style>
+  
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card">
+
+    <a href="../../index.html" class="w3-bar-item w3-button w3-large">
+      <b>Jennifer S. Li</b>
+    </a>
+
+    <!-- Experience Dropdown -->
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button">Work Experience ▾</button>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+        <a href="../../experience/astranis.html" class="w3-bar-item w3-button">
+          Astranis – Associate Technical Project Manager
+        </a>
+        <a href="../../experience/spacex-hls.html" class="w3-bar-item w3-button">
+          SpaceX - Human Lander System (HLS) Mechanisms Intern
+        </a>
+        <a href="../../experience/spacex-mechs.html" class="w3-bar-item w3-button">
+          SpaceX - Starship Mechanisms Intern
+        </a>
+        <a href="../../experience/tesla.html" class="w3-bar-item w3-button">
+          Tesla - Stator Manufacturing Design Intern
+        </a>
+        <a href="../../experience/chemix.html" class="w3-bar-item w3-button">
+          Chemix - Battery R&D Intern
+        </a>
+        <a href="../../experiences/taflab.html" class="w3-bar-item w3-button">
+          TAFLab - Multihulled Unmanned Boat Undergrad Researcher
+        </a>
+        <a href="../../experience/nist.html" class="w3-bar-item w3-button">
+          NIST - Additive Manufacturing Laser Powder Bed Fusion Intern
+        </a>
+        <a href="../../experience/other.html" class="w3-bar-item w3-button">
+          Other (Misc)
+        </a>
+        
+      </div>
+    </div>
+
+    <!-- Projects Dropdown -->
+
+<div class="w3-dropdown-hover">
+  <button class="w3-button">Projects ▾</button>
+
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+    <div class="parent">
+      <a href="../../experience/fsae.html" class="w3-bar-item w3-button">
+        Berkeley Formula Racing ▸
+      </a>
+        <div class="w3-bar-block w3-border submenu">
+          <a href="seat.html" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
+          <a href="brakes.html" class="w3-bar-item w3-button">Brakes</a>
+          <a href="steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
+          <a href="pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
+          <a href="headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
+          <a href="diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
+        </div>
+  
+        <a href="../wheel.html" class="w3-bar-item w3-button">
+        Hollow Carbon Fiber Wheel
+        </a>
+         <a href="../perry.html" class="w3-bar-item w3-button">
+          Perry the Quadruped Robot
+         </a>
+        <a href="../passive-walker.html" class="w3-bar-item w3-button">
+          Passive Walking Robot
+         </a>
+        <a href="../cupholder.html" class="w3-bar-item w3-button">
+          Gimballed Cup Holder
+         </a>
+        
+        <a href="../uav.html" class="w3-bar-item w3-button">
+          UAV Flight Control
+         </a>
+        <a href="../flower.html" class="w3-bar-item w3-button">
+          Morphing Flower Soft-Robot
+         </a>
+        <a href="../turtle.html" class="w3-bar-item w3-button">
+          Amphibious Turtle Robot
+         </a>
+        <a href="../star.html" class="w3-bar-item w3-button">
+          Stage Separation Mechanism
+         </a>
+        <a href="../misc.html" class="w3-bar-item w3-button">
+          Other
+        </a>
+    </div>
+  </div>
+</div>
+
+
+    <a href="../../courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
+    <a href="../../assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+
+  </div>
+</div>
+
+<!-- Spacer for fixed navbar -->
+<div style="margin-top:64px"></div>
+<!-- Header-->
+<section id="header" class="w3-container w3-padding-64">
+  <div class="max-width">
+    <h2>Ergonomic Steering Wheel with Integrated Screen</h2>
+    <h3>
+      Designed and manufactured a custom steering wheel featuring an integrated display,
+      redesigned paddle shifters, and iteratively validated ergonomics
+    </h3>
+    <p>
+      This was a collaborative project spanning mechanical and electrical subteams. My contributions
+      covered the initial ergonomic design, handle geometry iterations, paddle shifter sensitivity
+      tuning, and final electrical adjustments. Intermediary ergonomic work and electronics
+      integration were carried out by teammates Noah Shermis and Brandon Chin respectively.
+    </p>
+    <img src="images/sw.png" alt="B23 Steering Wheel" style="width:100%; max-width:900px">
+  </div>
+</section>
+
+<section id="overview" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Overview</h2>
+    <p>
+      The B23 steering wheel was the team's first with an integrated display, replacing the
+      external MoTeC ADL unit to reduce weight and display driver data directly on the wheel.
+      The redesign addressed ergonomic shortcomings from the previous year, growing the wheel
+      diameter, redesigning the handle geometry and paddle shape, and
+      packaging a screen, PCB, function buttons, and all wiring cleanly. The wheel body was
+      3D printed on a MarkForged printer in carbon-fiber-reinforced nylon at 100% infill (to ensure that it will pass safety rules),
+      with a removable carbon fiber backing plate housing all wiring and electronics.
+    </p>
+  </div>
+</section>
+
+<section id="handle" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Handle Ergonomics</h2>
+    <p>
+      Intermediary handle geometry was designed by Noah Shermis. I worked on initial handle design and took over for the final ergonomic
+      refinement phase, iterating on grip shape and finger cutouts, adding handle grips, handle angle, and overall wheel diameter based
+      on driver feedback from rough 3D printed prototypes.
+    </p>
+    <p>
+      The wheel diameter was increased to improve comfort and create more
+      space for the integrated screen. Handle geometry was iteratively adjusted in CAD and
+      re-printed until all drivers confirmed a comfortable, secure grip. Tennis grip tape was
+      applied to the final handles for additional tactile comfort during racing.
+    </p>
+    <img src="images/sw_ergo.png" alt="Handle ergonomics" style="width:70%; max-width:800px">
+  </div>
+</section>
+
+<section id="shifting" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Paddle Shifters</h2>
+    <p>
+      The paddle shifting mechanism carried over the same core architecture from the previous
+      year. I redesigned the
+      paddle geometry for improved ergonomics, tuned actuation feel, and validated shift feedback
+      with drivers.
+    </p>
+    <p>
+      The paddles were resized and reshaped to better guide fingers into position and tune paddle sensitivity and actuation feel to driver preferences. 
+      Paddle travel was reduced both before and after limit switch actuation
+      to tighten shift feel. Magnets provide the return force after each shift, and the magnet
+      arrangement was iterated on alongside paddle geometry to achieve a click
+      that matched driver preference. Significant time was spent tuning 
+      actuation force and travel distance until each driver's feedback was satisfied.
+    </p>
+    <img src="images/sw_paddles.png" alt="Paddle shifter CAD and magnet return mechanism" style="width:100%; max-width:800px">
+  </div>
+</section>
+
+<section id="electronics" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Screen Integration</h2>
+    <h3>Screen</h3>
+    <p>
+      The screen is bolted into the front face of the wheel and vibrationally isolated by rubber
+      feet to protect it from chassis vibration during racing. Incorporating the screen directly
+      into the wheel eliminated the need for the external MoTeC ADL, reducing weight and keeping
+      driver-useful data within the natural sightline. The wheel also integrates 2 function
+      buttons and 2 switches for driver convenience, all waterproofed with individual gaskets.
+      A shifting light diffuser sits above the screen to display gear shift indicators.
+    </p>
+    <img src="images/sw_screen.png" alt="Integrated screen" style="width:90%; max-width:700px">
+
+    <h3>PCB and Wiring</h3>
+    <div style="display: flex; gap: 30px; align-items: center;">
+    <div>
+    <p>
+      The PCB is mounted to the removable carbon fiber backing plate, keeping it accessible for
+      maintenance without disassembling the wheel body. Wiring runs from the display and buttons
+      to the PCB, and from the PCB out to the main connector. All components were waterproofed
+      using custom rubber gaskets.
+    </p>
+    <p>
+      Dedicated wiring channels are routed into the back face of the wheel body, guiding all
+      wires cleanly from the screen and buttons to the connector. Wiring is potted with resin
+      to secure it in place and prevent chafing under vibration. The carbon fiber backing plate
+      covers the wiring for a clean finish and keeps everything contained within the wheel.
+    </p>
+    </div>
+    <img src="images/sw_wiring.png" alt="Wiring channels and resin potting" style="width:30%; max-width:700px">
+    </div>
+  </div>
+</section>
+
+<section id="misc" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Additional Details</h2>
+
+    <h3>Shifting Light Diffuser</h3>
+    <p>
+      A shifting light diffuser sits above the screen to display gear shift indicators. The
+      diffuser spreads the LED light evenly across the indicator strip, keeping shift cues
+      visible in bright outdoor conditions without glare.
+    </p>
+
+    <h3>Quick Disconnect</h3>
+    <p>
+      The wheel interfaces with the steering column via a quick-disconnect hub, allowing the
+      wheel to be removed rapidly for driver ingress and egress — a requirement under FSAE rules.
+      Initial 3D prints confirmed a good fit with the quick-release interface early in the
+      design process.
+    </p>
+  </div>
+</section>
+
+<section id="results" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Results</h2>
+    <p>
+      The B23 steering wheel was successfully manufactured and raced, with the integrated screen
+      functioning as designed. Driver feedback after the season noted that glancing at the wheel
+      for data during racing was harder than anticipated compared to a dashboard-mounted display,
+      as it required taking eyes off the road. As a result, the team opted not to continue the
+      integrated screen approach on B24.
+    </p>
+    <p>
+      Despite this, the wheel was well-received overall and remained in use through B23's full
+      race season and into B24 testing before being retired. The ergonomic improvements, handle
+      geometry, and paddle shifter design were carried forward and informed future steering wheel
+      iterations.
+    </p>
+  </div>
+</section>
+
+<section class="w3-light-grey w3-padding-64">
+  <div class="max-width">
+    <h2>Skills Demonstrated</h2>
+    <p>
+      Iterative ergonomic design and driver-centered validation • Physical prototyping and 
+      3D printing • MarkForged carbon-fiber-reinforced nylon manufacturing • Mechanical 
+      packaging of electronics • Paddle shifter mechanism design • Driver-specific sensitivity 
+      tuning • Cross-functional collaboration • CAD (SolidWorks) • Wiring routing and 
+      management • Waterproofing and sealing design • Design review process (CDR, DDR, FDR)
+    </p>
+  </div>
+</section>
+  
+<section id="contact" class="w3-white w3-padding-64">
+  <div class="max-width">
+    <h2>Contact</h2>
+    <p>Email: jennifersili@berkeley.edu</p>
+    <p>LinkedIn: linkedin.com/in/jennifersili</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="w3-container w3-center w3-padding-16 w3-light-grey">
+  <p>Jennifer Si Li | Engineering Portfolio</p>
+</footer>
+
+</body>
+</html>
+        
