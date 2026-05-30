@@ -1,366 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Pedals</title>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- W3.CSS -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedals</title>
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-grey.css">
-  
-  
-  <!-- Font -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-
-  
+  <!-- match whatever CSS your other pages use -->
   <style>
-    body, h1, h2, h3, h4 {
-      font-family: "Roboto", sans-serif;
-    }
-    header h1 {
-    font-size: 6rem;  
-    margin-bottom: 0.25rem;
-    }
+    /* ── paste your existing shared styles here ── */
+
     .max-width {
-      max-width: 1000px;
-      margin: auto;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
     }
-    img {
-      border-radius: 6px;
-      margin-top: 12px;
+
+    /* ── Table of Contents Sidebar ── */
+    .page-layout {
+      display: flex;
+      align-items: flex-start;
     }
-    a {
+
+    #toc-sidebar {
+      position: sticky;
+      top: 80px;
+      width: 210px;
+      min-width: 210px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      padding: 1rem 0.75rem;
+      background: #f9f9f9;
+      border-right: 2px solid #e0e0e0;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      z-index: 1;
+    }
+
+    #toc-sidebar h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin: 0 0 0.6rem 0;
+    }
+
+    #toc-sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    #toc-sidebar li { margin-bottom: 2px; }
+
+    #toc-sidebar a {
+      display: block;
+      padding: 3px 6px;
+      color: #444;
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
       text-decoration: none;
     }
-    
-    /* Hide the nested submenu by default */
-    .parent .submenu {
-      display: none;
-      position: absolute;
-      left: 100%;
-      top: 0;
-      background: white;
-      min-width: 180px;
-      z-index: 1000;
-    }
-    
-    /* Only show submenu when hovering*/
-    .parent:hover .submenu {
-      display: block;
-    }
-        
-    /* Make parent positioning context */
-    .dropdown {
-      position: relative;
-    }
-    /* Skills section layout */
-    
-    .skills-grid {
-      display: grid !important;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
-      margin-top: 2rem;
-    }
-    /*.skill-card {
-      background-color: #ffffff;
-      padding: 1.25rem 1.5rem; /* tighter padding */
-      border-radius: 6px;
-    } */
-    .skill-category ul {
-      list-style-type: disc
-      margin: auto;
-    }
-    
-    .skill-category li {
-      margin-bottom: 0.5rem;
-      line-height: 1.5;
+
+    #toc-sidebar a:hover { background: #e8e8e8; color: #000; }
+
+    #toc-sidebar a.toc-active {
+      background: #dde8f5;
+      color: #1a5fa8;
+      font-weight: 600;
     }
 
+    #toc-sidebar .toc-sub {
+      padding-left: 14px;
+      color: #666;
+      font-size: 0.78rem;
+    }
 
+    #toc-sidebar .toc-sub.toc-active {
+      background: #dde8f5;
+      color: #1a5fa8;
+      font-weight: 600;
+    }
+
+    .main-content { flex: 1; min-width: 0; }
+
+    @media (max-width: 860px) { #toc-sidebar { display: none; } }
+
+    .w3-top { z-index: 9999 !important; }
   </style>
-  
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-  
 </head>
-
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-card">
-
-    <a href="../../index.html" class="w3-bar-item w3-button w3-large">
-      <b>Jennifer S. Li</b>
-    </a>
-
-    <!-- Experience Dropdown -->
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-button">Work Experience ▾</button>
-      <div class="w3-dropdown-content w3-bar-block w3-border">
-        <a href="../../experience/astranis.html" class="w3-bar-item w3-button">
-          Astranis – Associate Technical Project Manager
-        </a>
-        <a href="../../experience/spacex-hls.html" class="w3-bar-item w3-button">
-          SpaceX - Human Lander System (HLS) Mechanisms Intern
-        </a>
-        <a href="../../experience/spacex-mechs.html" class="w3-bar-item w3-button">
-          SpaceX - Starship Mechanisms Intern
-        </a>
-        <a href="../../experience/tesla.html" class="w3-bar-item w3-button">
-          Tesla - Stator Manufacturing Design Intern
-        </a>
-        <a href="../../experience/chemix.html" class="w3-bar-item w3-button">
-          Chemix - Battery R&D Intern
-        </a>
-        <a href="../../experiences/taflab.html" class="w3-bar-item w3-button">
-          TAFLab - Multihulled Unmanned Boat Undergrad Researcher
-        </a>
-        <a href="../../experience/nist.html" class="w3-bar-item w3-button">
-          NIST - Additive Manufacturing Laser Powder Bed Fusion Intern
-        </a>
-        <a href="../../experience/other.html" class="w3-bar-item w3-button">
-          Other (Misc)
-        </a>
-        
-      </div>
-    </div>
-
-    <!-- Projects Dropdown -->
-
-<div class="w3-dropdown-hover">
-  <button class="w3-button">Projects ▾</button>
-
-  <div class="w3-dropdown-content w3-bar-block w3-border">
-    <div class="parent">
-      <a href="../../experience/fsae.html" class="w3-bar-item w3-button">
-        Berkeley Formula Racing ▸
-      </a>
-        <div class="w3-bar-block w3-border submenu">
-          <a href="seat.html" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
-          <a href="brakes.html" class="w3-bar-item w3-button">Brakes</a>
-          <a href="steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
-          <a href="pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
-          <a href="headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
-          <a href="diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
-        </div>
-  
-        <a href="../wheel.html" class="w3-bar-item w3-button">
-        Hollow Carbon Fiber Wheel
-        </a>
-         <a href="../perry.html" class="w3-bar-item w3-button">
-          Perry the Quadruped Robot
-         </a>
-        <a href="../passive-walker.html" class="w3-bar-item w3-button">
-          Passive Walking Robot
-         </a>
-        <a href="../cupholder.html" class="w3-bar-item w3-button">
-          Gimballed Cup Holder
-         </a>
-        
-        <a href="../uav.html" class="w3-bar-item w3-button">
-          UAV Flight Control
-         </a>
-        <a href="../flower.html" class="w3-bar-item w3-button">
-          Morphing Flower Soft-Robot
-         </a>
-        <a href="../turtle.html" class="w3-bar-item w3-button">
-          Amphibious Turtle Robot
-         </a>
-        <a href="../star.html" class="w3-bar-item w3-button">
-          Stage Separation Mechanism
-         </a>
-        <a href="../misc.html" class="w3-bar-item w3-button">
-          Other
-        </a>
-    </div>
-  </div>
-</div>
-
-
-    <a href="../../courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
-    <a href="../../assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
-
-  </div>
-</div>
+<!-- ── paste your existing navbar here ── -->
 
 <!-- Spacer for fixed navbar -->
 <div style="margin-top:64px"></div>
-<!-- Header-->
+
+<div class="page-layout">
+
+<!-- ================= TOC SIDEBAR ================= -->
+<nav id="toc-sidebar">
+  <h4>Contents</h4>
+  <ul>
+    <li><a href="#header">Overview</a></li>
+    <li><a href="#overview">Background</a></li>
+
+    <li><a href="#pedal-tray">Pedal Tray</a></li>
+    <li><a href="#tray-design" class="toc-sub">Design Changes</a></li>
+    <li><a href="#tray-sim" class="toc-sub">FEA Simulation</a></li>
+
+    <li><a href="#brake-pedal">Brake Pedal</a></li>
+    <li><a href="#brake-design" class="toc-sub">Design Changes</a></li>
+    <li><a href="#brake-sim" class="toc-sub">FEA Simulation</a></li>
+    <li><a href="#brake-testing" class="toc-sub">Physical Testing</a></li>
+
+    <li><a href="#throttle-pedal">Throttle Pedal</a></li>
+    <li><a href="#throttle-design" class="toc-sub">Design Changes</a></li>
+    <li><a href="#throttle-sim" class="toc-sub">FEA Simulation</a></li>
+    <li><a href="#return-mechanism" class="toc-sub">Return Mechanism</a></li>
+
+    <li><a href="#linpots">Linear Potentiometers</a></li>
+    <li><a href="#pedal-cups">Pedal Cups &amp; Heel Rest</a></li>
+
+    <li><a href="#post-fdr">Post-FDR Issues</a></li>
+    <li><a href="#linpot-range" class="toc-sub">Sensor Range Issues</a></li>
+    <li><a href="#torsional" class="toc-sub">Torsional Stiffness</a></li>
+    <li><a href="#future-work" class="toc-sub">Future Work</a></li>
+
+    <li><a href="#skills">Skills Demonstrated</a></li>
+  </ul>
+</nav>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="main-content">
+
+<!-- Header -->
 <section id="header" class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Ergonomic Steering Wheel with Integrated Screen</h2>
+    <h2>Pedal Tray Assembly</h2>
     <h3>
-      Designed and manufactured a custom steering wheel featuring an integrated display,
-      redesigned paddle shifters, and iteratively validated ergonomics
+      Designed and iterated on the B23 pedal tray assembly, including the brake pedal,
+      throttle pedal, return mechanism, linear potentiometer mounting, pedal cups, and heel rest.
     </h3>
     <p>
-      This was a collaborative project spanning mechanical and electrical subteams. My contributions
-      covered the initial ergonomic design, handle geometry iterations, paddle shifter sensitivity
-      tuning, and final electrical adjustments. Intermediary ergonomic work and electronics
-      integration were carried out by teammates Noah Shermis and Brandon Chin respectively.
+      The B23 pedal tray was a ground-up redesign focused on weight reduction, improved driver
+      ergonomics, and packaging of new sensor hardware. The design went through CDR, DDR, and FDR
+      review cycles, followed by extensive post-FDR iteration to resolve sensor accuracy and
+      structural issues discovered during testing.
     </p>
-    <img src="images/sw.png" alt="B23 Steering Wheel" style="width:100%; max-width:900px">
+    <!-- <img src="images/pedal_tray_assembly.png" alt="B23 Pedal Tray Assembly" style="width:60%; max-width:900px"> -->
   </div>
 </section>
 
+<!-- Overview -->
 <section id="overview" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Overview</h2>
     <p>
-      The B23 steering wheel was the team's first with an integrated display, replacing the
-      external MoTeC ADL unit to reduce weight and display driver data directly on the wheel.
-      The redesign addressed ergonomic shortcomings from the previous year, growing the wheel
-      diameter, redesigning the handle geometry and paddle shape, and
-      packaging a screen, PCB, function buttons, and all wiring cleanly. The wheel body was
-      3D printed on a MarkForged printer in carbon-fiber-reinforced nylon at 100% infill (to ensure that it will pass safety rules),
-      with a removable carbon fiber backing plate housing all wiring and electronics.
+      The B23 pedal tray assembly introduced several significant changes over B22: a new
+      single-wall throttle pedal mounting design, a redesigned brake pedal with an I-beam cross
+      section and upgraded material, a simplified torsion spring return mechanism, new linear
+      potentiometer mounting locations, and entirely new driver ergonomic features in the form
+      of 3D printed carbon-fiber-reinforced pedal cups and a heel rest. The assembly also
+      provides 3 inches of fore-aft pedal adjustability at 1-inch increments to accommodate
+      different driver sizes.
+    </p>
+    <p>
+      Post-FDR testing revealed several issues with the potentiometer mounting and throttle
+      pedal torsional stiffness that required multiple rounds of redesign and reprinting before
+      the system met functional requirements.
     </p>
   </div>
 </section>
 
-<section id="handle" class="w3-padding-64 w3-white">
+<!-- Pedal Tray -->
+<section id="pedal-tray" class="w3-padding-64 w3-white">
   <div class="max-width">
-    <h2>Handle Ergonomics</h2>
+    <h2>Pedal Tray</h2>
     <p>
-      Intermediary handle geometry was designed by Noah Shermis. I worked on initial handle design and took over for the final ergonomic
-      refinement phase, iterating on grip shape and finger cutouts, adding handle grips, handle angle, and overall wheel diameter based
-      on driver feedback from rough 3D printed prototypes.
+      The pedal tray is the structural backbone of the assembly, mounting the brake pedal,
+      master cylinders, throttle pedal, and all associated hardware to the chassis floor.
+      It is waterjet cut from 6061-T6 aluminum.
     </p>
+
+    <h3 id="tray-design">Design Changes (B22 → B23)</h3>
     <p>
-      The wheel diameter was increased to improve comfort and create more
-      space for the integrated screen. Handle geometry was iteratively adjusted in CAD and
-      re-printed until all drivers confirmed a comfortable, secure grip. Tennis grip tape was
-      applied to the final handles for additional tactile comfort during racing.
+      The most significant structural change was switching the throttle pedal side of the tray
+      to a single-wall design, reducing weight from 0.72 lbs to 0.63 lbs while also simplifying
+      assembly. The brake pedal side geometry was largely carried over from B22. The throttle
+      side walls were also made thinner overall. A key packaging improvement was that the
+      potentiometer mounts were designed to double as holders for the torsion springs, reducing
+      part count. Pedal cup and heel rest mounting tabs were added, and the tray was given
+      standoff holes to allow the heel rest distance to be adjusted.
     </p>
-    <img src="images/sw_ergo.png" alt="Handle ergonomics" style="width:70%; max-width:800px">
+    <!-- <img src="images/pedal_tray_b22_b23.png" alt="Pedal tray B22 vs B23 comparison" style="width:70%; max-width:800px"> -->
+
+    <h3 id="tray-sim">FEA Simulation</h3>
+    <p>
+      The tray was simulated in both SolidWorks and Ansys under a 450 lb brake pedal input,
+      with pin connectors at the master cylinder and brake pedal interfaces, a rigid floor
+      constraint at the top face, bonded dummy MCs and pedal bodies, and bolted tab connectors
+      with 1850 lbf preload. Results across both simulation environments were consistent:
+      max stress of approximately 210 MPa (30,460 psi) and a factor of safety of ~1.2.
+    </p>
+    <!-- <img src="images/pedal_tray_fea.png" alt="Pedal tray FEA von Mises stress" style="width:70%; max-width:800px"> -->
   </div>
 </section>
 
-<section id="shifting" class="w3-padding-64 w3-light-grey">
+<!-- Brake Pedal -->
+<section id="brake-pedal" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Paddle Shifters</h2>
+    <h2>Brake Pedal</h2>
+
+    <h3 id="brake-design">Design Changes (B22 → B23)</h3>
     <p>
-      The paddle shifting mechanism carried over the same core architecture from the previous
-      year. I redesigned the
-      paddle geometry for improved ergonomics, tuned actuation feel, and validated shift feedback
-      with drivers.
+      The overall geometry of the brake pedal was retained from B22, but several targeted
+      changes were made to improve structural performance, reduce weight, and improve
+      compatibility with the new tray design. The pedal is machined from 7050-T6351 aluminum,
+      upgraded from 6061-T6, to allow for more aggressive material removal while maintaining
+      a higher factor of safety. An I-beam cross section was incorporated into the shank to
+      reduce deflection under load while also reducing weight, bringing the total from 0.70 lbs
+      to 0.68 lbs. The pedal height was increased by 0.5 inches to improve leverage and
+      better align with the master cylinder actuation geometry. Stainless steel ball bearings
+      replaced the previous bronze bushings for smoother pivot actuation, and mounting points
+      for the pedal cup were added to the sides of the pedal face.
     </p>
+    <!-- <img src="images/brake_pedal_b22_b23.png" alt="Brake pedal B22 vs B23" style="width:70%; max-width:800px"> -->
+
+    <h3 id="brake-sim">FEA Simulation</h3>
     <p>
-      The paddles were resized and reshaped to better guide fingers into position and tune paddle sensitivity and actuation feel to driver preferences. 
-      Paddle travel was reduced both before and after limit switch actuation
-      to tighten shift feel. Magnets provide the return force after each shift, and the magnet
-      arrangement was iterated on alongside paddle geometry to achieve a click
-      that matched driver preference. Significant time was spent tuning 
-      actuation force and travel distance until each driver's feedback was satisfied.
+      The brake pedal was simulated under a 450 lb face load with a frictionless support
+      and remote displacement constraint at the pivot. The final Ansys simulation produced
+      a max von Mises stress of 210 MPa (iso-clipped at 100 MPa to visualize stress
+      distribution) and a max displacement of 2.9 mm. An earlier SolidWorks simulation
+      produced consistent results at 30,312.9 psi max stress and 0.11 inches max displacement,
+      confirming the design was adequate before switching simulation environments.
     </p>
-    <img src="images/sw_paddles.png" alt="Paddle shifter CAD and magnet return mechanism" style="width:100%; max-width:800px">
+    <!-- <img src="images/brake_pedal_fea.png" alt="Brake pedal FEA stress and displacement" style="width:70%; max-width:800px"> -->
+
+    <h3 id="brake-testing">Physical Testing</h3>
+    <p>
+      A destructive test was conducted on the previous-generation (B20) brake pedal to
+      determine whether it had been underbuilt or overbuilt, informing the design margin
+      for B23. The test fixture used two high-carbon steel square stock pieces to simulate
+      the pedal at maximum deflection angle with pistons restricting further travel. The
+      assembly was oriented on its side to allow an Instron load frame to apply force
+      directly to the pedal face. Results from this test were used to calibrate simulation
+      assumptions and set the target FOS for the B23 design.
+    </p>
+    <!-- <img src="images/pedal_instron_test.png" alt="Brake pedal Instron test fixture" style="width:60%; max-width:800px"> -->
   </div>
 </section>
 
-<section id="electronics" class="w3-padding-64 w3-white">
+<!-- Throttle Pedal -->
+<section id="throttle-pedal" class="w3-padding-64 w3-white">
   <div class="max-width">
-    <h2>Screen Integration</h2>
-    <h3>Screen</h3>
-    <p>
-      The screen is bolted into the front face of the wheel and vibrationally isolated by rubber
-      feet to protect it from chassis vibration during racing. Incorporating the screen directly
-      into the wheel eliminated the need for the external MoTeC ADL, reducing weight and keeping
-      driver-useful data within the natural sightline. The wheel also integrates 2 function
-      buttons and 2 switches for driver convenience, all waterproofed with individual gaskets.
-      A shifting light diffuser sits above the screen to display gear shift indicators.
-    </p>
-    <img src="images/sw_screen.png" alt="Integrated screen" style="width:90%; max-width:700px">
+    <h2>Throttle Pedal</h2>
 
-    <h3>PCB and Wiring</h3>
-    <div style="display: flex; gap: 30px; align-items: center;">
-    <div>
+    <h3 id="throttle-design">Design Changes (B22 → B23)</h3>
     <p>
-      The PCB is mounted to the removable carbon fiber backing plate, keeping it accessible for
-      maintenance without disassembling the wheel body. Wiring runs from the display and buttons
-      to the PCB, and from the PCB out to the main connector. All components were waterproofed
-      using custom rubber gaskets.
+      The throttle pedal retained its two-waterjet-piece parallel plate construction from B22,
+      using two 0.16-inch 6061-T6 aluminum plates with aluminum spacers. Smaller bronze bushings
+      were used to accommodate a smaller 5/16" shoulder bolt. The pedal weighs 0.27 lbs.
+      The major changes relative to B22 were in the linear potentiometer mounting locations —
+      the new single-wall tray design required moving the potentiometers, which enabled material
+      reduction on the tray while also spacing the sensors further apart for better independent
+      readings. Custom-made torsion springs were introduced to allow return force to be
+      customized based on individual driver feedback, replacing the off-the-shelf springs
+      used previously.
     </p>
+    <!-- <img src="images/throttle_pedal.png" alt="B23 Throttle pedal CAD" style="width:60%; max-width:800px"> -->
+
+    <h3 id="throttle-sim">FEA Simulation</h3>
     <p>
-      Dedicated wiring channels are routed into the back face of the wheel body, guiding all
-      wires cleanly from the screen and buttons to the connector. Wiring is potted with resin
-      to secure it in place and prevent chafing under vibration. The carbon fiber backing plate
-      covers the wiring for a clean finish and keeps everything contained within the wheel.
+      The throttle pedal was simulated under a 50 lb face load with a frictionless support at
+      the hard stop and a remote displacement constraint at the pivot. Both SolidWorks and Ansys
+      simulations were run. SolidWorks results: max stress 18,110 psi, max displacement 0.085
+      inches. Ansys results: max stress 116 MPa (1.16 MPa is a typo in the slide — the stress
+      contour scale shows 1.16 × 10⁸ Pa), max displacement 2.1 mm. The throttle pedal is
+      lightly loaded relative to the brake pedal, and the simulation confirmed substantial margin.
     </p>
-    </div>
-    <img src="images/sw_wiring.png" alt="Wiring channels and resin potting" style="width:30%; max-width:700px">
-    </div>
+    <!-- <img src="images/throttle_pedal_fea.png" alt="Throttle pedal FEA" style="width:70%; max-width:800px"> -->
+
+    <h3 id="return-mechanism">Return Mechanism</h3>
+    <p>
+      The B22 return mechanism used a two-wall bracket design that added weight and made
+      assembly more difficult. The B23 design simplified this to a single-wall configuration,
+      reducing both weight and part count while maintaining the same torsion spring architecture.
+      Magnets are not used on the throttle return — the torsion springs provide all return force.
+      The potentiometer mounts on the tray were designed to act as integrated spring holders,
+      eliminating separate retaining hardware.
+    </p>
+    <!-- <img src="images/return_mechanism_b22_b23.png" alt="Return mechanism B22 vs B23" style="width:70%; max-width:800px"> -->
   </div>
 </section>
 
-<section id="misc" class="w3-padding-64 w3-light-grey">
+<!-- Linear Potentiometers -->
+<section id="linpots" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Additional Details</h2>
-
-    <h3>Shifting Light Diffuser</h3>
+    <h2>Linear Potentiometers</h2>
     <p>
-      A shifting light diffuser sits above the screen to display gear shift indicators. The
-      diffuser spreads the LED light evenly across the indicator strip, keeping shift cues
-      visible in bright outdoor conditions without glare.
+      Both the throttle and brake pedals use linear potentiometers to measure pedal position.
+      The mounting locations were redesigned for B23 to reduce material needed on the pedal
+      tray and move the two throttle potentiometers further apart for more independent
+      position readings. The brake pedal position sensor was added as a new feature on B23,
+      providing direct brake pedal travel data to the DAQ system.
     </p>
-
-    <h3>Quick Disconnect</h3>
     <p>
-      The wheel interfaces with the steering column via a quick-disconnect hub, allowing the
-      wheel to be removed rapidly for driver ingress and egress — a requirement under FSAE rules.
-      Initial 3D prints confirmed a good fit with the quick-release interface early in the
-      design process.
+      The potentiometer mounts were designed to also serve as torsion spring holders,
+      consolidating two functions into a single part and simplifying the assembly. Smaller
+      potentiometers were targeted for future iterations to allow improved pedal geometry
+      and further weight reduction.
     </p>
+    <!-- <img src="images/linpot_mount.png" alt="Linear potentiometer mounting" style="width:60%; max-width:800px"> -->
   </div>
 </section>
 
-<section id="results" class="w3-padding-64 w3-white">
+<!-- Pedal Cups and Heel Rest -->
+<section id="pedal-cups" class="w3-padding-64 w3-white">
   <div class="max-width">
-    <h2>Results</h2>
+    <h2>Pedal Cups and Heel Rest</h2>
     <p>
-      The B23 steering wheel was successfully manufactured and raced, with the integrated screen
-      functioning as designed. Driver feedback after the season noted that glancing at the wheel
-      for data during racing was harder than anticipated compared to a dashboard-mounted display,
-      as it required taking eyes off the road. As a result, the team opted not to continue the
-      integrated screen approach on B24.
+      The B23 pedal tray introduced driver ergonomic contact surfaces for the first time:
+      carbon-fiber-reinforced 3D printed pedal cups and a heel rest. Both were printed on a
+      MarkForged printer using Onyx (carbon-fiber-filled nylon) with continuous carbon fiber
+      reinforcement for stiffness. Geometry and dimensions were based directly on driver
+      feedback gathered during testing.
+    </p>
+
+    <h3>Pedal Cups</h3>
+    <p>
+      The pedal cups mount to the sides of the brake pedal face rather than the face itself,
+      an improvement over the B22 mounting approach that reduced stress concentrations on the
+      pedal. This side-mounting strategy also made the cups easier to install and remove
+      independently of the pedal.
+    </p>
+
+    <h3>Heel Rest</h3>
+    <p>
+      The heel rest mounts to tabs on the tray floor using female threaded round standoffs
+      (McMaster 91125A341) and stainless steel flat head screws (McMaster 91500A352), with
+      standoff height used to adjust the heel rest distance from the tray. The part uses
+      reinforcing flanges on the back face to increase the moment area and overall stiffness,
+      an open shell in the center to reduce weight, and side walls to restrict lateral driver
+      foot movement. An inverted T-shaped cutout at the base allows the part to slide over
+      the mounting tabs for installation.
+    </p>
+    <!-- <img src="images/pedal_cups_heel_rest.png" alt="Pedal cups and heel rest CAD" style="width:70%; max-width:800px"> -->
+  </div>
+</section>
+
+<!-- Post-FDR Issues -->
+<section id="post-fdr" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Post-FDR Issues and Iterations</h2>
+    <p>
+      The pedal tray went through several significant redesign cycles after FDR as issues were
+      discovered during assembly and on-car testing. These are documented here both for
+      completeness and because they represent the bulk of the real engineering problem-solving
+      work on this subsystem.
+    </p>
+
+    <h3 id="linpot-range">Sensor Dynamic Range Issues</h3>
+    <p>
+      After switching to larger linear potentiometers, the throttle pedal travel was
+      insufficient to reach the required dynamic range of the sensors needed for accurate
+      throttle position readings. The sensors were physically too long for the available
+      pedal stroke, meaning the output voltage swing across the full pedal travel was too
+      small to be reliably interpreted by the DAQ system.
     </p>
     <p>
-      Despite this, the wheel was well-received overall and remained in use through B23's full
-      race season and into B24 testing before being retired. The ergonomic improvements, handle
-      geometry, and paddle shifter design were carried forward and informed future steering wheel
-      iterations.
+      Shorter linear potentiometers were sourced to match the available pedal stroke, but
+      this required a full redesign of the potentiometer mounting on the pedal tray to
+      accommodate the new sensor geometry. The tray mounting features were reprinted and
+      the sensor mounting brackets were updated accordingly.
+    </p>
+
+    <h3 id="torsional">Torsional Stiffness and Tracking Faults</h3>
+    <p>
+      During testing, the throttle pedal exhibited insufficient torsional stiffness. Under
+      driver input, the pedal would flex and twist, causing the two linear potentiometers
+      to read inconsistent positions relative to each other. The DAQ system uses both
+      potentiometer readings to verify throttle position and detect sensor faults — when
+      the readings diverged beyond the tolerance threshold due to physical flex rather than
+      a true sensor failure, tracking faults were triggered and throttle inputs could not
+      be interpreted correctly.
+    </p>
+    <p>
+      The fix was to move both throttle potentiometers to the same side of the pedal,
+      mounted directly adjacent to each other. With both sensors at the same location,
+      flex-induced divergence between the two readings was eliminated and the tracking
+      faults were resolved. This was validated on-car after the modification.
+    </p>
+    <p>
+      A separate delamination issue was identified on the brake pedal cup mounting area.
+      The pedal side in that region was reprinted with additional reinforcement geometry
+      and increased material thickness to prevent the layers from separating under
+      repeated pedal load cycles.
+    </p>
+
+    <h3 id="future-work">Future Work</h3>
+    <p>
+      Several improvements were identified for future iterations but not implemented on B23:
+    </p>
+    <p>
+      The linear potentiometer length constraint ultimately points to a need to redesign
+      the pedals themselves — not just the tray mounting — to accommodate shorter sensors
+      with the correct stroke geometry from the start. The current approach of adapting
+      the mounting around available sensors creates packaging compromises that cascade into
+      structural and accuracy issues.
+    </p>
+    <p>
+      Additional items flagged for future design reviews include adding a hardline
+      constraint system on the tray floor to secure brake lines more rigidly, and
+      evaluating a failsafe mechanism for loss of hydraulic pressure in either the front
+      or rear circuit to ensure the over-travel switch is not inadvertently triggered
+      under a partial system failure.
     </p>
   </div>
 </section>
 
-<section class="w3-light-grey w3-padding-64">
+<!-- Skills -->
+<section id="skills" class="w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Skills Demonstrated</h2>
     <p>
-      Iterative ergonomic design and driver-centered validation • Physical prototyping and 
-      3D printing • MarkForged carbon-fiber-reinforced nylon manufacturing • Mechanical 
-      packaging of electronics • Paddle shifter mechanism design • Driver-specific sensitivity 
-      tuning • Cross-functional collaboration • CAD (SolidWorks) • Wiring routing and 
-      management • Waterproofing and sealing design • Design review process (CDR, DDR, FDR)
+      Structural design and weight optimization • Material selection (6061-T6, 7050-T6351 aluminum) •
+      FEA simulation (SolidWorks Simulation, Ansys) • Design for manufacturing and assembly •
+      Waterjet-cut part design • 3D printing with MarkForged Onyx and continuous carbon fiber •
+      Driver-centered ergonomic design • Sensor integration and packaging • Iterative
+      problem-solving under hardware constraints • Post-test failure diagnosis and redesign •
+      CAD (SolidWorks) • Design review process (CDR, DDR, FDR)
     </p>
   </div>
 </section>
-  
-<section id="contact" class="w3-white w3-padding-64">
-  <div class="max-width">
-    <h2>Contact</h2>
-    <p>Email: jennifersili@berkeley.edu</p>
-    <p>LinkedIn: linkedin.com/in/jennifersili</p>
-  </div>
-</section>
 
-<!-- ================= FOOTER ================= -->
-<footer class="w3-container w3-center w3-padding-16 w3-light-grey">
-  <p>Jennifer Si Li | Engineering Portfolio</p>
-</footer>
+</div><!-- /.main-content -->
+</div><!-- /.page-layout -->
+
+<!-- ── paste your existing footer here ── -->
+
+<script>
+  const tocLinks = document.querySelectorAll('#toc-sidebar a');
+  const headings = Array.from(tocLinks)
+    .map(a => document.querySelector(a.getAttribute('href')))
+    .filter(Boolean);
+
+  function onScroll() {
+    let current = headings[0];
+    for (const el of headings) {
+      if (el.getBoundingClientRect().top <= 120) current = el;
+    }
+    tocLinks.forEach(a => {
+      a.classList.toggle('toc-active',
+        a.getAttribute('href') === '#' + current.id);
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+</script>
 
 </body>
 </html>
-        
