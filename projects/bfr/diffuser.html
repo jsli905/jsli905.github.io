@@ -193,17 +193,16 @@
   <div class="max-width">
     <h2>Undertray and Diffuser Aerodynamics</h2>
     <h3>
-      Used CFD simulation to iterate on B23's diffuser geometry and side wing strakes as
-      preliminary design work for B24, optimizing downforce contribution within packaging
-      constraints.
+      Used CFD simulation to investigate diffuser outlet curvature and area ratios as
+      preliminary B24 design work, targeting a flow reversal issue in B23's diffuser.
     </h3>
     <p>
-      As part of the aerodynamics subteam, I set up and ran CFD simulations to iterate on the
-      undertray diffuser and side wing geometry inherited from B23, exploring dimensional changes
-      to inform the B24 design. The base diffuser profile and side wing concept were developed by
-      previous team members; my work focused on simulating and testing variations on this
-      existing platform.
+      I set up and ran CFD simulations to investigate the undertray diffuser and side wing geometry inherited from B23. The
+      base diffuser and side wing were developed by previous team members; my work focused on iterating on flow behavior within this existing platform,
+      primarily looking at diffuser outlet curvature and inlet-to-outlet area ratios as well as optimizing downforce contribution within packaging
+      constraints.
     </p>
+   
     <!-- <img src="images/undertray_overview.png" alt="Undertray and sidewing assembly" style="width:60%; max-width:900px"> -->
   </div>
 </section>
@@ -212,26 +211,45 @@
   <div class="max-width">
     <h2>Diffuser Profile</h2>
     <p>
-      The B23 diffuser uses a curved Benzing D profile, a departure from the flat diffusers used
-      on B18 and B19. Curved diffusers were avoided in those years due to their more complex flow
+      The B20/B23 diffuser uses a curved Benzing D profile, a departure from the flat diffusers used
+      on B19. Curved diffusers were avoided in those years due to their more complex flow
       characteristics, but per Zhang's research on ground effect aerodynamics, these complex flow
-      features — including vortex formation and separated flow regions — are expected and even
+      features such as vortex formation and separated flow regions are expected and even
       necessary for an optimal diffuser, provided the flow remains attached and vortices stay
       stable rather than breaking down asymmetrically.
     </p>
     <p>
-      Simulation of the B18 diffuser geometry showed reversed flow within the diffuser, but with
-      a strong, stable vortex and attached flow along the upper surface — consistent with the
-      "OK" surface flow pattern identified in Zhang's reference study, as opposed to the vortex
-      reversal and symmetry breakdown seen in poorly performing diffuser profiles. Turbulence in
-      the middle of the diffuser was also expected and consistent with this regime. This analysis
-      framed the design space I worked within when iterating on B23's geometry for B24.
+      Zhang's reference surface flow patterns distinguish between a favorable case, where flow
+      separates cleanly off the diffuser ramp with stable vortices, and an unfavorable case
+      showing vortex reversal and symmetry breakdown across the diffuser centerline. B23's
+      simulations showed flow reversal occurring in the center of the diffuser where clean
+      separation was expected instead .
     </p>
     <!-- <img src="images/diffuser_profile_comparison.png" alt="Diffuser surface flow comparison with Zhang reference" style="width:70%; max-width:900px"> -->
   </div>
 </section>
 
-<section id="side-undertrays" class="w3-padding-64 w3-white">
+<section id="outlet-curvature" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Diffuser Outlet Curvature and Area Ratio Investigation</h2>
+    <p>
+      To address the center-channel flow reversal, I focused on two parameters: the curvature of
+      the diffuser outlet ramp and the inlet-to-outlet area ratio of the diffuser channel. The
+      hypothesis was that the existing outlet curvature and expansion ratio were too aggressive
+      for the flow to remain attached through the center of the diffuser, causing it to separate
+      early and reverse rather than exit cleanly.
+    </p>
+    <p>
+      I ran a series of CFD cases varying outlet curvature and area ratio to observe their effect
+      on the centerline flow pattern, looking for a configuration that would produce clean
+      separation at the outlet, matching Zhang's favorable flow regime, rather than the
+      reversed flow seen in B23.
+    </p>
+    <!-- <img src="images/outlet_curvature_sweep.png" alt="Diffuser outlet curvature CFD comparison" style="width:70%; max-width:900px"> -->
+  </div>
+</section>
+
+<section id="side-undertrays" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Side Undertrays with Integrated Sidewings</h2>
     <p>
@@ -239,14 +257,8 @@
       paired with an outboard profile incorporating a side wing array that functions similarly to
       a diffuser pump, accelerating flow to support the main diffuser's pressure recovery. Each
       side wing is a two-element S1223 airfoil with integrated endplate strakes to manage spanwise
-      flow and reduce tip losses. This base design was developed by previous team members.
-    </p>
-    <p>
-      Building on this platform, I set up CFD cases to iterate on diffuser dimensions — testing
-      increased diffuser width and length to explore how far downforce could be pushed within the
-      geometric envelope set by the chassis and suspension components. I also tested different
-      strake widths on the side wing endplates to evaluate their effect on downforce and flow
-      attachment, as preliminary direction-setting for the B24 design.
+      flow and reduce tip losses. This base design was developed by previous team members and
+      provided the baseline geometry for the outlet curvature and area ratio investigation.
     </p>
     <p>
       The side undertray and wing assemblies are manufactured from 7-ply carbon fiber with two
@@ -257,7 +269,7 @@
   </div>
 </section>
 
-<section id="undertray-sidepod" class="w3-padding-64 w3-light-grey">
+<section id="undertray-sidepod" class="w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Undertray, Sidewings, and Sidepod Integration</h2>
     <p>
@@ -270,23 +282,23 @@
       The low-profile undertray maximizes air intake through the inlet while the Benzing diffuser
       profile reduces wake without compromising downforce. Multi-element side wings sit above the
       diffuser to add rear downforce while maintaining the car's overall center of pressure
-      balance. This integrated layout formed the baseline for the dimensional sweeps performed
-      in CFD.
+      balance. The inlet area, set relative to the radiator frontal area, was one of the
+      reference points used when evaluating outlet area ratios during the B24 investigation.
     </p>
     <!-- <img src="images/undertray_sidepod_layout.png" alt="Undertray, sidewing, and sidepod integration" style="width:70%; max-width:900px"> -->
   </div>
 </section>
 
-<section id="results" class="w3-padding-64 w3-white">
+<section id="results" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Results</h2>
     <p>
       The B23 baseline aerodynamic package produced a total downforce of 382–415N at a drag of
       172–178N, broken down by component as follows: rear wing 157–164N, front wing 132–145N,
-      side wings 31N, and undertray 27–31N. The side wing and undertray contributions — the areas
-      targeted in the B24 dimensional sweeps — provided a meaningful share of total downforce
-      while maintaining the diffuser flow characteristics identified as favorable in the Zhang
-      reference study. This baseline served as the starting point for the B24 iteration work.
+      side wings 31N, and undertray 27–31N. This baseline, including its known center-channel
+      flow reversal, served as the starting point for the B24 outlet curvature and area ratio
+      investigation, which aimed to recover the favorable separated-flow regime described in the
+      Zhang reference study and improve undertray downforce contribution for B24.
     </p>
     <!-- <img src="images/final_velocity_streamlines.png" alt="Final velocity contours and streamlines" style="width:70%; max-width:900px"> -->
   </div>
@@ -296,9 +308,8 @@
   <div class="max-width">
     <h2>Skills Demonstrated</h2>
     <p>
-      CFD simulation and case setup (Ansys Fluent) • Aerodynamic design iteration • Ground effect
-      aerodynamics • Reading and applying technical literature to design decisions • Center of
-      pressure balance analysis
+      Computational Fluid Dynamics (Ansys Fluent) • Flow diagnosis and root cause investigation •
+      Aerodynamic design iteration • Ground effect aerodynamics • Center of pressure balance analysis
     </p>
   </div>
 </section>
