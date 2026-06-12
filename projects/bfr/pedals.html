@@ -429,6 +429,7 @@
     <h2>Throttle Pedal</h2>
 
     <h3 id="throttle-design">Design</h3>
+    <div style="display: flex; gap: 30px; align-items: center;">
     <p>
       The throttle pedal retained its two-waterjet-piece parallel plate construction from B22,
       using two 0.16-inch 6061-T6 aluminum plates with aluminum spacers. Smaller bronze bushings
@@ -440,18 +441,19 @@
       customized based on individual driver feedback, replacing the off-the-shelf springs
       used previously.
     </p>
-    <img src="images/throttle_pedal.png" alt="B23 Throttle pedal CAD" style="width:60%; max-width:800px">
+    <img src="images/throttle_pedal.png" alt="B23 Throttle pedal CAD" style="width:100%; max-width:800px">
+    </div>
 
     <h3 id="throttle-sim">FEA Simulation</h3>
     <p>
       The throttle pedal was simulated under a 50 lb face load with a frictionless support at
       the hard stop and a remote displacement constraint at the pivot. Both SolidWorks and Ansys
       simulations were run. SolidWorks results: max stress 18,110 psi, max displacement 0.085
-      inches. Ansys results: max stress 116 MPa (1.16 MPa is a typo in the slide — the stress
-      contour scale shows 1.16 × 10⁸ Pa), max displacement 2.1 mm. The throttle pedal is
+      inches. Ansys results: max stress 16824 psi, max displacement 0.083 inches. The throttle pedal is
       lightly loaded relative to the brake pedal, and the simulation confirmed substantial margin.
     </p>
-    <!-- <img src="images/throttle_pedal_fea.png" alt="Throttle pedal FEA" style="width:70%; max-width:800px"> -->
+    <img src="images/throttle_pedal_sldwkfea.png" alt="Throttle pedal Solidworks FEA" style="width:100%; max-width:800px">
+    <img src="images/throttle_pedal_ansysfea.png" alt="Throttle pedal Ansys FEA" style="width:70%; max-width:800px">
 
     <h3 id="return-mechanism">Return Mechanism</h3>
     <p>
@@ -462,7 +464,7 @@
       The potentiometer mounts on the tray were designed to act as integrated spring holders,
       eliminating separate retaining hardware.
     </p>
-    <!-- <img src="images/return_mechanism_b22_b23.png" alt="Return mechanism B22 vs B23" style="width:70%; max-width:800px"> -->
+    <!-- <img src="images/return_mechanism.png" alt="Return mechanism B22 vs B23" style="width:70%; max-width:800px"> -->
   </div>
 </section>
 
@@ -470,6 +472,8 @@
 <section id="linpots" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Linear Potentiometers</h2>
+    <div style="display: flex; gap: 30px; align-items: center;">
+    <div>
     <p>
       Both the throttle and brake pedals use linear potentiometers to measure pedal position.
       The mounting locations were redesigned for B23 to reduce material needed on the pedal
@@ -483,7 +487,9 @@
       potentiometers were targeted for future iterations to allow improved pedal geometry
       and further weight reduction.
     </p>
-    <!-- <img src="images/linpot_mount.png" alt="Linear potentiometer mounting" style="width:60%; max-width:800px"> -->
+    </div>
+    <img src="images/linpot_mount.png" alt="Linear potentiometer mounting" style="width:50%; max-width:800px">
+    </div>
   </div>
 </section>
 
@@ -491,17 +497,21 @@
 <section id="pedal-cups" class="w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Pedal Cups and Heel Rest</h2>
+    <div style="display: flex; gap: 30px; align-items: center;">
     <p>
       The B23 pedal tray introduced driver ergonomic contact surfaces for the first time: carbon-fiber-reinforced 3D printed pedal cups and a heel rest. Both were printed on a
       MarkForged printer using Onyx (carbon-fiber-filled nylon) with continuous carbon fiber
-      reinforcement for stiffness. Geometry and dimensions were based directly on driver feedback gathered during testing.
+      reinforcement for stiffness. Geometry and dimensions were based directly on driver feedback gathered during design and testing.
     </p>
+      <img src="images/pedal_cups_heel_rest.png" alt="Pedal cups and heel rest CAD" style="width:70%; max-width:800px">
+    </div>
 
     <h3>Pedal Cups</h3>
     <p>
       The pedal cups mount to the sides of the brake pedal face rather than the face itself, an improvement over the B22 mounting approach that reduced stress concentrations on the
       pedal. This side-mounting strategy also made the cups easier to install and remove independently of the pedal.
     </p>
+    <img src="images/pedal_cup.png" alt="Pedal cups and heel rest CAD" style="width:50%; max-width:800px">
 
     <h3>Heel Rest</h3>
     <p>
@@ -510,7 +520,7 @@
       an open shell in the center to reduce weight, and side walls to restrict lateral driver foot movement. An inverted T-shaped cutout at the base allows the part to slide over
       the mounting tabs for installation.
     </p>
-    <!-- <img src="images/pedal_cups_heel_rest.png" alt="Pedal cups and heel rest CAD" style="width:70%; max-width:800px"> -->
+    <img src="images/heel_rest.png" alt="Pedal cups and heel rest CAD" style="width:50%; max-width:800px">
   </div>
 </section>
 
