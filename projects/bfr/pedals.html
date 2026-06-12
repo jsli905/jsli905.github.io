@@ -405,18 +405,19 @@
       replaced the previous bronze bushings for smoother pivot actuation, and mounting points
       for the pedal cup were added to the sides of the pedal face.
     </p>
-    <!-- <img src="images/brake_pedal_b22_b23.png" alt="Brake pedal B22 vs B23" style="width:70%; max-width:800px"> -->
+    <img src="images/brake_pedal_b22_b23.png" alt="Brake pedal B22 vs B23" style="width:70%; max-width:800px">
 
     <h3 id="brake-sim">FEA Simulation</h3>
     <p>
       The brake pedal was simulated under a 450 lb face load with a frictionless support
-      and remote displacement constraint at the pivot. The final Ansys simulation produced
+      and remote displacement constraint at the pivot. I ran a final Ansys simulation which produced
       a max von Mises stress of 210 MPa (iso-clipped at 100 MPa to visualize stress
-      distribution) and a max displacement of 2.9 mm. An earlier SolidWorks simulation
+      distribution), ~30458 psi, and a max displacement of 2.9 mm, ~0.11 inches. An earlier SolidWorks simulation
       produced consistent results at 30,312.9 psi max stress and 0.11 inches max displacement,
       confirming the design was adequate before switching simulation environments.
     </p>
-    <!-- <img src="images/brake_pedal_fea.png" alt="Brake pedal FEA stress and displacement" style="width:70%; max-width:800px"> -->
+    <img src="images/brake_pedal_sldwkfea.png" alt="Brake pedal Solidworks FEA stress and displacement" style="width:100%; max-width:800px">
+    <img src="images/brake_pedal_ansysfea.png" alt="Brake pedal Ansys FEA stress and displacement" style="width:100%; max-width:800px">
 
     
   </div>
@@ -435,11 +436,11 @@
       The major changes relative to B22 were in the linear potentiometer mounting locations —
       the new single-wall tray design required moving the potentiometers, which enabled material
       reduction on the tray while also spacing the sensors further apart for better independent
-      readings. Custom-made torsion springs were introduced to allow return force to be
+      readings. Custom-made torsion springs were made to allow return force to be
       customized based on individual driver feedback, replacing the off-the-shelf springs
       used previously.
     </p>
-    <!-- <img src="images/throttle_pedal.png" alt="B23 Throttle pedal CAD" style="width:60%; max-width:800px"> -->
+    <img src="images/throttle_pedal.png" alt="B23 Throttle pedal CAD" style="width:60%; max-width:800px">
 
     <h3 id="throttle-sim">FEA Simulation</h3>
     <p>
@@ -544,9 +545,8 @@
       be interpreted correctly.
     </p>
     <p>
-      The fix was to move both throttle potentiometers to the same side of the pedal,
-      mounted directly adjacent to each other. With both sensors at the same location,
-      flex-induced divergence between the two readings was eliminated and the tracking
+      I redesigned the throttle pedal to reposition and add aluminum spacers as well as a bent sheet metal backing to increase torsional stiffness.
+      With increased torsional stiffness,flex-induced divergence between the two readings was eliminated and the tracking
       faults were resolved. This was validated on-car after the modification.
     </p>
     <p>
