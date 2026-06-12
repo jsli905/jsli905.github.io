@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Headrest</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-grey.css">
+  
+  
+  <!-- Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+  
+  <style>
+    body, h1, h2, h3, h4 {
+      font-family: "Roboto", sans-serif;
+    }
+    header h1 {
+    font-size: 6rem;  
+    margin-bottom: 0.25rem;
+    }
+    .max-width {
+      max-width: 1000px;
+      margin: auto;
+    }
+    img {
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Hide the nested submenu by default */
+    .parent .submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background: white;
+      min-width: 180px;
+      z-index: 1000;
+    }
+    
+    /* Only show submenu when hovering*/
+    .parent:hover .submenu {
+      display: block;
+    }
+        
+    /* Make parent positioning context */
+    .dropdown {
+      position: relative;
+    }
+    /* Skills section layout */
+    
+    .skills-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    /*.skill-card {
+      background-color: #ffffff;
+      padding: 1.25rem 1.5rem; /* tighter padding */
+      border-radius: 6px;
+    } */
+    .skill-category ul {
+      list-style-type: disc
+      margin: auto;
+    }
+    
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+
+  </style>
+  
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card">
+
+    <a href="../../index.html" class="w3-bar-item w3-button w3-large">
+      <b>Jennifer S. Li</b>
+    </a>
+
+    <!-- Experience Dropdown -->
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button">Work Experience ▾</button>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+        <a href="../../experience/astranis.html" class="w3-bar-item w3-button">
+          Astranis – Associate Technical Project Manager
+        </a>
+        <a href="../../experience/spacex-hls.html" class="w3-bar-item w3-button">
+          SpaceX - Human Lander System (HLS) Mechanisms Intern
+        </a>
+        <a href="../../experience/spacex-mechs.html" class="w3-bar-item w3-button">
+          SpaceX - Starship Mechanisms Intern
+        </a>
+        <a href="../../experience/tesla.html" class="w3-bar-item w3-button">
+          Tesla - Stator Manufacturing Design Intern
+        </a>
+        <a href="../../experience/chemix.html" class="w3-bar-item w3-button">
+          Chemix - Battery R&D Intern
+        </a>
+        <a href="../../experiences/taflab.html" class="w3-bar-item w3-button">
+          TAFLab - Multihulled Unmanned Boat Undergrad Researcher
+        </a>
+        <a href="../../experience/nist.html" class="w3-bar-item w3-button">
+          NIST - Additive Manufacturing Laser Powder Bed Fusion Intern
+        </a>
+        <a href="../../experience/other.html" class="w3-bar-item w3-button">
+          Other (Misc)
+        </a>
+        
+      </div>
+    </div>
+
+    <!-- Projects Dropdown -->
+
+<div class="w3-dropdown-hover">
+  <button class="w3-button">Projects ▾</button>
+
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+    <div class="parent">
+      <a href="../../experience/fsae.html" class="w3-bar-item w3-button">
+        Berkeley Formula Racing ▸
+      </a>
+        <div class="w3-bar-block w3-border submenu">
+          <a href="seat.html" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
+          <a href="brakes.html" class="w3-bar-item w3-button">Brakes</a>
+          <a href="steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
+          <a href="pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
+          <a href="headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
+          <a href="diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
+        </div>
+  
+        <a href="../wheel.html" class="w3-bar-item w3-button">
+        Hollow Carbon Fiber Wheel
+        </a>
+         <a href="../perry.html" class="w3-bar-item w3-button">
+          Perry the Quadruped Robot
+         </a>
+        <a href="../passive-walker.html" class="w3-bar-item w3-button">
+          Passive Walking Robot
+         </a>
+        <a href="../cupholder.html" class="w3-bar-item w3-button">
+          Gimballed Cup Holder
+         </a>
+        
+        <a href="../uav.html" class="w3-bar-item w3-button">
+          UAV Flight Control
+         </a>
+        <a href="../flower.html" class="w3-bar-item w3-button">
+          Morphing Flower Soft-Robot
+         </a>
+        <a href="../turtle.html" class="w3-bar-item w3-button">
+          Amphibious Turtle Robot
+         </a>
+        <a href="../star.html" class="w3-bar-item w3-button">
+          Stage Separation Mechanism
+         </a>
+        <a href="../misc.html" class="w3-bar-item w3-button">
+          Other
+        </a>
+    </div>
+  </div>
+</div>
+
+
+    <a href="../../courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
+    <a href="../../assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+
+  </div>
+</div>
+
+<!-- Spacer for fixed navbar -->
+<div style="margin-top:64px"></div>
+<!-- Header-->
+<section id="headrest" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Headrest</h2>
+    <p>
+      The headrest was one of the tallest single components on the car, making it a high-value
+      target for mass reduction. The design goal was to minimize mass as aggressively as possible
+      while maintaining driver safety, providing a wide range of adjustability, and meeting
+      structural requirements under lateral and rearward impact loads specified by competition rules.
+    </p>
+    <img src="images/headrest_card.jpg" alt="Alcantara-wrapped headrest foam" style="width:40%; max-width:500px">
+
+    <h3>Adjustability and Padding</h3>
+    <p>
+      The headrest provides 7 inches of continuous adjustability using dual-lock velcro, allowing drivers of different heights to position the pad correctly without discrete step
+      adjustments. The padding consists of foam and a polycarbonate backing (size optimized within competition rules), with foam volume reduced by 42% compared to the previous year while still meeting safety
+      requirements. Both the foam and polycarbonate sheet were wrapped in Alcantara fabric for with the final cover, which I made on a sewing machine to achieve a clean, tailored fit around the molded geometry
+    </p>
+    <img src="images/headrest.png" alt="Alcantara-wrapped headrest foam and polycarbonate backing" style="width:40%; max-width:500px">
+    <h3>Mount Design</h3>
+    <p>
+      The mounting bracket was designed to maximize strength-to-weight ratio, using a mix of round
+      tube and stamped sheet metal. Stamped flanges (dimples) were added around the mounting holes
+      on the back plate to locally increase stiffness without adding significant mass. These
+      flanges were formed using a custom 3D printed die, allowing the stamping geometry to be
+      tuned and iterated cheaply before committing to final tooling. A bend was also introduced
+      into one of the structural members purely for stiffness, increasing the section's resistance
+      to bending without adding material.
+    </p>
+
+    <p>
+      The mount was validated under two load cases per competition rules: a 300N lateral force and
+      a 900N rearward force, both applied to the headrest mounting interface. Under the 300N
+      lateral case, the max stress reached 71,031 psi for a factor of safety of 1.13, with the
+      highest stress concentrated around the stamped flange region near the tube-to-plate
+      junction. Under the 900N rearward case, max stress reached 60,177 psi for a factor of safety
+      of 1.33, concentrated around the central mounting hole. Both cases met the minimum required
+      factor of safety while keeping the mount as light as possible.
+    </p>
+    <img src="images/headrest_mount.png" alt="Headrest FEA stress results" style="width:70%; max-width:900px"> 
+    
+  </div>
+</section>
+
+<section class="w3-light-grey w3-padding-64">
+  <div class="max-width">
+    <h2>Skills Demonstrated</h2>
+    <p>
+      Mass optimization • Sheet metal design and stamping • Custom tooling design • Jigging • FEA • Material selection for safety • CAD (SolidWorks) • Fabric sewing • 
+      Design for adjustability and ergonomics • Compliance with safety rules
+    </p>
+  </div>
+</section>
+  
+
+<section id="contact" class="w3-white w3-padding-64">
+  <div class="max-width">
+    <h2>Contact</h2>
+    <p>Email: jennifersili@berkeley.edu</p>
+    <p>LinkedIn: linkedin.com/in/jennifersili</p>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="w3-container w3-center w3-padding-16 w3-light-grey">
+  <p>Jennifer Si Li | Engineering Portfolio</p>
+</footer>
+
+</body>
+</html>
+        
