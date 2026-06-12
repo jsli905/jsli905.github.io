@@ -300,7 +300,7 @@
     <li><a href="#linpots">Linear Potentiometers</a></li>
     <li><a href="#pedal-cups">Pedal Cups &amp; Heel Rest</a></li>
 
-    <li><a href="#post-fdr">Post-FDR Issues</a></li>
+    <li><a href="#post-fdr">Throttle Pedal Issues</a></li>
     <li><a href="#linpot-range" class="toc-sub">Sensor Range Issues</a></li>
     <li><a href="#torsional" class="toc-sub">Torsional Stiffness</a></li>
     <li><a href="#future-work" class="toc-sub">Future Work</a></li>
@@ -379,8 +379,18 @@
     <h2>Brake Pedal</h2>
     <p>
       Project Owner: Donald Le.<br>
-      Contributions: Collaborated extensively on pedal design and iteration. <br>
-      I conducted testing and analysis of the previous B22 pedal design and machined the pedal.
+      Contributions: Collaborated extensively on pedal design and iteration and ran Ansys FEA simulations. <br>
+      I conducted testing and analysis of the previous B20 pedal design and machined the pedal.
+    </p>
+    <h3 id="brake-testing">Physical Testing</h3>
+    <p>
+      A destructive test was conducted on the previous-generation (B20/22) brake pedal to
+      determine whether it had been underbuilt or overbuilt and validating previous simulations, informing the FEA setup
+      for B23. The test fixture used two high-carbon steel square stock pieces to simulate
+      the pedal at maximum deflection angle with pistons restricting further travel. The
+      assembly was oriented on its side to allow an Instron load frame to apply force
+      directly to the pedal face. Results from this test were used to calibrate simulation
+      assumptions and set the target FOS for the B23 design.
     </p>
     <h3 id="brake-design">Design</h3>
     <p>
@@ -408,17 +418,7 @@
     </p>
     <!-- <img src="images/brake_pedal_fea.png" alt="Brake pedal FEA stress and displacement" style="width:70%; max-width:800px"> -->
 
-    <h3 id="brake-testing">Physical Testing</h3>
-    <p>
-      A destructive test was conducted on the previous-generation (B20) brake pedal to
-      determine whether it had been underbuilt or overbuilt, informing the design margin
-      for B23. The test fixture used two high-carbon steel square stock pieces to simulate
-      the pedal at maximum deflection angle with pistons restricting further travel. The
-      assembly was oriented on its side to allow an Instron load frame to apply force
-      directly to the pedal face. Results from this test were used to calibrate simulation
-      assumptions and set the target FOS for the B23 design.
-    </p>
-    <!-- <img src="images/pedal_instron_test.png" alt="Brake pedal Instron test fixture" style="width:60%; max-width:800px"> -->
+    
   </div>
 </section>
 
