@@ -143,7 +143,7 @@
           <a href="steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
           <a href="pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
           <a href="headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
-          <a href="diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
+          <a href="undertray.html" class="w3-bar-item w3-button">Undertray</a>
         </div>
   
         <a href="../wheel.html" class="w3-bar-item w3-button">
@@ -191,7 +191,7 @@
 <!-- Header-->
 <section id="header" class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Undertray and Diffuser Aerodynamics</h2>
+    <h2>Undertray Aerodynamics</h2>
     <h3>
       Used CFD simulation to investigate diffuser outlet curvature and area ratios as
       preliminary B24 design work, targeting a flow reversal issue in B23's diffuser.
@@ -213,17 +213,22 @@
     <p>
       The B20/B23 diffuser uses a curved Benzing D profile, a departure from the flat diffusers used
       on B19. Curved diffusers were avoided in those years due to their more complex flow
-      characteristics, but per Zhang's research on ground effect aerodynamics, these complex flow
+      characteristics, but based on 
+      <a href="https://www.semanticscholar.org/paper/Ground-Effect-Aerodynamics-of-Race-Cars-Zhang-Toet/ab063930cf236501a012b63b2c0b03d54efece1c"> 
+        Ground Effect Aerodynamics of Race Cars </a>, these complex flow
       features such as vortex formation and separated flow regions are expected and even
       necessary for an optimal diffuser, provided the flow remains attached and vortices stay
       stable rather than breaking down asymmetrically.
     </p>
     <p>
-      Zhang's reference surface flow patterns distinguish between a favorable case, where flow
-      separates cleanly off the diffuser ramp with stable vortices, and an unfavorable case
-      showing vortex reversal and symmetry breakdown across the diffuser centerline. B23's
-      simulations showed flow reversal occurring in the center of the diffuser where clean
-      separation was expected instead .
+      The B23 side undertray sections use a Benzing D diffuser profile on the inboard side,
+      paired with an outboard profile incorporating a side wing array that functions similarly to
+      a diffuser pump, accelerating flow to support the main diffuser's pressure recovery. This base design was developed by previous team members and
+      provided the baseline geometry for the outlet curvature and area ratio investigation.
+    </p>
+    <p>
+      B23's simulations showed flow reversal occurring in the center of the diffuser where clean
+      separation with stable wortices was expected instead showing vortex reversal and symmetry breakdown across the diffuser centerline.
     </p>
     <!-- <img src="images/diffuser_profile_comparison.png" alt="Diffuser surface flow comparison with Zhang reference" style="width:70%; max-width:900px"> -->
   </div>
@@ -241,33 +246,14 @@
     </p>
     <p>
       I ran a series of CFD cases varying outlet curvature and area ratio to observe their effect
-      on the centerline flow pattern, looking for a configuration that would produce clean
-      separation at the outlet, matching Zhang's favorable flow regime, rather than the
+      on the centerline flow pattern, looking for a configuration that would produce favorable flow regime where flow
+      separates cleanly at the outlet with stable vortices, rather than the
       reversed flow seen in B23.
     </p>
     <!-- <img src="images/outlet_curvature_sweep.png" alt="Diffuser outlet curvature CFD comparison" style="width:70%; max-width:900px"> -->
   </div>
 </section>
 
-<section id="side-undertrays" class="w3-padding-64 w3-light-grey">
-  <div class="max-width">
-    <h2>Side Undertrays with Integrated Sidewings</h2>
-    <p>
-      The B23 side undertray sections use a Benzing D diffuser profile on the inboard side,
-      paired with an outboard profile incorporating a side wing array that functions similarly to
-      a diffuser pump, accelerating flow to support the main diffuser's pressure recovery. Each
-      side wing is a two-element S1223 airfoil with integrated endplate strakes to manage spanwise
-      flow and reduce tip losses. This base design was developed by previous team members and
-      provided the baseline geometry for the outlet curvature and area ratio investigation.
-    </p>
-    <p>
-      The side undertray and wing assemblies are manufactured from 7-ply carbon fiber with two
-      layers of Rohacell core for additional rigidity.
-    </p>
-    <!-- <img src="images/side_undertray_cad.png" alt="Side undertray and sidewing CAD" style="width:60%; max-width:900px"> -->
-    <!-- <img src="images/velocity_contours.png" alt="Inboard and outboard velocity contours" style="width:70%; max-width:900px"> -->
-  </div>
-</section>
 
 <section id="undertray-sidepod" class="w3-padding-64 w3-white">
   <div class="max-width">
@@ -286,6 +272,56 @@
       reference points used when evaluating outlet area ratios during the B24 investigation.
     </p>
     <!-- <img src="images/undertray_sidepod_layout.png" alt="Undertray, sidewing, and sidepod integration" style="width:70%; max-width:900px"> -->
+  </div>
+</section>
+
+  <section id="future-work" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Changes and Next Steps</h2>
+
+    <h3>Inlet Flow </h3>
+    <p>
+      From the inboard velocity contour and streamlines, the flow entering the diffuser throat looked like it 
+      is already non-uniform. I hypothesized this could be from wheel wake and upstream undertray surface and
+      could have been causing early separation regardless of outlet geometry. However, upon checking the velocity profiles
+      directly at the diffuser throat, the profile looked clean and uniform, informing my decision to look at the diffuser outlet curvature
+      and area ratio.
+    </p>
+
+    <h3>Outlet Curvature and Divergence Angle</h3>
+    <p>
+      I worked on flattening the outlet divergence angle while preserving the same overall area ratio, spreading the expansion 
+      over more of the diffuser's length, letting the pressure gradient build more gradually and form a stable recirculation bubble.
+    </p>
+    <h3>Area Ratio vs. Length</h3>
+    <p>
+      I tested three exit-to-throat area ratios with the B23 diffuser length to help locate the transition point between reversed and stable
+      separated flow. At 1.5, the flow stays fully attached the whole way, underperforming on downforce.
+At 2.0, maybe you start to see the "good" separation — a stable bubble near the exit, vortices intact
+At 2.5, it tips into reversal. 
+      I found that at 2.0, we get 90% of the downforce of 2.5 but with stable flow unlike in B23. 
+    </p>
+    <p>
+     As a result of my research and CFD simulations, I recommended the following investigations:
+    </p>
+
+    <h3>Additional Center Channel Strakes</h3>
+    <p>
+      Dividing the diffuser into multiple narrower channels using center strakes (in addition to
+      the existing outboard strakes) would reduce the effective width-to-length expansion ratio
+      each channel experiences. This is a common technique in ground-effect diffuser design to
+      stabilize the center vortex structure by limiting the lateral room available for symmetry
+      breakdown. 
+    </p>
+
+    <h3>Ride Height Sensitivity</h3>
+    <p>
+      The undertray ride height curve is sensitive
+      to the ride-height-to-diffuser-length ratio (h/d), and B23 ride height changes could push the diffuser in and out of the reversed-flow regime. 
+      Simulating at multiple ride heights, rather than a single static height, would clarify whether this is a
+      static geometry issue or a dynamic sensitivity issue that changes throughout a lap.
+    </p>
+    
   </div>
 </section>
 
