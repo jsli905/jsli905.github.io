@@ -203,7 +203,7 @@
       constraints.
     </p>
    
-    <!-- <img src="images/undertray_overview.png" alt="Undertray and sidewing assembly" style="width:60%; max-width:900px"> -->
+    <img src="images/undertray.png" alt="Undertray and sidewing assembly" style="width:100%; max-width:900px">
   </div>
 </section>
 
@@ -220,21 +220,56 @@
       necessary for an optimal diffuser, provided the flow remains attached and vortices stay
       stable rather than breaking down asymmetrically.
     </p>
+    <img src="images/B19_sims.png" alt="B19 sims" style="width:70%; max-width:900px">
+
     <p>
+      B23's simulations showed flow reversal occurring in the center of the diffuser where clean
+      separation with stable wortices was expected instead showing vortex reversal and symmetry breakdown across the diffuser centerline.
+    </p>
+    
+  </div>
+</section>
+
+
+
+
+<section id="undertray-sidepod" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Undertray, Sidewings Integration</h2>
+     <p>
       The B23 side undertray sections use a Benzing D diffuser profile on the inboard side,
       paired with an outboard profile incorporating a side wing array that functions similarly to
       a diffuser pump, accelerating flow to support the main diffuser's pressure recovery. This base design was developed by previous team members and
       provided the baseline geometry for the outlet curvature and area ratio investigation.
     </p>
+    <img src="images/b23_side_ut.png" alt="B23 Side Undertray/Wings" style="width:70%; max-width:900px">
+    
     <p>
-      B23's simulations showed flow reversal occurring in the center of the diffuser where clean
-      separation with stable wortices was expected instead showing vortex reversal and symmetry breakdown across the diffuser centerline.
+      The undertray inlet uses a diverging cross-section, increasing from 0.7× to 1× the radiator
+      frontal area to smoothly accelerate and condition flow before it reaches the radiator. The
+      inlet is also asymmetric in shape, routing air parallel to the radiator's 30° mounting
+      angle to minimize losses at entry.
     </p>
-    <!-- <img src="images/diffuser_profile_comparison.png" alt="Diffuser surface flow comparison with Zhang reference" style="width:70%; max-width:900px"> -->
+    <p>
+      The low-profile undertray maximizes air intake through the inlet while the Benzing diffuser
+      profile reduces wake without compromising downforce. Multi-element side wings sit above the
+      diffuser to add rear downforce while maintaining the car's overall center of pressure
+      balance. The inlet area, set relative to the radiator frontal area, was one of the
+      reference points used when evaluating outlet area ratios during my investigation.
+    </p>
+    <img src="images/b23_streamlines.png" alt="B23 Side Undertray/Wings" style="width:70%; max-width:900px">
+      <p>
+      From the inboard velocity contour and streamlines, the flow entering the diffuser throat looked like it 
+      is already non-uniform. I hypothesized this could be from wheel wake and upstream undertray surface and
+      could have been causing early separation regardless of outlet geometry. However, upon checking the velocity profiles
+      directly at the diffuser throat, the profile looked clean and uniform, informing my decision to look at the diffuser outlet curvature
+      and area ratio.
+    </p>
+
   </div>
 </section>
 
-<section id="outlet-curvature" class="w3-padding-64 w3-white">
+  <section id="outlet-curvature" class="w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Diffuser Outlet Curvature and Area Ratio Investigation</h2>
     <p>
@@ -250,58 +285,32 @@
       separates cleanly at the outlet with stable vortices, rather than the
       reversed flow seen in B23.
     </p>
-    <!-- <img src="images/outlet_curvature_sweep.png" alt="Diffuser outlet curvature CFD comparison" style="width:70%; max-width:900px"> -->
-  </div>
-</section>
-
-
-<section id="undertray-sidepod" class="w3-padding-64 w3-white">
-  <div class="max-width">
-    <h2>Undertray, Sidewings, and Sidepod Integration</h2>
+    <p> I flattened the outlet divergence angle while preserving the same overall area ratio, spreading the expansion 
+      over more of the diffuser's length, letting the pressure gradient build more gradually and form a stable recirculation bubble.</p>
     <p>
-      The undertray inlet uses a diverging cross-section, increasing from 0.7× to 1× the radiator
-      frontal area to smoothly accelerate and condition flow before it reaches the radiator. The
-      inlet is also asymmetric in shape, routing air parallel to the radiator's 30° mounting
-      angle to minimize losses at entry.
+      With the diffuser length fixed by packaging, I tested various exit-to-throat area ratios from
+      roughly 3 to 9, across both straight diffuser profiles and the curved Benzing F profile, to
+      locate the transition between reversed and stable separated flow. Across this sweep, downforce
+      gain relative to the baseline diffuser increased substantially with area ratio, up to
+      roughly 75% at the highest ratios tested (8.9, ~10–24°), but reversed flow began to occur at
+      area ratios above approximately 4, which is where B23's diffuser sat.
     </p>
     <p>
-      The low-profile undertray maximizes air intake through the inlet while the Benzing diffuser
-      profile reduces wake without compromising downforce. Multi-element side wings sit above the
-      diffuser to add rear downforce while maintaining the car's overall center of pressure
-      balance. The inlet area, set relative to the radiator frontal area, was one of the
-      reference points used when evaluating outlet area ratios during my investigation.
+      The packaging-constrained configurations (limited by ground clearance and chassis geometry)
+      clustered around area ratios of 4.8–9.0° and 2.0–12°, both near or just past this reversal
+      threshold. This meant the highest-downforce options achievable within the current packaging
+      were also the ones most likely to tip into the unstable, reversed-flow regime that was
+      ultimately observed.
     </p>
-    <!-- <img src="images/undertray_sidepod_layout.png" alt="Undertray, sidewing, and sidepod integration" style="width:70%; max-width:900px"> -->
+     <img src="images/area_ratio.png" alt="Diffuser area ratio comparison" style="width:70%; max-width:900px"> -->
   </div>
 </section>
 
   <section id="future-work" class="w3-padding-64 w3-white">
   <div class="max-width">
-    <h2>Changes and Next Steps</h2>
-
-    <h3>Inlet Flow </h3>
+    <h2>Results and Next Steps</h2>
     <p>
-      From the inboard velocity contour and streamlines, the flow entering the diffuser throat looked like it 
-      is already non-uniform. I hypothesized this could be from wheel wake and upstream undertray surface and
-      could have been causing early separation regardless of outlet geometry. However, upon checking the velocity profiles
-      directly at the diffuser throat, the profile looked clean and uniform, informing my decision to look at the diffuser outlet curvature
-      and area ratio.
-    </p>
-
-    <h3>Outlet Curvature and Divergence Angle</h3>
-    <p>
-      I worked on flattening the outlet divergence angle while preserving the same overall area ratio, spreading the expansion 
-      over more of the diffuser's length, letting the pressure gradient build more gradually and form a stable recirculation bubble.
-    </p>
-    <h3>Area Ratio vs. Length</h3>
-    <p>
-      I tested a few exit-to-throat area ratios with the B23 diffuser length to help locate the transition point between reversed and stable
-      separated flow. At 1.5, the flow stays fully attached the whole way, underperforming on downforce.
-      At 2.0, I saw "good" separation with a stable bubble near the exit and vortices intact. I found that at 2.0, we get 90% of the downforce of 2.5 but not yet
-      tipping into reversal like in B23. 
-    </p>
-    <p>
-     As a result of my research and CFD simulations, I recommended the following investigations:
+     As a result of my research, I recommended the following investigations:
     </p>
 
     <h3>Additional Center Channel Strakes</h3>
