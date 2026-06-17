@@ -194,12 +194,32 @@
 <!-- ================= PAGE HEADER ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h1>SpaceX - HLS Intern</h1>
+    <h1>National Institute of Standards and Technology (NIST) - Additive Manufacturing Research Intern</h1>
     <p class="w3-large">
-      <b>Dates:</b> May 2024 – August 2024<br>
-      <b>Team:</b> Starship Human Lander System Mechanisms<br>
-      <b>Focus:</b> soft capture docking mechs
+      <b>Dates:</b> June 2019 – August 2020<br>
+      <b>Team:</b> Engineering Lab, Additive Manufacturing Project<br>
+      Developed software tools, computer vision pipelines, and image analysis methods for additive manufacturing research at the National Institute of Standards and Technology. 
     </p>
+  </div>
+</section>
+
+<!-- ================= PROBLEM SPACE ================= -->
+<section class="section-grey">
+  <div class="max-width">
+    <h2>Problem Space</h2>
+    <p>
+      Additive manufacturing offers transformative potential for defense, aerospace, and medical
+      part production — but adoption is bottlenecked by the complete absence of public qualification
+      standards. Without qualification, each organization must conduct its own costly, time-consuming
+      testing programs, and data almost always remains proprietary.
+    </p>
+    <ul>
+      <li>No public qualification framework exists for AM processes or materials in aerospace/defense</li>
+      <li>Internal defects (gas pores, lack-of-fusion, cracking, warping) occur during L-PBF and can cause part failure if undetected</li>
+      <li>Layerwise images captured by the AMMT's in-situ camera came out rotated and perspective-distorted due to a 63.2° off-axis camera angle — unusable for accurate defect localization without correction</li>
+      <li>The AM Material Database (ammd.nist.gov) required manual XML curation of experimental data — a slow, error-prone process not scalable to the volume of tests needed for qualification</li>
+      <li>Existing test data from other labs remained siloed; a shared, structured public database was needed to pool results toward qualification</li>
+    </ul>
   </div>
 </section>
 
@@ -207,35 +227,84 @@
 <section class="w3-container w3-padding-32 w3-light-grey">
   <div class="max-width">
     <h2>Role Summary</h2>
-    <!--High-level description of your role. What were you hired to do? -->
-    <!-- What problems did your team own? What scale were you working at? -->
     <p>
-      
-    </p>
-    <!-- What you owned end-to-end, Key interfaces (EE, firmware, manufacturing, test), Decision-making authority -->
-    <ul>
-      
-    </ul>
+      During three appointments with NIST's Engineering Laboratory, I worked on projects supporting
+      additive manufacturing data management, process monitoring, and image analysis. My work ranged from
+      automating data curation workflows for the Additive Manufacturing Materials Database (AMMD) to developing
+      computer vision algorithms for processing layerwise images collected during metal additive manufacturing builds.
+      These projects combined software development, data engineering, image processing, and manufacturing research.
+    </p> <p class="date-badge">Summer 2019</p>
+        <h3>AM Material Database — XML Data Curation Automation</h3>
+        <p>
+          The AM Material Database (ammd.nist.gov) required researchers to manually convert
+          Excel-based experimental results into structured XML before upload. Wrote Python scripts
+          to automate this conversion pipeline end-to-end: querying for source files, downloading
+          and unzipping them, parsing Excel data, and generating conformant XML for database
+          ingest.
+        </p>
+        <ul>
+          <li>Automated file discovery via query, download, and unzip workflow</li>
+          <li>Converted Excel experimental data to structured XML at scale</li>
+          <li>Reduced manual effort for researchers contributing data to the public database</li>
+        </ul>
+        <div class="tag-row">
+          <span class="tag tag-blue">Python</span>
+          <span class="tag tag-purple">XML / Excel automation</span>
+          <span class="tag tag-teal">ammd.nist.gov</span>
+        </div>
+      </div>
+ 
+      <div class="timeline-item">
+        <p class="date-badge">December 2019</p>
+        <h3>Melt Pool Characterization from In-Situ Print Images</h3>
+        <p>
+          Melt pool geometry is a key indicator of print quality in L-PBF: improper melt pool
+          formation underlies the majority of fusion defects and trapped-gas porosity. Developed
+          Python programs to extract melt pool properties from high-speed camera images captured
+          during AMMT printing tests, feeding quantitative data into NIST's model-based qualification
+          effort.
+        </p>
+        <ul>
+          <li>Wrote image processing programs to measure melt pool size and morphology from in-situ images</li>
+          <li>Supported the Engineering Laboratory's model-based AM qualification research program</li>
+        </ul>
+        <div class="tag-row">
+          <span class="tag tag-blue">Python</span>
+          <span class="tag tag-teal">Melt pool metrology</span>
+          <span class="tag tag-amber">L-PBF process monitoring</span>
+        </div>
+      </div>
+ 
+      <div class="timeline-item">
+        <p class="date-badge">Summer 2020</p>
+        <h3>Layerwise Image Processing via Computer Vision</h3>
+        <p>
+          Developed a full computer vision pipeline to correct distorted layerwise images from the
+          AMMT's angled layer camera, enabling accurate real-world localization of defects. Benchmarked
+          six undistortion methods against synthetic ground-truth images generated from XYPT build
+          command data, then applied the best-performing approach to the second experiment's dataset,
+          cropping and sorting images by part and layer for analysis.
+        </p>
+        <ul>
+          <li>Tested and compared six OpenCV-based image undistortion methods (getPerspectiveTransform, findHomography variants)</li>
+          <li>Built synthetic ground-truth images from XYPT build command files for quantitative benchmarking</li>
+          <li>Designed automated pipeline to undistort, crop, and sort layerwise images by part/layer</li>
+          <li>Identified recurring defect patterns: elevated edges, corner protrusion through powder, subsurface blobs</li>
+        </ul>
+        <div class="tag-row">
+          <span class="tag tag-blue">Python</span>
+          <span class="tag tag-blue">OpenCV</span>
+          <span class="tag tag-teal">Computer vision</span>
+          <span class="tag tag-teal">Perspective undistortion</span>
+          <span class="tag tag-amber">L-PBF defect analysis</span>
+        </div>
+        <div class="callout">
+          <p>Full project write-up: <a href="nist_layerwise_project.html" style="color:#005288; font-weight:700;">Layerwise Imaging Project Page →</a></p>
+        </div>
+      </div>
   </div>
 </section>
-
-<!-- ================= PROBLEM SPACE ================= -->
-<section class="w3-container w3-padding-64">
-  <div class="max-width">
-    <h2>Problem Space</h2>
-    <!-- What was broken, missing, or limiting the organization? Why did this problem matter (cost, safety, schedule, scale)?-->
-    <p>
-      
-    </p>
-    <ul>
-      <li>Existing system limitations</li>
-      <li>Throughput / reliability / safety issues</li>
-      <li>Constraints from facilities or standards</li>
-    </ul>
-
-  </div>
-</section>
-
+  
 <!-- ================= REQUIREMENTS & CONSTRAINTS ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
