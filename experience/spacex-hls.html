@@ -12,9 +12,13 @@
   <!-- Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
-  <style>
+    <style>
     body, h1, h2, h3, h4 {
       font-family: "Roboto", sans-serif;
+    }
+    header h1 {
+    font-size: 6rem;  
+    margin-bottom: 0.25rem;
     }
     .max-width {
       max-width: 1000px;
@@ -23,9 +27,60 @@
     img {
       border-radius: 6px;
       margin-top: 12px;
-      margin-bottom: 12px;
     }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Hide the nested submenu by default */
+    .parent .submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background: white;
+      min-width: 180px;
+      z-index: 1000;
+    }
+    
+    /* Only show submenu when hovering*/
+    .parent:hover .submenu {
+      display: block;
+    }
+        
+    /* Make parent positioning context */
+    .dropdown {
+      position: relative;
+    }
+    /* Skills section layout */
+    
+    .skills-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    /*.skill-card {
+      background-color: #ffffff;
+      padding: 1.25rem 1.5rem; /* tighter padding */
+      border-radius: 6px;
+    } */
+    .skill-category ul {
+      list-style-type: disc
+      margin: auto;
+    }
+    
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+
   </style>
+  
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  
 </head>
 
 <body>
@@ -34,11 +89,11 @@
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card">
 
-    <a href="../index.html" class="w3-bar-item w3-button w3-large">
+    <a href="../../index.html" class="w3-bar-item w3-button w3-large">
       <b>Jennifer S. Li</b>
     </a>
 
-   <!-- Experience Dropdown -->
+    <!-- Experience Dropdown -->
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-button">Work Experience ▾</button>
       <div class="w3-dropdown-content w3-bar-block w3-border">
@@ -76,60 +131,61 @@
   <button class="w3-button">Projects ▾</button>
 
   <div class="w3-dropdown-content w3-bar-block w3-border">
-
-    
-
     <div class="parent">
-    <a href="fsae.html" class="w3-bar-item w3-button">
-      Berkeley Formula Racing ▸
-    </a>
-      <div class="w3-bar-block w3-border submenu">
-        <a href="../projects/bfr/seat.html" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
-        <a href="../projects/bfr/brakes.html" class="w3-bar-item w3-button">Brakes</a>
-        <a href="../projects/bfr/steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
-        <a href="../projects/bfr/pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
-        <a href="../projects/bfr/headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
-        <a href="../projects/bfr/diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
-      </div>
-
-      <a href="../projects/wheel.html" class="w3-bar-item w3-button">
-      Hollow Carbon Fiber Wheel
+      <a href="../../experience/fsae.html" class="w3-bar-item w3-button">
+        Berkeley Formula Racing ▸
       </a>
-      <a href="../projects/CandyDrop Final Project Report.pdf" class="w3-bar-item w3-button">
-      Hard Candy Machine
-      </a>
-       <a href="../projects/perry.html" class="w3-bar-item w3-button">
-        Perry the Quadruped Robot
-       </a>
-      <a href="../projects/passive-walker.html" class="w3-bar-item w3-button">
-        Passive Walking Robot
-       </a>
-      <a href="../projects/cupholder.html" class="w3-bar-item w3-button">
-        Gimballed Cup Holder
-       </a>
-      
-      <a href="../projects/uav.html" class="w3-bar-item w3-button">
-        UAV Flight Control
-       </a>
-      <a href="../projects/flower.html" class="w3-bar-item w3-button">
-        Morphing Flower Soft-Robot
-       </a>
-      <a href="../projects/turtle.html" class="w3-bar-item w3-button">
-        Amphibious Turtle Robot
-       </a>
-      <a href="../projects/star.html" class="w3-bar-item w3-button">
-        Stage Separation Mechanism
-       </a>
-      <a href="../projects/misc.html" class="w3-bar-item w3-button">
-        Other
-       </a>
-      
+        <div class="w3-bar-block w3-border submenu">
+          <a href="../projects/bfr/seat.html" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
+          <a href="../projects/bfr/brakes.html" class="w3-bar-item w3-button">Brakes</a>
+          <a href="../projects/bfr/steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
+          <a href="../projects/bfr/pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
+          <a href="../projects/bfr/headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
+          <a href="../projects/bfr/diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
+        </div>
+  
+        <a href="../projects/wheel.html" class="w3-bar-item w3-button">
+        Hollow Carbon Fiber Wheel
+        </a>
+        <a href="../projects/CandyDrop Final Project Report.pdf" class="w3-bar-item w3-button">
+        Hard Candy Machine
+        </a>
+         <a href="../projects/perry.html" class="w3-bar-item w3-button">
+          Perry the Quadruped Robot
+         </a>
+        <a href="../projects/passive-walker.html" class="w3-bar-item w3-button">
+          Passive Walking Robot
+         </a>
+        <a href="../projects/cupholder.html" class="w3-bar-item w3-button">
+          Gimballed Cup Holder
+         </a>
+        
+        <a href="../projects/uav.html" class="w3-bar-item w3-button">
+          UAV Flight Control
+         </a>
+        <a href="../projects/flower.html" class="w3-bar-item w3-button">
+          Morphing Flower Soft-Robot
+         </a>
+        <a href="../projects/turtle.html" class="w3-bar-item w3-button">
+          Amphibious Turtle Robot
+         </a>
+        <a href="../projects/star.html" class="w3-bar-item w3-button">
+          Stage Separation Mechanism
+         </a>
+        <a href="../projects/misc.html" class="w3-bar-item w3-button">
+          Other
+        </a>
     </div>
-    
-
   </div>
 </div>
 
+
+    <a href="../courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
+    <a href="../assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+
+  </div>
+</div>
 <!-- Spacer for fixed navbar -->
 <div style="margin-top:64px"></div>
 
