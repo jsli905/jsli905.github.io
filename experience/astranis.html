@@ -16,6 +16,10 @@
     body, h1, h2, h3, h4 {
       font-family: "Roboto", sans-serif;
     }
+    header h1 {
+    font-size: 6rem;  
+    margin-bottom: 0.25rem;
+    }
     .max-width {
       max-width: 1000px;
       margin: auto;
@@ -23,9 +27,60 @@
     img {
       border-radius: 6px;
       margin-top: 12px;
-      margin-bottom: 12px;
     }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Hide the nested submenu by default */
+    .parent .submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background: white;
+      min-width: 180px;
+      z-index: 1000;
+    }
+    
+    /* Only show submenu when hovering*/
+    .parent:hover .submenu {
+      display: block;
+    }
+        
+    /* Make parent positioning context */
+    .dropdown {
+      position: relative;
+    }
+    /* Skills section layout */
+    
+    .skills-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    /*.skill-card {
+      background-color: #ffffff;
+      padding: 1.25rem 1.5rem; /* tighter padding */
+      border-radius: 6px;
+    } */
+    .skill-category ul {
+      list-style-type: disc
+      margin: auto;
+    }
+    
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+
   </style>
+  
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  
 </head>
 
 <body>
