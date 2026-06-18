@@ -200,13 +200,7 @@
       <b>Team:</b> Engineering Lab, Additive Manufacturing Project<br>
       Developed software tools, computer vision pipelines, and image analysis methods for additive manufacturing research at the National Institute of Standards and Technology. 
     </p>
-  </div>
-</section>
 
-<!-- ================= PROBLEM SPACE ================= -->
-<section class="section-grey">
-  <div class="max-width">
-    <h2>Problem Space</h2>
     <p>
       Additive manufacturing offers transformative potential for defense, aerospace, and medical
       part production — but adoption is bottlenecked by the complete absence of public qualification
@@ -220,6 +214,12 @@
       <li>The AM Material Database (ammd.nist.gov) required manual XML curation of experimental data — a slow, error-prone process not scalable to the volume of tests needed for qualification</li>
       <li>Existing test data from other labs remained siloed; a shared, structured public database was needed to pool results toward qualification</li>
     </ul>
+    <p>
+      Additive manufacturing generates large amounts of process data that can be used to improve
+      material characterization, process understanding, and defect detection. During my time at NIST,
+      I developed software tools to automate data handling, process experimental data, and analyze
+      manufacturing images collected during laser powder bed fusion builds.
+    </p>
   </div>
 </section>
 
@@ -233,7 +233,7 @@
       automating data curation workflows for the Additive Manufacturing Materials Database (AMMD) to developing
       computer vision algorithms for processing layerwise images collected during metal additive manufacturing builds.
       These projects combined software development, data engineering, image processing, and manufacturing research.
-    </p> <p class="date-badge">Summer 2019</p>
+    </p> <p class="date-badge">June-September 2019</p>
         <h3>AM Material Database — XML Data Curation Automation</h3>
         <p>
           The AM Material Database (ammd.nist.gov) required researchers to manually convert
@@ -252,7 +252,7 @@
           <span class="tag tag-purple">XML / Excel automation</span>
           <span class="tag tag-teal">ammd.nist.gov</span>
         </div>
-      </div>
+      
  
       <div class="timeline-item">
         <p class="date-badge">December 2019</p>
@@ -276,7 +276,7 @@
       </div>
  
       <div class="timeline-item">
-        <p class="date-badge">Summer 2020</p>
+        <p class="date-badge">June-August 2020</p>
         <h3>Layerwise Image Processing via Computer Vision</h3>
         <p>
           Developed a full computer vision pipeline to correct distorted layerwise images from the
@@ -299,97 +299,24 @@
           <span class="tag tag-amber">L-PBF defect analysis</span>
         </div>
         <div class="callout">
-          <p>Full project write-up: <a href="nist_layerwise_project.html" style="color:#005288; font-weight:700;">Layerwise Imaging Project Page →</a></p>
+          <p>Project: <a href="nist_layerwise_project.html" style="color:#005288; font-weight:700;">In-Situ Defect Detection Project Page →</a></p>
         </div>
       </div>
+    </div>
   </div>
 </section>
   
 <!-- ================= REQUIREMENTS & CONSTRAINTS ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
+<section class="section-grey">
   <div class="max-width">
-    <h2>Requirements & Constraints</h2>
+    <h2>Requirements &amp; Constraints</h2>
     <ul>
-      <li>Performance requirements (loads, temps, tolerances)</li>
-      <li>Safety & compliance (UL, CE, internal standards)</li>
-      <li>Manufacturing constraints</li>
-      <li>Schedule / budget constraints</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= CONCEPT DEVELOPMENT ================= -->
-<section class="w3-container w3-padding-64">
-  <div class="max-width">
-    <h2>Concept Development</h2>
-    <p>
-      trade studies,
-      early prototypes, or architecture decisions.
-    </p>
-
-    <img src="../images/company-a_concept.jpg"
-         alt="Concept sketches or CAD"
-         style="width:100%; max-width:900px">
-
-    <ul>
-      <li>Alternatives considered</li>
-      <li>Why the final concept was chosen</li>
-      <li>Key risks identified early</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= DETAILED DESIGN ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
-  <div class="max-width">
-    <h2>Detailed Design</h2>
-    <p>
-      Mechanical details.
-      Call out materials, tolerances, mechanisms, and interfaces.
-    </p>
-
-    <ul>
-      <li>CAD tools used</li>
-      <li>Material selection rationale</li>
-      <li>Thermal / structural considerations</li>
-    </ul>
-
-    <img src="../images/company-a_cad.jpg"
-         alt="Detailed CAD"
-         style="width:100%; max-width:900px">
-  </div>
-</section>
-
-<!-- ================= ANALYSIS & VALIDATION ================= -->
-<section class="w3-container w3-padding-64">
-  <div class="max-width">
-    <h2>Analysis & Validation</h2>
-    <ul>
-      <li>FEA / hand calcs</li>
-      <li>Thermal modeling</li>
-      <li>Design margin verification</li>
-      <li>Test plans</li>
-    </ul>
-
-    <img src="../images/company-a_testing.jpg"
-         alt="Testing setup"
-         style="width:100%; max-width:900px">
-  </div>
-</section>
-
-<!-- ================= MANUFACTURING & ASSEMBLY ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
-  <div class="max-width">
-    <h2>Manufacturing & Assembly</h2>
-    <p>
-      How was this built? What changed between prototype
-      and final versions?
-    </p>
-
-    <ul>
-      <li>Vendors / processes</li>
-      <li>Assembly sequence considerations</li>
-      <li>DFM / DFA changes</li>
+      <li><b>Accuracy:</b> Undistorted images needed to match real-world coordinates accurately enough to localize defects for closed-loop feedback to the AMMT during printing</li>
+      <li><b>Scalability:</b> XML curation automation had to handle large batches of experimental files without manual intervention per file</li>
+      <li><b>Image quality constraints:</b> Low contrast between metal parts and powder background limited automated edge detection; corner-point selection required manual assistance</li>
+      <li><b>Instrument constraints:</b> Layer imaging camera fixed at 63.2° from surface normal with viewing vector &lt;0.45, 0, 0.89&gt; — perspective distortion was a fundamental property of the setup, not an error</li>
+      <li><b>Data format constraints:</b> Build command data stored in XYPT CSV files (x/y coordinates, laser power, trigger) at 10 µs resolution — synthetic image generation required parsing these correctly</li>
+      <li><b>Research scope:</b> Work fed into a larger multi-lab qualification program; outputs needed to be documented and reproducible for other researchers</li>
     </ul>
   </div>
 </section>
@@ -398,17 +325,47 @@
 <section class="w3-container w3-padding-64">
   <div class="max-width">
     <h2>Results & Impact</h2>
-    <ul>
-      <li>Quantified improvements (%, $, throughput)</li>
-      <li>Safety improvements</li>
-      <li>Business or engineering outcomes</li>
-    </ul>
-
-    <p>
+    <p style="margin-top:1.25rem;">
+      The automation pipeline for XML curation eliminated manual data preparation steps,
+      enabling faster and more reliable contributions to the publicly accessible AM Material
+      Database. The layerwise image pipeline produced corrected, cropped, and organized image
+      datasets ready for downstream machine learning and defect classification work. Defect
+      pattern findings (elevated edges, corner protrusion, subsurface blobs) gave the AMMT team
+      actionable hypotheses for parameter adjustment and future automated image analysis and in-situ defect corretion work.
     </p>
   </div>
 </section>
-
+  
+<section class="section-grey">
+  <div class="max-width">
+    <h2>Papers &amp; Presentations</h2>
+    <ul>
+      <li>
+        <b>Technical Report (Summer 2020):</b>
+        "Analyzing and Undistorting Layerwise Images of Laser-Powder Bed Fusion Additive Manufacturing Tests" —
+        <a href="nist_layerwise_project.html">Project page</a>
+        &nbsp;·&nbsp;
+        <a href="#">Add PDF link</a>
+      </li>
+      <li>
+        <b>Research Proposal (2019–2020):</b>
+        "Qualification Methods for Laser Parameters in Powder-Bed Fusion AM" —
+        <a href="#">Add PDF link</a>
+      </li>
+      <li>
+        <b>Journal / Conference paper:</b>
+        <em>Add co-authored paper title, authors, venue, year</em> —
+        <a href="#">Add DOI or link</a>
+      </li>
+      <li>
+        <b>Presentation / Poster:</b>
+        <em>Add title, conference or symposium, year</em> —
+        <a href="#">Add slides link</a>
+      </li>
+    </ul>
+  </div>
+</section>
+  
 <!-- ================= SKILLS DEMONSTRATED ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
