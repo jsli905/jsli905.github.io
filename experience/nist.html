@@ -238,7 +238,7 @@
         <h4>June-September 2019</h4>
          <p>
           The Additive Manufacturing Materials Database (AMMD) stores material and process data from additive
-          manufacturing experiments. Researchers previously required researchers to manually convert
+          manufacturing experiments. Previously, it required researchers to manually convert
           Excel-based experimental results into structured XML before upload. I wrote Python scripts
           to automate this conversion pipeline: queried file repositories, automatically located matching datasets, downloading
           and unzipping them, parsing Excel data, and generating XML files that are uploaded to the database.
@@ -264,36 +264,71 @@
           <li>Wrote image processing programs to measure melt pool size and morphology from in-situ images</li>
           <li>Supported the Engineering Laboratory's model-based AM qualification research program</li>
         </ul>
-        <div class="tag-row">
-          <span class="tag tag-blue">Python</span>
-          <span class="tag tag-teal">Melt pool metrology</span>
-          <span class="tag tag-amber">L-PBF process monitoring</span>
-        </div>
       </div>
- 
-      <div class="timeline-item">
-        <p class="date-badge">June-August 2020</p>
-        <h3>Layerwise Image Processing via Computer Vision</h3>
+    
+      <h3>Layerwise Image Processing and Analysis </h3>
+      <h4>June-August 2020</h4>
+    
         <p>
-          Developed a full computer vision pipeline to correct distorted layerwise images from the
-          AMMT's angled layer camera, enabling accurate real-world localization of defects. Benchmarked
-          six undistortion methods against synthetic ground-truth images generated from XYPT build
-          command data, then applied the best-performing approach to the second experiment's dataset,
-          cropping and sorting images by part and layer for analysis.
+          During metal additive manufacturing builds, cameras capture images after each layer is deposited and
+          fused. These layerwise images can provide valuable information about process defects, powder spreading
+          quality, and part distortion. However, because the camera was mounted at an angle relative to the build
+          plane, the images contained significant geometric distortion and could not be directly compared against
+          the intended build geometry.
         </p>
+    
+        <h3>Image Undistortion Pipeline</h3>
+    
+        <p>
+          I developed a computer vision pipeline in Python that aligned and undistorted layerwise images using
+          build command data and synthetic reference images generated from the CAD geometry. Multiple image
+          registration techniques were investigated, including perspective transformations and homography-based
+          methods using varying numbers of reference points.
+        </p>
+    
+        <img src="images/nist_undistortion_pipeline.png"
+             alt="Undistortion Pipeline"
+             style="width:100%; max-width:900px">
+    
+        <p>
+          To quantitatively evaluate each method, I generated image masks and compared them against synthetic
+          reference images using contour area, bounding rectangle dimensions, corner locations, and total pixel
+          differences. The results showed that homography-based approaches provided the best overall alignment
+          performance while balancing geometric accuracy and positional consistency.
+        </p>
+    
+        <h3>Automated Part Extraction</h3>
+    
+        <p>
+          After image alignment, I developed software to automatically crop individual parts from each layer and
+          organize the results into a structured dataset. Images were sorted by part and layer number, allowing
+          researchers to quickly review the evolution of each printed component throughout the build process.
+        </p>
+    
+        <img src="images/nist_part_extraction.png"
+             alt="Part Extraction"
+             style="width:100%; max-width:900px">
+    
+        <h3>Defect Analysis</h3>
+    
+        <p>
+          Using the processed image dataset, I investigated manufacturing defects and recurring process patterns.
+          Analysis revealed several common phenomena, including powder ridges propagating between layers, elevated
+          edges along part boundaries, corner protrusions through powder layers, and defects that appeared during
+          fusion despite not being visible in the preceding powder layer.
+        </p>
+    
+        <p>
+          These observations helped identify potential opportunities for future in-situ monitoring and automated
+          defect detection during additive manufacturing builds.
+        </p>
+
         <ul>
-          <li>Tested and compared six OpenCV-based image undistortion methods (getPerspectiveTransform, findHomography variants)</li>
+          <li>Tested and compared six OpenCV-based image undistortion methods</li>
           <li>Built synthetic ground-truth images from XYPT build command files for quantitative benchmarking</li>
           <li>Designed automated pipeline to undistort, crop, and sort layerwise images by part/layer</li>
           <li>Identified recurring defect patterns: elevated edges, corner protrusion through powder, subsurface blobs</li>
         </ul>
-        <div class="tag-row">
-          <span class="tag tag-blue">Python</span>
-          <span class="tag tag-blue">OpenCV</span>
-          <span class="tag tag-teal">Computer vision</span>
-          <span class="tag tag-teal">Perspective undistortion</span>
-          <span class="tag tag-amber">L-PBF defect analysis</span>
-        </div>
         <div class="callout">
           <p>Project: <a href="nist_layerwise_project.html" style="color:#005288; font-weight:700;">In-Situ Defect Detection Project Page →</a></p>
         </div>
