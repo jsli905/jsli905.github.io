@@ -1,1 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>NIST Defects Project| Jennifer Si Li</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-light-grey.css">
+
+  <!-- Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+
+    <style>
+    body, h1, h2, h3, h4 {
+      font-family: "Roboto", sans-serif;
+    }
+    header h1 {
+    font-size: 6rem;  
+    margin-bottom: 0.25rem;
+    }
+    .max-width {
+      max-width: 1000px;
+      margin: auto;
+    }
+    img {
+      border-radius: 6px;
+      margin-top: 12px;
+    }
+    a {
+      text-decoration: none;
+    }
+    
+    /* Hide the nested submenu by default */
+    .parent .submenu {
+      display: none;
+      position: absolute;
+      left: 100%;
+      top: 0;
+      background: white;
+      min-width: 180px;
+      z-index: 1000;
+    }
+    
+    /* Only show submenu when hovering*/
+    .parent:hover .submenu {
+      display: block;
+    }
+        
+    /* Make parent positioning context */
+    .dropdown {
+      position: relative;
+    }
+    /* Skills section layout */
+    
+    .skills-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    /*.skill-card {
+      background-color: #ffffff;
+      padding: 1.25rem 1.5rem; /* tighter padding */
+      border-radius: 6px;
+    } */
+    .skill-category ul {
+      list-style-type: disc
+      margin: auto;
+    }
+    
+    .skill-category li {
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+
+  </style>
+  
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card">
+
+    <a href="../../index.html" class="w3-bar-item w3-button w3-large">
+      <b>Jennifer S. Li</b>
+    </a>
+
+    <!-- Experience Dropdown -->
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-button">Work Experience ▾</button>
+      <div class="w3-dropdown-content w3-bar-block w3-border">
+        <a href="astranis.html" class="w3-bar-item w3-button">
+          Astranis – Associate Technical Project Manager
+        </a>
+        <a href="spacex-hls.html" class="w3-bar-item w3-button">
+          SpaceX - Human Lander System (HLS) Mechanisms Intern
+        </a>
+        <a href="spacex-mechs.html" class="w3-bar-item w3-button">
+          SpaceX - Starship Mechanisms Intern
+        </a>
+        <a href="tesla.html" class="w3-bar-item w3-button">
+          Tesla - Stator Manufacturing Design Intern
+        </a>
+        <a href="chemix.html" class="w3-bar-item w3-button">
+          Chemix - Battery R&D Intern
+        </a>
+        <a href="taflab.html" class="w3-bar-item w3-button">
+          TAFLab - Multihulled Unmanned Boat Undergrad Researcher
+        </a>
+        <a href="nist.html" class="w3-bar-item w3-button">
+          NIST - Additive Manufacturing Laser Powder Bed Fusion Intern
+        </a>
+        <a href="other.html" class="w3-bar-item w3-button">
+          Other (Misc)
+        </a>
+        
+      </div>
+    </div>
+
+    <!-- Projects Dropdown -->
+
+<div class="w3-dropdown-hover">
+  <button class="w3-button">Projects ▾</button>
+
+  <div class="w3-dropdown-content w3-bar-block w3-border">
+    <div class="parent">
+      <a href="../../experience/fsae.html" class="w3-bar-item w3-button">
+        Berkeley Formula Racing ▸
+      </a>
+        <div class="w3-bar-block w3-border submenu">
+          <a href="../projects/bfr/seat.html" class="w3-bar-item w3-button">Carbon Fiber Seat</a>
+          <a href="../projects/bfr/brakes.html" class="w3-bar-item w3-button">Brakes</a>
+          <a href="../projects/bfr/steeringwheel.html" class="w3-bar-item w3-button">Steering Wheel</a>
+          <a href="../projects/bfr/pedals.html" class="w3-bar-item w3-button">Pedals/Pedal Tray</a>
+          <a href="../projects/bfr/headrest.html" class="w3-bar-item w3-button">Head Restraint</a>
+          <a href="../projects/bfr/diffuser.html" class="w3-bar-item w3-button">Diffuser</a>
+        </div>
+  
+        <a href="../projects/wheel.html" class="w3-bar-item w3-button">
+        Hollow Carbon Fiber Wheel
+        </a>
+        <a href="../projects/CandyDrop Final Project Report.pdf" class="w3-bar-item w3-button">
+        Hard Candy Machine
+        </a>
+         <a href="../projects/perry.html" class="w3-bar-item w3-button">
+          Perry the Quadruped Robot
+         </a>
+        <a href="../projects/passive-walker.html" class="w3-bar-item w3-button">
+          Passive Walking Robot
+         </a>
+        <a href="../projects/cupholder.html" class="w3-bar-item w3-button">
+          Gimballed Cup Holder
+         </a>
+        
+        <a href="../projects/uav.html" class="w3-bar-item w3-button">
+          UAV Flight Control
+         </a>
+        <a href="../projects/flower.html" class="w3-bar-item w3-button">
+          Morphing Flower Soft-Robot
+         </a>
+        <a href="../projects/turtle.html" class="w3-bar-item w3-button">
+          Amphibious Turtle Robot
+         </a>
+        <a href="../projects/star.html" class="w3-bar-item w3-button">
+          Stage Separation Mechanism
+         </a>
+        <a href="../projects/misc.html" class="w3-bar-item w3-button">
+          Other
+        </a>
+    </div>
+  </div>
+</div>
+
+
+    <a href="../courses.html" class="w3-bar-item w3-button w3-hide-small">Courses</a>
+    <a href="../assets/resume.pdf" class="w3-bar-item w3-button w3-hide-small">Resume</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small">Contact</a>
+
+  </div>
+</div>
+
+<!-- Spacer for fixed navbar -->
+<div style="margin-top:64px"></div>
+
+
+<!-- ================= PAGE HEADER ================= -->
+<section class="w3-container w3-padding-64">
+  <div class="max-width">
+    <h1>National Institute of Standards and Technology (NIST) Layerwise Imaging Projec</h1>
+    <p class="w3-large">
+      <b>Dates:</b> June 2019 – August 2020<br>
+      <b>Team:</b> Engineering Lab, Additive Manufacturing Project<br>
+      Developed software tools, computer vision pipelines, and image analysis methods for additive manufacturing research at the National Institute of Standards and Technology. 
+    </p>
+
+    <p>
+      Additive manufacturing offers transformative potential for defense, aerospace, and medical
+      part production — but adoption is bottlenecked by the complete absence of public qualification
+      standards. Without qualification, each organization must conduct its own costly, time-consuming
+      testing programs, and data almost always remains proprietary.
+    </p>
+    <ul>
+      <li>No public qualification framework exists for AM processes or materials in aerospace/defense</li>
+      <li>Internal defects (gas pores, lack-of-fusion, cracking, warping) occur during L-PBF and can cause part failure if undetected</li>
+      <li>Layerwise images captured by the AMMT's in-situ camera came out rotated and perspective-distorted due to a 63.2° off-axis camera angle — unusable for accurate defect localization without correction</li>
+      <li>The AM Material Database (ammd.nist.gov) required manual XML curation of experimental data — a slow, error-prone process not scalable to the volume of tests needed for qualification</li>
+      <li>Existing test data from other labs remained siloed; a shared, structured public database was needed to pool results toward qualification</li>
+    </ul>
+    <p>
+      Additive manufacturing generates large amounts of process data that can be used to improve
+      material characterization, process understanding, and defect detection. During my time at NIST,
+      I developed software tools to automate data handling, process experimental data, and analyze
+      manufacturing images collected during laser powder bed fusion builds.
+    </p>
+  </div>
+</section>
+
+<!-- ================= ROLE SUMMARY ================= -->
+<section class="w3-container w3-padding-32 w3-light-grey">
+  <div class="max-width">
+    <h2>Role Summary</h2>
+    <p>
+      During three appointments with NIST's Engineering Laboratory, I worked on projects supporting
+      additive manufacturing data management, process monitoring, and image analysis. My work ranged from
+      automating data curation workflows for the Additive Manufacturing Materials Database (AMMD) to developing
+      computer vision algorithms for processing layerwise images collected during metal additive manufacturing builds.
+      These projects combined software development, data engineering, image processing, and manufacturing research.
+    </p> 
+        <h3>AM Material Database — XML Data Curation Automation</h3>
+        <h4>June-September 2019</h4>
+         <p>
+          The Additive Manufacturing Materials Database (AMMD) stores material and process data from additive
+          manufacturing experiments. Previously, it required researchers to manually convert
+          Excel-based experimental results into structured XML before upload. I wrote Python scripts
+          to automate this conversion pipeline: queried file repositories, automatically located matching datasets, downloading
+          and unzipping them, parsing Excel data, and generating XML files that are uploaded to the database.
+        </p>
+        <ul>
+          <li>Automated file discovery via query, download, and unzip workflow</li>
+          <li>Converted Excel experimental data to structured XML at scale</li>
+          <li>Reduced manual effort for data curation and database population</li>
+        </ul>
+      
+        <h3>Melt Pool Characterization from In-Situ Print Images</h3>
+        <h4>December 2019</h4>
+        <p>
+          Melt pool geometry is a key indicator of print quality in L-PBF adn directly
+      influences part microstructure and mechanical properties. Improper melt pool
+          formation underlies the majority of fusion defects and trapped-gas porosity. I developed
+          image-processing Python programs to extract melt pool properties from high-speed camera images captured
+          during Additive Manufacturing Metrology Testbed (AMMT) printing tests, feeding quantitative data into NIST's model-based qualification
+          effort. The programs extracted geometric measurements and process metrics that could be used by researchers to analyze process stability and correlate printing
+      parameters with manufacturing outcomes.
+        </p>
+        <ul>
+          <li>Wrote image processing programs to measure melt pool size and morphology from in-situ images</li>
+          <li>Supported the Engineering Laboratory's model-based AM qualification research program</li>
+        </ul>
+      
+    
+      <h3>Layerwise Image Processing and Analysis </h3>
+      <h4>June-August 2020</h4>
+    
+        <p>
+          During metal additive manufacturing builds, cameras capture images after each layer is deposited and
+          fused. These layerwise images can provide valuable information about process defects, powder spreading
+          quality, and part distortion. However, because the camera was mounted at an angle relative to the build
+          plane, the images contained significant geometric distortion and could not be directly compared against
+          the intended build geometry.
+        </p>
+    
+        <h3>Image Undistortion Pipeline</h3>
+    
+        <p>
+          I developed a computer vision pipeline in Python that aligned and undistorted layerwise images using
+          build command data and synthetic reference images generated from the CAD geometry. Multiple image
+          registration techniques were investigated, including perspective transformations and homography-based
+          methods using varying numbers of reference points.
+        </p>
+    
+        <img src="images/nist_undistortion_pipeline.png"
+             alt="Undistortion Pipeline"
+             style="width:100%; max-width:900px">
+    
+        <p>
+          To quantitatively evaluate each method, I generated image masks and compared them against synthetic
+          reference images using contour area, bounding rectangle dimensions, corner locations, and total pixel
+          differences. The results showed that homography-based approaches provided the best overall alignment
+          performance while balancing geometric accuracy and positional consistency.
+        </p>
+    
+        <h3>Automated Part Extraction</h3>
+    
+        <p>
+          After image alignment, I developed software to automatically crop individual parts from each layer and
+          organize the results into a structured dataset. Images were sorted by part and layer number, allowing
+          researchers to quickly review the evolution of each printed component throughout the build process.
+        </p>
+    
+        <img src="images/nist_part_extraction.png"
+             alt="Part Extraction"
+             style="width:100%; max-width:900px">
+    
+        <h3>Defect Analysis</h3>
+    
+        <p>
+          Using the processed image dataset, I investigated manufacturing defects and recurring process patterns.
+          Analysis revealed several common phenomena, including powder ridges propagating between layers, elevated
+          edges along part boundaries, corner protrusions through powder layers, and defects that appeared during
+          fusion despite not being visible in the preceding powder layer.
+        </p>
+    
+        <p>
+          These observations helped identify potential opportunities for future in-situ monitoring and automated
+          defect detection during additive manufacturing builds.
+        </p>
+
+        <ul>
+          <li>Tested and compared six OpenCV-based image undistortion methods</li>
+          <li>Built synthetic ground-truth images from XYPT build command files for quantitative benchmarking</li>
+          <li>Designed automated pipeline to undistort, crop, and sort layerwise images by part/layer</li>
+          <li>Identified recurring defect patterns: elevated edges, corner protrusion through powder, subsurface blobs</li>
+        </ul>
+        <div class="callout">
+          <p>Project: <a href="nist_layerwise_project.html" style="color:#005288; font-weight:700;">In-Situ Defect Detection Project Page →</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
+<!-- ================= REQUIREMENTS & CONSTRAINTS ================= -->
+<section class="section-grey">
+  <div class="max-width">
+    <h2>Requirements &amp; Constraints</h2>
+    <ul>
+      <li><b>Accuracy:</b> Undistorted images needed to match real-world coordinates accurately enough to localize defects for closed-loop feedback to the AMMT during printing</li>
+      <li><b>Scalability:</b> XML curation automation had to handle large batches of experimental files without manual intervention per file</li>
+      <li><b>Image quality constraints:</b> Low contrast between metal parts and powder background limited automated edge detection; corner-point selection required manual assistance</li>
+      <li><b>Instrument constraints:</b> Layer imaging camera fixed at 63.2° from surface normal with viewing vector &lt;0.45, 0, 0.89&gt; — perspective distortion was a fundamental property of the setup, not an error</li>
+      <li><b>Data format constraints:</b> Build command data stored in XYPT CSV files (x/y coordinates, laser power, trigger) at 10 µs resolution — synthetic image generation required parsing these correctly</li>
+      <li><b>Research scope:</b> Work fed into a larger multi-lab qualification program; outputs needed to be documented and reproducible for other researchers</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= RESULTS & IMPACT ================= -->
+<section class="w3-container w3-padding-64">
+  <div class="max-width">
+    <h2>Results & Impact</h2>
+    <p style="margin-top:1.25rem;">
+      The automation pipeline for XML curation eliminated manual data preparation steps,
+      enabling faster and more reliable contributions to the publicly accessible AM Material
+      Database. The layerwise image pipeline produced corrected, cropped, and organized image
+      datasets ready for downstream machine learning and defect classification work. Defect
+      pattern findings (elevated edges, corner protrusion, subsurface blobs) gave the AMMT team
+      actionable hypotheses for parameter adjustment and future automated image analysis and in-situ defect corretion work.
+    </p>
+  </div>
+</section>
+  
+<section class="section-grey">
+  <div class="max-width">
+    <h2>Papers &amp; Presentations</h2>
+    <ul>
+      <li>
+        <b>Technical Report (Summer 2020):</b>
+        "Analyzing and Undistorting Layerwise Images of Laser-Powder Bed Fusion Additive Manufacturing Tests" —
+        <a href="nist_layerwise_project.html">Project page</a>
+        &nbsp;·&nbsp;
+        <a href="#"></a>
+      </li>
+      <li>
+        <b>Research Proposal (2019–2020):</b>
+        "Qualification Methods for Laser Parameters in Powder-Bed Fusion AM" —
+        <a href="#"></a>
+      </li>
+      <li>
+        <b>Journal / Conference paper:</b>
+        <em></em> —
+        <a href="#"></a>
+      </li>
+      <li>
+        <b>Presentation / Poster:</b>
+        <em></em> —
+        <a href="#"></a>
+      </li>
+    </ul>
+  </div>
+</section>
+  
+<!-- ================= SKILLS DEMONSTRATED ================= -->
+<section class="w3-light-grey w3-padding-64">
+  <div class="max-width">
+
+    <h2>Skills Demonstrated</h2>
+
+    <p>
+      Python • Computer Vision • Image Processing • Data Automation • Data Engineering • Additive Manufacturing • Research & Development • 
+      Experimental Data Analysis • Homography & Perspective Mapping • Additive Manufacturing • Process Monitoring • Defect Analysis
+    </p>
+
+  </div>
+</section>
+
+
+</body>
+</html>
 
