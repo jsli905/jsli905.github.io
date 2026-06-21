@@ -200,54 +200,56 @@
       <b>Team:</b> Engineering Lab, Additive Manufacturing Project<br>
       Developed software tools, computer vision pipelines, and image analysis methods for additive manufacturing research at the National Institute of Standards and Technology. 
     </p>
-
     <p>
-      Additive manufacturing offers transformative potential for defense, aerospace, and medical
-      part production — but adoption is bottlenecked by the complete absence of public qualification
-      standards. Without qualification, each organization must conduct its own costly, time-consuming
-      testing programs, and data almost always remains proprietary.
-    </p>
-    <ul>
-      <li>No public qualification framework exists for AM processes or materials in aerospace/defense</li>
-      <li>Internal defects (gas pores, lack-of-fusion, cracking, warping) occur during L-PBF and can cause part failure if undetected</li>
-      <li>Layerwise images captured by the AMMT's in-situ camera came out rotated and perspective-distorted due to a 63.2° off-axis camera angle — unusable for accurate defect localization without correction</li>
-      <li>The AM Material Database (ammd.nist.gov) required manual XML curation of experimental data — a slow, error-prone process not scalable to the volume of tests needed for qualification</li>
-      <li>Existing test data from other labs remained siloed; a shared, structured public database was needed to pool results toward qualification</li>
-    </ul>
-    <p>
-      Additive manufacturing generates large amounts of process data that can be used to improve
-      material characterization, process understanding, and defect detection. During my time at NIST,
-      I developed software tools to automate data handling, process experimental data, and analyze
-      manufacturing images collected during laser powder bed fusion builds.
-    </p>
-  </div>
-</section>
-
-<!-- ================= ROLE SUMMARY ================= -->
-<section class="w3-container w3-padding-32 w3-light-grey">
-  <div class="max-width">
-    <h2>Role Summary</h2>
-    <p>
-      During three appointments with NIST's Engineering Laboratory, I worked on projects supporting
+      During three internships with NIST's Engineering Laboratory, I worked on projects supporting
       additive manufacturing data management, process monitoring, and image analysis. My work ranged from
       automating data curation workflows for the Additive Manufacturing Materials Database (AMMD) to developing
       computer vision algorithms for processing layerwise images collected during metal additive manufacturing builds.
       These projects combined software development, data engineering, image processing, and manufacturing research.
     </p> 
-        <h3>AM Material Database — XML Data Curation Automation</h3>
-        <h4>June-September 2019</h4>
-         <p>
-          The Additive Manufacturing Materials Database (AMMD) stores material and process data from additive
-          manufacturing experiments. Previously, it required researchers to manually convert
-          Excel-based experimental results into structured XML before upload. I wrote Python scripts
-          to automate this conversion pipeline: queried file repositories, automatically located matching datasets, downloading
-          and unzipping them, parsing Excel data, and generating XML files that are uploaded to the database.
-        </p>
-        <ul>
-          <li>Automated file discovery via query, download, and unzip workflow</li>
-          <li>Converted Excel experimental data to structured XML at scale</li>
-          <li>Reduced manual effort for data curation and database population</li>
-        </ul>
+    </div>
+</section>
+<!-- ================= ROLE SUMMARY ================= -->
+<section class="w3-container w3-padding-32 w3-light-grey">
+  <div class="max-width">
+    <h2>Role Summary</h2>
+    <p>
+      Additive manufacturing (AM) offers transformative potential for many industries, but adoption had been bottlenecked by the  absence of public qualification
+      standards. Without qualification, each organization must conduct its own costly, time-consuming
+      testing programs, and data almost always remains proprietary. Laser Power Bed Fusion (L-PBF) AM had also been facing adoption issues
+      due to how prevalent defects (gas pores, lack-of-fusion, cracking, warping) occur.
+    </p>
+    <p>
+      During three internships with NIST's Engineering Laboratory, I worked on projects supporting
+      additive manufacturing data management, process monitoring, and image analysis. My work ranged from
+      automating data curation workflows for the Additive Manufacturing Materials Database (AMMD) to developing
+      computer vision algorithms for processing layerwise images collected during metal additive manufacturing builds.
+      These projects combined software development, data engineering, image processing, and manufacturing research.
+    </p> 
+    </div>
+</section> 
+  
+      <li>Layerwise images captured by the AMMT's in-situ camera came out rotated and perspective-distorted due to a 63.2° off-axis camera angle — unusable for accurate defect localization without correction</li>
+    </ul>
+
+
+<!-- ================= ROLE SUMMARY ================= -->
+<section class="w3-container w3-padding-32 w3-white">
+  <div class="max-width">
+      <h2>AM Material Database — XML Data Curation Automation</h2>
+      <h3>June-September 2019</h3>
+       <p>
+        The Additive Manufacturing Materials Database <a href="https://web.archive.org/web/20220418031718/https://ammd.nist.gov/" style="color:#005288; font-weight:700;">(ammd.nist.gov)</a></p> stores material and process data from additive
+        manufacturing experiments. Previously, it required researchers to manually convert
+        Excel-based experimental results into structured XML before upload. I wrote Python scripts
+        to automate this conversion pipeline: queried file repositories, automatically located matching datasets, downloading
+        and unzipping them, parsing Excel data, and generating XML files that are uploaded to the database.
+      </p>
+      <ul>
+        <li>Automated file discovery via query, download, and unzip workflow</li>
+        <li>Converted Excel experimental data to structured XML at scale</li>
+        <li>Reduced manual effort for data curation and database population</li>
+      </ul>
       
         <h3>Melt Pool Characterization from In-Situ Print Images</h3>
         <h4>December 2019</h4>
