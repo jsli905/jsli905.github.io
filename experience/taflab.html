@@ -351,14 +351,16 @@
       positioning with linear actuators. The two sails are separated by b/2 = 0.5 m
       (half the main sail height), with separation controlled by linear actuators.
     </p>
+    
+    <h3>Mini-Sail</h3>
     <p>
-      The keel uses a NACA-0012 profile with an elliptical planform, selected for its
-      lower drag coefficient at the operating speeds. Lift force was calculated using
-      L = Cl × (ρV²/2) × A, with Cl = 1.05 at 10° angle of attack, seawater density
-      = 1025 kg/m³, velocity = 4 m/s, and projected area = 0.0078 m², yielding a
-      lift force of 4.25 N.
+      I revised the mini-sail geometry from the prior version, which was too small and
+      thin to generate sufficient steering force. The updated dimensions are 0.5 m tall ×
+      0.5 m wide with a NACA-0018 profile at increased thickness. Laser-cut plywood templates
+      of the airfoil profile were used to guide hot-wire foam cutting. The foam core was
+      then fiberglassed with three layers of fiberglass/epoxy and left to cure for five days
+      before spray painting.
     </p>
-
     
   </div>
 </section>
@@ -366,7 +368,7 @@
 <!-- ================= DETAILED DESIGN ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Detailed Design</h2>
+    <h2>Design Details</h2>
 
     <h3>Hull</h3>
     <p>
@@ -377,16 +379,39 @@
       the parallel mid-body, tapering to a vertical stern to minimize wave-making resistance
       at the operating speed/length ratio.
     </p>
-
-    <h3>Mini-Sail</h3>
     <p>
-      The mini-sail geometry was revised from the prior version, which was too small and
-      thin to generate sufficient steering force. The updated dimensions are 0.5 m tall ×
-      0.5 m wide with a NACA-0018 profile at increased thickness. Laser-cut plywood templates
-      of the airfoil profile were used to guide hot-wire foam cutting. The foam core was
-      then fiberglassed with three layers of fiberglass/epoxy and left to cure for five days
-      before spray painting.
+      Hull dimensions were derived analytically using established catamaran design ratios
+      (beam ratio, draft ratio, midship coefficient, prismatic coefficient) rather than
+      CFD, which is appropriate for a displacement-speed vessel at this scale. The approach
+      was validated against two independent references: a speed/length ratio table from
+      catamaran design literature, and Claes Tretow's "Design of a free-rotating wing sail for an autonomous sailboat" stating Cp = 0.54
+      is appropriate at the target S/L ratio of 1.1. Total displacement was verified by
+      computing mass displaced: 2 × Bwl × Lwl × Tc × Cp × Cm × ρ = 8.9 kg.
     </p>
+    
+    <h3>Keel</h3>
+    <p>
+      The keel uses a NACA-0012 profile with an elliptical planform, selected for its
+      lower drag coefficient at the operating speeds. Lift force was calculated using
+      L = Cl × (ρV²/2) × A, with Cl = 1.05 at 10° angle of attack, seawater density
+      = 1025 kg/m³, velocity = 4 m/s, and projected area = 0.0078 m², yielding a
+      lift force of 4.25 N.
+    </p>
+
+      <p>
+        Keel lift force was calculated using the standard lift equation to ensure sufficient
+        lateral resistance at operating speed:
+      </p>
+      \[
+        L = C_l \cdot \frac{\rho V^2}{2} \cdot A
+      \]
+      <p>
+        where \(C_l = 1.05\) at 10° angle of attack (NACA-0012), \(\rho = 1025\,\text{kg/m}^3\)
+        (seawater), \(V = 4\,\text{m/s}\), and \(A = 0.0078\,\text{m}^2\):
+      </p>
+      \[
+        L = 1.05 \times \frac{1025 \times 4^2}{2} \times 0.0078 \approx \boxed{4.25\,\text{N}}
+      \]
 
     <h3>Rudder</h3>
     <p>
@@ -403,59 +428,12 @@
       fit. A 0.1" tolerance was added between mating components in the assembly models and
       the parts were reprinted, resolving the fit issues.
     </p>
-    <!-- <img src="images/taflab_assembly_cad.png" alt="Sailboat assembly CAD" style="width:70%; max-width:900px"> -->
   </div>
 </section>
 
-<!-- ================= ANALYSIS & VALIDATION ================= -->
-<section class="w3-container w3-padding-64">
-  <div class="max-width">
-    <h2>Analysis & Validation</h2>
-
-    <h3>Hull Sizing Hand Calculations</h3>
-    <p>
-      Hull dimensions were derived analytically using established catamaran design ratios
-      (beam ratio, draft ratio, midship coefficient, prismatic coefficient) rather than
-      CFD, which is appropriate for a displacement-speed vessel at this scale. The approach
-      was validated against two independent references: a speed/length ratio table from
-      catamaran design literature, and a "Boat Design Book" reference confirming Cp = 0.54
-      is appropriate at the target S/L ratio of 1.1. Total displacement was verified by
-      computing mass displaced: 2 × Bwl × Lwl × Tc × Cp × Cm × ρ = 8.9 kg.
-    </p>
-
-    <h3>Keel Lift Calculation</h3>
-      <p>
-        Keel lift force was calculated using the standard lift equation to ensure sufficient
-        lateral resistance at operating speed:
-      </p>
-      \[
-        L = C_l \cdot \frac{\rho V^2}{2} \cdot A
-      \]
-      <p>
-        where \(C_l = 1.05\) at 10° angle of attack (NACA-0012), \(\rho = 1025\,\text{kg/m}^3\)
-        (seawater), \(V = 4\,\text{m/s}\), and \(A = 0.0078\,\text{m}^2\):
-      </p>
-      \[
-        L = 1.05 \times \frac{1025 \times 4^2}{2} \times 0.0078 \approx \boxed{4.25\,\text{N}}
-      \]
-
-    <h3>Capsize Stability</h3>
-    <p>
-      Capsize stability was assessed qualitatively using the righting arm vs. capsizing
-      arm framework: the righting arm is ½ the center-to-center beam, while the capsizing
-      arm is the height of the sail center of effort above the fulcrum (waterline). A
-      wider interhull beam increases capsize resistance by extending the righting arm.
-      Bridge deck clearance was also considered to prevent excessive pressures in the
-      bridgedeck region during wave action.
-    </p>
-
-    
-    <!-- <img src="images/taflab_layup.png" alt="Fiberglass layup process" style="width:60%; max-width:800px"> -->
-  </div>
-</section>
 
 <!-- ================= MANUFACTURING & ASSEMBLY ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
+<section class="w3-container w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Manufacturing & Assembly</h2>
        
@@ -464,9 +442,12 @@
     </p>
     <ul>
       
-      <li><strong>Sail profiles:</strong> Airfoil templates laser-cut from plywood; polystyrene foam cut to size, then hot-wire cut to profile by running current through a wire and following the taped templates at each foam end</li>
+      <li><strong>Mini-sail cutting:</strong> Airfoil templates laser-cut from plywood; polystyrene foam cut to size, then hot-wire cut to profile by running current through a wire and following the taped templates at each foam end</li>
+      <img src="images/minisail.png" alt="Mini-Sail Cutting" style="width:100%; max-width:900px">
       <li><strong>Mini-sail layup:</strong> Fiberglass layup over foam core, 5-day cure, spray painted</li>
+      <img src="images/sail_layup.png" alt="Mini-Sail Fiberglass Layup" style="width:100%; max-width:900px">
       <li><strong>Rudders:</strong> 3D printed on Fortus; mounted to third T-slot cross-rail via printed mount components</li>
+      <img src="images/rudder_mounting.png" alt="Rudder printed and mounted" style="width:70%; max-width:900px">
       <li><strong>Assembly:</strong> Hulls, sail mount, main sail, mid-section, electronics box, and rudder assembled in SolidWorks-guided sequence; sail mounted at center of buoyancy; mini-sail mounted to structure</li>
       <li><strong>Electronics:</strong> Electronics box and wind vane mounted; next steps (beyond my time on the project) were attaching servos to mini-sail and rudders with waterproof gasket sealing</li>
       <li><strong>New hull molds:</strong> 3D printed on Fortus (male mold), sanded, and coated with mold release</li>
@@ -509,12 +490,12 @@
       epoxy sets.
     </p>
     
-    <!-- <img src="images/taflab_prototype.jpg" alt="Physical prototype in lab" style="width:70%; max-width:900px"> -->
+    <!--  -->
   </div>
 </section>
 
 <!-- ================= RESULTS & IMPACT ================= -->
-<section class="w3-container w3-padding-64">
+<section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Results & Impact</h2>
     <ul>
@@ -531,12 +512,12 @@
       hull manufacturing process, CAD infrastructure, and dimensional calculations were all
       substantially advanced beyond the prior state.
     </p>
-    <!-- <img src="images/taflab_final_proto.jpg" alt="Prototype assembly" style="width:60%; max-width:900px"> -->
+    <img src="images/boat_assembly.png" alt="Prototype assembly" style="width:100%; max-width:900px"> -->
   </div>
 </section>
 
 <!-- ================= LESSONS LEARNED ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
+<section class="w3-container w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Lessons Learned</h2>
     <p> I learned a lot from both the team's past lessons as well as from difficulties I encountered:</p>
@@ -551,7 +532,7 @@
 </section>
 
 <!-- ================= SKILLS DEMONSTRATED ================= -->
-<section class="w3-light-grey w3-padding-64">
+<section class="w3-light-grey w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Skills Demonstrated</h2>
     <p>
