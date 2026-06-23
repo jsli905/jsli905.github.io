@@ -79,6 +79,7 @@
   </style>
   
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  
 
   
 </head>
@@ -193,12 +194,11 @@
 <!-- ================= PAGE HEADER ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h1>TAFLAB</h1>
-    <h1>SpaceX - HLS Intern</h1><h1>WORK IN PROGESS - <a href="https://docs.google.com/presentation/d/1GJVHiXkRrcghPs9Np6qwjjk0nX-TCnsc9QibTs6Rc3g/edit?usp=sharing">Click here for Slides</a> </h1>
+    <h1>Theoretical & Applied Fluid Dynamics Laboratory (TAFLab) Undergrad Researcher</h1>
     <p class="w3-large">
-      <b>Dates:</b> May 2024 – August 2024<br>
-      <b>Team:</b> Starship Human Lander System Mechanisms<br>
-      <b>Focus:</b> soft capture docking mechs
+      <b>Dates:</b> May 2023 – August 2023<br>
+      <b>Team:</b>  Ocean Drone<br>
+      <b>Focus:</b> Mechanical design and fabrication of sailboat components for a swarm of ocean drones
     </p>
   </div>
 </section>
@@ -207,14 +207,21 @@
 <section class="w3-container w3-padding-32 w3-light-grey">
   <div class="max-width">
     <h2>Role Summary</h2>
-    <!--High-level description of your role. What were you hired to do? -->
-    <!-- What problems did your team own? What scale were you working at? -->
     <p>
-      
+      I joined the TAFLab ocean drone project, contributing to mechanical design, prototyping, and manufacturing of an autonomous
+      sailing catamaran. The project worked towards creating a fleet of autonomous surface vehicles
+      to traverse open water to a target location using wind propulsion and servo-controlled
+      steering. Much of the high-level design had been established by prior team members; my
+      work focused on finalizing hull and mini-sail dimensions, improving the manufacturing process, and manufacturing
+      and integrating physical components. 
     </p>
-    <!-- What you owned end-to-end, Key interfaces (EE, firmware, manufacturing, test), Decision-making authority -->
     <ul>
-      
+      <li>Hull geometry finalization and dimensional calculations</li>
+      <li>File reorganization: CAD migration to SolidWorks and GitHub file repository setup</li>
+      <li>Tolerance corrections </li>
+      <li>Manufacturing process development for fiberglass composite hulls and sails</li>
+      <li>Physical fabrication: rudders, mini-sail, fiberglass layup, assembly</li>
+      <li>Assembly of newly fabricated components and electronics on physical prototype</li>
     </ul>
   </div>
 </section>
@@ -223,16 +230,20 @@
 <section class="w3-container w3-padding-64">
   <div class="max-width">
     <h2>Problem Space</h2>
-    <!-- What was broken, missing, or limiting the organization? Why did this problem matter (cost, safety, schedule, scale)?-->
     <p>
-      
+      The TAFLab ocean drone project was working on making small autonomous drones capable of efficient
+      open-water sailing while carrying onboard electronics. The boat had to be physically compact, hydrodynamically efficient at low speeds (~2 knots), and light enough
+      to be displaced by a small catamaran hull volume. The prior prototype had revealed several
+      design, manufacturing, and integration issues that limited build quality and repeatability, and the
+      CAD files were in 2022 OnShape, which lacked simulation and analysis capability for future development.
     </p>
     <ul>
-      <li>Existing system limitations</li>
-      <li>Throughput / reliability / safety issues</li>
-      <li>Constraints from facilities or standards</li>
+      <li>Prior female mold design required excessive filament and caused fiberglass layers to fold during layup, reducing hull quality</li>
+      <li>Servo mounts printed without sufficient tolerance, preventing assembly of printed components</li>
+      <li>Mini-sail geometry was too small and thin to effectively steer the drone</li>
+      <li>CAD files were not in SolidWorks, limiting simulation, analysis, and collaboration capabilities</li>
+      <li>No shared file repository existed for version control and team access</li>
     </ul>
-
   </div>
 </section>
 
@@ -241,10 +252,12 @@
   <div class="max-width">
     <h2>Requirements & Constraints</h2>
     <ul>
-      <li>Performance requirements (loads, temps, tolerances)</li>
-      <li>Safety & compliance (UL, CE, internal standards)</li>
-      <li>Manufacturing constraints</li>
-      <li>Schedule / budget constraints</li>
+      <li><strong>Hull length:</strong> fixed at 1 m to constrain overall boat size</li>
+      <li><strong>Displacement capacity:</strong> boat must efficiently displace enough water to support ~8.9 kg total mass (2 hulls × Bwl × Lwl × Tc × Cp × Cm × ρ = 8.9 kg), derived from hull sizing calculations</li>
+      <li><strong>Hydrodynamic efficiency:</strong> hull geometry optimized for displacement-speed sailing at ~2 knots; speed/length ratio of 1.1 corresponding to Cp = 0.54–0.55</li>
+      <li><strong>Manufacturing:</strong> molds must be 3D printable on available Fortus printer; layup process must be executable with a small team and limited materials</li>
+      <li><strong>Waterproofing:</strong> all servo and electronics interfaces must be sealed with gaskets for marine environment</li>
+      <li><strong>Assembly tolerances:</strong> printed components must include clearance tolerances to allow fit without post-processing</li>
     </ul>
   </div>
 </section>
@@ -253,20 +266,100 @@
 <section class="w3-container w3-padding-64">
   <div class="max-width">
     <h2>Concept Development</h2>
+
+        <h3>Hull Geometry</h3>
     <p>
-      trade studies,
-      early prototypes, or architecture decisions.
+      The team's first approach to sizing the hulls was to find dimensions that could displace
+      a given assumed mass (20 kg total, 10 L per hull), working backwards from displacement
+      to cross-section. This approach unfortunately did not maximize hydrodynamic
+      efficiency. A heavier boat requires more displacement, which increases wetted surface
+      area and drag in a compounding cycle.
+    </p>
+    <p>
+      I worked on hull redesign, and reframed the problem as: given a fixed 1 m hull length, what is the
+      maximum load the boat can carry while still sailing efficiently? Using established naval
+      architecture scaling ratios, I derived the hull parameters as follow:
+    </p>
+    
+    <h4>Waterline Beam</h4>
+    <p>
+      A length-to-beam ratio of 7 is ideal for heavily-loaded displacement hulls. For a 1 m hull:
+    </p>
+    \[
+      B_{WL} = \frac{L}{7} = \frac{1\,\text{m}}{7} \approx 0.14\,\text{m}
+    \]
+    
+    <h4>Maximum Draft</h4>
+    <p>
+      A beam-to-draft ratio of 2 minimizes frictional resistance while avoiding a narrow,
+      deep hull profile:
+    </p>
+    \[
+      T_c = \frac{B_{WL}}{2} = \frac{0.14}{2} = 0.07\,\text{m}
+    \]
+    
+    <h4>Midship Coefficient</h4>
+    <p>
+      The midship coefficient \(C_m\) describes the shape of the hull cross-section relative
+      to a bounding rectangle. A value of \(C_m = 0.8\) corresponds to a more elliptical
+      (vs. parabolic) shape, minimizing wetted surface area for a given displacement:
+    </p>
+    \[
+      C_m = \frac{A_m}{T_c \times B_{WL}} = 0.8
+      \quad \Rightarrow \quad
+      A_m = 0.8 \times 0.14 \times 0.07 = 0.00784\,\text{m}^2
+    \]
+    <p>
+      where \(A_m\) is the maximum cross-sectional area of the hull at the midship point.
+    </p>
+    
+    <h4>Prismatic Coefficient</h4>
+    <p>
+      The prismatic coefficient \(C_p\) describes how "full" the hull is relative to a
+      cylinder of the same midship cross-section and length. It is selected from the
+      speed-to-length ratio:
+    </p>
+    \[
+      \frac{V}{\sqrt{L}} = \frac{2\,\text{kn}}{\sqrt{3.3\,\text{ft}}} \approx 1.1
+      \quad \Rightarrow \quad C_p \approx 0.55
+    \]
+    \[
+      C_p = \frac{\nabla}{A_m \times L_{WL}}
+      \quad \Rightarrow \quad
+      \nabla = C_p \times A_m \times L_{WL} = 0.55 \times 0.00784 \times 1 = 0.00431\,\text{m}^3 \text{ (per hull)}
+    \]
+    
+    <h4>Total Displacement</h4>
+    <p>
+      The total mass the catamaran can displace while sailing efficiently across both hulls:
+    </p>
+    \[
+      m_{\text{disp}} = 2 \times B_{WL} \times L_{WL} \times T_c \times C_p \times C_m \times \rho_{SW}
+    \]
+    \[
+      = 2 \times 0.14 \times 1 \times 0.07 \times 0.55 \times 0.8 \times 1025
+      \approx \boxed{8.9\,\text{kg}}
+    \]
+
+    <h3>Sail Design</h3>
+    <p>
+      Both the main sail and mini-sail use a NACA-0018 symmetric airfoil profile, chosen
+      for its thickness and lift characteristics at low Reynolds numbers. The main sail
+      is 1 m tall × 0.5 m chord; the mini-sail is 0.5 m tall × 0.12 m chord, sized to
+      approximately 10–12% of the main rig area. A no-taper rectangular planform was
+      chosen over a tapered design because the uniform center of gravity simplifies
+      positioning with linear actuators. The two sails are separated by b/2 = 0.5 m
+      (half the main sail height), with separation controlled by linear actuators.
+    </p>
+    <p>
+      The keel uses a NACA-0012 profile with an elliptical planform, selected for its
+      lower drag coefficient at the operating speeds. Lift force was calculated using
+      L = Cl × (ρV²/2) × A, with Cl = 1.05 at 10° angle of attack, seawater density
+      = 1025 kg/m³, velocity = 4 m/s, and projected area = 0.0078 m², yielding a
+      lift force of 4.25 N.
     </p>
 
-    <img src="../images/company-a_concept.jpg"
-         alt="Concept sketches or CAD"
-         style="width:100%; max-width:900px">
-
-    <ul>
-      <li>Alternatives considered</li>
-      <li>Why the final concept was chosen</li>
-      <li>Key risks identified early</li>
-    </ul>
+    
   </div>
 </section>
 
@@ -274,20 +367,43 @@
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Detailed Design</h2>
+
+    <h3>Hull</h3>
     <p>
-      Mechanical details.
-      Call out materials, tolerances, mechanisms, and interfaces.
+      Hull geometry was modeled in SolidWorks based on the calculated parameters: 1 m
+      length, 0.14 m waterline beam, 0.07 m draft, Cm = 0.8 (elliptical midship section),
+      Cp = 0.55. The resulting midship cross-section area at the largest point is
+      0.8 × 0.14 × 0.07 = 0.00784 m². The spoon-shaped bow transitions smoothly into
+      the parallel mid-body, tapering to a vertical stern to minimize wave-making resistance
+      at the operating speed/length ratio.
     </p>
 
-    <ul>
-      <li>CAD tools used</li>
-      <li>Material selection rationale</li>
-      <li>Thermal / structural considerations</li>
-    </ul>
+    <h3>Mini-Sail</h3>
+    <p>
+      The mini-sail geometry was revised from the prior version, which was too small and
+      thin to generate sufficient steering force. The updated dimensions are 0.5 m tall ×
+      0.5 m wide with a NACA-0018 profile at increased thickness. Laser-cut plywood templates
+      of the airfoil profile were used to guide hot-wire foam cutting. The foam core was
+      then fiberglassed with three layers of fiberglass/epoxy and left to cure for five days
+      before spray painting.
+    </p>
 
-    <img src="../images/company-a_cad.jpg"
-         alt="Detailed CAD"
-         style="width:100%; max-width:900px">
+    <h3>Rudder</h3>
+    <p>
+      Rudders were 3D printed on the Fortus printer at Jacobs Hall. Two rudders were printed
+      to allow for redundancy. The rudder mounts connect to the third T-slot rail spanning
+      across the hulls and attach via servo-actuated linkages for directional control.
+    </p>
+
+    <h3>CAD and Tolerances</h3>
+    <p>
+      All CAD files were migrated to SolidWorks, with a shared GitHub repository established
+      for version control and team file access. During test assembly of previously printed
+      components, the servo mounts were found to have zero clearance tolerance, preventing
+      fit. A 0.1" tolerance was added between mating components in the assembly models and
+      the parts were reprinted, resolving the fit issues.
+    </p>
+    <!-- <img src="images/taflab_assembly_cad.png" alt="Sailboat assembly CAD" style="width:70%; max-width:900px"> -->
   </div>
 </section>
 
@@ -295,16 +411,46 @@
 <section class="w3-container w3-padding-64">
   <div class="max-width">
     <h2>Analysis & Validation</h2>
-    <ul>
-      <li>FEA / hand calcs</li>
-      <li>Thermal modeling</li>
-      <li>Design margin verification</li>
-      <li>Test plans</li>
-    </ul>
 
-    <img src="../images/company-a_testing.jpg"
-         alt="Testing setup"
-         style="width:100%; max-width:900px">
+    <h3>Hull Sizing Hand Calculations</h3>
+    <p>
+      Hull dimensions were derived analytically using established catamaran design ratios
+      (beam ratio, draft ratio, midship coefficient, prismatic coefficient) rather than
+      CFD, which is appropriate for a displacement-speed vessel at this scale. The approach
+      was validated against two independent references: a speed/length ratio table from
+      catamaran design literature, and a "Boat Design Book" reference confirming Cp = 0.54
+      is appropriate at the target S/L ratio of 1.1. Total displacement was verified by
+      computing mass displaced: 2 × Bwl × Lwl × Tc × Cp × Cm × ρ = 8.9 kg.
+    </p>
+
+    <h3>Keel Lift Calculation</h3>
+      <p>
+        Keel lift force was calculated using the standard lift equation to ensure sufficient
+        lateral resistance at operating speed:
+      </p>
+      \[
+        L = C_l \cdot \frac{\rho V^2}{2} \cdot A
+      \]
+      <p>
+        where \(C_l = 1.05\) at 10° angle of attack (NACA-0012), \(\rho = 1025\,\text{kg/m}^3\)
+        (seawater), \(V = 4\,\text{m/s}\), and \(A = 0.0078\,\text{m}^2\):
+      </p>
+      \[
+        L = 1.05 \times \frac{1025 \times 4^2}{2} \times 0.0078 \approx \boxed{4.25\,\text{N}}
+      \]
+
+    <h3>Capsize Stability</h3>
+    <p>
+      Capsize stability was assessed qualitatively using the righting arm vs. capsizing
+      arm framework: the righting arm is ½ the center-to-center beam, while the capsizing
+      arm is the height of the sail center of effort above the fulcrum (waterline). A
+      wider interhull beam increases capsize resistance by extending the righting arm.
+      Bridge deck clearance was also considered to prevent excessive pressures in the
+      bridgedeck region during wave action.
+    </p>
+
+    
+    <!-- <img src="images/taflab_layup.png" alt="Fiberglass layup process" style="width:60%; max-width:800px"> -->
   </div>
 </section>
 
@@ -312,16 +458,58 @@
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Manufacturing & Assembly</h2>
+       
     <p>
-      How was this built? What changed between prototype
-      and final versions?
+      My fabrication contributions:
     </p>
-
     <ul>
-      <li>Vendors / processes</li>
-      <li>Assembly sequence considerations</li>
-      <li>DFM / DFA changes</li>
+      
+      <li><strong>Sail profiles:</strong> Airfoil templates laser-cut from plywood; polystyrene foam cut to size, then hot-wire cut to profile by running current through a wire and following the taped templates at each foam end</li>
+      <li><strong>Mini-sail layup:</strong> Fiberglass layup over foam core, 5-day cure, spray painted</li>
+      <li><strong>Rudders:</strong> 3D printed on Fortus; mounted to third T-slot cross-rail via printed mount components</li>
+      <li><strong>Assembly:</strong> Hulls, sail mount, main sail, mid-section, electronics box, and rudder assembled in SolidWorks-guided sequence; sail mounted at center of buoyancy; mini-sail mounted to structure</li>
+      <li><strong>Electronics:</strong> Electronics box and wind vane mounted; next steps (beyond my time on the project) were attaching servos to mini-sail and rudders with waterproof gasket sealing</li>
+      <li><strong>New hull molds:</strong> 3D printed on Fortus (male mold), sanded, and coated with mold release</li>
     </ul>
+  
+    <h3>Hull Manufacturing Process: Old vs. New</h3>
+    <p>Old Process:</p>
+    <ul>
+      <li>Designed and 3D printed female mold sectionals for fiberglass layup</li>
+      <li>Vaseline as release agent between epoxy and fiberglass</li>
+      <li>3 layers of fiberglass/epoxy (24-hr dry period)</li>
+      <li>Take out of mold and cut excess w/dremel</li>
+      <li>Inserted laser-cut wooden ribs and foam capped the hulls</li>
+      <li>Hot wire cut the foam for sail profiles</li>
+      <li>Aligned/inserted PVC for skeleton support</li>
+    </ul>
+    <p>New Process:</p>
+    <ul>
+      <li>Switch to male mold for ease of manufacturing</li>
+      <li>Use the Fortus (FDM printer) instead of foam (emphasize speed over aesthetics)</li>
+      <li>Sand + use mold release</li>
+      <li>Same layup process and post-layup process</li>
+    </ul>
+
+    <h3>Sail Cutting Lessons </h3>
+      <p>
+      One process improvement identified during hot-wire cutting: using a bow-style frame
+      to hold the cutting wire (rather than two people each holding one end of a stick)
+      would provide more constant tension and cutting speed, reducing the warping that
+      occurred from uneven pulling angles and rates between operators.
+    </p>
+    <h3>Fiberglass Layup Lessons</h3>
+    <p>
+      During the mini-sail fiberglass layup, air bubbles formed consistently along the
+      trailing edge of the airfoil. Root cause: the epoxy began curing before all air
+      could be worked out, compounded by working on many small fiberglass pieces
+      sequentially (with the trailing edge done last). The fix for future layups would
+      be to use two large pieces of fiberglass rather than many small pieces, reducing
+      total working time and leaving more time to push out resin and air before the
+      epoxy sets.
+    </p>
+    
+    <!-- <img src="images/taflab_prototype.jpg" alt="Physical prototype in lab" style="width:70%; max-width:900px"> -->
   </div>
 </section>
 
@@ -330,13 +518,20 @@
   <div class="max-width">
     <h2>Results & Impact</h2>
     <ul>
-      <li>Quantified improvements (%, $, throughput)</li>
-      <li>Safety improvements</li>
-      <li>Business or engineering outcomes</li>
+      <li>Revised hull geometry using first-principles naval architecture calculations, establishing a displacement capacity of 8.9 kg across both hulls at a speed/length ratio of 1.1</li>
+      <li>Developed an improved male-mold fiberglass manufacturing process, eliminating the layer-folding issues of the prior female-mold approach and reducing mold material requirements</li>
+      <li>Successfully fabricated and mounted two rudders and the mini-sail on the physical prototype</li>
+      <li>Resolved servo mount fit issues by adding 0.1" clearance tolerance to printed components, enabling assembly of previously non-fitting parts</li>
+      <li>Migrated all CAD to SolidWorks with a shared GitHub repository, enabling simulation and analysis capabilities and establishing version-controlled file management for the team</li>
+      <li>Revised mini-sail geometry (0.5 m × 0.5 m, increased airfoil thickness) to provide sufficient steering authority, correcting the undersized prior design</li>
     </ul>
-
     <p>
+      The prototype was not fully completed during my time on the project — servo attachment
+      to the mini-sail and rudders remained as next steps. Despite this, the physical structure,
+      hull manufacturing process, CAD infrastructure, and dimensional calculations were all
+      substantially advanced beyond the prior state.
     </p>
+    <!-- <img src="images/taflab_final_proto.jpg" alt="Prototype assembly" style="width:60%; max-width:900px"> -->
   </div>
 </section>
 
@@ -344,14 +539,27 @@
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Lessons Learned</h2>
+    <p> I learned a lot from both the team's past lessons as well as from difficulties I encountered:</p>
     <ul>
-      <li>What i would do differently</li>
-      <li>What surprised me</li>
-      <li>Skills or judgment i developed</li>
+      <li><strong>Frame the problem correctly from the start:</strong> the first hull sizing approach was fundamentally the wrong question for an efficiency-optimized design</li>
+      <li><strong>Composite layup requires time planning:</strong> working the trailing edge last on a multi-piece layup meant the epoxy had begun to cure before air could be removed. Future layups should use fewer, larger pieces and sequence the work so the most difficult geometry is addressed first</li>
+      <li><strong>Tooling for manual processes matters:</strong> using two people to hold a hot-wire cutter introduced variability in tension and angle, causing cut warping. A rigid bow frame would have provided consistent geometry and required only one operator</li>
+      <li><strong>Tolerance is not optional in printed assemblies:</strong> establishing a standard clearance and applying it consistently across all mating interfaces from the start would have avoided the reprint cycle.</li>
+      <li><strong>Learned about boat design:</strong> entering a project with no background in boat design, understanding the underlying physics (displacement, prismatic coefficient, speed/length ratio) before touching CAD or fabrication</li>
     </ul>
   </div>
 </section>
 
+<!-- ================= SKILLS DEMONSTRATED ================= -->
+<section class="w3-light-grey w3-padding-64">
+  <div class="max-width">
+    <h2>Skills Demonstrated</h2>
+    <p>
+      Hand calculations • Airfoil selection and lift force calculation • Composite layup and mold design • 
+      CAD (SolidWorks) • Tolerance analysis • Manufacturing process development 
+    </p>
+  </div>
+</section>
 
 </body>
 </html>
