@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Astranis TPM | Jennifer Si Li</title>
+  <title>Chemix | Jennifer Si Li</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -199,159 +199,219 @@
     <p class="w3-large">
       <b>Dates:</b> May 2022 – August 2022<br>
       <b>Team:</b> Battery Research & Development<br>
-      <b>Focus:</b> Mechanical Engineering
+      <b>Focus:</b> Design and fabrication of test fixtures and instrumentation for battery cells
     </p>
+    <p>Note: I signed a non-disclosure agreement with Chemix Battery. Detailed specifications,
+      test results, and proprietary design information have been omitted from this page. The descriptions below
+      reflect general methodology and my engineering contributions only.</p>
   </div>
 </section>
-
+ 
 <!-- ================= ROLE SUMMARY ================= -->
 <section class="w3-container w3-padding-32 w3-light-grey">
   <div class="max-width">
     <h2>Role Summary</h2>
-    <!--High-level description of your role. What were you hired to do? -->
-    <!-- What problems did your team own? What scale were you working at? -->
     <p>
-      
+      At Chemix Battery, I was a mechanical engineering intern on the Battery R/&D team. I designed and built test infrastructure
+      used to characterize battery cell performance. Projects spanned thermal management, gas generation
+      measurement, CAD design, and materials testing. Each project involved the full design-build-test loop:
+      identifying the measurement need, selecting an approach, fabricating or assembling hardware, and
+      validating output against known references.
     </p>
-    <!-- What you owned end-to-end, Key interfaces (EE, firmware, manufacturing, test), Decision-making authority -->
     <ul>
-      
+      <li>Designed and built a temperature regulation system to actively cool cells during cycling, mimicking real-world thermal environments</li>
+      <li>Designed and built an in-situ pouch cell gas generation measurement device with a 0.12 mL margin of error</li>
+      <li>Designed and built cylindrical cell holders that increased space efficiency in incubators by 350% and securely held four different sizes of cylindrical cells during cycling</li>
+      <li>Additional projects: CAD design for electronics enclosures, cylindrical cell filling system, heat tape controller for safety testing, rubber hardness testing, cell validation, and incubator setup</li>
     </ul>
   </div>
 </section>
-
-<!-- ================= PROBLEM SPACE ================= -->
+ 
+<!-- ================= PROJECT 1: GAS GENERATION ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Problem Space</h2>
-    <!-- What was broken, missing, or limiting the organization? Why did this problem matter (cost, safety, schedule, scale)?-->
+    <h2>Project 1: Pouch Cell Gas Generation Measurement</h2>
+ 
+    <h3>Background</h3>
     <p>
-      
+      During formation cycling, some pouch cells can produce gas as a byproduct of chemical reactions at the electrodes.
+      Because pouch cells are sealed, generated gas causes the cell to swell, which can damage device
+      components and raise safety concerns. The goal of this project was to measure gas generation 
+      during cycling rather than relying on before/after mass comparisons alone.
+    </p>
+ 
+    <h3>Underlying Principle</h3>
+    <p>
+      The measurement approach leverages Archimedes' Principle (buoyant force acting on a submerged object equals
+      the weight of the fluid it displaces). By suspending a pouch cell from a load cell while it is submerged in liquid,
+      any change in the cell's volume changes the buoyant force, which in turn changes the tension measured at the load cell:
+    </p>
+    <img src="images/archimedes.png" alt="Underlying Principle" style="width:60%; max-width:900px">
+    <p>
+      As the cell swells, buoyant force increases, tension at the load cell decreases, and the load cell reading changes
+      proportionally. This allows continuous, real-time volume tracking throughout a charge/discharge cycle.
+    </p>
+ 
+    <h3>Implementation</h3>
+    <p>
+      I built a frame that sat inside a temperature-controlled incubator. The pouch cell was suspended via thin wire
+      from the load cell, submerged in silicone oil. This was chosen for its low vapor pressure, electrical insulating properties,
+      and thermal stability. Nickel tabs were spot-welded onto the cells to make electrical connections for cycling.
+      A Python script I wrote logged the load cell output and converted it to a volume-vs-time trace, exporting both
+      a CSV and a plot. To validate the setup, I compared in-situ volume readings against direct mass measurements
+      of cells taken before and after cycling.
     </p>
     <ul>
-      <li>Existing system limitations</li>
-      <li>Throughput / reliability / safety issues</li>
-      <li>Constraints from facilities or standards</li>
+      <li><strong>Fluid:</strong> Silicone oil (low vapor pressure, electrically insulating, thermally stable)</li>
+      <li><strong>Measurement:</strong> Load cell reading mass change → volume change via buoyancy equation</li>
+      <li><strong>Data pipeline:</strong> Python script → CSV output + volume-vs-time plot</li>
+      <li><strong>Validation:</strong> Pre/post mass measurement compared to in-situ output</li>
+      <li><strong>Accuracy achieved:</strong> 0.12 mL margin of error</li>
     </ul>
-
   </div>
 </section>
-
-<!-- ================= REQUIREMENTS & CONSTRAINTS ================= -->
+ 
+<!-- ================= PROJECT 2: CELL COOLING ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Requirements & Constraints</h2>
+    <h2>Project 2: Cell Cooling / Temperature Regulation System</h2>
+ 
+    <h3>Background</h3>
+    <p>
+      Battery cells in real-world applications are actively cooled, which affects their electrochemical performance.
+      Cycling cells without active thermal management causes them to run hotter than they would in a device,
+      making lab performance data less representative of field conditions. The goal was to build a system
+      that could cool cells to a set target temperature during cycling and maintain it, enabling more
+      realistic performance characterization. We would also be able to use this to test cell performance in optimal temperature conditions.
+    </p>
+ 
+    <h3>Approach: Cooling Method Comparison</h3>
+    <p>
+      I researched cooling approaches used in industry and settled on direct cooling. I made three designs to test and compare:
+    </p>
     <ul>
-      <li>Performance requirements (loads, temps, tolerances)</li>
-      <li>Safety & compliance (UL, CE, internal standards)</li>
-      <li>Manufacturing constraints</li>
-      <li>Schedule / budget constraints</li>
+      <li><strong>Inflatable cooling jacket</strong>: flexible, conformable contact around cylindrical cells that fills up with coolant</li>
+      <li><strong>Copper coils</strong>: wound contact cooling via coolant-carrying tubes - would not work for multiple cell sizes</li>
+      <li><strong>Aluminum plate heat sink</strong>: conductive block contact - tests cooling from cell ends (cylinder faces) rather than the lateral surface</li>
+    </ul>
+ 
+    <h3>Implementation</h3>
+    <p>
+      I built a pump-tank-radiator fluid circuit that connected to each of the three cooling configurations.
+      Six 21700 cylindrical cells were cycled simultaneously across the setups (two cells per configuration).
+      Thermocouples were attached to each cell to monitor temperature in real time. The comparison metric
+      was how quickly and precisely each configuration brought cells to the target temperature and held them there.
+    </p>
+    <p>The copper coil configuration ended up being chosen due to better thermal conductivity allowing the cell to stabilize at target temperature faster
+      and being easy to mass produce (used the same setup used to make <a href="../projects/bfr/pedals.html" class="w3-bar-item w3-button">BFR's torsion springs</a>)</p>
+  <h3>Next Steps</h3>
+    <ul>
+      <li>Put a fan in front of radiator for more efficient cooling</li>
+      <li>>Use the temperature controlled oil bath to heat the coolant to test cells are warmer temperatures</li>
+      <li>Hook up more cells (in parallel so that it is always unheated coolant reaching the cells</li>
+      <li>Add leak-stop valves so that if a cell explodes, the system will still work</li>
     </ul>
   </div>
 </section>
-
-<!-- ================= CONCEPT DEVELOPMENT ================= -->
+ 
+<!-- ================= PROJECT 3: INCUBATOR HOLDERS ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Concept Development</h2>
+    <h2>Project 3: Incubator Cell Holders</h2>
+ 
+    <h3>Background /& Goal</h3>
     <p>
-      trade studies,
-      early prototypes, or architecture decisions.
+      Cylindrical cells being cycled in incubators needed to be held securely in place during testing.
+      The existing arrangement was spatially inefficient, limiting how many cells could be tested simultaneously.
+      Off the shelf holders were not universal for all the cylindrical cell sizes we used, nor were they reliable (contact slip issues).
+      The goal was to design holders that improved packing density while maintaining reliable mechanical support.
     </p>
-
-    <img src="../images/company-a_concept.jpg"
-         alt="Concept sketches or CAD"
-         style="width:100%; max-width:900px">
-
-    <ul>
-      <li>Alternatives considered</li>
-      <li>Why the final concept was chosen</li>
-      <li>Key risks identified early</li>
-    </ul>
+ 
+    <h3>Result</h3>
+    <p>
+      The redesigned holders increased usable space efficiency in incubators by 350%, allowing significantly
+      more cells to be cycled concurrently. The design also provided stable support to prevent movement
+      or shorting during cycling.
+    </p>
   </div>
 </section>
-
-<!-- ================= DETAILED DESIGN ================= -->
+ 
+<!-- ================= MISC PROJECTS ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Detailed Design</h2>
-    <p>
-      Mechanical details.
-      Call out materials, tolerances, mechanisms, and interfaces.
-    </p>
-
+    <h2>Additional Projects</h2>
     <ul>
-      <li>CAD tools used</li>
-      <li>Material selection rationale</li>
-      <li>Thermal / structural considerations</li>
-    </ul>
-
-    <img src="../images/company-a_cad.jpg"
-         alt="Detailed CAD"
-         style="width:100%; max-width:900px">
-  </div>
-</section>
-
-<!-- ================= ANALYSIS & VALIDATION ================= -->
-<section class="w3-container w3-padding-64">
-  <div class="max-width">
-    <h2>Analysis & Validation</h2>
-    <ul>
-      <li>FEA / hand calcs</li>
-      <li>Thermal modeling</li>
-      <li>Design margin verification</li>
-      <li>Test plans</li>
-    </ul>
-
-    <img src="../images/company-a_testing.jpg"
-         alt="Testing setup"
-         style="width:100%; max-width:900px">
-  </div>
-</section>
-
-<!-- ================= MANUFACTURING & ASSEMBLY ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
-  <div class="max-width">
-    <h2>Manufacturing & Assembly</h2>
-    <p>
-      How was this built? What changed between prototype
-      and final versions?
-    </p>
-
-    <ul>
-      <li>Vendors / processes</li>
-      <li>Assembly sequence considerations</li>
-      <li>DFM / DFA changes</li>
+      <li><strong>Rubber hardness testing:</strong> Investigated the impact of rubber gasket hardness on LFP stack cell 
+        discharge energy across multiple material types and hardness values, cycling each condition and comparing discharge energy over ~150 cycles</li>
+      <li><strong>CAD design:</strong> Designed enclosures for electronics and cells</li>
+      <li><strong>Cylindrical cell filling system:</strong> Designed tooling to support cell filling and assembly process</li>
+      <li><strong>Heat tape controller:</strong> Built a controller for heat tape used in safety testing</li>
+      <li><strong>Cell validation /& incubator setup:</strong> Set up and validated cells and incubators for cycling runs</li>
     </ul>
   </div>
 </section>
-
+ 
 <!-- ================= RESULTS & IMPACT ================= -->
-<section class="w3-container w3-padding-64">
+<section class="w3-container w3-padding-64 w3-white">
   <div class="max-width">
-    <h2>Results & Impact</h2>
+    <h2>Results /& Impact</h2>
     <ul>
-      <li>Quantified improvements (%, $, throughput)</li>
-      <li>Safety improvements</li>
-      <li>Business or engineering outcomes</li>
+      <li>Built a gas generation measurement system achieving 0.12 mL margin of error, validated against direct mass measurements</li>
+      <li>Built and compared three active cell cooling configurations, generating comparative thermal performance data across cooling methods</li>
+      <li>Designed incubator cell holders that increased space efficiency by 350%, enabling higher-throughput cycling experiments</li>
+      <li>Delivered working instrumentation and fixtures across multiple concurrent projects</li>
     </ul>
-
-    <p>
-    </p>
   </div>
 </section>
-
+ 
 <!-- ================= LESSONS LEARNED ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Lessons Learned</h2>
     <ul>
-      <li>What i would do differently</li>
-      <li>What surprised me</li>
-      <li>Skills or judgment i developed</li>
+      <li><strong>Resourcefulness is a skill:</strong> Very small startup with limited tooling, supply lead times, and budget. Getting things done meant improvising, substituting, and figuring things out without the infrastructure of a larger organization</li>
+ 
+      <li><strong>Being the only ME taught me independence and how to learn across disciplines:</strong> I was the only mechanical engineer on the team and often had to work independently on mechanical problems, but also learned to pull in knowledge from people with very different backgrounds.</li>
+ 
+      <li><strong>Get your fittings organized early:</strong> Fittings were a constant headache across the cooling project. Having a well-organized, labeled system for fittings by size, thread type, and material would have saved significant time designing the system. </li>
+ 
+      <li><strong>Measurement setup can introduce its own error (gas generation project):</strong> The welded nickel tabs used to make electrical contact on the pouch cells added meaningful error to buoyancy readings. A lighter connection method, such as thin wires clipped to the cell tabs, would improve measurement fidelity.</li>
+ 
+      <li><strong>Leak-test everything:</strong> The cooling system developed leaks in several places I hadn't prioritized testing: the radiator, a 3D-printed connector at the 3/8" socket interface, and the coolant tank cap. I had tested segments, but missed some of the biggest sources. I learned to leak-test each joint individually and under pressure, not just assembled sections.</li>
+ 
+      <li><strong>Good designs do multiple jobs at once:</strong> When designing the cylindrical cell holders, I realized the same structure could also incorporate cooling features and lead contacts without adding complexity. Designing for dual function from the start (support + cooling + electrical contact) was more safe effective than needed separate features for each.</li>
+ 
+      <li><strong>Learned a lot about batteries:</strong> Coming in with a mechanical background, I left with a much stronger understanding of electrochemistry, cell formats, formation cycling, gas generation mechanisms, and thermal behavior. Working alongside ChemEs accelerated that learning significantly.</li>
     </ul>
   </div>
 </section>
+ 
+<!-- ================= SKILLS DEMONSTRATED ================= -->
+<section class="w3-light-grey w3-padding-64">
+  <div class="max-width">
+    <h2>Skills Demonstrated</h2>
+    <p>
+      Mechanical design /& fabrication • CAD (SolidWorks) • Instrumentation /& measurement systems •
+      Python • Thermal cooling system design • Fluid system assembly • Fitting selection /& plumbing •
+      Experimental validation • Fixture design • Battery cell /& electrochemistry fundamentals
+    </p>
+  </div>
+  </section>
+<section id="contact" class="w3-white w3-padding-64">
+  <div class="max-width">
+    <h2>Contact</h2>
+    <p>Email: jennifersili@berkeley.edu</p>
+    <p>LinkedIn: linkedin.com/in/jennifersili</p>
+  </div>
+</section>
+
+</div>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="w3-container w3-center w3-padding-16 w3-light-grey">
+  <p>Jennifer Si Li | Engineering Portfolio</p>
+</footer>
 
 
 </body>
