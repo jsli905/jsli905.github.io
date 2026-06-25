@@ -194,165 +194,273 @@
 <!-- ================= PAGE HEADER ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h1>Tesla - Stator Manufacturing Engineer</h1>
-    <h1>WORK IN PROGESS - <a href="https://docs.google.com/presentation/d/1GJVHiXkRrcghPs9Np6qwjjk0nX-TCnsc9QibTs6Rc3g/edit?usp=sharing">Click here for Slides</a> </h1>
-    <p class="w3-large">
-      <b>Dates:</b> August 2023 – December 2023<br>
-      <b>Team:</b> Starship Human Lander System Mechanisms<br>
-      <b>Focus:</b> soft capture docking mechs
+    <h1>Tesla - Stator Manufacturing Engineering Intern</h1>
+      <b>Dates:</b> Summer 2022<br>
+      <b>Location:</b> Gigafactory Nevada<br>
+      <b>Team:</b> Drive Unit - Stator Manufacturing<br>
+      <b>Focus:</b> Automated stator teardown system design, manufacturing line improvements, and sensor integration
     </p>
-  </div>
-</section>
+    <p>Note: This work is covered by a Tesla NDA. Specific numbers, data, images, and proprietary
+      information have been omitted. Certain terminology has been intentionally left undefined. The descriptions below
+      reflect general methodology and engineering contributions only.</p>
 
-<!-- ================= ROLE SUMMARY ================= -->
 <section class="w3-container w3-padding-32 w3-light-grey">
   <div class="max-width">
     <h2>Role Summary</h2>
-    <!--High-level description of your role. What were you hired to do? -->
-    <!-- What problems did your team own? What scale were you working at? -->
     <p>
-      
+      I worked on the stator manufacturing team where I worked on various projects. My biggest project was designing and building
+      an automated stator teardown system to recover and reuse stator stacks from scrapped motors.
+      I also supported the broader manufacturing line with fixture, tool, and mechanism design, sensor integration, PLC logic,
+      and process improvements across multiple stations. The role required coordinating closely with production
+      associates, process engineers, the quality team, and external part manufacturers to get projects onto
+      active production lines.
     </p>
-    <!-- What you owned end-to-end, Key interfaces (EE, firmware, manufacturing, test), Decision-making authority -->
     <ul>
-      
+      <li>Led design of automated stator teardown system: CNC endturn cutting, copper pull machine, and stack cleaning</li>
+      <li>Designed fixtures, sourced tooling, and wrote G-code for CNC mill setup</li>
+      <li>Ran force tests and FEA simulations to validate copper pull machine design</li>
+      <li>Designed and built pre-TUF1 alignment jig to address the top fault across all three wind lines</li>
+      <li>Wrote PLC logic and installed sensors for multiple stations on active production lines</li>
+      <li>Contributed fixtures, guards, jigs, and CAD support across production and quality teams</li>
     </ul>
   </div>
 </section>
-
-<!-- ================= PROBLEM SPACE ================= -->
+ 
+<!-- ================= MAIN PROJECT: STATOR TEARDOWN ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Problem Space</h2>
-    <!-- What was broken, missing, or limiting the organization? Why did this problem matter (cost, safety, schedule, scale)?-->
+    <h2>Main Project: Automated Stator Teardown</h2>
+ 
+    <h3>Background &amp; Goal</h3>
     <p>
-      
+      Scrapped stators, ones which fail during manufacturing or fail quality inspections were mostly being discarded entirely,
+      including their laminated stator stacks, which are expensive components. There is a manual process for tearing down stators, which would take an hour per stator
+      and caused wrist injuries. The goal was to create
+      an automated process to tear down scrapped stators and recover the stator stacks for reuse,
+      replacing the labor-intensive manual process.
     </p>
+ 
+    <h3>Process Overview</h3>
+    <p>The automated teardown process consists of five sequential stages:</p>
+    <div style="margin: 1rem 0;">
+      <div class="process-step"><div class="step-num">1</div><div>Cut the endturn off the scrapped stator in a CNC mill</div></div>
+      <div class="process-step"><div class="step-num">2</div><div>Associate moves the cut stator to the copper pull machine</div></div>
+      <div class="process-step"><div class="step-num">3</div><div>Copper wire removed from the stator stack</div></div>
+      <div class="process-step"><div class="step-num">4</div><div>Stack moved to the clean machine</div></div>
+      <div class="process-step"><div class="step-num">5</div><div>Clean machine clears all cooling channels of copper dust</div></div>
+    </div>
+ 
+    <p><strong>Benefits of the automated system vs. prior manual process:</strong></p>
     <ul>
-      <li>Existing system limitations</li>
-      <li>Throughput / reliability / safety issues</li>
-      <li>Constraints from facilities or standards</li>
+      <li>93% reduction in required headcount</li>
+      <li>89% reduction in process time</li>
+      <li>Enables reuse of stacks from failed stators — significant material cost savings</li>
     </ul>
-
   </div>
 </section>
-
-<!-- ================= REQUIREMENTS & CONSTRAINTS ================= -->
+ 
+<!-- ================= CNC MILL ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Requirements & Constraints</h2>
+    <h2>CNC Mill: Endturn Cutting</h2>
+ 
+    <h3>Setup &amp; Tooling</h3>
+    <p>
+      I set up the CNC machine, designed fixturing to hold stators in place during cutting,
+      and sourced and attached the cutting tooling. The fixture uses a combination of a fixed mount and
+      a pneumatic-cylinder-actuated clamp to secure the stator. Additional setup elements included:
+    </p>
     <ul>
-      <li>Performance requirements (loads, temps, tolerances)</li>
-      <li>Safety & compliance (UL, CE, internal standards)</li>
-      <li>Manufacturing constraints</li>
-      <li>Schedule / budget constraints</li>
+      <li>Fan for chip and dust management</li>
+      <li>Two cutting disc sizes to handle different stator variants</li>
+      <li>Mesh filter to prevent copper dust from clogging the vacuum</li>
+      <li>3D-printed vacuum adapter to connect the fixture to the CNC machine's vacuum system</li>
     </ul>
+ 
+    <h3>G-Code Program</h3>
+    <p>
+      I learned to write G-code, tested multiple programs, and finalized a cutting program. 
+      The spindle rotates clockwise while the path moves counterclockwise, which pushes copper dust toward
+      the center rather than into the cooling channels. The program cuts the bottom (non-lead) endturn only.
+    </p>
+    <p>
+      Some past iterations of the teardown design I tested included using touch prob detects whether the 
+      stator was an induction motor (IM) or permanent magnet motor (PM) to cut the endturn. A PM motor is almost twice the height of an IM motor, and
+      will have different endturn internal and external diameters.
+      A key design decision was using a single program for all stator variants and only cut one endturn.
+      I also considered having the operator select an IM or PM program to run (and wrote bot individual programs), however the potential
+      consequences of operator error was too big.
+    </p>
+    <ul>
+      <li><strong>Pro:</strong> Missing the endturn cutoff could break the spindle and damage the machine. Simpler and faster to operate. Would allow for copper pulling configuration (see next section)</li>
+      <li><strong>Con:</strong> Shorter tool lifespan: The geometric window that works for both variants is also narrow (0.7 mm clearance from the IM interior and PM exterior), so the disc will need to be replaced
+      when it is worn down to the point where it no longer cuts the entire PM enturn.</li>
+    </ul>
+    <p>
+      Cutting only the bottom endturn also avoids the safety hazard of the lead-side endturn flying off
+      during the cut, and keeps cooling channels cleaner by reducing total copper dust generated.
+    </p>
+ 
+    <h3>Copper Dust: Main Roadblock</h3>
+    <p>
+      The primary challenge was preventing copper dust from entering the stator's cooling channels during
+      the cut. This was resolved through the directed cutting motion (dust pushed inward toward the center),
+      a cooling channel cover fitted during the cut, and the downstream clean machine that clears any remaining dust.
+    </p>
   </div>
 </section>
-
-<!-- ================= CONCEPT DEVELOPMENT ================= -->
+ 
+<!-- ================= COPPER PULL MACHINE ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Concept Development</h2>
+    <h2>Copper Pull Machine</h2>
+ 
+    <h3>Pushing vs. Pulling</h3>
     <p>
-      trade studies,
-      early prototypes, or architecture decisions.
+      The manual process had production associates physically pushing copper wire out of the stator slots.
+      I evaluated whether to automate a push or pull approach, starting with napkin-math buckling calculations
+      on a push scenario. The analysis drove the decision to pull:
     </p>
-
-    <img src="../images/company-a_concept.jpg"
-         alt="Concept sketches or CAD"
-         style="width:100%; max-width:900px">
-
     <ul>
-      <li>Alternatives considered</li>
-      <li>Why the final concept was chosen</li>
-      <li>Key risks identified early</li>
+      <li>Reduced CNC cycle time: a two-endturn-cut program ran more than twice as long, so keeping to a single cut simplified the upstream step significantly</li>
+      <li>Eleminates risk of wire buckling and machine component failure</li>
+      <li>Reduced risk of stator stack (created from layers of sheet metal) delamination</li>
+      <li>Avoids safety and cooling channel cleanliness issues associated with cutting the top endturn</li>
     </ul>
+ 
+    <h3>Force Testing</h3>
+    <p>
+      To spec the pneumatic cylinder, I needed to know the actual force required to pull copper wire from
+      the stator slots. I ran Instron pull tests with the stator stack fixed in place to measure extraction force.
+      Key findings:
+    </p>
+    <ul>
+      <li>Impregnated (impreg) stators cannot be processed. The resin bonding prevents clean wire removal</li>
+      <li>Pre-impreg stators cannot be cut into sections before pulling without damaging the windings. The design must pull the full endturn intact</li>
+      <li>Force data was used directly to determine pneumatic cylinder specifications</li>
+    </ul>
+ 
+    <h3>Machine Design &amp; Validation</h3>
+    <p>
+      The machine operates across five stages: load cut stator -> move and raise stator -> pull copper ->
+      return stack to loading position -> grippers release copper into disposal below the conveyance.
+      The ID clamp engages via a keyway-aligned twist-and-lock mechanism; a PM sensor on the pallet lift
+      detects whether the incoming part is an IM or PM stator and sets the pneumatic cylinder extension accordingly.
+    </p>
+    <p>
+      Specific gripper and pulling mechanism details are under NDA. The design uses gripping fingers with
+      springs to engage the endturns, and a pneumatic cylinder provides the extraction force. I ran multiple
+      FEA simulations and fatigue analyses to validate the structural design.
+    </p>
   </div>
 </section>
-
-<!-- ================= DETAILED DESIGN ================= -->
+ 
+<!-- ================= OTHER PROJECTS ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Detailed Design</h2>
+    <h2>Other Projects</h2>
+ 
+    <h3>Pre-TUF1 Alignment Jig</h3>
     <p>
-      Mechanical details.
-      Call out materials, tolerances, mechanisms, and interfaces.
+      The number one fault on TUF1 machines across all three wind lines was caused by operator misplacement
+      of barrel connectors at the previous stations. I designed a jig that physically locates the correct
+      placement, eliminating the dependency on operator judgment for a precision positioning task.
     </p>
-
     <ul>
-      <li>CAD tools used</li>
-      <li>Material selection rationale</li>
-      <li>Thermal / structural considerations</li>
+      <li>Fork positions adjustable in X, Y, and Z to calibrate to the correct location</li>
+      <li>Operator pulls the top platform toward them; a laser sensor confirms the platform has reached the stopper</li>
+      <li>Connector dropped directly onto the forks at the correct position</li>
+      <li>Created an ergonomic handle, getting feedback from production associates, to eliminate operator fatigue as much as possible</li>
     </ul>
-
-    <img src="../images/company-a_cad.jpg"
-         alt="Detailed CAD"
-         style="width:100%; max-width:900px">
-  </div>
-</section>
-
-<!-- ================= ANALYSIS & VALIDATION ================= -->
-<section class="w3-container w3-padding-64">
-  <div class="max-width">
-    <h2>Analysis & Validation</h2>
-    <ul>
-      <li>FEA / hand calcs</li>
-      <li>Thermal modeling</li>
-      <li>Design margin verification</li>
-      <li>Test plans</li>
-    </ul>
-
-    <img src="../images/company-a_testing.jpg"
-         alt="Testing setup"
-         style="width:100%; max-width:900px">
-  </div>
-</section>
-
-<!-- ================= MANUFACTURING & ASSEMBLY ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
-  <div class="max-width">
-    <h2>Manufacturing & Assembly</h2>
+ 
+    <h3>Vibration-Based Impreg Machine Fault Detection</h3>
     <p>
-      How was this built? What changed between prototype
-      and final versions?
+      I investigated using vibration sensors and Fast Fourier Transforms (FFTs) to detect developing faults
+      in the impregnation machine. The frequency domain is more effective than time-domain data for multi-frequency
+      vibration analysis, enabling identification of characteristic fault signatures:
     </p>
-
     <ul>
-      <li>Vendors / processes</li>
-      <li>Assembly sequence considerations</li>
-      <li>DFM / DFA changes</li>
+      <li><strong>Shaft balance issues:</strong> large radial variation and marked amplitude increase in the FFT</li>
+      <li><strong>Misalignment:</strong> amplitude increase at specific harmonic frequencies</li>
+      <li><strong>Looseness:</strong> increase in number of harmonics or rise in fundamental frequency amplitude</li>
+    </ul>
+ 
+    <h3>Post-SIT Sensors</h3>
+    <p>
+      Lugs on stators were being crushed at the post-SIT station, likely due to parts arriving at the wrong
+      angle. I designed and fabricated sensor mounts, installed and wired the sensors on the line, set sensor
+      parameters, wrote the PLC logic, pushed the logic, and monitored the lines after deployment.
+    </p>
+ 
+    <h3>Additional Contributions</h3>
+    <ul>
+      <li>Sensor mounts across multiple line stations</li>
+      <li>Pallet validation gauges (made to be ergonomic and easy to use)</li>
+      <li>Barcode/RFID pallet record check for multiple stations: Mount desgin and CAD, physical installation, PLC logic</li>
+      <li>Station bypass logic + HMI addition</li>
+      <li>SQL queries to pull and categorize unknown dispatches</li>
+      <li>Copper spool guides</li>
+      <li>Bushing press machine guards</li>
+      <li>CAD for quality team: bobbin cover and stator inserts to test stack height faults</li>
+      <li>Redesign for pallet stoppers used across the stator production lines</li>
+      <li>Impreg trickle station reverse engineering</li>
+      <li>Production camera guards</li>
+      <li>General line fixes, additions, and adjustments</li>
     </ul>
   </div>
 </section>
-
+ 
 <!-- ================= RESULTS & IMPACT ================= -->
-<section class="w3-container w3-padding-64">
+<section class="w3-container w3-padding-64 w3-white">
   <div class="max-width">
-    <h2>Results & Impact</h2>
+    <h2>Results &amp; Impact</h2>
     <ul>
-      <li>Quantified improvements (%, $, throughput)</li>
-      <li>Safety improvements</li>
-      <li>Business or engineering outcomes</li>
+      <li>Designed a full automated stator teardown system projected to reduce headcount by 93% and process time by 89% vs. the manual baseline, while enabling stator stack reuse from scrapped parts</li>
+      <li>Resolved the top fault source across all three wind lines with the pre-TUF1 WYE connector alignment jig</li>
+      <li>Addressed lug crushing at post-SIT through sensor integration and PLC logic, providing automated detection of out-of-angle parts</li>
+      <li>Contributed PLC logic, sensor installations, fixtures, guards, and CAD support across the broader stator manufacturing line throughout the internship</li>
     </ul>
-
-    <p>
-    </p>
   </div>
 </section>
-
+ 
 <!-- ================= LESSONS LEARNED ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Lessons Learned</h2>
     <ul>
-      <li>What i would do differently</li>
-      <li>What surprised me</li>
-      <li>Skills or judgment i developed</li>
+      <li><strong>Large-scale manufacturing is a different world:</strong> having never worked in a high-volume factory before, the pace, coordination complexity, and real stakes of changes on active production lines were all larger than expected</li>
+ 
+      <li><strong>Getting production downtime is a genuine constraint:</strong> scheduling time on a live line to install or test something turned out to be one of the biggest practical blockers. It requires advance planning and cross-team coordination in a way that isn't obvious from an engineering desk, and I'd build it into project timelines more explicitly next time</li>
+ 
+      <li><strong>Cross-functional coordination is as much of the job as the engineering:</strong> getting anything onto the line required alignment with production associates, process engineers, the quality team, and external part manufacturers. Communicating progress clearly and proactively across all of them was essential</li>
+ 
+      <li><strong>Monitor changes after deployment:</strong> pushing a logic change or hardware modification and walking away isn't enough. The first hours of operation after a change often surface issues, and being present to observe and respond is part of the job</li>
+ 
+      <li><strong>Tolerances need to be triple-checked before parts go out:</strong> rushing a few designs led to missing clearance tolerances and required me personally modifying parts</li>
+ 
+      <li><strong>Outsourced machining lead times are long:</strong> parts that needed external machining took far longer than initially assumed. Planning fabrication timelines backward from the actual need date, with realistic lead time buffers, is essential at scale</li>
+ 
+      <li><strong>Small changes on a production line can have large effects in both directions:</strong> a seemingly minor modification can ripple into downstream faults or, conversely, eliminate a recurring issue entirely. That asymmetry demands caution and thorough communication before anything goes live</li>
+ 
+      <li><strong>Skills are learnable on the job:</strong> G-code, FANUC robots, and PLCs were not part of my background coming in. These were all skills I picked up during the internship</li>
+ 
+      <li><strong>Range of skills required at a manufacturing company:</strong> the breadth of what came up (mechanical design, FEA, G-code, PLC programming, SQL queries, vibration analysis) was broader than expected for a single internship, and learning to context-switch between them quickly was a skill in itself</li>
     </ul>
   </div>
 </section>
-
+ 
+<!-- ================= SKILLS DEMONSTRATED ================= -->
+<section class="w3-light-grey w3-padding-64">
+  <div class="max-width">
+    <h2>Skills Demonstrated</h2>
+    <p>
+      Mechanical design &amp; fabrication • CAD (SolidWorks) • FEA &amp; fatigue analysis • thermal simulation •
+      CNC machining &amp; G-code • FANUC robots • Ergonomics • Pneumatic systems • PLC logic •
+      Sensor selection, mounting &amp; wiring • SQL • Cross-functional coordination • Quality control • Root cause determination • 
+      Large-scale manufacturing environment • Motor &amp; stator manufacturing fundamentals
+    </p>
+  </div>
+</section>
 
 </body>
 </html>
