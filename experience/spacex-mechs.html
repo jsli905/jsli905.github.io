@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Astranis TPM | Jennifer Si Li</title>
+  <title>SpaceX Starship Mechs | Jennifer Si Li</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -75,6 +75,93 @@
       line-height: 1.5;
     }
 
+      
+    /* Ensure navbar always sits above sidebar and dropdowns */
+    .w3-top {
+      z-index: 9999 !important;
+    }
+ 
+    /* ── Table of Contents Sidebar ── */
+    .page-layout {
+      display: flex;
+      align-items: flex-start;
+    }
+ 
+    #toc-sidebar {
+      position: sticky;
+      top: 80px;
+      width: 210px;
+      min-width: 210px;
+      max-height: calc(100vh - 100px);
+      overflow-y: auto;
+      padding: 1rem 0.75rem;
+      background: #f9f9f9;
+      border-right: 2px solid #e0e0e0;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      z-index: 1;
+    }
+ 
+    #toc-sidebar h4 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin: 0 0 0.6rem 0;
+    }
+ 
+    #toc-sidebar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+ 
+    #toc-sidebar li {
+      margin-bottom: 2px;
+    }
+ 
+    #toc-sidebar a {
+      display: block;
+      padding: 3px 6px;
+      color: #444;
+      border-radius: 4px;
+      transition: background 0.15s, color 0.15s;
+    }
+ 
+    #toc-sidebar a:hover {
+      background: #e8e8e8;
+      color: #000;
+    }
+ 
+    #toc-sidebar a.toc-active {
+      background: #dde8f5;
+      color: #1a5fa8;
+      font-weight: 600;
+    }
+ 
+    /* sub-items (h3) */
+    #toc-sidebar .toc-sub {
+      padding-left: 14px;
+      color: #666;
+      font-size: 0.78rem;
+    }
+ 
+    #toc-sidebar .toc-sub.toc-active {
+      background: #dde8f5;
+      color: #1a5fa8;
+      font-weight: 600;
+    }
+ 
+    .main-content {
+      flex: 1;
+      min-width: 0;
+    }
+ 
+    /* Hide sidebar on small screens */
+    @media (max-width: 860px) {
+      #toc-sidebar { display: none; }
+    }
+ 
 
   </style>
   
@@ -189,17 +276,56 @@
 
 <!-- Spacer for fixed navbar -->
 <div style="margin-top:64px"></div>
+<div class="page-layout">
+ 
+<!-- ================= TOC SIDEBAR ================= -->
+<nav id="toc-sidebar">
+  <ul>
+    <li><a href="#header">Overview</a></li>
+    <li><a href="#role-summary">Role Summary</a></li>
 
+    <li><a href="#transfer-tube">Sump &amp; Transfer Tube</a></li>
+    <li><a href="#centering-v1" class="toc-sub">Centering Tool V1</a></li>
+    <li><a href="#centering-v2" class="toc-sub">Centering Tool V2</a></li>
+    <li><a href="#additional-tooling" class="toc-sub">Additional Tooling</a></li>
+
+    <li><a href="#flap-production">Flap Production</a></li>
+    <li><a href="#flap-tooling" class="toc-sub">Tooling &amp; Fixtures</a></li>
+    <li><a href="#flap-coupons" class="toc-sub">Coupons &amp; Qualification</a></li>
+    <li><a href="#flap-audit" class="toc-sub">Work Order Audit</a></li>
+    <li><a href="#flap-cart" class="toc-sub">Transport &amp; Build Cart</a></li>
+
+    <li><a href="#sim-beam">Vehicle Simulator Beam</a></li>
+    <li><a href="#sim-beam-design" class="toc-sub">Design &amp; Analysis</a></li>
+    <li><a href="#sim-beam-weld" class="toc-sub">Welding Challenge</a></li>
+
+    <li><a href="#plume-box">Plume Box</a></li>
+
+    <li><a href="#corrugation-cell">Flap Corrugation Cell</a></li>
+    <li><a href="#robot-programming" class="toc-sub">Robot Programming</a></li>
+    <li><a href="#pmm" class="toc-sub">PMM Integration</a></li>
+
+    <li><a href="#qd-retrofit">QD Retrofit</a></li>
+
+    <li><a href="#additional-work">Additional Work</a></li>
+    <li><a href="#results">Results &amp; Impact</a></li>
+    <li><a href="#lessons">Lessons Learned</a></li>
+    <li><a href="#skills">Skills</a></li>
+  </ul>
+</nav>
 
 <!-- ================= PAGE HEADER ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h1>SpaceX - HLS Intern</h1><h1>SpaceX - HLS Intern</h1><h1>WORK IN PROGESS - <a href="https://docs.google.com/presentation/d/1GJVHiXkRrcghPs9Np6qwjjk0nX-TCnsc9QibTs6Rc3g/edit?usp=sharing">Click Here for Slides</a> </h1>
+    <h1>SpaceX - Starship Mechanisms Intern</h1>
     <p class="w3-large">
-      <b>Dates:</b> May 2024 – August 2024<br>
-      <b>Team:</b> Starship Human Lander System Mechanisms<br>
-      <b>Focus:</b> soft capture docking mechs
+      <b>Dates:</b> January 2024 – May 2024<br>
+      <b>Team:</b> Starship Mechanisms (temporarily also in Starship Launch Tower Design team)<br>
+      <b>Focus:</b> Starship Build (Tooling, fixturing, and process development for Starship vehicle)
     </p>
+    <p>Note: this work is covered by a SpaceX NDA. Specific dimensions, load values, proprietary
+      design details, and internal system names have been omitted or generalized where necessary.
+      Descriptions reflect general methodology and engineering contributions only.</p>
   </div>
 </section>
 
@@ -207,152 +333,333 @@
 <section class="w3-container w3-padding-32 w3-light-grey">
   <div class="max-width">
     <h2>Role Summary</h2>
-    <!--High-level description of your role. What were you hired to do? -->
-    <!-- What problems did your team own? What scale were you working at? -->
     <p>
-      
+      I worked on the Starship Mechanisms team, contributing to tooling, fixturing, process development,
+      and build infrastructure across multiple Starship vehicle and launch tower systems. Projects spanned
+      propellant transfer tube alignment, flap production tooling, QD retrofit, robotic welding automation,
+      and satellite loader infrastructure. Many projects required travel to Starbase in Texas to work directly
+      with the teams building and integrating hardware in the field.
     </p>
-    <!-- What you owned end-to-end, Key interfaces (EE, firmware, manufacturing, test), Decision-making authority -->
+    <p>
+      Midway through the internship, I also temporarily was an intern for the launch tower team to support
+      the vehicle simulator beam and plume box projects. The move came from a combination of my wanting larger projects and the tower team needing extra hands.
+    </p>
     <ul>
-      
+      <li>Designed and built tooling for propellant transfer tube alignment to within ±0.01" concentricity</li>
+      <li>Developed tooling, work orders, and processes for flap production: radius gauges, Instron fixtures, weld and rivet coupons, stud welding tools, and a multi-purpose transport/build cart</li>
+      <li>Designed and built plume pressure measurement device, informed by flight footage and historical data review</li>
+      <li>Designed vehicle simulator beam for satellite loader integration on launch tower chopsticks</li>
+      <li>Programmed and built a fully automated robotic flap corrugation cell including PLC wiring and robot code</li>
+      <li>Led QD retrofit process development: build flow, work orders, root cause analysis, and issue resolution</li>
+      <li>Created drawings, SOPs, work orders, and change orders with revision tracking across all projects</li>
     </ul>
   </div>
 </section>
-
-<!-- ================= PROBLEM SPACE ================= -->
+ 
+<!-- ================= PROJECT: SUMP AND TRANSFER TUBE ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Problem Space</h2>
-    <!-- What was broken, missing, or limiting the organization? Why did this problem matter (cost, safety, schedule, scale)?-->
+    <h2>Project: Sump &amp; Transfer Tube Alignment Tooling</h2>
+ 
+    <h3>Background</h3>
     <p>
-      
+      The propellant transfer tubes feed into a distribution system that routes propellant to the engines,
+      and attach to the inner and outer sump. The entire system is double wall vacuum jacketed, which is why there
+      are inner and outer walls for all features that must be concentric. Inner and outer feed tubes are welded onto the transfer tubes.
+      The challenge was locating and constraining the outer transfer tube to ensure concentricity of the feed
+      holes during welding at a geometrically complex angle. The hole geometry was also not a standard ellipse,
+      circle, or oblong shape; it is somewhat like an egg-shaped profile, a result of the propellant distribution
+      system design.
+    </p>
+    <p>Problem: needed a way to locate and constrain the outer transfer tube at the precise angle with close-to-perfect concentricity of feed holes for welding.
+</p>
+ 
+    <h3>Centering Tool V1</h3>
+    <p>
+      I focused on tool effectiveness, ease of manufacturing, and ease of use. Key
+      considerations throughout:
     </p>
     <ul>
-      <li>Existing system limitations</li>
-      <li>Throughput / reliability / safety issues</li>
-      <li>Constraints from facilities or standards</li>
+      <li><strong>Tool effectiveness:</strong> designed for high torsional stiffness; properly constrains the transfer tubes so both the tubes and feed tube holes are concentric at the required angle</li>
+      <li><strong>Ease of manufacturing:</strong> maximized symmetric components, used tabs and etchings to reduce assembly confusion, and wrote detailed SOP build instructions</li>
+      <li><strong>Ease of use:</strong> kept the tool lightweight; etchings align with marks on the outer transfer tube for clocking</li>
     </ul>
-
+    <p>
+      After production feedback, several issues emerged with V1:
+    </p>
+    <ul>
+      <li>Tool did not fit as designed as the physical transfer tube hole geometry did not match the CAD: roll-formed edges were angled, hole curves were imperfect, and the manufacturing state in CAD didn't match either the part CAD or the physical part (a NX artifact)</li>
+      <li>Clearance needed to be increased while still maintaining the tight concentricity requirement</li>
+      <li>The tool was difficult to position at the required angle: welders were to locate using the angled feed tube holes and etch markings, which proved difficult to do in practice</li>
+    </ul>
+    <p>
+      The resolution involved taking physical measurements across the line of symmetry and reconciling with the closest matching points across both the part and manufacturing state CAD.
+    </p>
+ 
+    <h3>Centering Tool V2</h3>
+    <p>
+      V2 addressed the issues surfaced from production use. Key changes:
+    </p>
+    <ul>
+      <li>Updated hole geometries to match physical parts rather than nominal CAD</li>
+      <li>Redesigned for parallel-to-ground use to make positioning easier for welders (this required sacrificing manufacturing simplicity)</li>
+      <li>Added more structural cross sections that align precisely with transfer tube etchings, providing a reliable clocking reference without requiring weld interpretation (sacrificed manufacturing simplicity)</li>
+    </ul>
+ 
+    <h3>Additional Tooling for This System</h3>
+    <ul>
+      <li><strong>Concentricity clips:</strong> flat laser-cut sheet metal clips tacked onto the transfer tubes during welding to maintain concentricity throughout the weld process. Two-point contact on all edges ensures correct positioning</li>
+      <li><strong>Rounding rings:</strong> tooling and use instructions for holding transfer tubes in place and concentric during welding</li>
+      <li><strong>Sump flange placement tool:</strong> designed and produced to locate the sump flange during assembly</li>
+      <li><strong>Build work orders:</strong> clear and detailed build instructions covering the full process for this system</li>
+    </ul>
+    <img src="images/thrust_cartridge.png" alt="Propellant Distribution System" style="width:80%; max-width:900px">
   </div>
 </section>
-
-<!-- ================= REQUIREMENTS & CONSTRAINTS ================= -->
+ 
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Requirements & Constraints</h2>
+    <h2>Project: Flap Production Tooling &amp; Processes</h2>
+    <p>
+      I contributed tooling, test fixtures, coupons, and process documentation across several aspects of
+      flap production:
+    </p>
+ 
+    <h3>Tooling &amp; Fixtures</h3>
     <ul>
-      <li>Performance requirements (loads, temps, tolerances)</li>
-      <li>Safety & compliance (UL, CE, internal standards)</li>
-      <li>Manufacturing constraints</li>
-      <li>Schedule / budget constraints</li>
+      <li><strong>Radius gauges:</strong> created radius gauges and associated work orders for bump-formed root box skins</li>
+      <li><strong>Instron test fixtures:</strong> designed testing tooling for Instron mechanical testing of various flap components</li>
+      <li><strong>Leading edge stud welding tool:</strong> designed the tool and created the associated work order</li>
+      <li><strong>FWD flap HHLW cell:</strong> created work instructions for cell build</li>
     </ul>
+ 
+    <h3>Coupons &amp; Process Qualification</h3>
+    <ul>
+      <li><strong>Resistance Spot Welding (RSW) coupons:</strong> created and tested coupons for a new RSW schedule to qualify the welding parameters</li>
+      <li><strong>Rivet hole tolerancing coupons:</strong> created coupons that helped designers select the correct hole size for their target rivet</li>
+    </ul>
+ 
+    <h3>Work Order Audit</h3>
+    <p>
+      Audited work orders for the Aft Flap to verify that lineside inventory was correctly set up on
+      the production floor, catching discrepancies to prevent build issues.
+    </p>
+ 
+    <h3>Flap Transport &amp; Build Cart</h3>
+    <p>
+      I designed a cart that transports Aft Flaps and holds them at multiple angles for stud welding,
+      heat tile attachment, and ship integration. The cart spans two facilities and multiple build phases:
+    </p>
+    <ul>
+      <li>Used in Hawthorne for initial build and stud welding</li>
+      <li>Used as a transport cart from Hawthorne to Starbase</li>
+      <li>Used at Starbase for tiling and ship integration</li>
+    </ul>
+    <p>
+      This required coordinating with multiple teams across both sites and conducting design reviews with several teams.
+      I traveled to Starbase to work directly with the teams using the cart and ensure the design met
+      their needs on the floor.
+    </p>
+    <p>
+      To validate the cart design, I learned Abaqus and ran FEA simulations to verify that the flap 
+      would survive the loads experienced while seated on the cart.
+    </p>
   </div>
 </section>
-
-<!-- ================= CONCEPT DEVELOPMENT ================= -->
+ 
+<!-- ================= PROJECT: VEHICLE SIM BEAM ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Concept Development</h2>
+    <h2>Project: Vehicle Simulator Beam for Satellite Loading</h2>
+ 
+    <h3>Background &amp; Goal</h3>
     <p>
-      trade studies,
-      early prototypes, or architecture decisions.
+      The goal was to redesign the vehicle simulator beam so it could sit on the launch tower chopsticks
+      and be pushed by the chopstick mechanisms to the position where the ship would be placed. The
+      satellite loader hangs off the sim beam, gets lifted, and angles into position to load satellites into the ship.
+      The structure had to withstand 0.5 MN loads from pushers on either or both ends simultaneously, as well
+      as the loads from the satellite loader itself.
     </p>
-
-    <img src="../images/company-a_concept.jpg"
-         alt="Concept sketches or CAD"
-         style="width:100%; max-width:900px">
-
+    <p>
+      This project was largely self-directed. I was flown to Starbase and had to
+      quickly learn the local organization, find resources and workspace, and build relationships with the
+      teams there to get the project moving without a manager embedded on site.
+    </p>
+ 
+    <h3>Design &amp; Analysis</h3>
     <ul>
-      <li>Alternatives considered</li>
-      <li>Why the final concept was chosen</li>
-      <li>Key risks identified early</li>
+      <li>Designed the new beam and performed hand calculations to verify structural adequacy under the required loads</li>
+      <li>Created and released engineering drawings for the new design</li>
+      <li>Created work orders and sourced material for the build</li>
+      <li>Hand calculations were later verified correct via FEA by a more senior engineer</li>
     </ul>
+ 
+    <h3>Welding Challenges</h3>
+    <p>
+      Despite mitigation efforts in planning, tooling, and build instructions, parts fell out of tolerance
+      during welding. This was a consequence of welding a very large structure in suboptimal outdoor conditions at Starbase.
+    </p>
+    <ul>
+      <li>Plasma-cut parts deviated significantly from nominal, making it difficult for welders to align subsequent components accurately</li>
+      <li>Precise measurement tools were not available on site, leading to inaccurate cutouts</li>
+      <li>I redid the hand calculations using the as-built geometry and confirmed the part remained within acceptable structural margins</li>
+    </ul>
+    <img src="images/sim_beam.png" alt="Vehicle Simulator Beam" style="width:100%; max-width:900px">
   </div>
 </section>
-
-<!-- ================= DETAILED DESIGN ================= -->
+ 
+<!-- ================= PROJECT: PLUME BOX ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Detailed Design</h2>
+    <h2>Project: Plume Pressure Measurement Device</h2>
+ 
+    <h3>Background &amp; Design</h3>
     <p>
-      Mechanical details.
-      Call out materials, tolerances, mechanisms, and interfaces.
+      I designed and built a device to measure plume pressure loads at the launch tower. The design
+      process started with reviewing flight footage and historical data to select the correct mounting
+      location, accounting for both usability and safety risk. I then designed the enclosure and used
+      hand calculations to verify it could survive the expected plume loads.
     </p>
-
-    <ul>
-      <li>CAD tools used</li>
-      <li>Material selection rationale</li>
-      <li>Thermal / structural considerations</li>
-    </ul>
-
-    <img src="../images/company-a_cad.jpg"
-         alt="Detailed CAD"
-         style="width:100%; max-width:900px">
+    <p>
+      I built and installed the device myself, and worked with the launch tower electrical engineers for telemetry, ensuring it was
+      completed and in place ahead of the Flight 4 timeline set by the tower team.
+    </p>
+    <img src="images/plume.png" alt="Plume Measurement Box" style="width:60%; max-width:900px">
   </div>
 </section>
-
-<!-- ================= ANALYSIS & VALIDATION ================= -->
+ 
+<!-- ================= PROJECT: FLAP CORRUGATION CELL ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Analysis & Validation</h2>
+    <h2>Project: Flap Corrugation Robotic Automation Cell</h2>
+ 
+    <h3>Background &amp; Goal</h3>
+    <p>
+      Welding coupons are required before production welding to verify weld quality. The process of
+      producing these coupons and running pre-weld checks was manual and repetitive. I identified this
+      as an opportunity to automate and proposed the project. The goal
+      was a fully closed automated system where the robot completes all checks and coupon welding with
+      no human intervention required during operation.
+    </p>
+ 
+    <h3>Robot Programming</h3>
+    <p>
+      I learned Robot Studio and wrote the robot code to fully automate the following sequence:
+    </p>
     <ul>
-      <li>FEA / hand calcs</li>
-      <li>Thermal modeling</li>
-      <li>Design margin verification</li>
-      <li>Test plans</li>
+      <li>Tool Center Point (TCP) check</li>
+      <li>Power check</li>
+      <li>Lens check</li>
+      <li>Coupon welding</li>
     </ul>
-
-    <img src="../images/company-a_testing.jpg"
-         alt="Testing setup"
-         style="width:100%; max-width:900px">
+ 
+    <h3>Power Management Module (PMM) Integration</h3>
+    <p>
+      The power check works by measuring the temperature rise of an absorber; a microprocessor calculates
+      laser power from the temperature data. I worked out the pulse lengths and number of pulses needed
+      to safely perform the check without damaging the PMM, using:
+    </p>
+    \[
+      P = \frac{\Delta Q}{\Delta t}
+      \qquad \text{and} \qquad
+      \Delta Q = (T_{\text{final}} - T_{\text{initial}}) \cdot c_p \cdot m
+    \]
+    
+    <p>
+      The operating assumption was that passing the power check at one power setting confirms performance
+      at others, minimizing total PMM exposure time. I also wired the Siemens PLC to interface with the
+      power check hardware.
+    </p>
+ 
+    <h3>Physical Build</h3>
+    <p>
+      I designed and built a pedestal to house the coupons, lens check station, and power check hardware
+      within the cell footprint.
+    </p>
   </div>
 </section>
-
-<!-- ================= MANUFACTURING & ASSEMBLY ================= -->
+ 
+<!-- ================= PROJECT: QD RETROFIT ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Manufacturing & Assembly</h2>
+    <h2>Project: QD (Quick Disconnect) Retrofit</h2>
     <p>
-      How was this built? What changed between prototype
-      and final versions?
+      I was responsible for the Starship vehicle quick disconnect build process: developing the nominal
+      build flow, writing work orders, and running root cause analysis on issues as they arose. Issues
+      included panel misalignments and missing electronic caps. I tracked down the root causes, determined
+      corrective paths forward, and updated the build documentation accordingly.
     </p>
-
+  </div>
+</section>
+ 
+<!-- ================= MISC ================= -->
+<section class="w3-container w3-padding-64">
+  <div class="max-width">
+    <h2>Additional Work</h2>
     <ul>
-      <li>Vendors / processes</li>
-      <li>Assembly sequence considerations</li>
-      <li>DFM / DFA changes</li>
+      <li>Intro project for future interns: designed and produced a collapsible portable wireless phone charger stand as a future intern onboarding project, utilizing all the different fabrication processes available on the production floor</li>
+      <li>Drawings, SOPs, work orders, and change orders with revision tracking maintained across all projects</li>
+      <li>Conducted failure and root cause analyses across multiple projects with path-forward determination</li>
     </ul>
   </div>
 </section>
-
+ 
 <!-- ================= RESULTS & IMPACT ================= -->
-<section class="w3-container w3-padding-64">
+<section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Results & Impact</h2>
+    <h2>Results &amp; Impact</h2>
     <ul>
-      <li>Quantified improvements (%, $, throughput)</li>
-      <li>Safety improvements</li>
-      <li>Business or engineering outcomes</li>
+      <li>Delivered transfer tube centering tool through two full design-build-feedback iterations; V2 is now a regularly used production tool in HT07</li>
+      <li>Completed the plume box and vehicle simulator beam prior to Flight 4, meeting the timeline set by the tower team</li>
+      <li>Built and deployed a fully automated robotic corrugation cell, eliminating the need for human presence during coupon production and pre-weld checks</li>
+      <li>Contributed tooling, fixturing, coupons, work orders, and process documentation across flap production, QD retrofit, and propellant systems</li>
+      <li>Hand calculations for the sim beam were independently verified as correct via FEA by a senior engineer</li>
     </ul>
-
-    <p>
-    </p>
   </div>
 </section>
-
+ 
 <!-- ================= LESSONS LEARNED ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
+<section class="w3-container w3-padding-64 w3-white">
   <div class="max-width">
     <h2>Lessons Learned</h2>
     <ul>
-      <li>What i would do differently</li>
-      <li>What surprised me</li>
-      <li>Skills or judgment i developed</li>
+      <li><strong>Use your voice in meetings:</strong> being easily talked over made it harder for others to treat me as a project point of contact or hear my ideas. Actively working to speak up earlier and more assertively in group settings made a measurable difference in how my projects were prioritized</li>
+ 
+      <li><strong>Bounce ideas off teammates early:</strong> other team members have experience I can learn from. Even when they seem busy, scheduling time with them is worth it. The initial design for the vehicle sim beam was significantly more complex than the final version; earlier input from a more experienced engineer would have saved meaningful time on the redesign</li>
+ 
+      <li><strong>Learn internal resources as fast as possible:</strong> internal systems and tools can save substantial engineering time if you know they exist. Getting oriented to what's available (and who owns it/how to gain access to it) early pays off</li>
+ 
+      <li><strong>Build relationships before you need them:</strong> people are far more willing to prioritize your projects when you've built a relationship first. Production, thermal, and supply chain teams all moved faster on my projects once I had established those connections. It also opened up access to resources and information I wouldn't have found otherwise</li>
+ 
+      <li><strong>Push people consistently while maintaining the relationship:</strong> I learned how much active follow-up is required to keep projects on track. Visiting the shop floor, traveling to Starbase, following up constantly on timelines. Maintaining visibility without burning goodwill is a skill, and striking that balance was one of the most important things I developed this internship</li>
+ 
+      <li><strong>Update stakeholders throughout, not just at the end:</strong> I was good at advertising completion dates but learned that regular in-progress updates are just as important, even when nothing has slipped. Regular emails or messages keep less-involved stakeholders informed</li>
+ 
+      <li><strong>Ask for context early on every project:</strong> I spent time confused on the flap test fixtures project because I didn't ask for the full background when it was first assigned. Understanding the history and intent of a project upfront leads to better design decisions and faster identification of adjacent improvements</li>
+ 
+      <li><strong>Know when your bandwidth is at its limit:</strong> there were moments with too many conflicting deadlines and priorities. Learning to flag when that's happening, and ask for help, is as important as learning to manage a heavy parallel workload, which I also got much better at</li>
+ 
+      <li><strong>Parts and CAD rarely match perfectly in a fast-moving production environment:</strong> the V1 centering tool didn't fit because the physical parts deviated from both the part CAD and the manufacturing state CAD. When tooling needs to interface with production hardware, measurements from real parts are essential</li>
+ 
+      <li><strong>Outdoor welding of large structures is a different problem than shop welding:</strong> the sim beam welding issues at Starbase (large part, suboptimal conditions, plasma-cut inputs with significant deviation) were not fully preventable through better planning alone. Designing for as-built margins and having a recalculation plan ready is the right response when field conditions introduce variance you can't control</li>
     </ul>
   </div>
 </section>
-
-
+ 
+<!-- ================= SKILLS DEMONSTRATED ================= -->
+<section class="w3-light-grey w3-padding-64">
+  <div class="max-width">
+    <h2>Skills Demonstrated</h2>
+    <p>
+      Mechanical design &amp; fabrication • CAD (NX) • Hand calculations &amp; structural analysis •
+      FEA &amp; Abaqus (ANSA, META) simulation • Fixture &amp; tooling design • GD&amp;T &amp; tolerance analysis • Engineering drawings &amp; SOPs •
+      Change order &amp; revision tracking • Root cause analysis • CNC &amp; plasma cut fabrication •
+      Various types of welding • Robot Studio • PLC wiring &amp; programming (Siemens) •
+      Cross-functional coordination • Manufacturing process development
+    </p>
+  </div>
+</section>
+  
 </body>
 </html>
 
