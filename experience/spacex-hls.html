@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Astranis TPM | Jennifer Si Li</title>
+  <title>Starship HLS | Jennifer Si Li</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -191,167 +191,218 @@
 
 
 <!-- ================= PAGE HEADER ================= -->
-<div class="main-content">
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h1>SpaceX - HLS Intern</h1><h1>SpaceX - HLS Intern</h1><h1>WORK IN PROGESS - <a href="https://docs.google.com/presentation/d/1GJVHiXkRrcghPs9Np6qwjjk0nX-TCnsc9QibTs6Rc3g/edit?usp=sharing">Click Here for Slides</a> </h1>
+    <h1>SpaceX - HLS Intern</h1>
     <p class="w3-large">
       <b>Dates:</b> May 2024 – August 2024<br>
-      <b>Team:</b> Starship Human Lander System Mechanisms<br>
-      <b>Focus:</b> soft capture docking mechs
+      <b>Team:</b> Starship Human Lander System (HLS) Mechanisms<br>
+      <b>Focus:</b> Design, analysis, build, and test of soft capture docking mechanism damper struts
     </p>
+    <img src="../images/hls-prop-transfer.jpg" alt="Starship HLS Prop Transfer style="width:50%; max-width:900px">
   </div>
 </section>
 
-<!-- ================= ROLE SUMMARY ================= -->
 <section class="w3-container w3-padding-32 w3-light-grey">
   <div class="max-width">
     <h2>Role Summary</h2>
-    <!--High-level description of your role. What were you hired to do? -->
-    <!-- What problems did your team own? What scale were you working at? -->
     <p>
-      
+      I worked on the HLS Mechanisms team, an was the responsible engineer for the soft
+      capture docking mechanism damper struts, a flight-critical component for Starship's Human Landing
+      System. The scope covered final design, tooling, supplier coordination, first article builds,
+      acceptance test development, and confidence qualification testing. 
     </p>
-    <!-- What you owned end-to-end, Key interfaces (EE, firmware, manufacturing, test), Decision-making authority -->
+    <img src="images/hls_demo.jpg" alt="hls demo" style="width:50%; max-width:900px">
     <ul>
-      
+      <li>Finalized damper strut design and managed multiple assembly revisions through procurement, build, and integration challenges</li>
+      <li>Designed and released damper strut tooling under a tight two-week deadline</li>
+      <li>Led first article builds with a technician and resolved out-of-tolerance parts via analysis and SDRs</li>
+      <li>Developed, released, and executed Acceptance Test Procedures (ATP) and confidence qualification tests</li>
+      <li>Designed test fixtures for thermal, static load, vibration, and integrated docking mechanism tests</li>
+      <li>Integrated damper struts into the full soft capture assembly and supported integrated sled tests</li>
+      <li>Created smartsheets for the entire damper strut project, linked to larger soft capture docking mechanism smartsheet</li>
     </ul>
   </div>
 </section>
-
-<!-- ================= PROBLEM SPACE ================= -->
+ 
+<!-- ================= PROJECT BACKGROUND ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Problem Space</h2>
-    <!-- What was broken, missing, or limiting the organization? Why did this problem matter (cost, safety, schedule, scale)?-->
+    <h2>Project Background</h2>
     <p>
-      
+      The soft capture docking mechanism is responsible for the initial contact and capture phase of
+      Starship's docking sequence for the Human Landing System. The damper struts are a key structural
+      and dynamic component of that mechanism, absorbing loads during capture and maintaining alignment
+      through the docking sequence. The work this internship spanned final design through qualification testing.
     </p>
-    <ul>
-      <li>Existing system limitations</li>
-      <li>Throughput / reliability / safety issues</li>
-      <li>Constraints from facilities or standards</li>
-    </ul>
-
   </div>
 </section>
-
-<!-- ================= REQUIREMENTS & CONSTRAINTS ================= -->
+ 
+<!-- ================= DESIGN & TOOLING ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Requirements & Constraints</h2>
-    <ul>
-      <li>Performance requirements (loads, temps, tolerances)</li>
-      <li>Safety & compliance (UL, CE, internal standards)</li>
-      <li>Manufacturing constraints</li>
-      <li>Schedule / budget constraints</li>
-    </ul>
+    <h2>Design &amp; Tooling</h2>
+ 
+    <h3>Damper Strut Design Finalization</h3>
+    <p>
+      I finalized the design of the damper strut assemblies and released multiple revisions as
+      procurement, build, and integration challenges arose. Each revision required balancing design
+      intent against real-world constraints from suppliers, manufacturing, and the broader docking
+      mechanism assembly.
+    </p>
+ 
+    <h3>Tooling Design and Strut build</h3>
+    <p>
+      Damper strut tooling and build was on a tight two-week schedule to get four struts built (driven by the integrated mechanism testing date).
+      I had to pivot quickly between concepts and be flexible due to supply chain issues and
+      released build instructions alongside the tooling. 
+    </p>
+    <p>
+      I worked directly with suppliers and manufacturers throughout the design and build process.
+      When out-of-tolerance parts were received, I created issue orders, performed analyses to
+      determine whether the deviations were acceptable, and either dispositioned the parts or
+      determined the path forward to get conforming parts made within schedule. I resolved multiple
+      SDRs (Supplier Discrepancy Reports) across the project.
+    </p>
+    <p>
+      I finally executed first article builds of the damper strut, working through
+      build issues in real time and feeding findings back into the build instructions and assembly documentation.
+    </p>
   </div>
 </section>
-
-<!-- ================= CONCEPT DEVELOPMENT ================= -->
+ 
+<!-- ================= ACCEPTANCE TESTING ================= -->
 <section class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Concept Development</h2>
+    <h2>Acceptance Test Procedure (ATP) Development</h2>
+ 
+    <h3>Test Determination</h3>
     <p>
-      trade studies,
-      early prototypes, or architecture decisions.
+      I determined which tests were required for acceptance of the damper struts. For each candidate test,
+      the decision required either a first-principles justification for why it could be omitted, or a
+      determination of test margins and a fixture design if it was required. This wasn't a checklist
+      exercise — each decision needed to be defensible from fundamentals.
     </p>
-
-    <img src="../images/company-a_concept.jpg"
-         alt="Concept sketches or CAD"
-         style="width:100%; max-width:900px">
-
-    <ul>
-      <li>Alternatives considered</li>
-      <li>Why the final concept was chosen</li>
-      <li>Key risks identified early</li>
-    </ul>
+ 
+    <h3>Spring Break-In &amp; Lubrication</h3>
+    <p>
+      A specific challenge arose with the mechanical friction springs: the supplier's pre-built, broken-in,
+      and tested springs could not be used for our application, so I had to work with the supplier to
+      design a custom break-in process from scratch. I also performed performance tests across different
+      lubricants and lubricant amounts to characterize spring behavior and inform the final lubrication
+      specification.
+    </p>
+ 
+    <h3>ATP Documentation</h3>
+    <p>
+      I wrote and released the damper strut ATP and the mechanical friction spring break-in instructions,
+      incorporating feedback and constraints from other engineers on the team and from build owners.
+    </p>
   </div>
 </section>
-
-<!-- ================= DETAILED DESIGN ================= -->
+ 
+<!-- ================= QUALIFICATION TESTING ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
-    <h2>Detailed Design</h2>
+    <h2>Confidence Qualification Testing</h2>
+ 
+    <h3>Test Planning</h3>
     <p>
-      Mechanical details.
-      Call out materials, tolerances, mechanisms, and interfaces.
+      Following the acceptance test process, I determined the required tests for the confidence
+      qualification campaign. I applied the same first-principles framework but to qualification
+      standards rather than acceptance standards. I also determined qualification test limits for
+      the vibration and thermal tests (with help from analysis team).
     </p>
-
-    <ul>
-      <li>CAD tools used</li>
-      <li>Material selection rationale</li>
-      <li>Thermal / structural considerations</li>
-    </ul>
-
-    <img src="../images/company-a_cad.jpg"
-         alt="Detailed CAD"
-         style="width:100%; max-width:900px">
-  </div>
-</section>
-
-<!-- ================= ANALYSIS & VALIDATION ================= -->
-<section class="w3-container w3-padding-64">
-  <div class="max-width">
-    <h2>Analysis & Validation</h2>
-    <ul>
-      <li>FEA / hand calcs</li>
-      <li>Thermal modeling</li>
-      <li>Design margin verification</li>
-      <li>Test plans</li>
-    </ul>
-
-    <img src="../images/company-a_testing.jpg"
-         alt="Testing setup"
-         style="width:100%; max-width:900px">
-  </div>
-</section>
-
-<!-- ================= MANUFACTURING & ASSEMBLY ================= -->
-<section class="w3-container w3-padding-64 w3-light-grey">
-  <div class="max-width">
-    <h2>Manufacturing & Assembly</h2>
+ 
+    <h3>Vibration Test Fixture</h3>
     <p>
-      How was this built? What changed between prototype
-      and final versions?
+      The vibe test fixture was the most technically difficult fixture of the project. Requirements
+      included safely preloading the strut to match launch configuration, accurately reading spring
+      preload throughout the test, and ensuring the fixture itself survived the test environment without
+      compromising the measurement. I iterated through several preload instrumentation concepts before
+      arriving at a design that satisfied all three constraints simultaneously. I also ran
+      modal analyses to support the vibration test planning.
     </p>
-
-    <ul>
-      <li>Vendors / processes</li>
-      <li>Assembly sequence considerations</li>
-      <li>DFM / DFA changes</li>
-    </ul>
+ 
+    <h3>Test Execution &amp; Data Summary</h3>
+    <p>
+      I designed, released, and executed the confidence qualification tests, then summarized the
+      findings to inform the flight redesign of the soft capture mechanisms. The test data fed directly
+      into design decisions for the next revision.
+    </p>
+ 
+    <h3>Integrated Testing</h3>
+    <p>
+      I integrated the damper struts into the full soft capture docking assembly and assisted with
+      full integrated mechanism sled tests, which validated the system at the assembly level beyond
+      the component-level qualification.
+    </p>
   </div>
 </section>
-
+ 
 <!-- ================= RESULTS & IMPACT ================= -->
-<section class="w3-container w3-padding-64">
+<section class="w3-container w3-padding-64 w3-white">
   <div class="max-width">
-    <h2>Results & Impact</h2>
+    <h2>Results &amp; Impact</h2>
     <ul>
-      <li>Quantified improvements (%, $, throughput)</li>
-      <li>Safety improvements</li>
-      <li>Business or engineering outcomes</li>
+      <li>Delivered damper strut tooling on a two-week schedule for a highly complex part, meeting the program deadline</li>
+      <li>Executed first article builds and resolved all out-of-tolerance parts through analysis and supplier coordination, keeping the build schedule on track</li>
+      <li>Developed and completed the team's first acceptance test plan (ATP): included test selection, margin determination, fixture design, documentation, and execution for a flight-critical docking component</li>
+      <li>Developed and completed the team's first confidence qualification test campaign and delivered a data summary directly informing the flight redesign of the soft capture mechanism</li>
+      <li>Operated largely independently across design, suppliers, partner teams, and testing, leveraging relationships and institutional knowledge from the prior SpaceX internship</li>
     </ul>
-
-    <p>
-    </p>
   </div>
 </section>
-
+ 
 <!-- ================= LESSONS LEARNED ================= -->
 <section class="w3-container w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Lessons Learned</h2>
     <ul>
-      <li>What i would do differently</li>
-      <li>What surprised me</li>
-      <li>Skills or judgment i developed</li>
+      <li><strong>Leverage prior relationships and institutional knowledge aggressively:</strong> having built connections during my previous SpaceX internship, I was able to engage with partner teams such as testing, analysis, production, machining,  without needing my manager to make introductions or provide pointers. Knowing who to call and having existing trust with those people accelerated every part of the project</li>
+ 
+      <li><strong>Self-teach tools as soon as you need them:</strong> when modal analysis came up as a requirement for the vibration test planning, I learned then applied it immediately. </li>
+ 
+      <li><strong>Clear communication is sometimes more important than the technical work itself:</strong> I actively worked to improve on having a defined purpose (specific actions, deliverables, or decisions I needed) before every conversation or meeting. Communicating ideas concisely and with clear asks made everything downstream faster</li>
+ 
+      <li><strong>Start with first principles and high-level concepts before diving into details:</strong> on open-ended problems with multiple viable solutions, I sometimes started too deep (detailed margins, CAD, full analysis) before realizing something was wrong with the design. A quick hand-drawn FBD, high-level concept comparison, and reviewing with teammates first would have saved significant rework time on a few projects</li>
+ 
+      <li><strong>Be realistic with deadlines:</strong> I set aggressive internal deadlines that sometimes led to rushing in ways that introduced mistakes (I learned the hard way that staying past midnight leads to diminishing returns). Beyond the personal cost, unrealistic timelines can misdirect company resources and create downstream problems for other projects. Setting ambitious but achievable schedules, and communicating early when something is slipping, is more effective than trying to meet impossible deadlines</li>
+ 
+      <li><strong>Recognize and manage burnout:</strong> the pace and scope of three challenging internships pushed my limits. Similar to the last point, learning to recognize the early signs of physical exhaustion and address them by reprioritizing, asking for help, or resetting expectations was as important a skill as anything technical I developed</li>
     </ul>
   </div>
 </section>
+ 
+<!-- ================= SKILLS DEMONSTRATED ================= -->
+<section class="w3-light-grey w3-padding-64">
+  <div class="max-width">
+    <h2>Skills Demonstrated</h2>
+    <p>
+      Mechanical design &amp; analysis • CAD (NX) • Hand calculations &amp; first-principles analysis •
+      FEA • Modal analysis • Test fixture design • Acceptance &amp; qualification test development •
+      Vibration testing • Thermal testing • Static load testing • SDR disposition &amp; issue resolution •
+      Supplier coordination • GD&ampT, engineering drawings, SOPs •
+      Change order &amp; revision tracking
+    </p>
+  </div>
+</section>
 
+<section id="contact" class="w3-white w3-padding-64">
+  <div class="max-width">
+    <h2>Contact</h2>
+    <p>Email: jennifersili@berkeley.edu</p>
+    <p>LinkedIn: linkedin.com/in/jennifersili</p>
+  </div>
+</section>
+
+</div><!-- /.main-content -->
+</div><!-- /.page-layout -->
+
+<!-- ================= FOOTER ================= -->
+<footer class="w3-container w3-center w3-padding-16 w3-light-grey">
+  <p>Jennifer Si Li | Engineering Portfolio</p>
+</footer>
 
 </body>
 </html>
