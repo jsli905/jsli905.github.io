@@ -194,296 +194,207 @@
 <!-- Header-->
 <section id="header" class="w3-container w3-padding-64">
   <div class="max-width">
-    <h2>Neck Posture Corrector</h2>
+    <h2>Adjustable Posture-Correction Neck Brace</h2>
       <h3>
-        Manufactured a hollow carbon fiber wheel, exploring structural behavior, composite fabrication, and process optimization
+        Designed and prototyped a passive, mechanical neck brace to limit excessive forward neck flexion and encourage healthier posture
       </h3>
       <p>
          
-        We developed a method to manufacture hollow, structural carbon-fiber parts in order to eliminate the need for core materials. 
-        The mold can be reused to manufacture subsequent wheels or this methodology can be reconfigured to produce different parts such as an upright or steering wheel. 
-        The project required designing a manufacturable hollow wheel, developing a layup strategy, designing and manufacturing molds for a hollow component, 
-        and validating the structural integrity of the finished component.
-        Through experimentation with ply stackup sequences, mold manufacturing, and conducting a cure cycle with a new fabric, 
-        we enhanced our understanding of lightweight composite fabrication, reducing material waste while improving structural integrity. 
+        We developed a shoulder-supported chin brace that physically prevents harmful downward head tilt, rather than relying on behavioral feedback. 
+        The project required building a cardboard looks-like prototype to validate fit and aesthetics, developing two iterations of a 3D-printed 
+        works-like prototype with adjustable chin width, chin height, and shoulder length, testing the device on our own team, and benchmarking 
+        the result against existing posture-correction products on the market. 
+        
+        <br>
+        <a href="https://docs.google.com/document/d/1IVeImjk5kDJDUD_Yp3mkRXlnTrlFcjg6r9z3weeJTYg/" style="color:#005288; font-weight:700;">Click here for Final Report</a>
 
-        <br>Project Partners: Jenson Ho, Jae Won Hwang
+
+        <br>Project Partners: Sujal Bobba, Andrew Darmitzel, Aaditya Shivadey, Audrey Young
       </p>
 
-      <img src="../images/cf wheel.png" alt="UAV" style="width:50%; max-width:900px">
+      <img src="braceimages/neck_final.png" alt="Final neck brace prototype" style="width:100%; max-width:900px">
   </div>
 </section>
 
 <section id="background" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
       
-
       <h2>Background</h2>
-    <p> For racing applications, such as Berkeley Formula Racing’s FSAE vehicle, reducing unsprung weight results in improved acceleration and braking performance. 
-      The wheel contributes a significant amount of mass that can be reduced by using composite materials instead. It is important to note that carbon fiber parts 
-      can include core material that is constrained by ply faces for structure, but hollow parts without core are more optimal for our application due to mass reduction 
-      and eliminating risk of core degradation. Hollow carbon fiber components are often difficult to manufacture while maintaining a uniform surface. 
-      Oftentimes, the part has discontinuous and potentially weak split mold seams, rough internal surfaces, or wrinkles, fiber distortions, or epoxy voids. </p>
-    <p>We considered a few other methods before the one described here: One approach involves laying spokes into a female mold with a lightweight foam core, which remains inside the final wheel. 
-      Another method uses a pressurized bladder, commonly made from bagging material, that is also left inside the spokes. 
-      Although these methods produce functional wheels, they have drawbacks—such as added weight and the inability to reuse molds, 
-      making production costly and time-intensive.</p>
-              
+    <p>Forward neck flexion, commonly caused by prolonged slouching or "tech neck," is a widespread posture problem with no fully satisfying mechanical solution on the market. 
+      Existing products generally fall into two categories: soft shoulder and back braces that emphasize comfort and wearability but create a reliance that causes muscle atrophy, 
+      and smart electronic devices, that detect slouching and provide vibration feedback that are unreliable at actually preventing posture-related neck strain. </p>
+    <p>We set out to design a device with a passive, physical-intervention philosophy, but with meaningfully more adjustability for users with 
+      varying bodily dimensions, while keeping the device low-cost and quick to put on.</p>
+
   </div>
 </section>
 
 <section id="design" class="w3-padding-64 w3-white">
   <div class="max-width">
-    <h2>Design</h2>
-    <h3>Wheel Redesign</h3>
-  
+    <h2>Design Process</h2>
+    <h3>Interviews</h3>
     <p>
-      The previous wheel was a 3-piece Aluminum wheel held together with multiple fasteners, while this project attempts to create a hollowed out 
-      version of the wheel with only 2 pieces: an Aluminum insert and the hollow carbon fiber wheel. The new design incorporates 4 hollowed spokes, 
-      eliminating the aluminum wheel's crossing spokes, while maintaining an overall similar outer geometry to be compatible with existing components.
+      Before prototyping, we interviewed medical professionals as well as potential users of posture-correction devices. The medical professional interviews 
+      were especially formative: they helped establish the initial need for this kind of device and surfaced a key design constraint, that the brace had to 
+      avoid causing muscle atrophy. This pushed us toward a design that acts as a behavioral corrector, intervening only when the user tilts their head 
+      beyond a target threshold, rather than a resting brace that passively supports the head and could let the neck muscles weaken from disuse. Interviews 
+      with potential users added two more practical requirements: something low-cost with minimal time required to put the device on, and adjustability, 
+      particularly in chin width and height, to fit individual neck and jaw dimensions.
     </p>
-    <img src="wheelimages/ALvsCF.jpg" alt="Aluminum versus CF wheel design" style="width:100%; max-width:900px">
-  
-    <h3>Aluminum insert design</h3>
-
+    <p>We then came up with dozens of potential solutions, and created a Pugh chart to compare our three best solutions. This led us to settle on the elastic chin support design:</p>
+    <img src="braceimages/pugh.png" alt="Pugh Chart" style="width: 30%; max-width: 400px; border-radius: 6px;">
+    <p>
+        Our prototyping process consisted of two main stages: a looks-like prototype, followed by a works-like prototype. The looks-like prototype assessed fit 
+        and aesthetics. Critical dimensions, the length and width of the chin support, the height of the chin support relative to the shoulder, and the length 
+        of the shoulder support, were chosen by researching the 5th–95th percentile range of human dimensions and selecting a single representative value. 
+        Cardboard was used for the structure: a team member's chin and shoulder were traced, cut out, and fashioned into a brace, with a felt neck strap 
+        adhered to the back using duct tape.
+      </p>
+    </div>
+    <p>
+      Testing on team members showed the chin support was too wide to fit properly, and its shape prevented users from tilting their heads side to side, so it 
+      needed to be made smaller and moved closer to the shoulders. The shoulder support's height and shape fit users as intended, and the felt neck strap 
+      anchored the brace well, though its fixed length couldn't fit every team member. Cardboard represented the shape and size well but couldn't provide the 
+      rigidity needed for a practical prototype, so we moved to PLA 3D printing for greater strength, rigidity, and design flexibility, and planned to add 
+      adjustability for chin support height, the angle of the chin support relative to the shoulder support, and chin width in future iterations.
+    </p>
+ 
+    <h3>Works-Like Prototype: Initial Iteration</h3>
     <div style="display: flex; gap: 30px; align-items: center;">
-
-    <img src="wheelimages/insert.jpg" 
-         alt="Aluminum wheel insert CAD"
-         style="width: 25%; max-width: 400px; border-radius: 6px;">
-
+      <img src="braceimages/workslike.png" alt="Initial works-like prototype, full assembly" style="width: 30%; max-width: 400px; border-radius: 6px;">
+      <p>
+        The initial works-like prototype required three key features: a chin support that contacts the user's chin upon excessive neck tilt, a shoulder piece 
+        providing a base support, and a ratcheting mechanism allowing the angle between the chin and shoulder supports to be adjusted. A gear-and-pawl mechanism 
+        was integrated at the chin-to-shoulder joint for that angular adjustment. The chin piece's top was kept flat so it wouldn't contact the user's chin with 
+        a protruding edge, while the shoulder piece was curved to match the upper shoulders. Parts were dimensioned from one team member's chin and neck 
+        measurements (chin-to-jaw, jaw-to-neck, and neck-to-upper-chest distances) and 3D printed on a Bambu X1 Carbon and a Prusa MK3S.
+      </p>
+    </div>
     <p>
-      The wheels need to be fastened using standard lug-nuts, which exert a compressive force on the face of the insert.
-      The material choice was 6061 Aluminum as it’s a lightweight metal with isotropic properties and is better suited for handling compressive loads.
-      A more lightweight material could be used, but as its 2nd moment of area about the rotational axis is fairly small, reducing its weight is not as 
-      critical as the remainder of the wheel. <br>
-      We planned to bond this insert to the carbon fiber wheel with the structural epoxy DP460NS. <br><br>
-      Shown below is the overlap shear test results from the manufacturer’s datasheet using ASTM D 1002-72 Standard
+      Assessing this prototype, we determined several changes were needed: the chin support width needed to be made adjustable, and its overall height needed 
+      to be greatly reduced. An elastic mechanism needed to be added to the chin support to provide a variable, spring-like force against the user's chin, 
+      rather than a rigid stop. The shoulder support needed to be lengthened and made adjustable, and the ratcheting mechanism's tolerances needed to be 
+      tightened slightly for a more solid fit.
     </p>
-
-</div>
-  
-    <img src="wheelimages/epoxy_datasheet.jpg" alt="DP460NS Data Sheet Properties" style="width:100%; max-width:900px">
-  
-    <p>
-      As shown, the aluminum in an etched condition fails at 4500 PSI whereas a FRP(Fiber Reinforced Polymer) 
-      with IPA-wipe surface preparation fails between 570 and 800 PSI. This indicates that the adhesive is most 
-      likely to fail adhesively to the Carbon Fiber. With a conservative diameter of 3.2 inches, a torque load-case 
-      of 1636.8 in-lbf, and a total glue-bond area of about 8.67 in^2, we can calculate the theoretical stress applied to the bond. 
-    </p>
-    $$
-    \begin{aligned}
-    F_{applied} &= \frac{Torque}{Reaction\ Arm\ Radius}
-    = \frac{1636.8\ in\!-\!lbf}{1.6\ in}
-    = 1023\ lbf  \\[10pt]
-    \end{aligned}
-    \begin{aligned}
-    \sigma_{glue\ bond\ area} &= \frac{F_{applied}}{Effective\ Area}
-    = \frac{1023\ lbf}{8.67\ in^2}
-    = 118\ psi \\[10pt]
-    \end{aligned}
-    
-    $$
-  <p>Utilizing the minimum FRP strength values, the factor of safety was calculated</p>
-    $$
-    \begin{aligned}
-    FOS &= \frac{Material\ Strength}{Expected\ Stress}
-    = \frac{570\ psi}{118\ psi}
-    = 4.83
-    \end{aligned}
-    $$
-    <p>This is driven mostly by the large glue-bond area and reaction arm radius. </p>
-    <p>A similar calculation using the above equations was conducted for the lateral case of 325 lbf where a vehicle may be cornering. </p>
-    $$
-    \begin{aligned}
-    \sigma_{applied} &= \frac{325\ lbf}{8.67\ in^2} = 37.5\ psi \\[10pt]
-    
-    FOS &= \frac{570\ psi}{37.5\ psi} = 15.2
-    \end{aligned}
-    $$
-  
-    <h3>Mold Design </h3>
-  
-    <p>
-      Hollow part molds must be carefully planned out to account for mold draft angle, mold rigidity, alignment, and other design for manufacturing properties. 
-      The SolidWorks draft analysis tool was set to 3° in order to determine the parting line and ensure the part will come out of the mold once cured. 
-      The wheel tapers in at the spokes, so the mold would part in the vertical direction. <br>
-
-      In terms of material, our criteria required that it be reasonable to either additively or subtractively manufacture, be machined precisely, 
-      be rated for high temperature to prevent warping, and be sturdy such that the part cannot deform on its own while setting. We had Coastal 
-      Enterprises Low Temp Precision Board (PBLT-4) from a previous project that satisfied the criteria and was designed for tooling. 
-      These high density urethane boards came in a variety of densities and thicknesses, so we chose PBLT-4, which was 4 lbs/cubic foot and 
-      chose pieces that were 4” tall for ease of transport and that would fit under the shopbot tool head. This also meant that the mold files 
-      were sliced to 3-4” tall sections to accommodate the tool height limit. For realignment, dowel holes were made to hold the mold together 
-      during reassembly and the layup process. Mold design was iterated throughout the mold manufacturing process to accommodate Shopbot limitations. <br>
-        
-      Below is the mold CAD model consisting of the Inboard (green) and Outboard (yellow) mold plug
-
-    </p>
-    <img src="wheelimages/moldcad.jpg" alt="mold CAD" style="width:100%; max-width:900px">
-    
-  
-</div>
-
+ 
+    <h3>Works-Like Prototype: Final Iteration</h3>
+      <p>
+        The final works-like prototype addressed all of the above changes. The chin support's height was reduced by 3 cm and split into two pieces connected 
+        by a pin joint and an elastic band in tension; when force is applied to the chin support, it pivots about the joint and stretches the elastic, creating 
+        a spring-like force against the user's chin. An internal rack-and-pawl mechanism along the chin section, connecting both sides, allowed the chin width 
+        to be adjusted by a total of 3 cm by sliding the two halves apart or together. The shoulder support was lengthened by 4 cm and split into two parts 
+        that slide along each other and fasten with a set screw, giving 3 cm of total length adjustability. The neck strap material was also changed from 
+        felt to Velcro to allow greater adjustability for varying neck dimensions.
+      </p>
+  </div>
 </section>
+ 
 <section id="manufacturing" class="w3-padding-64 w3-light-grey">
   <div class="max-width">
     <h2>Manufacturing</h2>
-    <h3>Mold Manufacturing</h3>
-    <h4>Foam Tooling</h4>
     <p>
-      The Foam tooling was made with the aforementioned PBLT-4 foam and the Shopbot CNC router in the Jacob’s Hall makerspace. 
-      Computer Aided Machining (CAM) to generate the G-Code required for machining was done through Autodesk Fusion 360, 
-      which allowed us to simulate different toolpaths and to implement strategies for reducing machining time. <br>
-      Below is a screenshot of the CAM Simulation that showcases minimal material removal to reduce machining time
+      All works-like prototype components were 3D printed in PLA on a Bambu X1 Carbon and a Prusa MK3S, chosen over the cardboard and felt of the looks-like 
+      prototype for greater strength, rigidity, and design flexibility. We aimed to minimize unnecessary hardware, relying on a printed rack-and-pawl mechanism, 
+      a single pin joint, an elastic band, set screws, and Velcro, in order to keep the device low-cost and built from accessible materials. This let us move 
+      through three full prototype iterations, looks-like, initial works-like, and final works-like, fitted and tested on the same subject within the project 
+      timeline.
     </p>
-    <img src="wheelimages/wheelCAM.jpg" alt="Wheel Mold CAM" style="width:100%; max-width:900px">
-
-    <h4>3D Printing</h4>
-    <div style="display: flex; gap: 30px; align-items: center;">
-    <p>
-      To verify that the foam mold matched the original CAD file, a FDM 3D printed model of the outboard plug 
-      was printed out of polycarbonate filament, in the off chance that we would need to use the print as the mold instead.
-      To test the warpage and whether the print would behave irregularly under the heat, we left the print in the oven for 
-      3 hours at 200°F, which would be roughly the temperature conditions of the bake. 
-    </p>
-
-    <img src="wheelimages/plug.jpg" 
-         alt="PC 3D inboard plug print"
-         style="width: 25%; max-width: 400px; border-radius: 6px;">
-    </div>
-
-    <h4>Mold Preparation</h4>
-    <div style="display: flex; gap: 30px; align-items: center;">
-    <p>
-      To stack and glue the machined parts of the plug, wood glue was used and the part was aligned with 12” long bolts from home depot 
-      and weight added on top while setting. Although wood glue usually acts as a gap filler, there were still seam lines that would show through in the final part, so 3M Glazing Putty was used to fill any 
-      gaps or irregularities. The putty dried hard and was sanded to match the mold surface with 180, 220, then 360 grit sandpaper per the product specification.
-    </p>
-
-    <img src="wheelimages/moldgluing.jpg" 
-         alt="Plug mold gluing"
-         style="width: 25%; max-width: 400px; border-radius: 6px;">
-    </div>
-    <img src="wheelimages/seamfilling.jpg" alt="Gap filling seam line" class="center-image" style="width:100%; max-width:900px">
-
-    <p>The mold was sanded until there were no more tooling traces or irregularities and until the fitment of the plugs had a uniform seam with as 
-      little gap as possible, since this finished surface would be visible on the part. After cleaning off the remaining debris, the part was sprayed
-      with Duratec Polyester Surfacing Primer which is supposed to eliminate the porosity of the foam and is designed to stick to polyurethane foam.
-      Following the specification, the primer is sprayed with a pressure of 35-40 psi and allowed to tack before adding another layer. The primer was left 
-      to set for at least 8 hours before sanded from 220 grit to a surface finish. </p>
-    <p>
-      After two layers of surface primer and two rounds of sanding, the goal was to normalize the mold surface roughness until all porosity is visibly gone 
-      and even. For mold release, we wiped on 3 layers of Airtech Safelease 30, allowing for 30 minutes in between coats as per the datasheet. 
-      As an extra measure, RW4 Spray Wax Release Agent from Easy Composites was sprayed on as the last mold release application step. </p>
-
-    <h3>Material</h3>
-    <p>To capture the wheel’s intricate geometry, the wheel was produced with Axiom-5420-22CK, an epoxy prepreg. Based on the material specification, 
-      the matrix consists of toughened, high temperature, flame retardant epoxy and the fiber is a 3K Carbon/Kevlar hybrid on a 2x2 twill-weave 
-      that is high impact resistance and has a fabric weight of 190 gsm. Epoxy prepreg is more rigid during the pre-processing step due to the matrix 
-      being frozen into the fibers, so cutting out templates will make the layup process cleaner and reduce potential manufacturing error. 
-      With a flexible cure temperature given by the manufacturer’s spreadsheets, we utilized a cure-temp of 200F to reduce the required cure-time 
-      while still maintaining within the temperature range of our mold materials. However, there is no cure-time published by the manufacturer of the 
-      prepreg for a 200F cure-temp. Therefore, we utilized the logarithmic relationship between reaction-rate and temperature from the Arrhenius 
-      equation to generate a best-fit line and estimate our own cure-time for a 200F cure-temp as shown below </p>
-    <img src="wheelimages/cure_time_graph.jpg" alt="Correlating cure-time and cure-temperature" style="width:80%; max-width:900px">
-    <p>With a high R^2 score of 0.993, we can be confident in our line of best-fit. We utilize this equation of the best-fit line to calculate the cure-time. </p>
-    <div style="display: flex; gap: 30px; align-items: center;">
-      $$
-      \begin{aligned}
-      \ln(Cure\ Temp) &= -0.0569 \cdot \ln(Time) + 6.44 \\[12pt]
-      
-      \ln(Time) &= \frac{\ln(Cure\ Temp) - 6.44}{-0.0569}
-      \end{aligned}
-      $$
-      <img src="wheelimages/cure_time_calcs.jpg" alt="Cure Time Calculations" style="width:40%; max-width:900px">
-    </div>
-    
-    <h3>Ply Stackup and Orientation</h3>
-    <div style="display: flex; gap: 30px; align-items: center;">
-      <p>The stackup was sequenced to account for the wheel’s variable thickness while also using a symmetrical and balanced layup, as it allows for
-        more predictable stress distribution and stiffness properties. This allows us to utilize Quasi-Isotropic Balanced and Symmetric (QIBS) 
-        assumptions for calculating part-strength if materials testing of sample coupons were to be conducted in the future. Since one of the 
-        main goals was to preserve longitudinal stiffness, 0° plies are the innermost and outermost layers for axial stiffness, intended to handle 
-        forces along the direction of rotation and keep the wheel rigid under compression and tension. The 45° plies resist shear forces during 
-        acceleration, braking, cornering, and provide torsional stiffness.The 90° plies improve resistance against impacts, distributing radial 
-        loads evenly across the structure. Despite the wheel being variable thickness, maintaining symmetrical plies will reduce warping and bending. 
-        The photo on the right shows a 3D printed plug filling the insert slot, after deciding that it would be more advantageous to have a surface rather 
-        than a through hole for the insert.</p>
-      <img src="wheelimages/wheel_parts_diagram.png" alt="Wheel parts diagram" style="width:50%; max-width:900px">
-    </div>
-    <p>We had a cured 2 ply sample of the Axiom-5420 and it measured to 1 mm. We used this to determine the plies needed. To make sure each component has 
-      the required plies, we needed a strategy to cover the entire wheel at once, essentially one pass through that covers all the surfaces. 
-      The maximum of these full wheel sweepthroughs is 7 since we are limited by the thickness of the spokes. However, a repeating layup with the same seam 
-      lines would be extremely failure prone since all the discontinuities would be concentrated in one area.<br> 
-      Thus, we devised a layup sequence with 2 full wheel operations 
-      that cover the wheel from bead to bead. Operation 1 covers the wheel circumferentially while Operation 2 covers the wheel axially. This creates a 
-      cross ply structure which is stronger and each operation will cover the previous seamlines. Each operation was broken up into specific templates 
-      that could be followed. The contrasting operations are sketched out below</p>
-    <img src="wheelimages/layup_ops.jpg" alt="Layup operations and corresponding components" style="width:100%; max-width:900px">
-    <p>Operation 1 has three components:
-      <br>Box: The hollowed recesses of the spokes, includes outboard bead material.
-      <br>Rectangular patch: The outer walls of the spokes, includes outboard bead material.
-      <br>Barrel: The strip that wraps around the wheel, includes inboard bead material.</p>
-      
-    <p>Operation 2 has two components:
-      <br>Vertical box: The hollowed recesses of the spokes extended to include outboard & inboard bead material.
-      <br>Vertical rectangle: The outer walls of the spokes extended to include outboard & inboard bead material.
-      </p>
-
-      <p>Since there would be many relief cuts and seam lines during the process, making templates were essential 
-        to streamline material preparation and make sure all the areas were covered as planned. We explored the SolidWorks flattening feature, 
-        however, the template was ultimately laid on top of the mold and fitted by hand. During this process, 
-        extra material was also added for overlap. </p>
-      <h3>Layup and Cure</h3>
-      <div style="display: flex; gap: 30px; align-items: center;">
-        <img src="wheelimages/prepreg_prep.jpg" alt="Prepreg cutting" style="width:25%; max-width:900px">
-        <p>As per the datasheet, the prepreg was taken out 4-6 hours before cutting to stabilize to room temperature. Using the templates, all the pieces were cut out and 
-          labeled while the mold was being prepped. <br><br>
-          To formulate the most optimal manufacturing sequence, we split the layup procedure into two phases according to our mold design. 
-          The first phase involves wrapping strips of the fabric concentrically to fill the insert ring space on the inboard plug before then
-          stacking the outboard plug to constrain the ring. We alternated strips of 0, 45, and 90 degrees as the ring was being formed. This ensures the seam 
-          line is continuous all the way around as the radius grows once more material is added. 
-        </p>
-      </div>
-      <div style="display: flex; gap: 30px; align-items: center;">
-        <img src="wheelimages/layup.jpg" alt="Layup Process" style="width:25%; max-width:900px">
-        <p>We fit the aluminum insert into the mold cavity when joining the mold plugs together. After that, rods and weight were placed on top of the 
-          joined mold to keep the part compressed and aligned. We followed the sequence and began laying the first layers, attempting to match the fibers 
-          at the seam line. As a note, there is a little excess fabric on the top edge of the barrel piece intended to fold over onto the hollow spoke area. </p>
-      </div>
-    <p>Once all the plies have been applied and sufficiently flattened, perforated release film is added in a similar manner, attempting to conform to the 
-      mold geometry. The perforation is to allow epoxy to seep into the breather, overwise the part would be oversaturated and brittle. The part was wrapped 
-      in breather material, which acts as a buffer medium for the vacuum to pull through even when there is vacuum compression. The part was vacuum bagged
-      with lots of excess bag to account for the hollow cavities. The final vacuumed part then went into the hot box and vacuum was pulled. Full vacuum was defined at 29.92 inHg.
-    </p>
-    <img src="wheelimages/vacuum.jpg" alt="vacuumed part and vacuum reading" style="width:100%; max-width:900px">
-  </section>
-<section id="design" class="w3-padding-64 w3-white">
+  </div>
+</section>
+ 
+<section id="results" class="w3-padding-64 w3-white">
   <div class="max-width">
-    <h2>Results</h2>
-    <p>The CFRP Wheel weighed 575 grams and the aluminum insert weighed 126 grams, resulting in a combined weight of 701 grams.
-      This was a 3.5X mass reduction from the 2483 gram weight of the original aluminum wheel assembly</p>
-    <p> The process taught us the challenges of maintaining surface uniformity and ensuring durability without a core material. While this wheel is not yet at the standard 
-      for performance testing, the process provided valuable insights into composite fabrication and structural design. 
-      The bead requires further development to improve durability and performance in order to be pressure bearing, and the insert needs a redesign to 
-      ensure better integration and load distribution. Before performance testing, we can utilize Instron testing equipment to check tensile and 
-      compression properties, conduct deformation experiments, and cut the wheel to inspect the part more closely and verify part thickness. 
-      However, the ply stackup sequence and mold manufacturing steps were useful learning experiences, offering a deeper understanding of material behavior, 
-      structural optimization, and process refinement.</p>
+    <h2>Results &amp; Testing</h2>
+    <p>
+      User tests consisted of each team member, each with varying neck and chin dimensions, donning the device and adjusting it to their body. Although our 
+      testing sample was limited to our own team, the variation in our anthropometric dimensions gave a reasonable initial approximation of what other users 
+      would experience. Testing focused on the most heavily weighted sections of our Pugh chart: the device's effectiveness in limiting forward neck flexion, 
+      comfort during normal use, and ease of donning and doffing. Each team member verbally described how the device did or didn't meet these requirements, 
+      and we used those descriptions, along with our own experience building the prototype, for our overall assessment.
+    </p>
+    <p>
+      <strong>Effectiveness:</strong> the chin-stop design did effectively prevent users from tilting their heads beyond the target threshold, validating our 
+      passive, chin-and-shoulder-based approach. 
+    </p>
+    <p>
+      <strong>Ease of use:</strong> donning and doffing the device was manageable, but making adjustments while wearing it was difficult. The
+      angular adjustment mechanism was hard for users to align since they couldn't visually inspect its position.
+    </p>
+    <p>
+      <strong>Comfort:</strong> the device was generally comfortable, except that the chin support width was too small, causing discomfort for some users.
+    </p>
+    <p>
+      <strong>Manufacturability:</strong> all parts could be 3D printed and joined with standard fasteners, but some components were fragile and, despite our 
+      force calcs, were prone to breaking. This pointed to a need for stronger materials or more robust geometries.
+    </p>
+    <p>
+      <strong>Complexity:</strong> the number of prototypes required to reach our current design point indicates a moderately high level of complexity. 
+      Achieving proper integration between the functional mechanisms and the upper body proved more challenging than we initially expected.
+    </p>
+    <p>
+      Based on this assessment, the report identified several changes for a future version: the default chin support width should be significantly increased 
+      so the device sits around the neck rather than in front of it, and the overall shoulder support length should be decreased so the brace rests on the 
+      upper part of the shoulders rather than the front of the shoulders and upper chest. The elastic within the chin support should be changed to a stiffer 
+      material, such as a steel torsion spring, to provide a greater and more affirmative force against tilting. The neck strap's mounting slot should be 
+      enlarged to allow easier adjustment and reduce the likelihood of material failure, and future versions should use more reinforced geometries and 
+      resilient materials overall, since multiple components fractured during prototyping.
+    </p>
+  </div>
+</section>
+  
+<section id="comparison" class="w3-padding-64 w3-light-grey">
+  <div class="max-width">
+    <h2>Comparison to Existing Solutions</h2>
+    <img src="braceimages/latestaa_brace.jpg" alt="Latestaa Posture Correction Device" style="width:30%; max-width:350px; float:right; margin-left:20px;">
+    <p>
+       The Latestaa Neck Brace was the only commercial product we identified with a similar design to ours, sharing the same fundamental goal of preventing 
+      excessive downward head tilt using a passive chin rest mounted to the upper body. The key difference was adjustability: the Latestaa brace relies on 
+      fixed geometry, with its cloth neck strap as the only adjustable feature, while our design incorporates adjustability across chin width, angle, and 
+      shoulder support length, in addition to an adjustable neck strap. Our device is also designed as a behavioral corrector that only intervenes once the 
+      user's head tilts past a target threshold, rather than a resting brace that continuously supports the head, a distinction informed directly by our 
+      medical professional interviews and their concern about muscle atrophy. Latestaa's device does, however, successfully integrate silicone padding and 
+      injection-molded plastic, giving it greater comfort and durability than our prototype's cloth padding and 3D-printed PLA construction.
+    </p>
+  </div>
+</section>
+
+<section id="lessons" class="w3-padding-64 w3-white">
+  <div class="max-width">
+    <h2>Lessons Learned &amp; Next Steps</h2>
+    <p>
+      The biggest challenge of the project was meeting our original 5th–95th percentile sizing goal: across iterations, our chin support kept coming out too 
+      tall and not wide enough for users outside our test subject's specific dimensions. We addressed this within our time and budget constraints by reframing 
+      the goal from a universal fit to a user-specific customization approach, designing and iterating tightly around one team member rather than the full 
+      range. The device's excessive height and narrow chin support width limit how universally it can fit and may affect comfort for users outside that 
+      specific range; the report's final testing also noted that the brace tended to shift or rotate during use, suggesting the current support length and 
+      contact surfaces don't yet provide adequate stability.
+    </p>
+    <p>
+      Throughout the project, we applied a recurring design cycle, framing and reframing the problem, imagining and designing possible solutions, building and 
+      experimenting with prototypes, and observing and noting what did and didn't work, repeating that loop on the same test subject across the looks-like 
+      prototype and the two works-like iterations. What was most useful from the class in shaping the project was learning to design against the 5th–95th 
+      percentile range for a target market, the structured design process itself, and the practice of conducting user interviews before committing to a design 
+      direction.
+    </p>
+    <p>
+      Working through this project shifted our perspective on designing for the human body: it's genuinely difficult to fit a single adjustable mechanical 
+      design to a wide range of body dimensions, and producing multiple prototypes, testing them, and iterating quickly was what let us converge on a design 
+      that actually worked for our test subject. If time and money were not constraints, our next step would be to redesign and reprint the prototype with 
+      updated dimensions, reducing the chin support height and increasing its width, and to either use 3D printers capable of multiple materials to build a 
+      sleeker integrated elastic element into the chin support, or replace the elastic band with torsion springs for a stiffer, more reliable response.
+    </p>
   </div>
 </section>
 
 <section class="w3-light-grey w3-padding-64">
-   <div class="max-width">
-    <!-- Skills -->
-      <h2>Skills Demonstrated</h2>
-      <p>Composite structures • Laminate design and planning • Reusable mold design • CNC Router • CAM • Analysis (Stress and factor-of-safety calcs, Load path analysis, DFM, Strength vs. weight optimization) • 
-        Failure modes (delamination, fiber fracture) •  Design optimization • CAD (SolidWorks) • Experimental validation • Engineering tradeoff analysis
-      </p>
-    </div>
-  </section>
-  
+ <div class="max-width">
+  <!-- Skills -->
+    <h2>Skills Demonstrated</h2>
+    <p>Human-centered ergonomic design • Rapid prototyping • Iterative design and testing • 
+      Mechanism design • CAD (OnShape, Solidworks) • Design tradeoff analysis • Competitive/market benchmarking • Design for Manufacturing • Low-cost, accessible-materials design
+    </p>
+  </div>
+</section>
 
 <section id="contact" class="w3-white w3-padding-64">
   <div class="max-width">
