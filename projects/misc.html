@@ -244,6 +244,46 @@
     </div>
   </section>
 
+<section id="SLA-Cure-Time" class="w3-padding-64 w3-white">
+  <div class="max-width">
+      <h2>SLA Resin Cure Time Study</h2>
+      <h3>
+        Tensile testing and statistical analysis of cure time effects on SLA 3D-printed resin mechanical properties
+      </h3>
+      <p>
+        Investigated how cure time affects the mechanical properties of SLA (stereolithography) 3D-printed resins, testing Tough 1500, Flexible 80A, 
+        and Clear V5 at 75%, 100%, 125%, and 150% of the manufacturer's recommended cure durations. Designed and printed ASTM Type IV dogbone specimens, 
+        ran Instron tensile testing across all material and cure-time combinations, and used linear regression and ANOVA to determine whether cure time 
+        had a statistically significant effect on elastic modulus, ultimate tensile stress, strain at fracture, and toughness.
+      </p>
+      <img src="../images/sla_cure.jpg" alt="SLA resin dogbone specimens during and after tensile testing" style="width:100%; max-width:900px">
+      <h2>Overview</h2>
+ 
+      <ul>
+        <li>Designed ASTM Type IV dogbone specimens sized to fit Instron testing constraints and resin printer bed dimensions</li>
+        <li>Selected and refined material scope across two experimentation phases, narrowing from five resins (Elastic 50A, Flexible 80A, Clear V5, Tough 1500, Durable) to three</li>
+        <li>Printed and tensile-tested specimens at 75%, 100%, 125%, and 150% of each resin's recommended cure time</li>
+        <li>Built a Python pipeline to extract elastic modulus, yield/fracture stress and strain, and toughness from raw Instron data</li>
+        <li>Fit linear regression models relating cure time to each mechanical property and evaluated significance with ANOVA (R², F-statistic, p-value)</li>
+        <li>Identified which materials and properties showed statistically significant cure-time sensitivity versus which were stable across the tested range</li>
+      </ul>
+      <p>
+        Most mechanical properties were statistically insensitive to cure time across the tested range, suggesting the resins' polymer networks stabilize 
+        early in curing. A few exceptions emerged: Clear V5's elastic modulus, and Flexible 80A's ultimate tensile stress and toughness, increased 
+        significantly with longer cure times, while Tough 1500's toughness decreased. Even so, specimens cured at the manufacturer-recommended duration 
+        consistently showed the least variance, reinforcing recommended cure times as the standard for repeatable results.
+      </p>
+      <p>
+        <a href="https://docs.google.com/document/d/1WN0lLn_GrvTcQG76eLhkB247Yabl4AAIgO3-p2DwnD8/edit?usp=sharing" target="_blank">Click here for full project report</a>
+      </p>
+    <!-- Skills -->
+      <h2>Skills Demonstrated</h2>
+      <p>
+        Materials testing • Tensile/mechanical testing (Instron) • DOE & experimental design • Statistical analysis (linear regression, ANOVA) •
+        Python data analysis • Additive manufacturing (SLA)
+      </p>
+    </div>
+  </section>
   </div>
 
 
